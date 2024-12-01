@@ -1,0 +1,29 @@
+.formBlock
+    &-item
+        &-form
+            max-width: 100%
+            min-width: 100%
+        & > *:not(img)
+            position: relative
+            z-index: 1    
+        &-img
+            width: 660px
+            top: -70px
+            left: -145px                 
+@media screen and ( min-width: 768px )
+    .formBlock
+        &-item
+            &-form
+                max-width: 320px
+                min-width: 320px        
+@media screen and ( min-width: 992px )
+    .formBlock
+        &-item
+            &-form
+                max-width: 350px
+                min-width: 350px        
+// @media screen and ( min-width: 1200px )
+//     .formBlock
+//         &-form
+//             max-width: 450px
+//             min-width: 450px           

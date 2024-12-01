@@ -1,0 +1,31 @@
+.gear
+    &-item
+        &__price
+            color: $main
+            transition: .3s
+        &__main
+            background-color: $light
+            &:hover
+                background-color: $main
+                color: $white
+                & .unit-page__gear-price
+                    color: $white
+        &__btns
+            & .btn
+                opacity: .4
+                &:hover, &.active
+                    opacity: 1
+                &:hover
+                    & i              
+                        color: $black
+                &.active
+                    & i                        
+                        color: $main
+        &__desc
+            &-price
+                white-space: nowrap                        
+    &-item.disabled
+        opacity: .5
+        & .gear-item__main, .gear-item__btns .btn
+            pointer-events: none
+            cursor: default                        

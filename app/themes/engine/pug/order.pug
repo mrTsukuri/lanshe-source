@@ -1,0 +1,76 @@
+extends template/main
+
+block variables
+    -var title = ''
+block content
+    main
+        section.order
+            .container                                    
+                form(name='order').order-container.cart-grid.w-100
+                    .order-main.d-flex.flex-column
+                        h1.fs-20.fs-lg-32.fw-md.mb-0 Оформление заказа № 12345 <br> <span class='o-0_5'>на сумму 62 600 ₽</span>
+                        .order-block.order-details.d-flex.flex-column
+                            .fs-20.fw-md Укажите контактные данные
+                            .order-details__inputs.d-flex.flex-column
+                                .order-details__input.d-flex
+                                    label.main-input.main-input_border
+                                        input(type="tel" name='phone' placeholder='+7 (9__) ___-__-__' required).w-100
+                                    .fs-14.fs-xl-16.fw-md Укажите номер телефона    
+                                .order-details__input.d-flex
+                                    label.main-input.main-input_border
+                                        input(type="text" name='name' placeholder='Иванов Иван Иванович' required).w-100
+                                    .fs-14.fs-xl-16.fw-md Укажите ФИО
+                                .order-details__input.d-flex
+                                    label.main-input.main-input_border
+                                        input(type="email" name='email' placeholder='Ваш email' required).w-100
+                                    .fs-14.fs-xl-16.fw-md Укажите email
+                        .order-block.order-delivery.d-flex.flex-column
+                            .fs-20.fw-md Укажите адрес доставки
+                            label.main-input.main-input_border
+                                input(type="text" name='address' placeholder='Например: Москва, ул. Ленина, 100, кв. 100' required).w-100
+                            .order-delivery__info.d-flex.flex-column
+                                .order-delivery__company.d-flex
+                                    .order-delivery__img
+                                        img(src= start+"images/cdek.svg", alt="СДЭК").w-auto
+                                    .order-delivery__img
+                                        img(src= start+"images/postrus.svg", alt="Почта России").w-auto
+                                p.o-0_7 Мы доставляем ТК СДЭК и ПОЧТА РОССИИ. Стоимость доставки рассчитывается индивидуально и оплачивается при получении заказа.
+                        .order-block.order-payment.d-flex.flex-column
+                            .fs-20.fw-md Выберите способ оплаты
+                            .order-payment__block.d-flex
+                                label.order-payment__label
+                                    input(type="radio" name="payment" checked)
+                                    span.order-payment__item.d-flex.flex-column.align-items-start.rounded-12.pointer
+                                        span.order-payment__item-icon.d-flex.rounded-circle
+                                            i.icon-check.fs-32
+                                        span.order-payment__item-desc.d-flex.align-items-center
+                                            i.icon-credit_card.fs-24
+                                            span.fs-14.fs-xl-16.fw-md Банковской картой
+                                label.order-payment__label
+                                    input(type="radio" name="payment")
+                                    span.order-payment__item.d-flex.flex-column.align-items-start.rounded-12.pointer
+                                        span.order-payment__item-icon.d-flex.rounded-circle
+                                            i.icon-check.fs-32
+                                        span.order-payment__item-desc.d-flex.align-items-center
+                                            img(src=start+"images/dolyame-sm.svg", alt="")
+                                            span.fs-14.fs-xl-16.fw-md Долями по 2 040 ₽
+                    .cart-order.order-cart.d-flex.flex-column.bg-grey.rounded-12
+                        .fs-16.fw-md Товары в заказе
+                        .order-cart__products.d-flex.flex-column
+                            .order-cart__product.d-flex.flex-column
+                                .fs-14.fs-xl-16.fw-md.lh-1_4 Патчи 50 шт для наращивания ресниц
+                                .fs-14.fs-xl-16.lh-1_4.o-0_7 5 шт
+                            .order-cart__product.d-flex.flex-column
+                                .fs-14.fs-xl-16.fw-md.lh-1_4 Патчи 100 шт для наращивания ресниц
+                                .fs-14.fs-xl-16.lh-1_4.o-0_7 5 шт
+                            .order-cart__product.d-flex.flex-column
+                                .fs-14.fs-xl-16.fw-md.lh-1_4 Патчи 100 шт
+                                .fs-14.fs-xl-16.lh-1_4.o-0_7 5 шт
+                        .order-cart__buy.d-flex.flex-column
+                            button.btn.btn_main.w-100.justify-content-center Оплатить онлайн
+                            label.main-checkbox
+                                input(type="checkbox" name="processing" checked)
+                                span.main-checkbox__item.o-0_7.fs-14.fs-xl-16
+                                    i.icon-checkbox.fs-20
+                                    span Согласен на <a href='policy.html' class='text-decoration-underline pointer btn-inline'> обработку <br> персональных данных</a>                            
+                                                                  

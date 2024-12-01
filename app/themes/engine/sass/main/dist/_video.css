@@ -1,0 +1,43 @@
+.video h2 img {
+  width: auto;
+  height: 5rem;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(auto, 70vw));
+  grid-auto-flow: column;
+  overflow: auto;
+  gap: 2rem;
+}
+.video-item {
+  width: 35rem;
+  max-width: 70vw;
+}
+.video-item__img {
+  height: 20rem;
+}
+.video-item__img picture img {
+  height: 100%;
+}
+.video-item__icon {
+  top: 2rem;
+  right: 2rem;
+}
+.video-item__icon img {
+  width: auto;
+  height: 4rem;
+}
+
+@media screen and (min-width: 1250px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem;
+  }
+  .video-item {
+    width: auto;
+    max-width: unset;
+  }
+  .video-item__img {
+    height: 30rem;
+  }
+}

@@ -1,0 +1,6 @@
+.compareTable-heading {
+  max-height: 92px;
+}
+.compareTable-heading-wrapper {
+  z-index: 1;
+}

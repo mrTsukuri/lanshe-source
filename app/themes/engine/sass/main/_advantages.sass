@@ -1,0 +1,40 @@
+.advantages
+    &-block
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+    &-item
+        --advBG: 2rem
+        --advSG: 1.5rem
+        gap: var(--advBG)
+        padding: var(--advSG)        
+        border-top: 2px solid $black
+        border-left: 2px solid $black
+        &:first-child
+            border-top: 0         
+        &_bg
+            grid-column: span 2                       
+@media screen and ( min-width: 992px )
+    .advantages
+        &-block            
+            grid-template-columns: repeat(4, 1fr)
+        &-item
+            --advBG: 4rem
+            --advSG: 3rem
+            padding-bottom: 0
+            &:nth-child(-n + 3)
+                padding-top: 0
+                padding-bottom: var(--advSG)
+                border-top: none
+            &:nth-child(3n + 1)
+                padding-left: 0 
+                border-left: none
+@media screen and ( min-width: 1400px )
+    .advantages       
+        &-item            
+            --advSG: 1.5625vw
+                                   
+
+                          
+
+
+            

@@ -1,0 +1,117 @@
+/*! purgecss start ignore */                    
+.swiper-button-lock
+    display: none !important
+.slider-navigation__banner, .slider-navigation__4, .slider-navigation__2
+    & .slider-prev, & .slider-next
+        display: flex
+        cursor: pointer                        
+        transition: .3s                             
+    & .slider-prev i      
+        transform: rotate(180deg)        
+    & .slider-prev.swiper-button-disabled, & .slider-next.swiper-button-disabled
+        cursor: default
+        & i
+            opacity: .4
+    & .slider-pagination
+        width: auto
+        & .swiper-pagination-bullet            
+            min-width: 16px
+            max-width: 16px
+            height: 2px                                        
+            background: transparent
+            opacity: 1
+            transition: .3s
+            margin: 0 8px                                
+            border-radius: 0
+            background-color: rgba(34, 34, 34, .1)            
+            transform: scale(1)
+            transition: transform .2s,left .2s           
+            position: relative                                  
+            &.swiper-pagination-bullet-active                                       
+                &::before                    
+                    content: ''
+                    display: block
+                    width: 0%
+                    height: 100%
+                    background-color: #222222                    
+                    animation: loading 12s forwards 
+                    // animation: name duration timing-function delay iteration-count direction fill-mode                    
+                    position: absolute
+                    top: 0
+                    left: 0                                                              
+            &:only-child
+                display: none                    
+        &-wrapper
+            position: relative            
+            width: 268px
+            height: 2px          
+            overflow: hidden
+            display: flex
+            justify-content: center                       
+        &.swiper-pagination-bullets-dynamic
+            position: static
+            top: 50%                       
+            bottom: auto
+            transform: translateY(0)                                      
+            display: flex
+            overflow: visible
+            align-items: center                      
+        &.swiper-pagination-fraction
+            width: auto
+            position: static
+            color: rgba(26, 22, 22, 0.60)
+            & .swiper-pagination-current
+                color: #1A1616
+.slider-navigation__product
+    & .slider-pagination
+        & .swiper-pagination-bullet
+            background-color: #fff
+.slider-product
+    &__thumbs
+        & .swiper-slide
+            opacity: .5
+            &.swiper-slide-thumb-active
+                opacity: 1            
+@keyframes loading
+    0%
+        width: 0%
+    100%
+        width: 100%            
+.slider-4
+    & .swiper-slide
+        max-width: 278px        
+.slider-2
+    & .swiper-slide
+        max-width: 310px
+.slider-product
+    & .swiper-slide
+        max-width: 325px             
+@media screen and ( min-width: 1080px )
+    .slider-navigation__banner, .slider-navigation__4, .slider-navigation__2
+        & .slider-pagination            
+            & .swiper-pagination-bullet            
+                min-width: 55px
+                max-width: 55px
+    .slider-4, .slider-2
+        & .swiper-slide
+            margin-right: 24px 
+    .slider-4
+        & .swiper-slide
+            max-width: 343px            
+    .slider-2
+        & .swiper-slide
+            max-width: 527px
+    .slider-product
+        & .swiper-slide
+            max-width: unset                                                                                    
+@media screen and ( min-width: 1400px )
+    .slider-4, .slider-2
+        & .swiper-slide
+            margin-right: 32px
+    .slider-4
+        & .swiper-slide
+            max-width: 278px            
+    .slider-2
+        & .swiper-slide
+            max-width: 588px                                                            
+/*! purgecss end ignore */                                     

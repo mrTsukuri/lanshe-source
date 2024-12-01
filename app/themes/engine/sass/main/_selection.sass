@@ -1,0 +1,50 @@
+.selection
+    &-grid
+        display: grid
+        grid-template-columns: 100%
+        gap: 15px
+    &-item
+        display: grid
+        grid-template-columns: 1fr 120px
+        &__desc
+            padding: 15px
+            & a
+                padding: 10px 15px 
+        &__img
+            & img                
+                aspect-ratio: 4/3
+                height: 100%
+                object-fit: contain
+@media screen and ( min-width: 576px )
+    .selection    
+        &-item
+            &__desc
+                padding: 30px
+                padding-right: 0px                                        
+@media screen and ( min-width: 992px )
+    .selection
+        &-grid
+            grid-template-columns: repeat(3, 1fr)
+            gap: 24px
+        &-item
+            grid-template-columns: 100%
+            &__desc                
+                & a
+                    padding: 10px 20px                       
+            &__img
+                & img                
+                    aspect-ratio: 4/3
+                    height: 100%            
+@media screen and ( min-width: 1488px )
+    .selection
+        &-grid
+            grid-template-columns: repeat(3, 1fr)
+        &-item
+            grid-template-columns: 1fr 225px
+            &__desc
+                padding: 36px
+                padding-right: 0px                       
+            &__img
+                & img                
+                    aspect-ratio: 4/3
+                    height: 100%            

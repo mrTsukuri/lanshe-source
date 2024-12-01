@@ -1,0 +1,13 @@
+.brand-catalog__grid {
+  padding: 1px;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(158px, 1fr));
+  overflow: auto;
+}
+.brand-catalog__item {
+  margin: -1px 0 0 -1px;
+  font-family: "TTCommons", sans-serif;
+}
+.brand-catalog__img {
+  height: 60px;
+}

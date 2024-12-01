@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="/themes/engine/css/boots.css" as="style">
+    <link rel="preload" href="/themes/engine/css/main.css" as="style">
+    <link rel="preload" href="/themes/engine/css/libs.css" as="style"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/themes/engine/fonts/icons/icomoon.woff" as="font" type="font/woff" crossorigin>
+    <link rel="icon" href="/images/favicon.png" as="" type="image/png">
+    <link rel="icon" href="/images/favicon.svg" as="" type="image/svg+xml">
+    <link rel="stylesheet" href="/themes/engine/css/boots.css">
+    <link rel="stylesheet" href="/themes/engine/css/main.css">
+    <link rel="stylesheet" href="/themes/engine/css/libs.css">
+    <title>Архив договоров</title>
+  </head>
+  <body>
+    <header class="header pt-sm-50 pt-30 mb-md-40 mb-20 position-relative">
+      <div class="container position-relative">
+        <div class="header-top mb-lg-30 mb-20">
+          <div class="row g-0 align-items-center justify-content-between">                           
+            <div class="col-auto">                   <a class="d-inline-block header-logo" href="/" title="Перейти на главную страницу">
+                <picture>
+                  <source srcset="images/logo.svg" media="(min-width: 576px)"><img src="images/mobileLogo.svg" alt="Логотип" width="114" height="51">
+                </picture></a></div>
+            <div class="col-auto d-none d-md-block">
+              <button class="d-flex align-items-center header-href border-0 bg-transparent p-0" title="Выбор города"><i class="u_location-point fs-18 p-8 rounded-circle me-10 bg-white"></i><span class="fs-14">Петропавловск-Камчатский</span></button>
+            </div>
+            <div class="col-auto d-none d-lg-block"><a class="d-flex align-items-center header-href fw-sb" href="mailto:info@dl24.su" title="Написать на почту"><i class="u_at fs-18 p-8 rounded-circle me-10 bg-white"></i><span class="fs-14">info@dl24.su                </span></a></div>
+            <div class="col-auto">
+              <div class="row g-xxl-20 g-10">
+                <div class="col-auto">
+                  <div class="d-flex flex-column align-items-lg-end align-items-center">                       <a class="fs-xxl-18 fs-16 lh-1 fw-eb mb-5" href="tel:+78002000600" title="Телефон в России">8 (800) 20-00-600</a><span class="fs-12">Бесплатно по России                </span></div>
+                </div>
+                <div class="col-auto d-none d-lg-block">                   
+                  <div class="d-flex flex-column align-items-lg-end align-items-center">                       <a class="fs-xxl-18 fs-16 lh-1 fw-eb mb-5" href="tel:+79520014442" title="Телефон в Барнауле">+7 (952) 001-44-42</a><span class="fs-12">Телефон в Барнауле                </span></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto d-none d-xl-block">
+              <div class="row g-xxl-15 g-10">
+                <div class="col-auto"><a class="p-10 rounded-circle header-social bg-white d-flex align-items-center" href="https://wa.me/79967006363" title="Написал в WhatsApp"><img src="/images/whatsApp.svg" alt="WhatsApp"></a></div>
+                <div class="col-auto"><a class="p-10 rounded-circle header-social bg-white d-flex align-items-center" href="https://vk.com/dl_24" title="Написать в VK"><img src="/images/vk.svg" alt="VK"></a></div>
+              </div>
+            </div>
+            <div class="col-auto d-none d-sm-block"><a class="d-flex align-items-center header-href fw-sb" href="#" title="Зайти в личный кабинет"><i class="u_user-circle fs-18 p-10 rounded-circle me-xxl-10 bg-white"></i><span class="fs-14 d-none d-xxl-inline">Личный<br>кабинет </span></a></div>
+            <div class="col-auto">               
+              <button class="rounded-pill fw-sb d-flex border-0 align-items-center p-0 btn-call p-5 ps-xl-20" data-bs-toggle="modal" data-bs-target=".modal-call" title="Заказать обратный звонок"><span class="d-none d-xl-block me-10 lh-0_9 fs-14">Заказать<br> звонок</span><span class="bg-main rounded-circle d-flex p-8 btn-call-icon position-relative"><i class="u_phone-volume icon fs-20"></i></span></button>
+            </div>
+          </div>
+        </div>
+        <div class="header-bot rounded-pill bg-white p-5">
+          <div class="row g-0 align-items-center justify-content-between">
+            <div class="col-auto"><a class="d-flex align-items-center p-5 pe-20 bg-main rounded-pill header-calcBtn" href="calculator.html" title="Калькулятор грузоперевозок">                           <i class="u_calculator p-8 bg-white fs-xl-24 fs-18 me-10 rounded-circle"></i><span class="fs-14 lh-0_9 fw-sb">Калькулятор<br>грузоперевозок</span></a></div>
+            <div class="col-auto d-none d-lg-block">
+              <ul class="list-unstyled m-0 p-0 d-flex header-list">
+                <li class="d-flex align-items-center">
+                  <div class="dropdawn position-relative">
+                    <div class="d-flex dropdawn-btn align-items-center"><a class="fw-sb fs-14 me-2 d-flex align-items-center" href="#" title="Грузоперевозки"><span>Грузоперевозки</span></a><i class="u_angle-down icon fs-14 arrow"></i></div>
+                    <div class="dropdawn-menu p-30 rounded-20 bg-white position-absolute">
+                      <ul class="list-unstyled m-0">
+                        <li><a class="fw-sb fs-14" href="#" title="Грузоперевозки">Грузоперевозки</a></li>
+                        <li><a class="fw-sb fs-14" href="#" title="Грузоперевозки">Грузоперевозки</a></li>
+                        <li><a class="fw-sb fs-14" href="#" title="Грузоперевозки">Грузоперевозки</a></li>
+                        <li><a class="fw-sb fs-14" href="#" title="Грузоперевозки">Грузоперевозки</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="d-flex align-items-center"><a class="fw-sb fs-14" href="#" title="Переезд">Переезд</a></li>
+                <li class="d-flex align-items-center">
+                  <div class="dropdawn position-relative">
+                    <div class="d-flex dropdawn-btn align-items-center"><a class="fw-sb fs-14 me-2 d-flex align-items-center" href="#" title="О компании"><span>О компании</span></a><i class="u_angle-down icon fs-14 arrow"></i></div>
+                    <div class="dropdawn-menu p-30 rounded-20 bg-white position-absolute">
+                      <ul class="list-unstyled m-0">
+                        <li><a class="fw-sb fs-14" href="#" title="О компании">О компании</a></li>
+                        <li><a class="fw-sb fs-14" href="#" title="О компании">О компании</a></li>
+                        <li><a class="fw-sb fs-14" href="#" title="О компании">О компании</a></li>
+                        <li><a class="fw-sb fs-14" href="#" title="О компании">О компании</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="d-flex align-items-center"><a class="fw-sb fs-14" href="contact.html" title="Контакты">Контакты</a></li>
+              </ul>
+            </div>
+            <div class="col-auto d-none d-md-block"><a class="btn-light rounded-pill py-10 px-15 fs-14 fw-sb" href="#" title="Отследить груз">Отследить груз</a></div>
+            <div class="col-auto d-none d-sm-block">
+              <form class="header-search d-flex position-relative">
+                <input class="rounded-pill ps-20 bg-grey fs-14 lh-0_9 border-0" type="text" placeholder="Поиск по сайту">
+                <button class="btn-icon rounded-circle p-xl-15 p-10 bg-main border-0 d-flex position-absolute end-0 top-50 translate-middle-y" aria-label="Поиск по сайту" title="Поиск по сайту"><i class="u_search fs-20"></i></button>
+              </form>
+            </div>
+            <div class="col-auto d-lg-none"><a class="d-flex pe-10" href="#mobile-menu"><i class="u_bars fs-24"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <nav class="breadcrumbs mb-40">
+          <div class="breadcrumbs-nav d-flex align-items-center pt-0 text-nowrap overflow-auto pb-5"><span><a class="breadcrumbs-nav-item position-relative fs-14 lh-1" href="index.html" title="Вернуться на главную страницу"><span>Главная</span></a></span><span><a class="breadcrumbs-nav-item position-relative fs-14 lh-1" href="#" title="Вернуться на предыдущую страницу"><span>Внутренняя страницы</span></a></span><span><span class="breadcrumbs-nav-item breadcrumbs-nav-item-disabled text-light fs-14 lh-1">Текущая страница</span></span></div>
+        </nav>
+      </div>
+      <section class="archive">
+        <div class="container">
+          <h1 class="fs-sm-35 fs-25 lh-1 fw-eb baner-heading text-g mb-40">Архив договоров</h1>
+          <div class="row g-xl-35 g-20">
+            <div class="col-md-6"><a class="documents-item rounded-20 p-lg-40 p-20 bg-white d-flex justify-content-between align-items-center" href="perevozchiky.html">
+                <div class="d-flex align-items-center"><i class="u_file-alt icon text-main fs-lg-50 fs-30 me-sm-15 me-10"></i>
+                  <div class="d-flex flex-column">
+                    <div class="fs-sm-18 fw-bl mb-5 documents-item-title">Договор перевозчику</div>
+                    <div class="text-light">Начало действия: 10.10.2022</div>
+                  </div>
+                </div></a></div>
+            <div class="col-md-6"><a class="documents-item rounded-20 p-lg-40 p-20 bg-white d-flex justify-content-between align-items-center" href="zakazchiky.html">
+                <div class="d-flex align-items-center"><i class="u_file-alt icon text-main fs-lg-50 fs-30 me-sm-15 me-10"></i>
+                  <div class="d-flex flex-column">
+                    <div class="fs-sm-18 fw-bl mb-5 documents-item-title">Договор заказчику</div>
+                    <div class="text-light">Начало действия: 10.10.2022</div>
+                  </div>
+                </div></a></div>
+            <div class="col-md-6"><a class="documents-item rounded-20 p-lg-40 p-20 bg-white d-flex justify-content-between align-items-center" href="perevozchiky.html">
+                <div class="d-flex align-items-center"><i class="u_file-alt icon text-main fs-lg-50 fs-30 me-sm-15 me-10"></i>
+                  <div class="d-flex flex-column">
+                    <div class="fs-sm-18 fw-bl mb-5 documents-item-title">Договор перевозчику</div>
+                    <div class="text-light">Начало действия: 10.10.2022</div>
+                  </div>
+                </div></a></div>
+            <div class="col-md-6"><a class="documents-item rounded-20 p-lg-40 p-20 bg-white d-flex justify-content-between align-items-center" href="zakazchiky.html">
+                <div class="d-flex align-items-center"><i class="u_file-alt icon text-main fs-lg-50 fs-30 me-sm-15 me-10"></i>
+                  <div class="d-flex flex-column">
+                    <div class="fs-sm-18 fw-bl mb-5 documents-item-title">Договор заказчику</div>
+                    <div class="text-light">Начало действия: 10.10.2022</div>
+                  </div>
+                </div></a></div>
+            <div class="col-md-6"><a class="documents-item rounded-20 p-lg-40 p-20 bg-white d-flex justify-content-between align-items-center" href="perevozchiky.html">
+                <div class="d-flex align-items-center"><i class="u_file-alt icon text-main fs-lg-50 fs-30 me-sm-15 me-10"></i>
+                  <div class="d-flex flex-column">
+                    <div class="fs-sm-18 fw-bl mb-5 documents-item-title">Договор перевозчику</div>
+                    <div class="text-light">Начало действия: 10.10.2022</div>
+                  </div>
+                </div></a></div>
+            <div class="col-md-6"><a class="documents-item rounded-20 p-lg-40 p-20 bg-white d-flex justify-content-between align-items-center" href="zakazchiky.html">
+                <div class="d-flex align-items-center"><i class="u_file-alt icon text-main fs-lg-50 fs-30 me-sm-15 me-10"></i>
+                  <div class="d-flex flex-column">
+                    <div class="fs-sm-18 fw-bl mb-5 documents-item-title">Договор заказчику</div>
+                    <div class="text-light">Начало действия: 10.10.2022</div>
+                  </div>
+                </div></a></div>
+          </div>
+        </div>
+      </section>
+      <section class="question">
+        <div class="container">
+          <h2 class="fs-xl-40 fs-md-35 fs-sm-30 fs-20 fw-bl text-g lh-1_1 mb-md-35 mb-20">Частые вопросы и ответы на них</h2>
+          <div class="d-flex flex-column">
+            <div class="questions-item spoiler overflow-hidden rounded-20">
+              <div class="questions-item-btn position-relative">
+                <div class="position-relative d-flex">
+                  <div class="d-flex flex-column flex-grow-1 p-md-30 p-20">
+                    <div class="lh-1 fw-bl pe-5">Можно ли снизить стоимость грузоперевозки?</div>
+                  </div>
+                  <div class="spoiler-btn pointer p-10 d-flex align-items-center justify-content-center"><i class="u_angle-down icon fs-md-30 fs-24"></i></div>
+                </div>
+              </div>
+              <div class="questions-item-block spoiler-block mt-5">
+                <div class="p-lg-40 p-20">
+                  <div class="content">
+                    <ol>
+                      <li>
+                        <p>Предмет Договора</p>
+                        <ol>
+                          <li>Заказчик заказывает, а Перевозчик выполняет автомобильную перевозку груза на основании Заявки, подписанной сторонами, согласно условиям настоящего договора (далее - Договор).</li>
+                          <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                          <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                          <li>Перевозка груза выполняется Перевозчиком на основании Заявки, представляемой Заказчиком (далее - Заявка). Заказчик представляет Заявку на перевозку грузов в письменной форме.</li>
+                          <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                          <li>Договор содержит условия осуществления перевозки в рамках Заявки, согласованной Сторонами и ссылающейся на настоящий Договор. Договор является приложением и неотъемлемой частью Заявки. Договор размещен в сети Интернет и представлен Заказчиком в электронном виде по ссылке, указанной в Заявке с возможностью открытого доступа Перевозчика. Соглашение с условиями Договора подтверждается подписанием Заявки, ссылающейся на настоящей Договор. Подписание Заявки является одновременно подписанием настоящего Договора.</li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="questions-item spoiler overflow-hidden rounded-20">
+              <div class="questions-item-btn position-relative">
+                <div class="position-relative d-flex">
+                  <div class="d-flex flex-column flex-grow-1 p-md-30 p-20">
+                    <div class="lh-1 fw-bl pe-5">Можно ли снизить стоимость грузоперевозки?</div>
+                  </div>
+                  <div class="spoiler-btn pointer p-10 d-flex align-items-center justify-content-center"><i class="u_angle-down icon fs-md-30 fs-24"></i></div>
+                </div>
+              </div>
+              <div class="questions-item-block spoiler-block mt-5">
+                <div class="p-lg-40 p-20">
+                  <div class="content">
+                    <ol>
+                      <li>
+                        <p>Предмет Договора</p>
+                        <ol>
+                          <li>Заказчик заказывает, а Перевозчик выполняет автомобильную перевозку груза на основании Заявки, подписанной сторонами, согласно условиям настоящего договора (далее - Договор).</li>
+                          <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                          <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                          <li>Перевозка груза выполняется Перевозчиком на основании Заявки, представляемой Заказчиком (далее - Заявка). Заказчик представляет Заявку на перевозку грузов в письменной форме.</li>
+                          <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                          <li>Договор содержит условия осуществления перевозки в рамках Заявки, согласованной Сторонами и ссылающейся на настоящий Договор. Договор является приложением и неотъемлемой частью Заявки. Договор размещен в сети Интернет и представлен Заказчиком в электронном виде по ссылке, указанной в Заявке с возможностью открытого доступа Перевозчика. Соглашение с условиями Договора подтверждается подписанием Заявки, ссылающейся на настоящей Договор. Подписание Заявки является одновременно подписанием настоящего Договора.</li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="questions-item spoiler overflow-hidden rounded-20">
+              <div class="questions-item-btn position-relative">
+                <div class="position-relative d-flex">
+                  <div class="d-flex flex-column flex-grow-1 p-md-30 p-20">
+                    <div class="lh-1 fw-bl pe-5">Можно ли снизить стоимость грузоперевозки?</div>
+                  </div>
+                  <div class="spoiler-btn pointer p-10 d-flex align-items-center justify-content-center"><i class="u_angle-down icon fs-md-30 fs-24"></i></div>
+                </div>
+              </div>
+              <div class="questions-item-block spoiler-block mt-5">
+                <div class="p-lg-40 p-20">
+                  <div class="content">
+                    <ol>
+                      <li>
+                        <p>Предмет Договора</p>
+                        <ol>
+                          <li>Заказчик заказывает, а Перевозчик выполняет автомобильную перевозку груза на основании Заявки, подписанной сторонами, согласно условиям настоящего договора (далее - Договор).</li>
+                          <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                          <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                          <li>Перевозка груза выполняется Перевозчиком на основании Заявки, представляемой Заказчиком (далее - Заявка). Заказчик представляет Заявку на перевозку грузов в письменной форме.</li>
+                          <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                          <li>Договор содержит условия осуществления перевозки в рамках Заявки, согласованной Сторонами и ссылающейся на настоящий Договор. Договор является приложением и неотъемлемой частью Заявки. Договор размещен в сети Интернет и представлен Заказчиком в электронном виде по ссылке, указанной в Заявке с возможностью открытого доступа Перевозчика. Соглашение с условиями Договора подтверждается подписанием Заявки, ссылающейся на настоящей Договор. Подписание Заявки является одновременно подписанием настоящего Договора.</li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="questions-item spoiler overflow-hidden rounded-20">
+              <div class="questions-item-btn position-relative">
+                <div class="position-relative d-flex">
+                  <div class="d-flex flex-column flex-grow-1 p-md-30 p-20">
+                    <div class="lh-1 fw-bl pe-5">Можно ли снизить стоимость грузоперевозки?</div>
+                  </div>
+                  <div class="spoiler-btn pointer p-10 d-flex align-items-center justify-content-center"><i class="u_angle-down icon fs-md-30 fs-24"></i></div>
+                </div>
+              </div>
+              <div class="questions-item-block spoiler-block mt-5">
+                <div class="p-lg-40 p-20">
+                  <div class="content">
+                    <ol>
+                      <li>
+                        <p>Предмет Договора</p>
+                        <ol>
+                          <li>Заказчик заказывает, а Перевозчик выполняет автомобильную перевозку груза на основании Заявки, подписанной сторонами, согласно условиям настоящего договора (далее - Договор).</li>
+                          <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                          <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                          <li>Перевозка груза выполняется Перевозчиком на основании Заявки, представляемой Заказчиком (далее - Заявка). Заказчик представляет Заявку на перевозку грузов в письменной форме.</li>
+                          <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                          <li>Договор содержит условия осуществления перевозки в рамках Заявки, согласованной Сторонами и ссылающейся на настоящий Договор. Договор является приложением и неотъемлемой частью Заявки. Договор размещен в сети Интернет и представлен Заказчиком в электронном виде по ссылке, указанной в Заявке с возможностью открытого доступа Перевозчика. Соглашение с условиями Договора подтверждается подписанием Заявки, ссылающейся на настоящей Договор. Подписание Заявки является одновременно подписанием настоящего Договора.</li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="services">
+        <div class="container">
+          <div class="d-flex align-items-center justify-content-between mb-md-35 mb-20 slider-navigation-4" data-category="1">
+            <div class="slider-prev rounded-circle p-5 d-flex"><i class="u_arrow-right icon fs-lg-40 fs-md-35 fs-30"></i></div>
+            <h2 class="fs-md-35 fs-sm-30 fs-20 fw-bl text-g lh-1_1 mb-0">Просмотренные услуги</h2>
+            <div class="slider-next rounded-circle p-5 d-flex"><i class="u_arrow-right icon fs-lg-40 fs-md-35 fs-30"></i></div>
+          </div>
+          <div class="swiper slider-4" data-category="1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide h-auto d-flex"><a class="d-flex flex-column flex-grow-1 rounded-20 p-5 services-item position-relative overflow-hidden" href="service.html">
+                  <div class="ratio ratio-3x2 rounded-15 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/services/services-1.jpg" alt="Страхование груза">
+                  </div>
+                  <div class="p-lg-25 p-15 d-flex flex-column position-relative">
+                    <div class="fs-18 fw-bl lh-1_2 mb-5 services-item-title">Страхование груза</div>
+                    <div class="fs-18 fw-bl lh-1_2 text-main mb-5">От <span>1 500</span> ₽</div>
+                    <div class="fs-14 lh-1_3 services-item-text">Застрахуем груз на время перевозки на любое расстояние. Оформление за 5 минут.</div>
+                  </div></a>
+              </div>
+              <div class="swiper-slide h-auto d-flex"><a class="d-flex flex-column flex-grow-1 rounded-20 p-5 services-item position-relative overflow-hidden" href="serviceCalc.html">
+                  <div class="ratio ratio-3x2 rounded-15 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/services/services-2.jpg" alt="Упаковка груза">
+                  </div>
+                  <div class="p-lg-25 p-15 d-flex flex-column position-relative">
+                    <div class="fs-18 fw-bl lh-1_2 mb-5 services-item-title">Упаковка груза</div>
+                    <div class="fs-18 fw-bl lh-1_2 text-main mb-5">От <span>1 500</span> ₽</div>
+                    <div class="fs-14 lh-1_3 services-item-text">Аккуратно упакуем груз в деревянный короб, пленку, гофрокартон, вакуумные пакеты, мешки.</div>
+                  </div></a>
+              </div>
+              <div class="swiper-slide h-auto d-flex"><a class="d-flex flex-column flex-grow-1 rounded-20 p-5 services-item position-relative overflow-hidden" href="service.html">
+                  <div class="ratio ratio-3x2 rounded-15 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/services/services-3.jpg" alt="Услуги грузчиков">
+                  </div>
+                  <div class="p-lg-25 p-15 d-flex flex-column position-relative">
+                    <div class="fs-18 fw-bl lh-1_2 mb-5 services-item-title">Услуги грузчиков</div>
+                    <div class="fs-18 fw-bl lh-1_2 text-main mb-5">От <span>1 500</span> ₽</div>
+                    <div class="fs-14 lh-1_3 services-item-text">Наши грузчкики аккуратно погрузкят и разгрузят груз без повреждений.</div>
+                  </div></a>
+              </div>
+              <div class="swiper-slide h-auto d-flex"><a class="d-flex flex-column flex-grow-1 rounded-20 p-5 services-item position-relative overflow-hidden" href="serviceCalc.html">
+                  <div class="ratio ratio-3x2 rounded-15 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/services/services-4.jpg" alt="Обрешетка груза">
+                  </div>
+                  <div class="p-lg-25 p-15 d-flex flex-column position-relative">
+                    <div class="fs-18 fw-bl lh-1_2 mb-5 services-item-title">Обрешетка груза</div>
+                    <div class="fs-18 fw-bl lh-1_2 text-main mb-5">От <span>1 500</span> ₽</div>
+                    <div class="fs-14 lh-1_3 services-item-text">Упакуем любой груз в деревянный или металлический каркас и довезем в целости и сохранности.</div>
+                  </div></a>
+              </div>
+              <div class="swiper-slide h-auto d-flex"><a class="d-flex flex-column flex-grow-1 rounded-20 p-5 services-item position-relative overflow-hidden" href="service.html">
+                  <div class="ratio ratio-3x2 rounded-15 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/services/services-1.jpg" alt="Страхование груза">
+                  </div>
+                  <div class="p-lg-25 p-15 d-flex flex-column position-relative">
+                    <div class="fs-18 fw-bl lh-1_2 mb-5 services-item-title">Страхование груза</div>
+                    <div class="fs-18 fw-bl lh-1_2 text-main mb-5">От <span>1 500</span> ₽</div>
+                    <div class="fs-14 lh-1_3 services-item-text">Застрахуем груз на время перевозки на любое расстояние. Оформление за 5 минут.</div>
+                  </div></a>
+              </div>
+              <div class="swiper-slide h-auto d-flex"><a class="d-flex flex-column flex-grow-1 rounded-20 p-5 services-item position-relative overflow-hidden" href="serviceCalc.html">
+                  <div class="ratio ratio-3x2 rounded-15 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/services/services-2.jpg" alt="Упаковка груза">
+                  </div>
+                  <div class="p-lg-25 p-15 d-flex flex-column position-relative">
+                    <div class="fs-18 fw-bl lh-1_2 mb-5 services-item-title">Упаковка груза</div>
+                    <div class="fs-18 fw-bl lh-1_2 text-main mb-5">От <span>1 500</span> ₽</div>
+                    <div class="fs-14 lh-1_3 services-item-text">Аккуратно упакуем груз в деревянный короб, пленку, гофрокартон, вакуумные пакеты, мешки.</div>
+                  </div></a>
+              </div>
+              <div class="swiper-slide h-auto d-flex"><a class="d-flex flex-column flex-grow-1 rounded-20 p-5 services-item position-relative overflow-hidden" href="service.html">
+                  <div class="ratio ratio-3x2 rounded-15 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/services/services-3.jpg" alt="Услуги грузчиков">
+                  </div>
+                  <div class="p-lg-25 p-15 d-flex flex-column position-relative">
+                    <div class="fs-18 fw-bl lh-1_2 mb-5 services-item-title">Услуги грузчиков</div>
+                    <div class="fs-18 fw-bl lh-1_2 text-main mb-5">От <span>1 500</span> ₽</div>
+                    <div class="fs-14 lh-1_3 services-item-text">Наши грузчкики аккуратно погрузкят и разгрузят груз без повреждений.</div>
+                  </div></a>
+              </div>
+              <div class="swiper-slide h-auto d-flex"><a class="d-flex flex-column flex-grow-1 rounded-20 p-5 services-item position-relative overflow-hidden" href="serviceCalc.html">
+                  <div class="ratio ratio-3x2 rounded-15 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/services/services-4.jpg" alt="Обрешетка груза">
+                  </div>
+                  <div class="p-lg-25 p-15 d-flex flex-column position-relative">
+                    <div class="fs-18 fw-bl lh-1_2 mb-5 services-item-title">Обрешетка груза</div>
+                    <div class="fs-18 fw-bl lh-1_2 text-main mb-5">От <span>1 500</span> ₽</div>
+                    <div class="fs-14 lh-1_3 services-item-text">Упакуем любой груз в деревянный или металлический каркас и довезем в целости и сохранности.</div>
+                  </div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer py-lg-60 py-sm-40 py-20 position-relative overflow-hidden">
+      <div class="container position-relative">
+        <div class="footer-top mb-lg-30 mb-20">
+          <div class="row g-0 align-items-center justify-content-between">
+            <div class="col-auto">
+              <div class="header-logo"><a class="d-inline-block" href="/" title="Перейти на главную страницу">
+                  <picture>
+                    <source srcset="images/footerLogo.svg" media="(min-width: 576px)"><img src="images/mobileFooterLogo.svg" alt="Логотип" width="136" height="60">
+                  </picture></a></div>
+            </div>
+            <div class="col-auto d-none d-lg-block"><a class="d-flex align-items-center header-href fw-sb" href="mailto:info@dl24.su" title="Написать на почту"><i class="u_at fs-18 p-8 rounded-circle me-10 bg-white"></i><span class="fs-14">info@dl24.su               </span></a></div>
+            <div class="col-auto">
+              <div class="row g-20">
+                <div class="col-auto">
+                  <div class="d-flex flex-column align-items-lg-end align-items-center">                       <a class="fs-xxl-18 fs-16 lh-1 fw-eb mb-5" href="tel:+78002000600" title="Телефон в России">8 (800) 20-00-600</a><span class="fs-12">Бесплатно по России                </span></div>
+                </div>
+                <div class="col-auto d-none d-lg-block">                    
+                  <div class="d-flex flex-column align-items-lg-end align-items-center">                       <a class="fs-xxl-18 fs-16 lh-1 fw-eb mb-5" href="tel:+79520014442" title="Телефон в Барнауле">+7 (952) 001-44-42</a><span class="fs-12">Телефон в Барнауле                </span></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto d-none d-xl-block">
+              <div class="row g-15">
+                <div class="col-auto"><a class="p-10 rounded-circle header-social bg-white d-flex align-items-center" href="https://wa.me/79967006363" title="Написал в WhatsApp"><img src="/images/whatsApp.svg" alt="WhatsApp"></a></div>
+                <div class="col-auto"><a class="p-10 rounded-circle header-social bg-white d-flex align-items-center" href="https://vk.com/dl_24" title="Написать в VK"><img src="/images/vk.svg" alt="VK"></a></div>
+              </div>
+            </div>
+            <div class="col-auto d-none d-sm-block"><a class="d-flex align-items-center header-href fw-sb" href="#" title="Зайти в личный кабинет"><i class="u_user-circle fs-18 p-10 rounded-circle me-10 bg-white me-xxl-10"></i><span class="fs-14 d-none d-xxl-inline">Личный<br>кабинет </span></a></div>
+            <div class="col-auto">               
+              <button class="rounded-pill fw-sb d-flex border-0 align-items-center p-0 btn-call bg-white p-5 ps-xl-20" data-bs-toggle="modal" data-bs-target=".modal-call" title="Заказать обратный звонок"><span class="d-none d-xl-block me-10 lh-0_9 fs-14">Заказать<br> звонок</span><span class="bg-main rounded-circle d-flex p-8 btn-call-icon position-relative"><i class="u_phone-volume icon fs-20"></i></span></button>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bot rounded-pill bg-white p-5 mb-35 d-none d-sm-block">
+          <div class="row g-0 align-items-center justify-content-between">
+            <div class="col-auto"><a class="d-flex align-items-center p-5 pe-20 bg-main rounded-pill header-calcBtn" href="calculator.html" title="Калькулятор грузоперевозок">                           <i class="u_calculator p-8 bg-white fs-xl-24 fs-18 me-10 rounded-circle"></i><span class="fs-14 lh-0_9 fw-sb">Калькулятор<br>грузоперевозок</span></a></div>
+            <div class="col-auto d-none d-lg-block">
+              <ul class="list-unstyled m-0 p-0 d-flex header-list">
+                <li class="d-flex align-items-center">
+                  <div class="dropdawn position-relative">
+                    <div class="d-flex dropdawn-btn align-items-center"><a class="fw-sb fs-14 me-2 d-flex align-items-center" href="#" title="Грузоперевозки"><span>Грузоперевозки</span></a><i class="u_angle-down icon fs-14 arrow"></i></div>
+                    <div class="dropdawn-menu p-30 rounded-20 bg-white position-absolute">
+                      <ul class="list-unstyled m-0">
+                        <li><a class="fw-sb fs-14" href="#" title="Грузоперевозки">Грузоперевозки</a></li>
+                        <li><a class="fw-sb fs-14" href="#" title="Грузоперевозки">Грузоперевозки</a></li>
+                        <li><a class="fw-sb fs-14" href="#" title="Грузоперевозки">Грузоперевозки</a></li>
+                        <li><a class="fw-sb fs-14" href="#" title="Грузоперевозки">Грузоперевозки</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="d-flex align-items-center"><a class="fw-sb fs-14" href="#" title="Переезд">Переезд</a></li>
+                <li class="d-flex align-items-center">
+                  <div class="dropdawn position-relative">
+                    <div class="d-flex dropdawn-btn align-items-center"><a class="fw-sb fs-14 me-2 d-flex align-items-center" href="#" title="О компании"><span>О компании</span></a><i class="u_angle-down icon fs-14 arrow"></i></div>
+                    <div class="dropdawn-menu p-30 rounded-20 bg-white position-absolute">
+                      <ul class="list-unstyled m-0">
+                        <li><a class="fw-sb fs-14" href="#" title="О компании">О компании</a></li>
+                        <li><a class="fw-sb fs-14" href="#" title="О компании">О компании</a></li>
+                        <li><a class="fw-sb fs-14" href="#" title="О компании">О компании</a></li>
+                        <li><a class="fw-sb fs-14" href="#" title="О компании">О компании</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="d-flex align-items-center"><a class="fw-sb fs-14" href="#" title="Контакты">Контакты</a></li>
+              </ul>
+            </div>
+            <div class="col-auto d-none d-md-block"><a class="btn-light rounded-pill py-10 px-15 fs-14 fw-sb" href="#">Отследить груз</a></div>
+            <div class="col-auto">
+              <form class="header-search d-flex position-relative">
+                <input class="rounded-pill ps-20 bg-grey fs-14 lh-0_9 border-0" type="text" placeholder="Поиск по сайту">
+                <button class="btn-icon rounded-circle p-xl-15 p-10 bg-main border-0 d-flex position-absolute end-0 top-50 translate-middle-y" aria-label="Поиск по сайту" title="Поиск по сайту"><i class="u_search fs-20">                            </i></button>
+              </form>
+            </div>
+          </div>
+        </div><p class="fs-12 lh-lg o-0_7 mb-0 text-white">Отправляя свои личные данные через формы на сайте, вы даёте своё согласие на обработку персональных данных согласно Федеральному закону №152-ФЗ «О персональных данных» от 27.07.2006 г.Посещая сайт компании «Деловая Логистика 24», вы соглашаетесь с <button class="p-0 bg-transparent text-decoration-underline border-0 text-white">Правилами и условиями использования</button> и <button class="p-0 bg-transparent text-decoration-underline border-0 text-white">политикой обработки персональных данных</button> данного сайта.</p>    
+      </div>
+    </footer>
+    <nav class="mobile-menu menu-scrolling" id="mobile-menu" style="display: none">
+      <ul>
+        <li><a class="fw-rg" href="#">Грузоперевозки</a>
+          <ul>
+            <li><a class="fw-rg" href="#">Грузоперевозки</a></li>
+            <li><a class="fw-rg" href="#">Грузоперевозки</a></li>
+            <li><a class="fw-rg" href="#">Грузоперевозки</a></li>
+            <li><a class="fw-rg" href="#">Грузоперевозки</a></li>
+          </ul>
+        </li>
+        <li><a class="fw-rg" href="#">Переезд </a></li>
+        <li><a class="fw-rg" href="#">О компании</a>
+          <ul>
+            <li><a class="fw-rg" href="#">О компании</a></li>
+            <li><a class="fw-rg" href="#">О компании</a></li>
+            <li><a class="fw-rg" href="#">О компании</a></li>
+            <li><a class="fw-rg" href="#">О компании</a></li>
+          </ul>
+        </li>
+        <li><a class="fw-rg" href="contact.html">Контакты                                                      </a></li>
+        <li class="mobile-menu-feedback"><a class="d-flex align-items-center header-href fw-sb" href="mailto:info@dl24.su" title="Написать на почту"><i class="u_at fs-18 p-8 rounded-circle me-10 bg-white"></i><span class="fs-14">info@dl24.su</span></a>
+          <div class="d-flex flex-column">                       <a class="fs-xxl-18 fs-16 lh-1 fw-eb mb-5" href="tel:+78002000600" title="Телефон в России">8 (800) 20-00-600</a><span class="fs-12">Бесплатно по России</span></div>
+          <div class="d-flex flex-column">                       <a class="fs-xxl-18 fs-16 lh-1 fw-eb mb-5" href="tel:+79520014442" title="Телефон в Барнауле">+7 (952) 001-44-42</a><span class="fs-12">Телефон в Барнауле       </span></div>
+        </li>
+      </ul>
+    </nav><div aria-live="polite" aria-atomic="true">
+<div class="toast-container position-fixed top-0 end-0 p-3 js_toast_container" style="z-index: 10000;"> 
+</div>
+</div>               
+    <div class="modal fade modal-call" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="fs-35 fw-bl mb-0 text-g">Обратный звонок</div>
+            <button class="btn-close position-absolute end-0 top-0 mt-20 me-20 border-0 p-0 ms-auto d-flex rounded-circle p-8" data-bs-dismiss="modal"><i class="u_multiply icon fs-20"></i></button>
+          </div>
+          <div class="modal-body">
+            <p class="fw-bl fs-14 modal-desc">Оставьте номер телефона, и наш менеджер свяжется с вами в ближайшее время, чтобы проконсультировать по возникшим вопросам.</p>
+            <form class="d-flex flex-grow-1" name="callback" autocomplete="off">                  
+              <input class="input-phone rounded-start-pill border border-2 border-main px-30 py-25 fs-18 lh-1 fw-rg w-50 main-input" type="tel" placeholder="+7 (___) ___-__-__">
+              <button class="rounded-end-pill px-30 py-25 border border-2 border-main fs-18 lh-1 fw-bl bg-main w-50">Оставить заявку</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-manager" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="fs-35 fw-bl mb-0 text-g">Личный менеджер</div>
+            <button class="btn-close position-absolute end-0 top-0 mt-20 me-20 border-0 p-0 ms-auto d-flex rounded-circle p-8" data-bs-dismiss="modal"><i class="u_multiply icon fs-20"></i></button>
+          </div>
+          <div class="modal-body">
+            <p class="fw-bl fs-14 modal-desc">Оставьте номер телефона, и наш менеджер свяжется с вами в ближайшее время, чтобы проконсультировать по возникшим вопросам.</p>
+            <form class="d-flex flex-grow-1" name="manager" autocomplete="off">                  
+              <input class="input-phone rounded-start-pill border border-2 border-main px-30 py-25 fs-18 lh-1 fw-rg w-50 main-input" type="tel" placeholder="+7 (___) ___-__-__">
+              <button class="rounded-end-pill px-30 py-25 border border-2 border-main fs-18 lh-1 fw-bl bg-main w-50">Оставить заявку</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-consultation" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="fs-35 fw-bl mb-0 text-g">Консультация</div>
+            <button class="btn-close position-absolute end-0 top-0 mt-20 me-20 border-0 p-0 ms-auto d-flex rounded-circle p-8" data-bs-dismiss="modal"><i class="u_multiply icon fs-20"></i></button>
+          </div>
+          <div class="modal-body">
+            <p class="fw-bl fs-14 modal-desc">Оставьте номер телефона, и наш менеджер свяжется с вами в ближайшее время, чтобы проконсультировать по возникшим вопросам.</p>
+            <form class="d-flex flex-grow-1" name="consultation" autocomplete="off">                  
+              <input class="input-phone rounded-start-pill border border-2 border-main px-30 py-25 fs-18 lh-1 fw-rg w-50 main-input" type="tel" placeholder="+7 (___) ___-__-__">
+              <button class="rounded-end-pill px-30 py-25 border border-2 border-main fs-18 lh-1 fw-bl bg-main w-50">Оставить заявку</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-transportation" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="fs-35 fw-bl mb-0 text-g">Междугородние грузоперевозки</div>
+            <button class="btn-close position-absolute end-0 top-0 mt-20 me-20 border-0 p-0 ms-auto d-flex rounded-circle p-8" data-bs-dismiss="modal"><i class="u_multiply icon fs-20"></i></button>
+          </div>
+          <div class="modal-body">
+            <p class="fw-bl fs-14 modal-desc">Оставьте номер телефона, и наш менеджер свяжется с вами в ближайшее время, чтобы проконсультировать по возникшим вопросам.</p>
+            <form class="d-flex flex-grow-1" name="transportation" autocomplete="off">                  
+              <input class="input-phone rounded-start-pill border border-2 border-main px-30 py-25 fs-18 lh-1 fw-rg w-50 main-input" type="tel" placeholder="+7 (___) ___-__-__">
+              <button class="rounded-end-pill px-30 py-25 border border-2 border-main fs-18 lh-1 fw-bl bg-main w-50">Оставить заявку</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-calculation" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="fs-35 fw-bl mb-0 text-g">Расчет стоимости</div>
+            <button class="btn-close position-absolute end-0 top-0 mt-20 me-20 border-0 p-0 ms-auto d-flex rounded-circle p-8" data-bs-dismiss="modal"><i class="u_multiply icon fs-20"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="characteristic mb-35">                   
+              <div class="characteristic-block">
+                <div class="characteristic-heading d-flex align-items-center mb-20"><i class="u_location-point fs-20 me-10"></i>
+                  <div class="fs-18 fw-rg">Откуда, куда</div>
+                </div>
+                <div class="characteristic-char">
+                  <div class="characteristic-char-line d-flex justify-content-between position-relative align-items-center"><span><span>Начальная точка</span></span><span><span>Новосибирск</span></span></div>
+                  <div class="characteristic-char-line d-flex justify-content-between position-relative align-items-center"><span><span>Конечная точка</span></span><span><span>Кемерово</span></span></div>
+                </div>
+              </div>
+              <div class="characteristic-block">
+                <div class="characteristic-heading d-flex align-items-center mb-20"><i class="u_box fs-20 me-10"></i>
+                  <div class="fs-18 fw-rg">Параметры груза</div>
+                </div>
+                <div class="characteristic-char">
+                  <div class="characteristic-char-line d-flex justify-content-between position-relative align-items-center"><span><span>Вес груза</span></span><span><span>546 кг</span></span></div>
+                  <div class="characteristic-char-line d-flex justify-content-between position-relative align-items-center"><span><span>Объем груза</span></span><span><span>35 л</span></span></div>
+                  <div class="characteristic-char-line d-flex justify-content-between position-relative align-items-center"><span><span>Категория груза</span></span><span><span>Негабаритный</span></span></div>
+                  <div class="characteristic-char-line d-flex justify-content-between position-relative align-items-center"><span><span>Характер груза</span></span><span><span>Стройматериалы</span></span></div>
+                </div>
+              </div>
+              <div class="characteristic-block">
+                <div class="characteristic-heading d-flex align-items-center mb-20"><i class="u_truck fs-20 me-10"></i>
+                  <div class="fs-18 fw-rg">Параметры транспорта</div>
+                </div>
+                <div class="characteristic-char">
+                  <div class="characteristic-char-line d-flex justify-content-between position-relative align-items-center"><span><span>Габариты транспорта</span></span><span><span>5x10 м</span></span></div>
+                  <div class="characteristic-char-line d-flex justify-content-between position-relative align-items-center"><span><span>Тип кузова</span></span><span><span>Тип кузова</span></span></div>
+                  <div class="characteristic-char-line d-flex justify-content-between position-relative align-items-center"><span><span>Вид транспорта</span></span><span><span>Грузовик</span></span></div>
+                  <div class="characteristic-char-line d-flex justify-content-between position-relative align-items-center"><span><span>Тип загрузки</span></span><span><span>Верх | зад</span></span></div>
+                </div>
+              </div>
+            </div>
+            <p class="fw-bl fs-14 modal-desc">Оставьте номер телефона, и наш менеджер свяжется с вами в ближайшее время, чтобы проконсультировать по возникшим вопросам.</p>
+            <form class="d-flex flex-grow-1" name="calculation" autocomplete="off">                  
+              <input class="input-phone rounded-start-pill border border-2 border-main px-30 py-25 fs-18 lh-1 fw-rg w-50 main-input" type="tel" placeholder="+7 (___) ___-__-__">
+              <button class="rounded-end-pill px-30 py-25 border border-2 border-main fs-18 lh-1 fw-bl bg-main w-50">Оставить заявку</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-contentBlock" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="fs-35 fw-bl mb-0 text-g">Ведение компании дальнобойщика</div>
+            <button class="btn-close position-absolute end-0 top-0 mt-20 me-20 border-0 p-0 ms-auto d-flex rounded-circle p-8" data-bs-dismiss="modal"><i class="u_multiply icon fs-20"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="content mb-35">                   
+              <ul class="mb-0">
+                <li>Оформление заявки на транспортные услуги
+                  <ul>
+                    <li>Отправка документов по средствам электронной почты клиентам</li>
+                    <li>Подписание заявки от лица нашего клиента</li>
+                    <li>Печать и отправка пакета документов</li>
+                    <li>Приём возвратных документов</li>
+                    <li>Сканирование и архивация документов</li>
+                  </ul>
+                </li>
+                <li>Подготовка и отправка налоговых деклараций ПФР, ФОМС, УСН, ОСНО</li>
+                <li>Восстановление документов в случае их утери</li>
+                <li>Консультация личного менеджера в сфере грузоперевозок, работа над вашими зачачами</li>
+                <li>Оплата счетов</li>
+                <li>Контроль оплат</li>
+                <li>Консультации юриста</li>
+                <li>Возможность работы с НДС и без НДС</li>
+                <li>Составление, отправление, сканирование, архивация любых договоров</li>
+                <li>Составление, информационных, претензионных и досудебных писем</li>
+                <li>Предоставление документов по запросу клиента для банка или налоговой</li>
+              </ul>
+            </div>
+            <p class="fw-bl fs-14 modal-desc">Оставьте номер телефона, и наш менеджер свяжется с вами в ближайшее время, чтобы проконсультировать по возникшим вопросам.</p>
+            <form class="d-flex flex-grow-1" name="calculation" autocomplete="off">                  
+              <input class="input-phone rounded-start-pill border border-2 border-main px-30 py-25 fs-18 lh-1 fw-rg w-50 main-input" type="tel" placeholder="+7 (___) ___-__-__">
+              <button class="rounded-end-pill px-30 py-25 border border-2 border-main fs-18 lh-1 fw-bl bg-main w-50">Оставить заявку</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-rules" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="fs-35 fw-bl mb-0 text-g">Согласие на обработку персональных данных</div>
+            <button class="btn-close position-absolute end-0 top-0 mt-20 me-20 border-0 p-0 ms-auto d-flex rounded-circle p-8" data-bs-dismiss="modal"><i class="u_multiply icon fs-20"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="content">
+              <p>Пользователь, оставляя заявку на Сайте <a href="/">https://masterkomforta.com</a>, принимает настоящее Согласие на обработку персональных данных (далее &ndash; Согласие). Действуя свободно, по собственной воле и в своем интересе, а также подтверждая свою дееспособность, Пользователь дает свое согласие ООО «Оконные системы», Юридический адрес: Россия, 656016, Алтайский край, г. Барнаул, Рыбозаводской проезд, д. 24, 2 этаж, действующее под торговой маркой &laquo;Мастер Комфорта&raquo;, на обработку своих персональных данных со следующими условиями:</p>
+              <ol>
+                <li>Данное Согласие дается на обработку персональных данных как без использования средств автоматизации, так и с их использованием.</li>
+                <li>Согласие дается на обработку следующих персональных данных: персональные данные, не являющиеся специальными или биометрическими: номера контактных телефонов; адреса электронной почты; место работы и занимаемая должность; пользовательские данные (сведения о местоположении; тип и версия ОС; тип и версия Браузера; тип устройства и разрешение его экрана; источник откуда пришел на сайт пользователь; с какого сайта или по какой рекламе; язык ОС и Браузера; какие страницы открывает и на какие кнопки нажимает пользователь; ip-адрес).</li>
+                <li>Персональные данные не являются общедоступными.</li>
+                <li>Цель обработки персональных данных: обработка входящих запросов физических и юридических лиц с целью оказания консультирования; аналитика действий физического лица на веб-сайте и функционирования веб-сайта; проведение рекламных и новостных рассылок.</li>
+                <li>Основанием для обработки персональных данных является: ст. 24 Конституции Российской Федерации; ст. 6 Федерального закона №152-ФЗ О персональных данных&raquo;; &laquo;<button class="border-0 bg-transparent p-0 text-decoration-underline text-main" data-bs-toggle="modal" data-bs-target=".modal-policy">Политика обработки персональных данных;</button>настоящее согласие на обработку персональных данных.</li>
+                <li>В ходе обработки с персональными данными будут совершены следующие действия: сбор; запись; систематизация; накопление; хранение; уточнение (обновление, изменение); извлечение; использование; передача (распространение, предоставление, доступ); блокирование; удаление; уничтожение.</li>
+                <li>Персональные данные обрабатываются до отписки физического лица от рекламных и новостных рассылок. Также обработка персональных данных может быть прекращена по запросу субъекта персональных данных. Хранение персональных данных, зафиксированных на бумажных носителях, осуществляется согласно Федеральному закону №125-ФЗ &laquo;Об архивном деле в Российской Федерации&raquo; и иным нормативно правовым актам в области архивного дела и архивного хранения.</li>
+                <li>Согласие может быть отозвано субъектом персональных данных или его представителем путем направления письменного заявления ООО «Оконные системы» или его представителю по адресу, указанному в начале данного Согласия.</li>
+                <li>В случае отзыва субъектом персональных данных или его представителем согласия на обработку персональных данных ООО «Оконные системы» вправе продолжить обработку персональных данных без согласия субъекта персональных данных при наличии оснований, указанных в пунктах 2&ndash;11 части 1 статьи 6, части 2 статьи 10 и части 2 статьи 11 Федерального закона №152-ФЗ &laquo;О персональных данных&raquo; от 27.07.2006 г. в редакции от 01.07.2017.</li>
+                <li>Настоящее согласие действует все время до момента прекращения обработки персональных данных, указанных в п.7 и п.8 данного Согласия.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-policy" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="fs-35 fw-bl mb-0 text-g">Политики обработки персональных данных</div>
+            <button class="btn-close position-absolute end-0 top-0 mt-20 me-20 border-0 p-0 ms-auto d-flex rounded-circle p-8" data-bs-dismiss="modal"><i class="u_multiply icon fs-20"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="content">
+              <h2 class="fs-20 fw-bl">Терминология</h2>
+              <p>Клиент &mdash; физическое или юридическое лицо, имеющее намерение заказать или воспользоваться предоставляемой услугой либо заказывающее, приобретающее или использующее предоставляемые услуги для личных, семейных и иных нужд.</p>
+              <p>Продавец &mdash; ООО «Оконные системы», действующее под торговой маркой &laquo;Мастер Комфорта&raquo;</p>
+              <p>Сайт &mdash; перечень услуг и товаров, расположенный в сети Интернет по адресу <a href="/">https://masterkomforta.com</a>.</p>
+              <p>Услуги &mdash; все услуги, оказываемые компанией ООО «Оконные системы»: изготовление окон, фурнитуры и дверей, монтаж, доставка, предлагаемые к продаже Продавцом посредством Сайта.</p>
+              <p>Товары &mdash; все товары, предлагаемые компанией ООО «Оконные системы»: окна, двери, подоконники, фурнитура, предлагаемые к продаже Продавцом посредством Сайта.</p>
+              <p>Заказ &mdash; оставленная на сайте заявка Клиента на услуги и товары, а также информация от клиента о необходимости связаться с ним по указанным контактам. Администратор (Менеджер) &mdash; должностное лицо, выступающее от имени Продавца и обрабатывающее заказы Клиентов.</p>
+              <p>Персональные данные &mdash; любая информация, относящаяся к прямо или косвенно определенному или определяемому физическому лицу (субъекту персональных данных).</p>
+              <p>Форма сбора персональных данных &mdash; форма заказа обратного звонка, форма заказа, форма запроса либо иная форма на Сайте, формируемая посредством компьютерной программы Сайта, которая служит для сбора персональных данных.</p>
+              <p>Обработка персональных данных &mdash; любое действие (операция) или совокупность действий (операций), совершаемых с использованием средств автоматизации или без использования таких средств, с персональными данными, включая сбор, запись, систематизацию, накопление, хранение, уточнение (обновление, изменение), извлечение, использование, передачу (распространение, предоставление, доступ), обезличивание, блокирование, удаление, уничтожение персональных данных.</p>
+              <h2 class="fs-20 fw-bl">Основные условия</h2>
+              <p>Заказы, посредством форм сбора персональных данных на Сайте принимаются только от Клиентов &mdash; физических и юридических лиц старше 18 лет. Заполнив форму заказа (либо иную форму) на Сайте, Клиент извещает Продавца о своем полном и безоговорочном согласии на содержание сделанного заказа и на совершение Продавцом обратного звонка с целью подтверждения или уточнения заказа Клиента или дополнительного информирования Клиента об услугах, предоставляемых Продавцом, и выражает согласие на заключение с Продавцом договора в соответствии с частью 2 статьи 158 Гражданского Кодекса Российской Федерации, в т. ч. Клиент дает согласие Продавцу на обработку и использование персональных данных Клиента, согласно статьи 3 Федерального Закона № 152-ФЗ от 27.07.2006 г. в редакции от 01.07.2017 г. &laquo;О персональных данных&raquo; (далее &mdash; Закон), в целях, определенных Свидетельством Продавца, различными способами, в том числе путем осуществления автоматизированного анализа персональных данных и поручение Продавцом под свою ответственность обработку персональных данных любому третьему лицу по усмотрению Продавца при условии соблюдения требований ст. 6 Закона, в том числе осуществления таким лицом конфиденциальности и защиты персональных данных без ограничения срока действия.</p>
+              <p>Согласно пункта 5 статьи 21 Закона, настоящее согласие может быть отозвано только при условии письменного уведомления Продавца не менее чем за 180 дней до предполагаемой даты прекращения использования персональных данных Продавцом.</p>
+              <h2 class="fs-20 fw-bl">Порядок рассмотрения заказа</h2>
+              <p>Обработка заказа начинается незамедлительно после его поступления Продавцу. Обработку заказа осуществляет специалист, который проверяет возможность исполнения заявки Клиента.</p>
+              <p>Далее специалист Продавца осуществляется обратная связь с Клиентом, посредством указанного Клиентом способа контакта: телефонная связь, электронная почта, адрес в социальной сети либо иным способом; объясняются условия оформления заказа и порядок работы с Клиентом.</p>
+              <p>В случае невозможности исполнения заявленной Клиентом услуги или заказа специалист информирует об этом Клиента с объяснением причины отказа посредством указанного Клиентом способа контактной связи. При этом специалистом Продавца принимаются все возможные меры для исполнения заказа Клиента с предложением альтернативных вариантов. Общий срок, в течение которого должен быть обработан заказ, не может превышать 3 (трёх) дней при условии предоставления Клиентом Продавцу достоверных и доступных контактов обратной связи. Оплата. Политика безопасности платежей при получении услуг и товаров Оплата Услуг и Товаров производится Клиентом оплатой по выставленному счету на расчетный счет Продавца, согласно условиям заключенного договора. Оформление оплаты заказа на сайте не производится. При отказе от Услуги или Товара возврат денежных средств Клиенту осуществляется в той же форме, в которой была осуществлена оплата в течение 60 (шестидесяти) дней с момента получения Продавцом от Клиента письменного заявления на возврат с приложением всех необходимых документов.</p>
+              <p>Настоящие Правила и условия являются условиями договора купли-продажи, заключенного между Клиентом и Продавцом.</p>
+              <h2 class="fs-20 fw-bl">Реквизиты</h2>
+              <p>ООО «Оконные системы», Юридический адрес: Россия, 656016, Алтайский край, г. Барнаул, Рыбозаводской проезд, д. 24, 2 этаж</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/themes/engine/js/main.bundle.js"></script>
+    <script src="/themes/engine/js/slider.bundle.js"></script>
+  </body>
+</html>

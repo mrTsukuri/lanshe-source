@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="/themes/engine/css/boots.css" as="style">
+    <link rel="preload" href="/themes/engine/css/main.css" as="style">
+    <link rel="preload" href="/themes/engine/css/libs.css" as="style">
+    <link rel="preload" href="/themes/engine/fonts/Gilroy-Regular/Gilroy-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" href="/images/favicon.png" as="" type="image/png">
+    <link rel="icon" href="/images/favicon.svg" as="" type="image/svg+xml">
+    <link rel="stylesheet" href="/themes/engine/css/boots.css">
+    <link rel="stylesheet" href="/themes/engine/css/main.css">
+    <link rel="stylesheet" href="/themes/engine/css/libs.css">
+    <title>Вход в личный кабинет</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-wrapper d-flex flex-column gap-lg-30 gap-15">
+          <div class="header-top d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-30"><a class="header-logo d-flex flex-column gap-5" href="/index.html"><img class="w-auto" src="/images/logo.svg" alt="Интернет-магазин контрактных японских запчастей для мотоциклов"><span class="fs-12 d-none d-sm-inline">запчасти для мотоциклов</span></a></div>
+            <nav class="header-nav d-none d-xl-block">
+              <ul class="d-flex gap-xxl-20 gap-10 list-unstyled p-0 m-0">
+                <li><a class="fs-14" href="pay.html" title="Оплата">Оплата</a></li>
+                <li><a class="fs-14" href="deliveri.html" title="Доставка">Доставка</a></li>
+                <li><a class="fs-14" href="reviews.html" title="Отзывы">Отзывы</a></li>
+                <li><a class="fs-14" href="pickup-points.html" title="Пункты выдачи">Пункты выдачи</a></li>
+                <li><a class="fs-14" href="articles.html" title="Статьи">Статьи</a></li>
+                <li><a class="fs-14" href="contact.html" title="Контакты">Контакты</a></li>
+              </ul>
+            </nav>
+            <div class="d-flex align-items-center gap-xl-60 flex-sm-grow-1 flex-xl-grow-0">
+              <div class="d-none d-sm-flex align-items-center gap-10 mx-auto mx-xl-0"><span class="fs-14 o-0_5 d-none d-md-inline">Пишите нам —</span>
+                <div class="d-flex align-items-center gap-10"><a class="header-social d-block" href="#" target="_blank"><img src="/images/vk.svg" alt="Написать в ВКонтакте"></a><a class="header-social d-block" href="#" target="_blank"><img src="/images/tg.svg" alt="Написать в Telegram"></a><a class="header-social d-block" href="#" target="_blank"><img src="/images/wa.svg" alt="Написать в WhatsApp"></a>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-20">
+                <div class="header-tel d-flex flex-column align-items-end"><a class="fs-sm-20 fs-18 fw-bl" href="tel:88005516361">8 800 551-63-61</a><span class="fs-sm-14 fs-12 o-0_5">Бесплатно по России</span></div>
+                <button class="btn btn-call p-14 d-none d-md-flex" data-bs-toggle="modal" data-bs-target=".modal-call"><i class="icon fs-20 call"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="header-bottom d-flex align-items-center gap-30"><a class="btn btn-call p-14 d-xl-none d-flex" href="#mobile-menu"><i class="icon fs-20 u_bars"></i></a>
+            <div class="header-search-wrapper d-flex flex-grow-1"><a class="header-catalog btn btn-main d-xl-flex d-none gap-5 px-xl-30 px-20 py-xl-20 py-15" href="catalog.html"><span class="fw-sb">Каталог запчастей</span><i class="icon fs-20 angle-down"></i></a>
+              <form class="header-search d-flex position-relative flex-grow-1" action="search.html" method="get" autocomplite="off">
+                <input class="w-100 px-xl-30 px-20 py-xl-20 py-15 pe-40 fs-14" type="text" name="stext" placeholder="Например: Двигатель Yamaha R6">
+                <button class="header-search-btn d-flex position-absolute"><i class="icon search fs-sm-24 fs-20"></i></button>
+              </form>
+            </div>
+            <div class="d-md-flex d-none gap-30"><a class="d-flex flex-column align-items-center gap-5" href="favorite.html"><i class="icon fs-xl-30 fs-20 text-main favorite"></i>
+                <div class="d-flex flex-column align-items-center"><span class="fs-14">Избранное</span><span class="rounded-pill fs-12 o-0_5">8 товара</span></div></a><a class="d-flex flex-column align-items-center gap-5" href="basket.html"><i class="icon fs-xl-30 fs-20 text-main cart"></i>
+                <div class="d-flex flex-column align-items-center"><span class="fs-14">Корзина</span><span class="rounded-pill fs-12 o-0_5">25 600 ₽</span></div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="breadcrumbs mb-30">
+        <div class="container">
+          <div class="breadcrumbs-nav d-flex align-items-center gap-10 text-nowrap overflow-auto"><span><a class="breadcrumbs-nav-item fs-14" href="/"><span>Главная</span></a></span><span><a class="breadcrumbs-nav-item fs-14" href="#"><span>Внутренняя Страница</span></a></span><span><span class="breadcrumbs-nav-item breadcrumbs-nav-item-disabled breadcrumbs-nav-item fs-14">Страница</span></span></div>
+        </div>
+      </div>
+      <section class="login">
+        <div class="container">
+          <h1 class="fs-md-30 fs-20 fw-sb mb-md-30 mb-15">Вход в личный кабинет</h1>
+          <div class="row">
+            <div class="col-xxl-5 col-xl-6 col-lg-7 col-md-9 m-auto">
+              <div class="login-page-block-login p-30 d-flex flex-column align-items-center bg-light rounded-20"><span class="fs-sm-24 fs-20 fw-rg mb-md-30 mb-15 d-inline-block">Укажите данные для входа</span>
+                <form class="mb-md-30 mb-15 d-flex flex-column gap-md-30 gap-15 w-100" action="/login.html" method="POST" autocomplete="off">                                   
+                  <label class="main-input"> 
+                    <input class="cart-input px-xl-30 px-20 py-xl-20 py-15" type="text" name="login" placeholder="Введите email" value="" required>
+                  </label>
+                  <label class="main-input">
+                    <input class="cart-input px-xl-30 px-20 py-xl-20 py-15" type="password" name="password" placeholder="Введите пароль" required>
+                  </label>
+                  <label class="main-input">
+                    <input class="cart-input px-xl-30 px-20 py-xl-20 py-15" type="text" name="captcha" placeholder="код с картинки" required>
+                  </label>
+                  <button class="btn btn-main px-xl-30 px-20 py-xl-20 py-15 fs-14 fw-sb" type="submit">Войти                                </button>
+                </form><img class="w-auto" src="data:image/jpeg;base64,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">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer bg-light py-md-60 py-30">
+      <div class="container">
+        <div class="footer-top d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-20">
+            <div class="header-logo"><img class="w-auto" src="/images/logo.svg" alt="Интернет-магазин контрактных японских запчастей для мотоциклов"></div><span class="fs-14 fw-rg d-xxl-block d-none">Интернет-магазин контрактных <br> японских запчастей для мотоциклов</span>
+          </div>
+          <div class="d-none d-lg-flex align-items-center gap-xl-30 gap-20">
+            <div class="header-tel d-flex flex-column"><a class="fs-18 fw-bl" href="tel:+74952410240">+7 495 241-02-40</a><span class="fs-14 lh-1 o-0_5">Москва и область</span></div>
+            <div class="header-tel d-flex flex-column"><a class="fs-18 fw-bl" href="tel:+74952410240">+7 495 241-02-40</a><span class="fs-14 lh-1 o-0_5">Владивосток и приморский край</span></div>
+            <div class="header-tel d-flex flex-column"><a class="fs-18 fw-bl" href="tel:88005516361">8 800 551-63-61</a><span class="fs-14 lh-1 o-0_5">Бесплатно по России</span></div>
+          </div>
+          <button class="btn btn-main px-xl-30 px-20 py-xl-20 py-15 fs-14 fw-sb" data-bs-toggle="modal" data-bs-target=".modal-call">Заказать звонок</button>
+        </div>
+        <hr class="my-sm-30 my-15 o-0_1">
+        <div class="footer-bottom">                                 
+          <div class="footer-navigation d-flex flex-column">
+            <div class="footer-navigation-grid gap-md-20 gap-10">
+              <div class="footer-navigation-grid-item spoiler">
+                <div class="spoiler-btn align-items-center justify-content-between"><span class="fs-14">Меню</span><i class="icon fs-20 angle-down">  </i></div>
+                <div class="spoiler-block">
+                  <ul class="list-unstyled m-0 d-flex gap-10 pt-10">
+                    <li class="fs-14"><a href="#">Оплата</a></li>
+                    <li class="fs-14"><a href="#">Доставка</a></li>
+                    <li class="fs-14"><a href="#">Отзывы</a></li>
+                    <li class="fs-14"><a href="#">Пункты выдачи</a></li>
+                    <li class="fs-14"><a href="#">Статьи</a></li>
+                    <li class="fs-14"><a href="#">Контакты</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="footer-navigation-grid-item spoiler">
+                <div class="spoiler-btn align-items-center justify-content-between"><span class="fs-14">Двигатели</span><i class="icon fs-20 angle-down"></i></div>
+                <div class="spoiler-block">
+                  <ul class="list-unstyled m-0 text-col-sm-2 pt-10">
+                    <li class="fs-14"><a href="#">Двигатели Suzuki из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели Kawasaki из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели Aprilia из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели MV Agusta из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели Honda из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели BMW из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели KTM из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели Harley-Davidson из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели Yamaha из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели Ducati из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели Triumph из Японии</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-rule">   
+            <p>Посещая сайт компании «Запчасти для мотоциклов — интернет магазин MOTOD», вы соглашаетесь с Правилами и условиями использования и политикой обработки персональных данных данного сайта.</p>
+          </div>
+          <div class="footer-form d-flex flex-column align-items-center gap-20 p-xxl-40 p-sm-30 p-20 rounded-20">
+            <div class="fw-rg">Оставьте заявку онлайн и мы подберем вам запчасти</div>
+            <form class="concat-input w-100 js_callModal" name="footer-form" autocomplete="off">
+              <label class="main-input">
+                <input class="px-xl-30 px-20 py-xl-20 py-15 fs-14" type="tel" placeholder="+7 (9__) ___-__-__" name="phone" required>
+              </label>
+              <button class="btn-main btn px-xl-30 px-20 py-xl-20 py-15 fs-14 fw-sb">Оставить заявку</button>
+            </form>
+            <div class="d-flex align-items-center gap-10"><span class="fs-16 o-0_5">Или напишите нам в мессенджеры —</span>
+              <div class="d-flex gap-10"><a class="header-social d-block" href="#" target="_blank"><img src="/images/vk.svg" alt="Написать в ВКонтакте"></a><a class="header-social d-block" href="#" target="_blank"><img src="/images/tg.svg" alt="Написать в Telegram"></a><a class="header-social d-block" href="#" target="_blank"><img src="/images/wa.svg" alt="Написать в WhatsApp"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="position-absolute top-0 end-0 pe-10 pe-sm-30 pe-xxl-50">
+        <div class="rounded-circle p-14 d-flex scroll-top position-fixed pointer scroll-item bg-white"><i class="icon u_arrow-right fs-sm-30 fs-20 text-main"></i></div>
+      </div>
+    </footer>
+    <nav class="mobile-menu menu-scrolling" id="mobile-menu" style="display: none">
+      <ul>
+        <li class="mobile-menu-logo">
+          <div class="header-logo d-flex"><img class="w-auto" src="/images/logo.svg" alt="холодильное и торговое оборудование"></div>
+        </li>
+        <li class="mobile-menu-feedback d-flex flex-column align-items-start"><a class="btn btn-main fs-14 px-20 py-10 w-auto" href="catalog.html" title="Каталог запчастей">Каталог запчастей        </a></li>
+        <li><a class="lh-1" href="pay.html" title="Оплата">Оплата</a></li>
+        <li><a class="lh-1" href="deliveri.html" title="Доставка">Доставка</a></li>
+        <li><a class="lh-1" href="reviews.html" title="Отзывы">Отзывы</a></li>
+        <li><a class="lh-1" href="pickup-points.html" title="Пункты выдачи">Пункты выдачи</a></li>
+        <li><a class="lh-1" href="articles.html" title="Статьи">Статьи</a></li>
+        <li><a class="lh-1" href="contact.html" title="Контакты">Контакты</a></li>
+        <li class="mobile-menu-feedback d-flex flex-column align-items-start">           
+          <div class="d-flex flex-column"><a class="fs-xxl-24 fs-md-20 fs-16 lh-1 fw-bl w-auto" href="tel:88005516361">8 800 551-63-61</a><span class="fs-12 lh-1 o-0_5">Бесплатно по России</span></div>
+          <div class="d-flex flex-column"><a class="fs-xxl-24 fs-md-20 fs-16 lh-1 fw-bl w-auto" href="tel:+74952410240">+7 495 241-02-40</a><span class="fs-12 lh-1 o-0_5">Москва и область</span></div>
+          <div class="d-flex flex-column"><a class="fs-xxl-24 fs-md-20 fs-16 lh-1 fw-bl w-auto" href="tel:+74952410240">+7 495 241-02-40</a><span class="fs-12 lh-1 o-0_5">Владивосток и приморский край</span></div>
+        </li>
+      </ul>
+    </nav>
+    <div aria-live="polite" aria-atomic="true">
+      <div class="toast-container position-fixed top-0 end-0 p-3 js_toast_container" style="z-index: 10000;"></div>
+    </div>
+    <div class="modal fade modal-call" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">   
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">               
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close text-main"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-top">
+              <h3 class="fs-md-30 fs-20 fw-bl lh-1 mb-0">Остались вопросы?</h3>
+              <p>Оставьте ваши данные, мы перезвоним вам в ближайшее время и проконсультируем по любым вопросам. </p>
+            </div>
+            <div class="modal-bottom">
+              <form class="concat-input" name="modal-call" autocomplete="off">
+                <label class="main-input">
+                  <input class="px-xl-30 px-20 py-xl-20 py-15 fs-14" type="tel" placeholder="+7 (9__) ___-__-__" required>
+                </label>
+                <button class="btn btn-main px-xl-30 px-20 py-xl-20 py-15 fs-14 fw-sb">Заказать звонок</button>
+              </form><span>Также вы можете позвонить нам по телефону <a href='tel:88005516361' class='fw-sb'>8 800 551-63-61</a></span>
+              <div class="d-flex align-items-center gap-10"><span class="fs-16">Или напишите нам в мессенджеры —</span>
+                <div class="d-flex gap-10"><a class="header-social d-block" href="#" target="_blank"><img src="/images/vk.svg" alt="Написать в ВКонтакте"></a><a class="header-social d-block" href="#" target="_blank"><img src="/images/tg.svg" alt="Написать в Telegram"></a><a class="header-social d-block" href="#" target="_blank"><img src="/images/wa.svg" alt="Написать в WhatsApp"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-detail" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">   
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">               
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close text-main"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-top">
+              <h3 class="fs-md-30 fs-20 fw-bl lh-1 mb-0">Узнайте стоимость детали</h3>
+              <div class="modal-img rounded-20 overflow-hidden">
+                <picture>
+                  <source srcset="/images/modal/main.webp" type="image/webp"><img src="/images/modal/main.jpg" alt="Узнайте стоимость детали" loading="lazy">
+                </picture>
+              </div>
+              <div class="fs-18 fw-sb lh-1_4">Двигатель Yamaha DragStar 400 26M</div>
+              <div class="modal-char d-flex flex-column gap-5">
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Марка</span></span><span><span>Yamaha</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Модель</span></span><span><span>YZF R6</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Пробег по Японии</span></span><span><span>19 675 км</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Объём</span></span><span><span>600 см3</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Гарантия</span></span><span><span>14 дней</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Наличие на складах</span></span><span><span>Европа, Япония, Россия</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Состояние товара</span></span><span><span>Готов к установке</span></span></div>
+              </div>
+            </div>
+            <div class="modal-bottom">
+              <form class="concat-input" name="modal-detail" autocomplete="off">
+                <label class="main-input">
+                  <input class="px-xl-30 px-20 py-xl-20 py-15 fs-14" type="tel" placeholder="+7 (9__) ___-__-__" required>
+                </label>
+                <button class="btn btn-main px-xl-30 px-20 py-xl-20 py-15 fs-14 fw-sb">Заказать звонок</button>
+              </form><span>Также вы можете позвонить нам по телефону <a href='tel:88005516361' class='fw-sb'>8 800 551-63-61</a></span>
+              <div class="d-flex align-items-center gap-10"><span class="fs-16">Или напишите нам в мессенджеры —</span>
+                <div class="d-flex gap-10"><a class="header-social d-block" href="#" target="_blank"><img src="/images/vk.svg" alt="Написать в ВКонтакте"></a><a class="header-social d-block" href="#" target="_blank"><img src="/images/tg.svg" alt="Написать в Telegram"></a><a class="header-social d-block" href="#" target="_blank"><img src="/images/wa.svg" alt="Написать в WhatsApp"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-buy" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">   
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">               
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close text-main"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-top">
+              <h3 class="fs-md-30 fs-20 fw-bl lh-1 mb-0">Купите деталь в один клик</h3>
+              <div class="modal-img rounded-20 overflow-hidden">
+                <picture>
+                  <source srcset="/images/modal/main.webp" type="image/webp"><img src="/images/modal/main.jpg" alt="Купите деталь в один клик" loading="lazy">
+                </picture>
+              </div>
+              <div class="d-flex flex-column gap-10">
+                <div class="fs-18 fw-sb lh-1_4">Двигатель Yamaha DragStar 400 26M</div>
+                <div class="d-flex align-items-center gap-10"><span class="fs-24 fw-bl text-main">58 000 ₽</span><span class="fs-12 lh-1 o-0_5">Итоговая цена <br> с растаможкой</span></div>
+              </div>
+              <div class="modal-char d-flex flex-column gap-5">
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Марка</span></span><span><span>Yamaha</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Модель</span></span><span><span>YZF R6</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Пробег по Японии</span></span><span><span>19 675 км</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Объём</span></span><span><span>600 см3</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Гарантия</span></span><span><span>14 дней</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Наличие на складах</span></span><span><span>Европа, Япония, Россия</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Состояние товара</span></span><span><span>Готов к установке</span></span></div>
+              </div>
+            </div>
+            <div class="modal-bottom">
+              <form class="concat-input" name="modal-buy" autocomplete="off">
+                <label class="main-input">
+                  <input class="px-xl-30 px-20 py-xl-20 py-15 fs-14 fs-14" type="tel" placeholder="+7 (9__) ___-__-__" required>
+                </label>
+                <button class="btn btn-main px-xl-30 px-20 py-xl-20 py-15 fs-14 fw-sb">Заказать звонок</button>
+              </form><span>Также вы можете позвонить нам по телефону <a href='tel:88005516361' class='fw-sb'>8 800 551-63-61</a></span>
+              <div class="d-flex align-items-center gap-10"><span class="fs-16">Или напишите нам в мессенджеры —</span>
+                <div class="d-flex gap-10"><a class="header-social d-block" href="#" target="_blank"><img src="/images/vk.svg" alt="Написать в ВКонтакте"></a><a class="header-social d-block" href="#" target="_blank"><img src="/images/tg.svg" alt="Написать в Telegram"></a><a class="header-social d-block" href="#" target="_blank"><img src="/images/wa.svg" alt="Написать в WhatsApp"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-success" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content">           
+          <div class="modal-body">
+            <div class="modal-top">
+              <div class="modal-img"><img src="/images/modal/success.svg" alt="" loading="lazy">
+              </div>
+              <div class="d-flex flex-column gap-10"><span class="fs-md-30 fs-20 fw-bl lh-1">Спасибо за доверие!</span><span class="fs-18 lh-1">Ваша заявка получена, <br> мы скоро свяжемся с вами</span></div>
+              <button class="btn btn-main px-xl-30 px-20 py-xl-20 py-15 fs-14 fw-sb" data-bs-dismiss="modal">Отлично</button><span class="fs-12 lh-1 o-0_5">Сообщение закроется через 5 секунд</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/themes/engine/js/slider.bundle.js"></script>
+    <script src="/themes/engine/js/main.bundle.js"></script>
+    <script src="/themes/engine/js/gallery.bundle.js"></script>
+  </body>
+</html>

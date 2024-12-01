@@ -1,0 +1,48 @@
+.doors
+    &-grid
+        display: grid
+        grid-template-columns: repeat(4, minmax(280px, 1fr))
+        gap: 20px
+        overflow: auto
+    &-item
+        &-img
+            height: 200px
+        &-img.camera-img
+            height: 250px    
+             
+.camera
+    &-grid
+        display: grid
+        grid-template-columns: repeat(3, minmax(280px, 1fr))
+        gap: 20px
+        overflow: auto                                          
+@media screen and ( min-width: 992px )
+    .doors
+        &-grid            
+            grid-template-columns: repeat(4, minmax(330px, 1fr))            
+        &-item
+            &-img
+                height: 250px
+            &-img.camera-img
+                height: 350px
+    .camera
+        &-grid
+            display: grid
+            grid-template-columns: repeat(3, minmax(350px, 1fr))                             
+@media screen and ( min-width: 1200px )
+    .doors
+        &-grid            
+            grid-template-columns: repeat(4, 1fr)            
+    .camera
+        &-grid
+            display: grid
+            grid-template-columns: repeat(3, 1fr)            
+@media screen and ( min-width: 1460px )
+    .doors
+        &-grid                        
+            gap: 30px
+    .camera
+        &-grid            
+            gap: 30px                
+                           
+    

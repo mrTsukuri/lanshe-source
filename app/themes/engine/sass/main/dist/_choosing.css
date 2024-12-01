@@ -1,0 +1,9 @@
+.choosing-wrapper {
+  gap: 4rem;
+  padding: 3rem;
+  background: conic-gradient(from -90deg at 70% 50%, #192633 0deg, #2D3A47 36deg, #192633 72deg, #2D3A47 144deg, #192633 144deg, #2D3A47 216deg, #192633 216deg, #192633 288deg, #2D3A47 324deg, #192633 360deg);
+}
+.choosing-heading {
+  padding-bottom: 4rem;
+  border-bottom: 2px solid currentColor;
+}

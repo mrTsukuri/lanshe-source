@@ -1,0 +1,29 @@
+header.header
+    .header-container
+        .header-wrapepr.d-flex.align-items-center.justify-content-between
+            .header-left.d-flex.align-items-center
+                .header-logo__wrapper.mb-10
+                    a(href="index.html").header-logo.d-inline-block
+                        img(src= start+"images/logo.svg", alt="Логотип сайта")
+                nav.header-nav.d-lg-block.d-none
+                    ul.list-unstyled.m-0.p-0.d-flex
+                        each val in [{name: 'О Бренде', href: 'about.html'}, {name: 'Отзывы', href: 'reviews.html'}, {name: 'Как купить', href: 'content.html'}, {name: 'Контакты', href: 'contact.html'}]
+                            li
+                                a(href= val['href']).href-main.fs-14= val['name'] 
+            .header-right.d-flex.align-items-center
+                a(href="catalog.html").btn.header-catalog.rounded-pill.fs-14.d-none.d-lg-block Каталог 
+                .header-hrefs.d-flex
+                    a(href="cart.html").href-main.header-cart.d-none.d-lg-flex.align-items-center
+                        i.icon-local_mall.fs-30
+                        span.fs-14 8
+                    button.btn-inline.header-login.d-none.d-lg-flex.align-items-center(data-bs-toggle="modal", data-bs-target=".modal-login")
+                        i.icon-login.fs-30   
+                        span.fs-14 Войти
+                    //- a(href="account.html").header-login.d-none.d-lg-flex.align-items-center
+                    //-     i.icon-login.fs-30   
+                    //-     span.fs-14 Войти
+                    button.btn-inline.href-main.header-menu.d-flex.d-lg-none.align-items-center(data-bs-toggle="modal", data-bs-target=".modal-mmenu")
+                        i.icon-menu.fs-32
+
+    
+

@@ -1,0 +1,88 @@
+.cart
+    &-wrapper
+        gap: 3.2rem
+    &-grid               
+        display: grid
+        grid-template-columns: 100%
+        gap: 6.4rem
+        justify-content: space-between
+        align-items: flex-start           
+    &-main
+        gap: 1.6rem
+    &-item
+        gap: 1.6rem
+        &:not(:last-child)
+            padding-bottom: 1.6rem
+            border-bottom: 1px solid rgba(34, 34, 34, .1)
+        &__img
+            aspect-ratio: 3/4
+            width: 10rem            
+            min-width: 10rem            
+        &__desc
+            gap: 1.6rem    
+        &__buy
+            flex-direction: column
+            align-items: flex-start
+            gap: .8rem
+        &__count
+            order: 1
+            & .count-number
+                padding: .8rem 1.2rem
+        &__close
+            background-color: $white
+            padding: .4rem
+            border: 0
+            top: .4rem                       
+            left: .4rem
+    &-order
+        padding: 2.4rem
+        gap: 1.6rem
+        position: sticky
+        top: 0
+        & > *:not(:last-child)
+            padding-bottom: 1.6rem
+            border-bottom: 1px solid rgba(34, 34, 34, .1)
+        &__form
+            gap: 1.6rem
+            & .btn_main
+                justify-content: center
+@media screen and ( min-width: 1080px )
+    .cart
+        &-grid
+            grid-template-columns: auto 35rem
+            gap: 3.2rem            
+        &-item
+            gap: 3.2rem
+            min-width: 40rem
+            &__desc
+                gap: 3.2rem
+            &__buy
+                flex-direction: row
+                align-items: center
+                gap: 3.2rem
+            &__count
+                order: 0                
+        &-order
+            padding: 3.2rem
+            gap: 2.4rem
+            & > *:not(:last-child)                                                                    
+                padding-bottom: 2.4rem                                                                                                      
+@media screen and ( min-width: 1400px )
+    .cart
+        &-grid
+            grid-template-columns: auto 35rem
+            gap: 6.4rem            
+        &-item
+            gap: 3.2rem
+            min-width: 60rem
+            &__desc
+                gap: 3.2rem
+            &__buy
+                flex-direction: row
+                align-items: center
+                gap: 3.2rem
+        &-order
+            padding: 3.2rem
+            gap: 2.4rem
+            & > *:not(:last-child)                                                                    
+                padding-bottom: 2.4rem                                                                                                      

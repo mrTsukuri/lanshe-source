@@ -1,0 +1,12 @@
+.order-wrapper {
+  gap: 64px;
+}
+.order-block {
+  gap: 36px;
+}
+.order-block__title {
+  gap: 24px;
+}
+.order-block__num {
+  padding: 14px;
+}

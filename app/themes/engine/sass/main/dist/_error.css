@@ -1,0 +1,65 @@
+.error-block {
+  padding: 5rem;
+  gap: 2rem;
+}
+.error-num {
+  font-size: 10rem;
+}
+.error-num svg {
+  height: 9rem;
+  width: auto;
+}
+
+.inwork {
+  height: 100vh;
+  padding: 0;
+}
+.inwork .container {
+  height: 100%;
+}
+.inwork-block {
+  height: 100%;
+  gap: 3rem;
+}
+.inwork-logo {
+  height: 3rem;
+}
+.inwork-logo img {
+  height: 100%;
+  width: auto;
+}
+.inwork-social img {
+  width: 2rem;
+}
+
+@media screen and (min-width: 1250px) {
+  .error-block {
+    padding: 8rem;
+    gap: 3rem;
+  }
+  .error-num {
+    font-size: 14rem;
+  }
+  .error-num svg {
+    height: 13rem;
+  }
+
+  .inwork {
+    padding: 10rem 2rem;
+  }
+  .inwork-block {
+    gap: 6rem;
+  }
+  .inwork-logo {
+    height: 5.4rem;
+  }
+  .inwork-social img {
+    width: 4rem;
+  }
+}
+@media screen and (min-width: 1470px) {
+  .error-block {
+    padding: 10rem;
+    gap: 5rem;
+  }
+}

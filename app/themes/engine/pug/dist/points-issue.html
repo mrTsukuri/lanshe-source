@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="themes/engine/css/boots.css" as="style">
+    <link rel="preload" href="themes/engine/css/main.css" as="style">
+    <link rel="preload" href="themes/engine/css/libs.css" as="style">
+    <link rel="preload" href="themes/engine/fonts/Gilroy-Regular/Gilroy-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" href="images/favicon.png" as="" type="image/png">
+    <link rel="icon" href="images/favicon.svg" as="" type="image/svg+xml">
+    <link rel="stylesheet" href="themes/engine/css/boots.css">
+    <link rel="stylesheet" href="themes/engine/css/main.css">
+    <link rel="stylesheet" href="themes/engine/css/libs.css">
+    <title>Пункты выдачи</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-wrapper d-flex flex-column gap-lg-30 gap-15">
+          <div class="header-top d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center gap-30"><a class="header-logo d-flex flex-column gap-5" href="index.html"><img class="w-auto" src="images/logo.svg" alt="Интернет-магазин контрактных японских запчастей для мотоциклов"><span class="fs-12 d-none d-sm-inline">запчасти для мотоциклов</span></a></div>
+            <nav class="header-nav d-none d-xl-block">
+              <ul class="d-flex gap-xxl-20 gap-10 list-unstyled p-0 m-0">
+                <li><a class="fs-14" href="pay.html" title="Оплата">Оплата</a></li>
+                <li><a class="fs-14" href="deliveri.html" title="Доставка">Доставка</a></li>
+                <li><a class="fs-14" href="reviews.html" title="Отзывы">Отзывы</a></li>
+                <li><a class="fs-14" href="points-issue.html" title="Пункты выдачи">Пункты выдачи</a></li>
+                <li><a class="fs-14" href="articles.html" title="Статьи">Статьи</a></li>
+                <li><a class="fs-14" href="contact.html" title="Контакты">Контакты</a></li>
+              </ul>
+            </nav>
+            <div class="d-flex align-items-center gap-xl-60 flex-sm-grow-1 flex-xl-grow-0">
+              <div class="d-none d-sm-flex align-items-center gap-10 mx-auto mx-xl-0"><span class="fs-14 o-0_5 d-none d-md-inline">Пишите нам —</span>
+                <div class="d-flex align-items-center gap-10"><a class="header-social d-block" href="#" target="_blank"><img src="images/vk.svg" alt="Написать в ВКонтакте"></a><a class="header-social d-block" href="#" target="_blank"><img src="images/tg.svg" alt="Написать в Telegram"></a><a class="header-social d-block" href="#" target="_blank"><img src="images/wa.svg" alt="Написать в WhatsApp"></a>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-20">
+                <div class="header-tel d-flex flex-column align-items-end"><a class="fs-sm-20 fs-18 fw-bl" href="tel:88005516361">8 800 551-63-61</a><span class="fs-sm-14 fs-12 o-0_5">Бесплатно по России</span></div>
+                <button class="btn btn-call p-14 d-none d-md-flex" data-bs-toggle="modal" data-bs-target=".modal-call"><i class="icon fs-20 call"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="header-bottom d-flex align-items-center gap-md-30 gap-20"><a class="btn btn-call p-14 d-xl-none d-flex" href="#mobile-menu"><i class="icon fs-20 u_bars"></i></a>
+            <div class="header-search-wrapper d-flex flex-grow-1"><a class="header-catalog btn btn-main d-xl-flex d-none gap-5 px-xl-30 px-20 py-xl-20 py-15" href="catalog.html"><span class="fw-sb">Каталог запчастей</span><i class="icon fs-20 angle-down"></i></a>
+              <form class="header-search d-flex position-relative flex-grow-1 js_search" action="search.html" method="get" autocomplite="off">
+                <input class="w-100 px-xl-30 px-20 py-xl-20 py-15 pe-40 fs-14" type="text" name="stext" placeholder="Например: Двигатель Yamaha R6">
+                <button class="header-search-btn d-flex position-absolute"><i class="icon search fs-sm-24 fs-20"></i></button>
+                <div class="header-search-result js_search-result position-absolute start-0 w-100">
+                  <div class="header-search-result-wrapper p-xl-30 p-20 pe-10">
+                    <div class="d-flex flex-column gap-10 overflow-auto scroll-visible pe-20">
+                      <div class="header-search-result-group d-flex flex-column gap-10"><a class="fw-sb fs-sm-16 fs-14" href="category.html">Двигатели для мотоциклов Yamaha</a><a class="d-flex justify-content-between gap-10" href="product.html"><span class="fs-sm-14 fs-12">Двигатель Yamaha DragStar 400 26M</span><span class="fs-sm-14 fs-12 fw-sb text-main text-end text-nowrap">58 000 ₽</span></a><a class="d-flex justify-content-between gap-10" href="product.html"><span class="fs-sm-14 fs-12">Двигатель Yamaha R6 J502E</span><span class="fs-sm-14 fs-12 fw-sb text-main text-end text-nowrap">Цена по запросу</span></a><a class="d-flex justify-content-between gap-10" href="product.html"><span class="fs-sm-14 fs-12">Двигатель Yamaha DT230 Lanza 4TP</span><span class="fs-sm-14 fs-12 fw-sb text-main text-end text-nowrap">Нет в наличии</span></a><a class="d-flex justify-content-between gap-10" href="product.html"><span class="fs-sm-14 fs-12">Двигатель Yamaha YZF R1 N503E</span><span class="fs-sm-14 fs-12 fw-sb text-main text-end text-nowrap">58 000 ₽</span></a><a class="d-flex justify-content-between gap-10" href="product.html"><span class="fs-sm-14 fs-12">Двигатель Yamaha FZS1000 Fazer N505E</span><span class="fs-sm-14 fs-12 fw-sb text-main text-end text-nowrap">58 000 ₽</span></a><a class="d-flex justify-content-between gap-10" href="product.html"><span class="fs-sm-14 fs-12">Двигатель Yamaha YZF R1 N507E</span><span class="fs-sm-14 fs-12 fw-sb text-main text-end text-nowrap">58 000 ₽</span></a><a class="d-flex justify-content-between gap-10" href="product.html"><span class="fs-sm-14 fs-12">Двигатель Yamaha YZF R1 N509E</span><span class="fs-sm-14 fs-12 fw-sb text-main text-end text-nowrap">58 000 ₽</span></a>
+                      </div>
+                      <div class="header-search-result-group d-flex flex-column gap-10"><a class="fw-sb fs-sm-16 fs-14" href="category.html">Коробки передач [КПП] для мотоциклов Yamaha</a><a class="d-flex justify-content-between gap-10" href="product.html"><span class="fs-sm-14 fs-12">Двигатель Yamaha DragStar 400 26M</span><span class="fs-sm-14 fs-12 fw-sb text-main text-end text-nowrap">58 000 ₽</span></a><a class="d-flex justify-content-between gap-10" href="product.html"><span class="fs-sm-14 fs-12">Двигатель Yamaha R6 J502E</span><span class="fs-sm-14 fs-12 fw-sb text-main text-end text-nowrap">Цена по запросу</span></a><a class="d-flex justify-content-between gap-10" href="product.html"><span class="fs-sm-14 fs-12">Двигатель Yamaha DT230 Lanza 4TP</span><span class="fs-sm-14 fs-12 fw-sb text-main text-end text-nowrap">Нет в наличии</span></a><a class="d-flex justify-content-between gap-10" href="product.html"><span class="fs-sm-14 fs-12">Двигатель Yamaha YZF R1 N503E</span><span class="fs-sm-14 fs-12 fw-sb text-main text-end text-nowrap">58 000 ₽</span></a><a class="d-flex justify-content-between gap-10" href="product.html"><span class="fs-sm-14 fs-12">Двигатель Yamaha FZS1000 Fazer N505E</span><span class="fs-sm-14 fs-12 fw-sb text-main text-end text-nowrap">58 000 ₽</span></a><a class="d-flex justify-content-between gap-10" href="product.html"><span class="fs-sm-14 fs-12">Двигатель Yamaha YZF R1 N507E</span><span class="fs-sm-14 fs-12 fw-sb text-main text-end text-nowrap">58 000 ₽</span></a><a class="d-flex justify-content-between gap-10" href="product.html"><span class="fs-sm-14 fs-12">Двигатель Yamaha YZF R1 N509E</span><span class="fs-sm-14 fs-12 fw-sb text-main text-end text-nowrap">58 000 ₽</span></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="d-md-flex d-none gap-30"><a class="d-flex flex-column align-items-center gap-5" href="favorite.html"><i class="icon fs-xl-30 fs-20 text-main favorite"></i>
+                <div class="d-flex flex-column align-items-center"><span class="fs-14">Избранное</span><span class="rounded-pill fs-12 o-0_5">8 товара</span></div></a><a class="d-flex flex-column align-items-center gap-5" href="basket.html"><i class="icon fs-xl-30 fs-20 text-main cart"></i>
+                <div class="d-flex flex-column align-items-center"><span class="fs-14">Корзина</span><span class="rounded-pill fs-12 o-0_5">25 600 ₽</span></div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="breadcrumbs mb-30">
+      <div class="container">
+        <div class="breadcrumbs-nav d-flex align-items-center gap-10 text-nowrap overflow-auto"><span><a class="breadcrumbs-nav-item fs-14" href="/"><span>Главная</span></a></span><span><a class="breadcrumbs-nav-item fs-14" href="#"><span>Внутренняя Страница</span></a></span><span><span class="breadcrumbs-nav-item breadcrumbs-nav-item-disabled breadcrumbs-nav-item fs-14">Страница</span></span></div>
+      </div>
+    </div>
+    <section class="points-issue">
+      <div class="container">
+        <h1 class="fs-md-30 fs-20 fw-sb mb-md-30 mb-15">Пункты выдачи в 15 городах России</h1>
+        <div class="points-grid js_office_map">
+          <div class="points-items overflow-auto scroll-visible pe-20">
+            <div class="row g-14">
+              <div class="col-lg-12 col-sm-6">
+                <div class="points-item d-flex align-items-start gap-15 pointer js_office_coordinates" data-latitude="55.717386" data-longitude="37.757584" data-category="0">
+                  <div class="d-flex p-10 rounded-circle bg-light"><i class="icon u_map-marker fs-xl-30 fs-20"></i></div>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="points-item-title fs-sm-18 fw-sb">Москва</div>
+                    <div class="fs-sm-16 fs-14 o-0_5">Улица 1-й Вязовский проезд  4, строение 19</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6">
+                <div class="points-item d-flex align-items-start gap-15 pointer js_office_coordinates" data-latitude="59.842002" data-longitude="30.476747" data-category="1">
+                  <div class="d-flex p-10 rounded-circle bg-light"><i class="icon u_map-marker fs-xl-30 fs-20"></i></div>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="points-item-title fs-sm-18 fw-sb">Санкт-Петербург</div>
+                    <div class="fs-sm-16 fs-14 o-0_5">Проспект Обуховской обороны, дом 295</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6">
+                <div class="points-item d-flex align-items-start gap-15 pointer js_office_coordinates" data-latitude="54.998246" data-longitude="82.979754" data-category="2">
+                  <div class="d-flex p-10 rounded-circle bg-light"><i class="icon u_map-marker fs-xl-30 fs-20"></i></div>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="points-item-title fs-sm-18 fw-sb">Новосибирск</div>
+                    <div class="fs-sm-16 fs-14 o-0_5">Улица Нижегородская, дом 280</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6">
+                <div class="points-item d-flex align-items-start gap-15 pointer js_office_coordinates" data-latitude="56.884153" data-longitude="60.680623" data-category="3">
+                  <div class="d-flex p-10 rounded-circle bg-light"><i class="icon u_map-marker fs-xl-30 fs-20"></i></div>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="points-item-title fs-sm-18 fw-sb">Екатеринбург</div>
+                    <div class="fs-sm-16 fs-14 o-0_5">Улица Норильская, дом 77</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6">
+                <div class="points-item d-flex align-items-start gap-15 pointer js_office_coordinates" data-latitude="56.348617" data-longitude="43.816343" data-category="4">
+                  <div class="d-flex p-10 rounded-circle bg-light"><i class="icon u_map-marker fs-xl-30 fs-20"></i></div>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="points-item-title fs-sm-18 fw-sb">Нижний-Новгород</div>
+                    <div class="fs-sm-16 fs-14 o-0_5">Улица Торфяная, дом 35</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6">
+                <div class="points-item d-flex align-items-start gap-15 pointer js_office_coordinates" data-latitude="55.832909" data-longitude="49.041008" data-category="5">
+                  <div class="d-flex p-10 rounded-circle bg-light"><i class="icon u_map-marker fs-xl-30 fs-20"></i></div>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="points-item-title fs-sm-18 fw-sb">Казань</div>
+                    <div class="fs-sm-16 fs-14 o-0_5">Улица Восстания, дом 100</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6">
+                <div class="points-item d-flex align-items-start gap-15 pointer js_office_coordinates" data-latitude="55.105753" data-longitude="61.388064" data-category="6">
+                  <div class="d-flex p-10 rounded-circle bg-light"><i class="icon u_map-marker fs-xl-30 fs-20"></i></div>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="points-item-title fs-sm-18 fw-sb">Челябинск</div>
+                    <div class="fs-sm-16 fs-14 o-0_5">Тракт троицкий , дом 54</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6">
+                <div class="points-item d-flex align-items-start gap-15 pointer js_office_coordinates" data-latitude="54.988298" data-longitude="73.480663" data-category="7">
+                  <div class="d-flex p-10 rounded-circle bg-light"><i class="icon u_map-marker fs-xl-30 fs-20"></i></div>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="points-item-title fs-sm-18 fw-sb">Омск</div>
+                    <div class="fs-sm-16 fs-14 o-0_5">Проспект Космический 109, корпус 1</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6">
+                <div class="points-item d-flex align-items-start gap-15 pointer js_office_coordinates" data-latitude="53.181806" data-longitude="50.173065" data-category="8">
+                  <div class="d-flex p-10 rounded-circle bg-light"><i class="icon u_map-marker fs-xl-30 fs-20"></i></div>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="points-item-title fs-sm-18 fw-sb">Самара</div>
+                    <div class="fs-sm-16 fs-14 o-0_5">Улица Верхне-Карьерная, дом 3А</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6">
+                <div class="points-item d-flex align-items-start gap-15 pointer js_office_coordinates" data-latitude="47.198591" data-longitude="39.617213" data-category="9">
+                  <div class="d-flex p-10 rounded-circle bg-light"><i class="icon u_map-marker fs-xl-30 fs-20"></i></div>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="points-item-title fs-sm-18 fw-sb">Ростов-на-Дону</div>
+                    <div class="fs-sm-16 fs-14 o-0_5">Улица Каширская, дом 5</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6">
+                <div class="points-item d-flex align-items-start gap-15 pointer js_office_coordinates" data-latitude="54.739711" data-longitude="55.988452" data-category="10">
+                  <div class="d-flex p-10 rounded-circle bg-light"><i class="icon u_map-marker fs-xl-30 fs-20"></i></div>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="points-item-title fs-sm-18 fw-sb">Уфа</div>
+                    <div class="fs-sm-16 fs-14 o-0_5">Улица Бессонова, дом 2Б</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6">
+                <div class="points-item d-flex align-items-start gap-15 pointer js_office_coordinates" data-latitude="55.991365" data-longitude="92.915256" data-category="11">
+                  <div class="d-flex p-10 rounded-circle bg-light"><i class="icon u_map-marker fs-xl-30 fs-20"></i></div>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="points-item-title fs-sm-18 fw-sb">Красноярск</div>
+                    <div class="fs-sm-16 fs-14 o-0_5">Улица  Академика Вавилова, дом 1, строение 67</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6">
+                <div class="points-item d-flex align-items-start gap-15 pointer js_office_coordinates" data-latitude="58.004008" data-longitude="56.156015" data-category="12">
+                  <div class="d-flex p-10 rounded-circle bg-light"><i class="icon u_map-marker fs-xl-30 fs-20"></i></div>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="points-item-title fs-sm-18 fw-sb">Пермь</div>
+                    <div class="fs-sm-16 fs-14 o-0_5">Улица Трамвайная, дом 14</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6">
+                <div class="points-item d-flex align-items-start gap-15 pointer js_office_coordinates" data-latitude="51.710515" data-longitude="39.289777" data-category="13">
+                  <div class="d-flex p-10 rounded-circle bg-light"><i class="icon u_map-marker fs-xl-30 fs-20"></i></div>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="points-item-title fs-sm-18 fw-sb">Воронеж</div>
+                    <div class="fs-sm-16 fs-14 o-0_5">Улица Землячки, дом 15</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-sm-6">
+                <div class="points-item d-flex align-items-start gap-15 pointer js_office_coordinates" data-latitude="48.748745" data-longitude="44.470074" data-category="14">
+                  <div class="d-flex p-10 rounded-circle bg-light"><i class="icon u_map-marker fs-xl-30 fs-20"></i></div>
+                  <div class="d-flex flex-column gap-2">
+                    <div class="points-item-title fs-sm-18 fw-sb">Волгоград</div>
+                    <div class="fs-sm-16 fs-14 o-0_5">Улица Землячки, дом 16</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="points-map rounded-20 overflow-hidden w-100 h-100">
+            <div class="map-block h-100" id="map"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer bg-light py-md-60 py-30">
+      <div class="container">
+        <div class="footer-top d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-20">
+            <div class="header-logo"><img class="w-auto" src="images/logo.svg" alt="Интернет-магазин контрактных японских запчастей для мотоциклов"></div><span class="fs-14 fw-rg d-xxl-block d-none">Интернет-магазин контрактных <br> японских запчастей для мотоциклов</span>
+          </div>
+          <div class="d-none d-lg-flex align-items-center gap-xl-30 gap-20">
+            <div class="header-tel d-flex flex-column"><a class="fs-18 fw-bl" href="tel:+74952410240">+7 495 241-02-40</a><span class="fs-14 lh-1 o-0_5">Москва и область</span></div>
+            <div class="header-tel d-flex flex-column"><a class="fs-18 fw-bl" href="tel:+74952410240">+7 495 241-02-40</a><span class="fs-14 lh-1 o-0_5">Владивосток и приморский край</span></div>
+            <div class="header-tel d-flex flex-column"><a class="fs-18 fw-bl" href="tel:88005516361">8 800 551-63-61</a><span class="fs-14 lh-1 o-0_5">Бесплатно по России</span></div>
+          </div>
+          <button class="btn btn-main px-xl-30 px-20 py-xl-20 py-15 fs-14 fw-sb" data-bs-toggle="modal" data-bs-target=".modal-call">Заказать звонок</button>
+        </div>
+        <hr class="my-sm-30 my-15 o-0_1">
+        <div class="footer-bottom">                                 
+          <div class="footer-navigation d-flex flex-column">
+            <div class="footer-navigation-grid gap-md-20 gap-10">
+              <div class="footer-navigation-grid-item spoiler">
+                <div class="spoiler-btn align-items-center justify-content-between"><span class="fs-14">Меню</span><i class="icon fs-20 angle-down">  </i></div>
+                <div class="spoiler-block">
+                  <ul class="list-unstyled m-0 d-flex gap-10 pt-10">
+                    <li class="fs-14"><a href="#">Оплата</a></li>
+                    <li class="fs-14"><a href="#">Доставка</a></li>
+                    <li class="fs-14"><a href="#">Отзывы</a></li>
+                    <li class="fs-14"><a href="#">Пункты выдачи</a></li>
+                    <li class="fs-14"><a href="#">Статьи</a></li>
+                    <li class="fs-14"><a href="#">Контакты</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="footer-navigation-grid-item spoiler">
+                <div class="spoiler-btn align-items-center justify-content-between"><span class="fs-14">Двигатели</span><i class="icon fs-20 angle-down"></i></div>
+                <div class="spoiler-block">
+                  <ul class="list-unstyled m-0 text-col-sm-2 pt-10">
+                    <li class="fs-14"><a href="#">Двигатели Suzuki из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели Kawasaki из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели Aprilia из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели MV Agusta из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели Honda из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели BMW из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели KTM из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели Harley-Davidson из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели Yamaha из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели Ducati из Японии</a></li>
+                    <li class="fs-14"><a href="#">Двигатели Triumph из Японии</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-rule">   
+            <p>Посещая сайт компании «Запчасти для мотоциклов — интернет магазин MOTOD», вы соглашаетесь с Правилами и условиями использования и политикой обработки персональных данных данного сайта.</p>
+          </div>
+          <div class="footer-form d-flex flex-column align-items-center gap-20 p-xxl-40 p-sm-30 p-20 rounded-20">
+            <div class="fw-rg">Оставьте заявку онлайн и мы подберем вам запчасти</div>
+            <form class="concat-input w-100 js_callModal" name="footer-form" autocomplete="off">
+              <label class="main-input">
+                <input class="px-xl-30 px-20 py-xl-20 py-15 fs-14" type="tel" placeholder="+7 (9__) ___-__-__" name="phone" required>
+              </label>
+              <button class="btn-main btn px-xl-30 px-20 py-xl-20 py-15 fs-14 fw-sb">Оставить заявку</button>
+            </form>
+            <div class="d-flex align-items-center gap-10"><span class="fs-16 o-0_5">Или напишите нам в мессенджеры —</span>
+              <div class="d-flex gap-10"><a class="header-social d-block" href="#" target="_blank"><img src="images/vk.svg" alt="Написать в ВКонтакте"></a><a class="header-social d-block" href="#" target="_blank"><img src="images/tg.svg" alt="Написать в Telegram"></a><a class="header-social d-block" href="#" target="_blank"><img src="images/wa.svg" alt="Написать в WhatsApp"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="position-absolute top-0 end-0 pe-10 pe-sm-30 pe-xxl-50">
+        <div class="rounded-circle p-14 d-flex scroll-top position-fixed pointer scroll-item bg-white"><i class="icon u_arrow-right fs-sm-30 fs-20 text-main"></i></div>
+      </div>
+    </footer>
+    <nav class="mobile-menu menu-scrolling" id="mobile-menu" style="display: none">
+      <ul>
+        <li class="mobile-menu-logo">
+          <div class="header-logo d-flex"><img class="w-auto" src="images/logo.svg" alt="холодильное и торговое оборудование"></div>
+        </li>
+        <li class="mobile-menu-feedback d-flex flex-column align-items-start"><a class="btn btn-main fs-14 px-20 py-10 w-auto" href="catalog.html" title="Каталог запчастей">Каталог запчастей        </a></li>
+        <li><a class="lh-1" href="pay.html" title="Оплата">Оплата</a></li>
+        <li><a class="lh-1" href="deliveri.html" title="Доставка">Доставка</a></li>
+        <li><a class="lh-1" href="reviews.html" title="Отзывы">Отзывы</a></li>
+        <li><a class="lh-1" href="points-issue.html" title="Пункты выдачи">Пункты выдачи</a></li>
+        <li><a class="lh-1" href="articles.html" title="Статьи">Статьи</a></li>
+        <li><a class="lh-1" href="contact.html" title="Контакты">Контакты</a></li>
+        <li class="mobile-menu-feedback d-flex flex-column align-items-start">           
+          <div class="d-flex flex-column"><a class="fs-xxl-24 fs-md-20 fs-16 lh-1 fw-bl w-auto" href="tel:88005516361">8 800 551-63-61</a><span class="fs-12 lh-1 o-0_5">Бесплатно по России</span></div>
+          <div class="d-flex flex-column"><a class="fs-xxl-24 fs-md-20 fs-16 lh-1 fw-bl w-auto" href="tel:+74952410240">+7 495 241-02-40</a><span class="fs-12 lh-1 o-0_5">Москва и область</span></div>
+          <div class="d-flex flex-column"><a class="fs-xxl-24 fs-md-20 fs-16 lh-1 fw-bl w-auto" href="tel:+74952410240">+7 495 241-02-40</a><span class="fs-12 lh-1 o-0_5">Владивосток и приморский край</span></div>
+        </li>
+      </ul>
+    </nav>
+    <div aria-live="polite" aria-atomic="true">
+      <div class="toast-container position-fixed top-0 end-0 p-3 js_toast_container" style="z-index: 10000;"></div>
+    </div>
+    <div class="modal fade modal-call" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">   
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">               
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close text-main"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-top">
+              <h3 class="fs-md-30 fs-20 fw-bl lh-1 mb-0">Остались вопросы?</h3>
+              <p>Оставьте ваши данные, мы перезвоним вам в ближайшее время и проконсультируем по любым вопросам. </p>
+            </div>
+            <div class="modal-bottom">
+              <form class="concat-input" name="modal-call" autocomplete="off">
+                <label class="main-input">
+                  <input class="px-xl-30 px-20 py-xl-20 py-15 fs-14" type="tel" placeholder="+7 (9__) ___-__-__" required>
+                </label>
+                <button class="btn btn-main px-xl-30 px-20 py-xl-20 py-15 fs-14 fw-sb">Заказать звонок</button>
+              </form><span>Также вы можете позвонить нам по телефону <a href='tel:88005516361' class='fw-sb'>8 800 551-63-61</a></span>
+              <div class="d-flex align-items-center gap-10"><span class="fs-16">Или напишите нам в мессенджеры —</span>
+                <div class="d-flex gap-10"><a class="header-social d-block" href="#" target="_blank"><img src="images/vk.svg" alt="Написать в ВКонтакте"></a><a class="header-social d-block" href="#" target="_blank"><img src="images/tg.svg" alt="Написать в Telegram"></a><a class="header-social d-block" href="#" target="_blank"><img src="images/wa.svg" alt="Написать в WhatsApp"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-detail" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">   
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">               
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close text-main"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-top">
+              <h3 class="fs-md-30 fs-20 fw-bl lh-1 mb-0">Узнайте стоимость детали</h3>
+              <div class="modal-img rounded-20 overflow-hidden">
+                <picture>
+                  <source srcset="images/modal/main.webp" type="image/webp"><img src="images/modal/main.jpg" alt="Узнайте стоимость детали" loading="lazy">
+                </picture>
+              </div>
+              <div class="fs-18 fw-sb lh-1_4">Двигатель Yamaha DragStar 400 26M</div>
+              <div class="modal-char d-flex flex-column gap-5">
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Марка</span></span><span><span>Yamaha</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Модель</span></span><span><span>YZF R6</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Пробег по Японии</span></span><span><span>19 675 км</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Объём</span></span><span><span>600 см3</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Гарантия</span></span><span><span>14 дней</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Наличие на складах</span></span><span><span>Европа, Япония, Россия</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Состояние товара</span></span><span><span>Готов к установке</span></span></div>
+              </div>
+            </div>
+            <div class="modal-bottom">
+              <form class="concat-input" name="modal-detail" autocomplete="off">
+                <label class="main-input">
+                  <input class="px-xl-30 px-20 py-xl-20 py-15 fs-14" type="tel" placeholder="+7 (9__) ___-__-__" required>
+                </label>
+                <button class="btn btn-main px-xl-30 px-20 py-xl-20 py-15 fs-14 fw-sb">Заказать звонок</button>
+              </form><span>Также вы можете позвонить нам по телефону <a href='tel:88005516361' class='fw-sb'>8 800 551-63-61</a></span>
+              <div class="d-flex align-items-center gap-10"><span class="fs-16">Или напишите нам в мессенджеры —</span>
+                <div class="d-flex gap-10"><a class="header-social d-block" href="#" target="_blank"><img src="images/vk.svg" alt="Написать в ВКонтакте"></a><a class="header-social d-block" href="#" target="_blank"><img src="images/tg.svg" alt="Написать в Telegram"></a><a class="header-social d-block" href="#" target="_blank"><img src="images/wa.svg" alt="Написать в WhatsApp"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-buy" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">   
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">               
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close text-main"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-top">
+              <h3 class="fs-md-30 fs-20 fw-bl lh-1 mb-0">Купите деталь в один клик</h3>
+              <div class="modal-img rounded-20 overflow-hidden">
+                <picture>
+                  <source srcset="images/modal/main.webp" type="image/webp"><img src="images/modal/main.jpg" alt="Купите деталь в один клик" loading="lazy">
+                </picture>
+              </div>
+              <div class="d-flex flex-column gap-10">
+                <div class="fs-18 fw-sb lh-1_4">Двигатель Yamaha DragStar 400 26M</div>
+                <div class="d-flex align-items-center gap-10"><span class="fs-24 fw-bl text-main">58 000 ₽</span><span class="fs-12 lh-1 o-0_5">Итоговая цена <br> с растаможкой</span></div>
+              </div>
+              <div class="modal-char d-flex flex-column gap-5">
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Марка</span></span><span><span>Yamaha</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Модель</span></span><span><span>YZF R6</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Пробег по Японии</span></span><span><span>19 675 км</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Объём</span></span><span><span>600 см3</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Гарантия</span></span><span><span>14 дней</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Наличие на складах</span></span><span><span>Европа, Япония, Россия</span></span></div>
+                <div class="characteristic-line justify-content-between position-relative flex-grow-1"><span><span>Состояние товара</span></span><span><span>Готов к установке</span></span></div>
+              </div>
+            </div>
+            <div class="modal-bottom">
+              <form class="concat-input" name="modal-buy" autocomplete="off">
+                <label class="main-input">
+                  <input class="px-xl-30 px-20 py-xl-20 py-15 fs-14 fs-14" type="tel" placeholder="+7 (9__) ___-__-__" required>
+                </label>
+                <button class="btn btn-main px-xl-30 px-20 py-xl-20 py-15 fs-14 fw-sb">Заказать звонок</button>
+              </form><span>Также вы можете позвонить нам по телефону <a href='tel:88005516361' class='fw-sb'>8 800 551-63-61</a></span>
+              <div class="d-flex align-items-center gap-10"><span class="fs-16">Или напишите нам в мессенджеры —</span>
+                <div class="d-flex gap-10"><a class="header-social d-block" href="#" target="_blank"><img src="images/vk.svg" alt="Написать в ВКонтакте"></a><a class="header-social d-block" href="#" target="_blank"><img src="images/tg.svg" alt="Написать в Telegram"></a><a class="header-social d-block" href="#" target="_blank"><img src="images/wa.svg" alt="Написать в WhatsApp"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-success" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content">           
+          <div class="modal-body">
+            <div class="modal-top">
+              <div class="modal-img"><img src="images/modal/success.svg" alt="" loading="lazy">
+              </div>
+              <div class="d-flex flex-column gap-10"><span class="fs-md-30 fs-20 fw-bl lh-1">Спасибо за доверие!</span><span class="fs-18 lh-1">Ваша заявка получена, <br> мы скоро свяжемся с вами</span></div>
+              <button class="btn btn-main px-xl-30 px-20 py-xl-20 py-15 fs-14 fw-sb" data-bs-dismiss="modal">Отлично</button><span class="fs-12 lh-1 o-0_5">Сообщение закроется через 5 секунд</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-fail" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-sm modal-success">
+        <div class="modal-content">           
+          <div class="modal-body">
+            <div class="modal-top">                   
+              <div class="d-flex flex-column gap-10"><span class="fs-md-30 fs-20 fw-bl lh-1">Ошибка!</span><span class="fs-18 lh-1">Необходимо заполнить обязательные поля</span></div>
+              <button class="btn btn-main px-xl-30 px-20 py-xl-20 py-15 fs-14 fw-sb" data-bs-dismiss="modal">Закрыть</button><span class="fs-12 lh-1 o-0_5">Сообщение закроется через 5 секунд</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="themes/engine/js/slider.bundle.js"></script>
+    <script src="themes/engine/js/main.bundle.js"></script>
+    <script src="themes/engine/js/gallery.bundle.js"></script>
+  </body>
+</html>

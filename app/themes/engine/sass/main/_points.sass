@@ -1,0 +1,27 @@
+.points
+    &-grid
+        display: grid
+        grid-template-columns: 100%        
+        gap: 20px 
+    &-item
+        &.active
+            & i, & .points-item-title
+                color: $main
+    &-map
+        aspect-ratio: 4 / 3                
+@media screen and ( min-width: 992px )
+    .points
+        &-grid
+            grid-template-columns: 1fr 620px
+            grid-template-rows: 400px                                   
+@media screen and ( min-width: 1200px )
+    .points
+        &-grid
+            grid-template-columns: 1fr 720px
+            grid-template-rows: 500px
+            gap: 30px       
+@media screen and ( min-width: 1340px )
+    .points
+        &-grid
+            grid-template-columns: 1fr 820px        
+                      

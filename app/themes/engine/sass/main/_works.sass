@@ -1,0 +1,132 @@
+.works
+    &-grid
+        display: grid
+        grid-template-columns: 100%
+        grid-template-areas: 'desc' 'gallery' 'descb'
+        gap: 20px     
+    &-desc
+        grid-area: desc
+        & .content
+            & ul
+                opacity: 1
+                & li
+                    line-height: 1.2
+                    opacity: 1
+                    font-size: 14px
+                    &:not(:last-of-type)
+                        margin-bottom: 10px
+    &-descb
+        grid-area: descb
+        &-grid
+            display: grid
+            grid-template-columns: repeat(12, 1fr)
+            grid-auto-rows: 100px 
+            padding: 1px           
+        &-item
+            border: 2px solid $main            
+            margin: -1px
+        &-item:nth-child(2), &-item:nth-child(3)
+            grid-column: span 5                            
+        &-item:nth-child(1), &-item:nth-child(4)
+            grid-column: span 7
+        &-item:nth-child(5)
+            grid-column: span 12                                        
+    &-gallery
+        grid-area: gallery       
+        &-wrapper
+            display: grid
+            & > *
+                grid-column: 1 / 1
+                grid-row: 1 / 1
+        &-main
+            opacity: 0
+            visibility: hidden
+            transition: .3s
+            & img
+                min-height: 260px
+                max-height: 450px
+            &.active
+                opacity: 1
+                visibility: visible
+        &-thumbs
+            display: grid
+            grid-template-columns: repeat(4, 120px)
+            gap: 10px
+            overflow: auto
+        &-thumb
+            position: relative
+            &::before
+                content: ''
+                display: block
+                width: 100%
+                height: 100%
+                position: absolute
+                top: 0
+                left: 0
+                border: 2px solid transparent
+                border-radius: 15px         
+            & img
+                height: 90px                 
+            &.active
+                &::before
+                    border-color: $main
+@media screen and ( min-width: 576px )
+    .works        
+        &-descb        
+            &-grid                
+                grid-template-columns: repeat(4, 1fr)
+                grid-auto-rows: 140px                       
+            &-item:nth-child(2), &-item:nth-child(3)
+                grid-column: span 1                            
+            &-item:nth-child(1), &-item:nth-child(4), &-item:nth-child(5)
+                grid-column: span 2
+        &-desc
+            & .content
+                & ul                    
+                    & li                        
+                        font-size: 18px
+        &-gallery
+            &-thumbs                
+                grid-template-columns: repeat(4, 1fr)                                                                                                                                   
+@media screen and ( min-width: 992px )
+    .works
+        &-grid            
+            grid-template-columns: 420px 1fr
+            gap: 30px
+            grid-template-areas: 'desc gallery' 'descb descb'        
+        &-gallery
+            &-main                
+                & img
+                    min-height: 260px
+                    max-height: 450px                            
+            &-thumb                       
+                & img
+                    height: 90px                                                          
+@media screen and ( min-width: 1200px )
+    .works
+        &-grid            
+            grid-template-columns: 540px 1fr
+            gap: 30px 40px
+            grid-template-areas: 'desc gallery' 'descb gallery'
+        &-descb        
+            &-grid                
+                grid-template-columns: repeat(4, 1fr)                                     
+            &-item:nth-child(2), &-item:nth-child(3)
+                grid-column: span 1                            
+            &-item:nth-child(1), &-item:nth-child(4), &-item:nth-child(5)
+                grid-column: span 2
+        &-gallery
+            &-main                
+                & img
+                    min-height: 374px
+                    max-height: 450px                            
+            &-thumb                       
+                & img
+                    height: 120px                 
+@media screen and ( min-width: 1460px )
+    .works
+        &-grid            
+            grid-template-columns: 570px 1fr
+            gap: 30px 60px
+            grid-template-areas: 'desc gallery' 'descb gallery'
+                        

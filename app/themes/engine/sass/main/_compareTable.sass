@@ -1,0 +1,74 @@
+.compareTable
+    &-block
+        flex: 1 0 0%
+        min-width: 100px
+        &.heading
+            min-width: 115px
+    &-heading
+        height: 40px
+        max-height: 40px
+        &-wrapper
+            z-index: 1
+            &.img
+                & img               
+                    width: 80%
+        &-img
+            max-width: 13px    
+    &-btn
+        background: $white
+        &.active
+            background: $main
+            & i
+                &::before
+                    content: '\e91c'
+    &-column
+        display: none
+        &.active
+            display: block                    
+@media screen and ( min-width: 576px )
+    .compareTable
+        &-heading            
+            height: 50px
+            max-height: 50px
+            &-img
+                max-width: 30px
+        &-block
+            min-width: 120px
+            &.heading
+                min-width: 160px        
+@media screen and ( min-width: 768px )
+    .compareTable
+        &-heading
+            height: 60px
+            max-height: 60px
+        &-block
+            min-width: 130px
+            &.heading
+                min-width: 160px    
+@media screen and ( min-width: 992px )
+    .compareTable
+        &-heading
+            height: 80px
+            max-height: 80px
+        &-block
+            min-width: unset
+            &.heading
+                min-width: 150px    
+@media screen and ( min-width: 1200px )
+    .compareTable
+        &-heading
+            height: 92px
+            max-height: 92px
+            &-wrapper.img
+                & img
+                    width: 80%
+@media screen and ( min-width: 1554px )
+    .compareTable
+        &-heading
+            &-wrapper.img
+                & img
+                    width: auto
+
+
+                    
+                    

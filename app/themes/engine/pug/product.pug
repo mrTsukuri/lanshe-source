@@ -1,0 +1,129 @@
+extends template/main
+
+block variables
+    -var title = ''
+block content
+    main
+        .page-grid
+            -
+                let prodBread = [
+                                {href: 'index', title: 'Главная'},
+                                {href: 'catalog', title: 'Каталог'},                            
+                                {title: 'Товар'},                            
+                            ]
+            +breadcrumbs(prodBread)                                
+            .page-sections.d-flex.flex-column
+                section.product#about
+                    .container
+                        .product-grid
+                            .product-gallery.d-flex.align-items-start
+                                .product-gallery__thumbs.d-none.d-lg-block
+                                    .slider-product__thumbs.swiper
+                                        .swiper-wrapper
+                                            -for(let i = 1; i <= 5; i++)
+                                                if i <= 3
+                                                    .swiper-slide.pointer
+                                                        .product-gallery__thumb.rounded-16.overflow-hidden
+                                                            img(src= start+"images/product/thumbs/"+i+".jpg", alt="Патчи 50 шт для наращивания ресниц")
+                                                else
+                                                    .swiper-slide.pointer
+                                                        .product-gallery__thumb.rounded-16.overflow-hidden
+                                                            img(src= start+"images/product/thumbs/3.jpg", alt="Патчи 50 шт для наращивания ресниц")                                                           
+                                .product-gallery__slider
+                                    .slider-product.swiper.h-100
+                                        .swiper-wrapper
+                                            -for(let i = 1; i <= 5; i++)
+                                                if i <= 3
+                                                    .swiper-slide
+                                                        .product-gallery__img.rounded-24.overflow-hidden.pointer(data-fancybox= 'gallery', data-src = start+ "images/product/"+i+"_org.jpg")
+                                                            img(src= start+ "images/product/"+i+".jpg", alt="Патчи 50 шт для наращивания ресниц")
+                                                else
+                                                    .swiper-slide
+                                                        .product-gallery__img.rounded-24.overflow-hidden.pointer(data-fancybox= 'gallery', data-src = start+ "images/product/3_org.jpg")
+                                                            img(src= start+ "images/product/3.jpg", alt="Патчи 50 шт для наращивания ресниц")                                                           
+                            .product-main.d-flex.flex-column
+                                .product-desc.d-flex.flex-column
+                                    .product-heading.d-flex.flex-column
+                                        h1.fs-20.fs-xl-32.fw-md.mb-0 Патчи 50 шт для наращивания ресниц
+                                        p Новые профессиональные патчи для наращивания ресниц Lanshe Total White Minimal form на сегодняшний день являются самыми белыми, безопасными и эстетичными на рынке.
+                                    .product-radio.d-flex.align-items-center.rounded-pill
+                                        label
+                                            input(type="radio" name='couple' checked)
+                                            span.product-radio__item.d-flex.align-items-center.justify-content-center.fs-14.fs-xl-16.lh-1_4.rounded-pill
+                                                span 50 пар
+                                                i.icon.icon-check.fs-20
+                                        label
+                                            input(type="radio" name='couple')
+                                            span.product-radio__item.d-flex.align-items-center.justify-content-center.fs-14.fs-xl-16.lh-1_4.rounded-pill
+                                                span 100 пар
+                                                i.icon.icon-check.fs-20
+
+                                .product-info.d-flex.flex-column
+                                    .product-buy
+                                        .product-buy__price
+                                            .fs-24.fs-xl-32.fw-md.lh-1_2 2 600 ₽
+                                        .product-buy__count
+                                            .count-number
+                                                .count-btn.count-btn_min
+                                                    i.icon-remove.fs-32
+                                                label.flex-grow-1
+                                                    input(type="number" min="1" max="999" value="1").count-input
+                                                .count-btn.count-btn_plus
+                                                    i.icon-add.fs-32                     
+                                        .product-buy__btn
+                                            button.btn.btn_main.d-flex.align-items-center
+                                                i.icon-local_mall.fs-32
+                                                span В корзину
+                                    .product-shares.d-flex.align-items-center.rounded-8
+                                        .product-shares__icon.bg-black.rounded-4.d-flex
+                                            img(src= start+"images/dolyame.svg", alt="Долями").w-auto
+                                        .fs-14.flex-grow-1 4 платежа по 1 000 ₽
+                                        i.icon-chevron
+                                    .product-spoilers.d-flex.flex-column
+                                        .spoiler.spoiler-item
+                                            .spoiler-btn.d-flex.align-items-center.justify-content-between
+                                                .fs-14.fs-xl-16.fw-md.lh-1_4 Состав
+                                                .spoiler-item-icon
+                                            .spoiler-block
+                                                .content
+                                                    p гидрогель, нетканый материал, экстракт алоэ, аскорбиновая кислота,  экстракт алоэ, аскорбиновая кислота, гидрогель, нетканый материал 
+                                        .spoiler.spoiler-item
+                                            .spoiler-btn.d-flex.align-items-center.justify-content-between
+                                                .fs-14.fs-xl-16.fw-md.lh-1_4 Характеристики
+                                                .spoiler-item-icon
+                                            .spoiler-block
+                                                .content
+                                                    p гидрогель, нетканый материал, экстракт алоэ, аскорбиновая кислота,  экстракт алоэ, аскорбиновая кислота, гидрогель, нетканый материал 
+                                        .spoiler.spoiler-item
+                                            .spoiler-btn.d-flex.align-items-center.justify-content-between
+                                                .fs-14.fs-xl-16.fw-md.lh-1_4 Способ применения
+                                                .spoiler-item-icon
+                                            .spoiler-block
+                                                .content
+                                                    p гидрогель, нетканый материал, экстракт алоэ, аскорбиновая кислота,  экстракт алоэ, аскорбиновая кислота, гидрогель, нетканый материал 
+                +reviews
+                +catalog('Возможно вам понравится', false)
+                +questions
+            .page-nav.d-flex.flex-column.align-items-end
+                .page-nav__hrefs.d-none.d-lg-flex.flex-column.align-items-end
+                    each val in [{href: 'about', title: 'О товаре'}, {href: 'reviews', title: 'Отзывы'}, {href: 'products', title: 'Вам понравится'}, {href: 'questions', title: 'Частые вопросы'}]
+                        a(href="#"+ val['href']).fs-14.page-nav__item.position-relative.d-flex.align-items-start.text-end= val['title']
+                            svg(width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M2.44595 4.37247H0.5L3.05406 0H5.00001L2.44595 4.37247Z" fill="#222222")
+                .page-nav__buy.d-flex.js-buy
+                    .fs-18.fs-lg-20.fs-xl-24.fw-md.lh-1_2.align-self-lg-end 2 600 ₽
+                    .page-nav__btns.d-flex
+                        .count-number
+                            .count-btn.count-btn_min
+                                i.icon-remove.fs-lg-32.fs-24
+                            label
+                                input(type="number" min="1" max="999" value="1").count-input
+                            .count-btn.count-btn_plus
+                                i.icon-add.fs-lg-32.fs-24
+                        button.btn.btn_main.d-flex.align-items-center.justify-content-center
+                            i.icon-local_mall.fs-24
+                            span.d-none.d-xl-block В корзину
+                    a(href="#").bg-grey.p-8.p-xl-16.d-flex.align-items-center.gap-6.rounded-8.justify-content-center
+                        img(src= start+ "images/dolyame-sm.svg", alt="Долями").w-auto
+                        .fs-12 Долями <span class='d-none d-xl-inline-block'>по 2 040 ₽</span>
+

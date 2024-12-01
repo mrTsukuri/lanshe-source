@@ -1,0 +1,8 @@
+.tag-item-left .tag-item-icon {
+  order: 1;
+  margin-left: 5px;
+}
+
+.tag-item-right .tag-item-icon {
+  margin-right: 5px;
+}

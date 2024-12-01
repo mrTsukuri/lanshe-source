@@ -1,0 +1,26 @@
+.steps__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 300px);
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: clip;
+}
+.steps__item {
+  padding: 70px 20px 20px 20px;
+}
+.steps__num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 40px;
+}
+
+@media screen and (min-width: 1500px) {
+  .steps__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .steps__item {
+    padding: 90px 2.1vw 2.1vw 2.1vw;
+  }
+}

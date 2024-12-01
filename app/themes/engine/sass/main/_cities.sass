@@ -1,0 +1,50 @@
+.cities
+    &-search
+        & input
+            min-width: 250px
+            max-width: 260px
+            height: 50px
+    &-alphabet
+        &-item
+            width: 25px
+            height: 25px
+            background-color: transparent            
+        &-item.active
+            background: $main
+            color: $white            
+    &-item
+        background-color: $white
+        transition: .3s
+        & i
+            color: $main
+            transition: .3s                   
+    &-item.active, &-item:hover
+        background-color: $main
+        color: $black
+        & i
+            color: $white
+    &-badge
+        &-btn
+            background: #EDEEF2
+            width: 30px
+            height: 30px
+        &-btn:hover, &-btn.active
+            background: $main
+            color: $black
+        &-href            
+            &::after
+                content: ''
+                position: absolute
+                height: 1px
+                width: 0%
+                bottom: 3px
+                left: 0
+                background: currentColor
+                transition: width .3s
+        &-href:hover
+            &::after
+                width: 100% 
+                
+            
+
+

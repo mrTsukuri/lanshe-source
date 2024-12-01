@@ -1,0 +1,21 @@
+extends template/main
+
+block variables
+    -var title = ''
+block content
+    main
+        section.reviews
+            .container
+                .section-heading.d-flex.align-items-center.justify-content-between
+                    h2.fs-20.fs-lg-32.fw-md.mb-0 Отзывы                    
+                    button.btn-inline.href-main.href-line(data-bs-toggle="modal", data-bs-target=".modal-reviews") Оставить отзыв                        
+                .reviews-grid                   
+                    -
+                        let reviewsArr = [
+                                            {name: 'Акулина Волкова', ava: 'girl', city: 'г. Чебоксары', text: 'Мы верим, что каждый человек уникален, поэтому наша продукция разрабатывается с учётом индивидуальных потребностей.', revImg: ['1', '2', '3']},
+                                            {name: 'Валентин Кзоло', ava: 'boy', city: 'г. Чебоксары', text: 'Преимущества наших патчей в том, что они изготовлены из материалов высочайшего качества, признанных медицински безопасными. Патчи обеспечивают безупречный результат в процессе наращивания ресниц за счет липкого и влажного гидрогеля, который не оставляет раздражения на коже.', revImg: ['1', '2', '3']}
+                                        ]
+                    -for(let i = 1; i <= 3; i++)
+                        each val in reviewsArr                            
+                            +reviews-item(val['name'], val['ava'], val['city'], val['text'], val['revImg'])
+        +questions                            

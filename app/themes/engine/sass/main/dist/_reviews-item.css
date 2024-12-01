@@ -1,0 +1,22 @@
+.reviews-item {
+  gap: 2.4rem;
+  padding: 2.4rem;
+}
+.reviews-item__heading {
+  gap: 1.5rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.1);
+}
+.reviews-item__gallery {
+  gap: 0.8rem;
+}
+.reviews-item__img {
+  width: 8rem;
+  aspect-ratio: 1/1;
+}
+
+@media screen and (min-width: 1400px) {
+  .reviews-item {
+    padding: 3.2rem;
+  }
+}

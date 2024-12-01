@@ -1,0 +1,125 @@
+.choosing
+    --chooMG: 2rem        
+    --chooSG: 1.5rem
+    &-wrapper
+        gap: var(--chooMG)
+        padding: var(--chooSG)
+        background: conic-gradient(from -90deg at 70% 50%, #192633 0deg, #2D3A47 36deg, #192633 72deg, #2D3A47 144deg, #192633 144deg, #2D3A47 216deg, #192633 216deg, #192633 288deg, #2D3A47 324deg, #192633 360deg)           
+        & > *
+            position: relative
+            z-index: 1
+        &::before
+            content: ''
+            width: 100%
+            height: 100%
+            background: conic-gradient(from -90deg at 50% 50%, #192633 0deg, #2D3A47 36deg, #192633 72deg, #2D3A47 144deg, #192633 144deg, #2D3A47 216deg, #192633 216deg, #192633 288deg, #2D3A47 324deg, #192633 360deg)   
+            mix-blend-mode: color-dodge
+            position: absolute
+            top: 0
+            left: 0
+    &-heading
+        padding-bottom: var(--chooMG)
+        border-bottom: 2px solid currentColor
+    &-block
+        display: flex
+        flex-direction: column
+        container: choosing / inline-size        
+        gap: var(--chooSG)
+        &__heading, &__inputs, &__form
+            flex: 1 0 0%
+        &__heading
+            gap: var(--chooSG)
+            & button
+                width: 30rem
+        &__inputs
+            display: grid
+            grid-template-columns: repeat(2, 1fr)   
+            gap: var(--chooSG)
+        &__form
+            gap: var(--chooSG)
+            flex-direction: column
+            & > *
+                flex: 0 0 100%
+    &-radio
+        cursor: pointer
+        & input
+            display: none
+        &__item
+            padding: 1.5rem
+            gap: var(--chooSG)
+            border: 2px solid $white
+            border-radius: 1rem
+            transition: .3s
+        &__icon            
+            border: 2px solid $white
+            color: $white
+            width: 3rem
+            height: 3rem
+            transition: .3s                       
+            &::before
+                content: ''
+                display: block
+                width: 1.2rem
+                height: .8rem
+                border-left: 2px solid $white                            
+                border-bottom: 2px solid $white
+                transform: translate(-50%, -65%) rotate(-45deg)
+                transition: .3s
+                opacity: 0
+                position: absolute
+                top: 50%
+                left: 50%
+        & input:checked ~ .choosing-radio__item
+            background-color: $white
+            color: $black
+            & .choosing-radio__icon
+                background-color: $main
+                border-color: $main
+                &::before
+                    opacity: 1
+@media screen and ( min-width: 992px )
+    .choosing
+        --chooMG: 3rem        
+        --chooSG: 2rem                              
+        &-wrapper            
+            padding: 3rem
+        &-block                                                
+            &__heading, &__inputs, &__form
+                flex: 1 0 0%
+            &__inputs                
+                grid-template-columns: repeat(4, 1fr)
+            &__form
+                flex-direction: row               
+                & > *
+                    flex: 0 0 calc( 50% - (var(--chooSG) / 2) )                
+        &-radio
+            &__item
+                padding: 2rem                                                                                              
+@media screen and ( min-width: 1400px )
+    .choosing
+        --chooMG: 4rem
+        --chooSG: 3rem                                           
+        &-block                                    
+            flex-direction: row
+            align-items: flex-end
+            &__heading
+                flex: 0 0 31.41cqw
+            &__inputs, &__form
+                flex: 1 0 0%                
+                                                                      
+                        
+
+                 
+                                       
+                           
+
+                                    
+
+                
+
+
+                    
+    
+                        
+
+                        

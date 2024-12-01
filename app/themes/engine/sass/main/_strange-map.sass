@@ -1,0 +1,122 @@
+.strange-map
+    &-block
+        display: grid        
+        &-wrapper
+            z-index: 1
+            & h2
+                right: 390px
+                bottom: 230px                
+        &-item-1
+            right: 360px
+            top: 30px        
+        &-item-2
+            left: 480px
+            top: 80px                   
+        &-item-3
+            left: 40px
+            top: 160px
+        &-img
+            & img
+                width: 100%
+@media screen and ( min-width: 576px )
+    .strange-map    
+        &-block
+            & > *
+                grid-row: 1 / 1
+                grid-column: 1 / 1
+            &-wrapper                
+                & h2
+                    position: absolute
+                    right: 100px
+                    bottom: 70px
+            &-img
+                & img
+                    height: 295px
+                    width: auto
+            &-item-1, &-item-2, &-item-3
+                position: absolute
+            &-item-1
+                right: 120px
+                top: 30px        
+            &-item-2
+                left: 120px
+                top: 50px                   
+            &-item-3
+                left: 0px
+                top: 80px                                   
+@media screen and ( min-width: 768px )
+    .strange-map    
+        &-block
+            &-wrapper                
+                & h2
+                    right: 190px
+                    bottom: 100px
+            &-img
+                & img
+                    height: 390px
+            &-item-1
+                right: 170px
+                top: 20px        
+            &-item-2
+                left: 180px
+                top: 70px                   
+            &-item-3
+                left: 10px
+                top: 120px                                   
+@media screen and ( min-width: 992px )
+    .strange-map    
+        &-block
+            &-wrapper                
+                & h2
+                    right: 300px
+                    bottom: 140px
+            &-img
+                & img
+                    height: 528px
+            &-item-1
+                right: 300px
+                top: 50px        
+            &-item-2
+                left: 230px
+                top: 100px                   
+            &-item-3
+                left: 30px
+                top: 200px                                   
+@media screen and ( min-width: 1200px )
+    .strange-map    
+        &-block
+            &-wrapper                
+                & h2
+                    right: 330px
+                    bottom: 170px
+            &-img
+                & img
+                    height: 628px
+            &-item-1
+                right: 300px
+                top: 30px        
+            &-item-2
+                left: 300px
+                top: 80px                   
+            &-item-3
+                left: 40px
+                top: 160px                                   
+@media screen and ( min-width: 1460px )
+    .strange-map    
+        &-block
+            &-wrapper                
+                & h2
+                    right: 390px
+                    bottom: 230px
+            &-img
+                & img
+                    height: 786px
+                &-item-1
+                    right: 360px
+                    top: 30px        
+                &-item-2
+                    left: 480px
+                    top: 80px                   
+                &-item-3
+                    left: 40px
+                    top: 160px                               

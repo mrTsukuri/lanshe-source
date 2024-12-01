@@ -1,0 +1,43 @@
+.worksheets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fil, 24rem);
+  gap: 1rem;
+  grid-auto-flow: column;
+  overflow: auto;
+}
+.worksheets-item {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 2rem;
+  padding: 2rem;
+  min-width: 24rem;
+}
+.worksheets-item img {
+  mix-blend-mode: darken;
+}
+.worksheets-item__desc {
+  gap: 2rem;
+}
+
+@media screen and (min-width: 1250px) {
+  .worksheets-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    grid-auto-flow: unset;
+    overflow: unset;
+  }
+  .worksheets-item {
+    grid-template-columns: 100%;
+    padding: 3rem;
+    min-width: unset;
+  }
+}
+@media screen and (min-width: 1470px) {
+  .worksheets-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .worksheets-item {
+    grid-template-columns: 10.157vw 1fr;
+    grid-template-rows: 13rem;
+  }
+}

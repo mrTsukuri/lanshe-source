@@ -1,0 +1,19 @@
+.advantages-block {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.advantages-item {
+  gap: 4rem;
+  padding: 3rem;
+  padding-bottom: 0;
+}
+.advantages-item_bg {
+  grid-column: span 2;
+}
+.advantages-item:nth-child(-n+3) {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+.advantages-item:nth-child(3n+1) {
+  padding-left: 0;
+}

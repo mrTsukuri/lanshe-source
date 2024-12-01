@@ -1,0 +1,20 @@
+.search
+    &-grid
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        & > *
+            margin-top: -1px
+            margin-left: -1px
+@media screen and ( min-width: 768px )
+    .search
+        &-grid            
+            grid-template-columns: repeat(3, 1fr)   
+@media screen and ( min-width: 992px )
+    .search
+        &-grid            
+            grid-template-columns: repeat(4, 1fr)   
+@media screen and ( min-width: 1488px )
+    .search
+        &-grid            
+            grid-template-columns: repeat(5, 1fr)   
+                

@@ -1,0 +1,33 @@
+.promotions > *:not(.promotions-item-vector) {
+  position: relative;
+  z-index: 1;
+}
+.promotions-item {
+  min-height: 220px;
+}
+.promotions-item-img {
+  min-width: 170px;
+  max-width: 170px;
+  max-height: unset;
+}
+.promotions-item-img img {
+  object-fit: cover;
+}
+.promotions-item-vector {
+  width: 1032px;
+  height: 927px;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (min-width: 992px) {
+  .promotions-item-img {
+    min-width: 170px;
+    max-width: 170px;
+    max-height: unset;
+  }
+  .promotions-item-img img {
+    object-fit: cover;
+  }
+}

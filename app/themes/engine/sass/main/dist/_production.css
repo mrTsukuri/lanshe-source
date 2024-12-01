@@ -1,0 +1,107 @@
+.production-top, .production-bot, .production-gallery {
+  display: grid;
+  gap: 2rem;
+}
+.production-top {
+  grid-template-columns: 100%;
+  align-items: center;
+}
+.production-top ul {
+  line-height: 1.4;
+  padding-left: 2.4rem;
+  font-size: 1.4rem;
+}
+.production-top ul li:not(:last-child) {
+  margin-bottom: 0.4rem;
+}
+.production-video {
+  aspect-ratio: 4/3;
+}
+.production-video picture img {
+  height: 100%;
+}
+.production-video__youtube {
+  padding: 1rem 1.5rem;
+  gap: 1rem;
+  top: 1rem;
+  right: 1rem;
+}
+.production-video__youtube img {
+  width: auto;
+  height: 2rem;
+}
+.production-bot, .production-gallery {
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-auto-flow: column;
+  overflow: auto;
+}
+.production-gallery {
+  gap: 2rem;
+}
+.production-item {
+  height: 20rem;
+  width: 25rem;
+}
+.production-item img {
+  height: 100%;
+}
+.production-item__title {
+  padding: 0.5rem;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+@media screen and (min-width: 576px) {
+  .production-top ul {
+    font-size: 1.6rem;
+  }
+  .production-video {
+    aspect-ratio: 16/9;
+  }
+  .production-video picture img {
+    height: 100%;
+  }
+  .production-video__youtube {
+    padding: 1.5rem 2rem;
+    gap: 1.5rem;
+    top: 2rem;
+    right: 2rem;
+  }
+  .production-video__youtube img {
+    width: auto;
+    height: 3rem;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .production-top, .production-bot, .production-gallery {
+    gap: 1.875vw;
+  }
+  .production-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .production-video {
+    max-height: 43rem;
+  }
+  .production-bot, .production-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: unset;
+    overflow: unset;
+  }
+  .production-item {
+    height: 30rem;
+    width: auto;
+  }
+  .production-item__title {
+    padding: 0.5rem 1rem;
+    bottom: 1.4rem;
+    left: 1.4rem;
+  }
+}
+@media screen and (min-width: 1470px) {
+  .production-bot, .production-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .production-item {
+    height: 24.8rem;
+  }
+}

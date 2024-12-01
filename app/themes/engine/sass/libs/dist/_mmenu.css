@@ -1,0 +1,105 @@
+/*! purgecss start ignore */
+.mm-ocd {
+  transition-property: bottom;
+  transition-delay: 0.5s;
+  transition-duration: 0s;
+}
+
+.mm-ocd--open {
+  transition-delay: 0s;
+}
+
+.mm-ocd .mobile-menu {
+  display: block !important;
+}
+
+.mm-ocd__content {
+  background: 0 0;
+  --mm-ocd-width: 55%;
+  min-width: 250px;
+}
+
+.mm-spn.mm-spn--dark {
+  background: #fff;
+  position: relative;
+  opacity: 1;
+  backdrop-filter: blur(10px);
+}
+
+.mm-spn.mm-spn--navbar ul {
+  top: 0;
+}
+
+.mm-spn.mm-spn--navbar ul:before {
+  content: none;
+}
+
+.mm-spn.mm-spn--navbar:after {
+  content: none;
+}
+
+.mm-spn ul {
+  opacity: 1;
+  width: 100%;
+  padding: 20px;
+}
+
+.mm-spn ul:after {
+  content: none;
+}
+
+.mm-spn ul.mm-spn--parent {
+  overflow-y: hidden;
+  left: -100%;
+}
+
+.mm-spn li:after {
+  content: none;
+}
+
+.mm-spn li.sub::before, .mm-spn li.noSub::before {
+  content: none;
+}
+
+.mm-spn li.noSub {
+  margin-top: 20px;
+  padding-top: 20px;
+  position: relative;
+}
+.mm-spn li.noSub::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 0;
+}
+.mm-spn li.noSub a {
+  width: auto;
+}
+
+.mm-spn a {
+  padding: 0;
+  color: #222;
+}
+.mm-spn a.nh::before {
+  content: none;
+}
+
+.mm-spn a:not(:last-child):after {
+  content: none;
+}
+
+.mm-spn a:not(:last-child) {
+  width: auto;
+}
+
+.mobile-menu__logo img {
+  height: 3rem;
+}
+
+/*! purgecss end ignore */        

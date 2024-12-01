@@ -1,0 +1,57 @@
+.main-section
+    padding: 20px 0
+    border-radius: 15px
+    &__grid
+        display: grid
+        grid-template-columns: 100%
+        gap: 30px        
+    // &__line
+    //     width: 1px
+    //     height: auto
+    //     align-self: stretch
+    //     background-color: $black
+    //     opacity: .1
+    &__menu
+        // padding-left: 1.5vw
+        // border-left: 1px solid rgba(37, 37, 37, .1)
+        &-grid
+            display: flex
+            flex-wrap: wrap
+            & > *
+                flex: 1 0 calc(33.33% - 10px)
+        &-item
+            background-color: $white
+            transition: .3s
+            height: 130px
+            &:hover
+                background-color: $main
+            & .icon
+                top: 10px
+                right: 10px
+    & + .feedback
+        margin-top: -35px                                   
+@media screen and ( min-width: 1200px )
+    .main-section
+        padding: 80px 0        
+        &__grid            
+            // grid-template-columns: 1136px 1fr
+            grid-template-columns: 1fr 18vw
+            gap: 1.5vw              
+        & + .feedback
+            margin-top: -75px
+        &__menu
+            &-grid
+                flex-direction: column
+                & > *
+                    width: 0 0 100%            
+@media screen and ( min-width: 1500px )
+    .main-section
+        padding: 80px 0
+        &__grid            
+            // grid-template-columns: 1136px 1fr
+            grid-template-columns: 1fr 13.5vw
+            gap: 1.5vw
+        & + .feedback
+            margin-top: -75px                          
+                           
+    

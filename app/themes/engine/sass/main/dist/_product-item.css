@@ -1,0 +1,20 @@
+.product-item {
+  gap: 2.4rem;
+}
+.product-item__wrapper button, .product-item__wrapper a:not(.product-item__img) {
+  position: absolute;
+  bottom: 0.8rem;
+  left: 0.8rem;
+}
+.product-item__img {
+  aspect-ratio: 2/3;
+}
+.product-item__img img {
+  height: 100%;
+}
+.product-item__info {
+  gap: 1.6rem;
+}
+.product-item__desc {
+  gap: 0.8rem;
+}

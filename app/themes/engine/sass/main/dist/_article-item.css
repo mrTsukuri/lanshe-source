@@ -1,0 +1,23 @@
+.articles-item__img {
+  height: 150px;
+}
+.articles-item__img img {
+  height: 100%;
+}
+.articles-item__desc {
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 1250px) {
+  .articles-item__img {
+    height: 194px;
+  }
+  .articles-item__img img {
+    height: 100%;
+  }
+  .articles-item__desc {
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+}

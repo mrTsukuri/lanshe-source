@@ -1,0 +1,222 @@
+/*! purgecss start ignore */
+.category
+    &-info, &-grid
+        display: grid
+        gap: 2rem
+    &-info
+        grid-template-columns: 100%        
+        &__desc
+            gap: 2rem
+        &__img
+            max-height: 400px
+            border: 2px solid $light
+            display: none
+            & img
+                height: 100%            
+    &-tabs
+        & .js-tabs__tab
+            padding: 1rem 1.5rem
+            background-color: $light
+            transition: .3s
+            white-space: nowrap
+            &.active
+                background-color: $second
+                color: $white
+        &__content
+            padding: 2rem                                       
+            column-count: 2
+            column-gap: 1.875vw
+            & ul
+                display: contents
+                & .baner-category__item
+                    margin-bottom: 1rem
+                    white-space: normal
+
+    &-grid        
+        grid-template-columns: 100%            
+    &-filter
+        position: fixed
+        top: 0
+        left: 0
+        bottom: 0
+        right: 100%
+        z-index: 1001
+        overflow: hidden       
+        overscroll-behavior: contain
+        background: rgba(0,0,0,0)                          
+        transition-timing-function: ease       
+        transition-delay: 0.35s
+        &__float-btn
+            display: none
+            padding: 1rem 1.5rem                        
+            font-size: 1.6rem
+            border: 0
+            font-weight: 500
+            position: absolute
+            left: 100%
+            background: $main
+            border-radius: .6rem                      
+            &::before
+                content: ''
+                display: block
+                width: 1rem
+                height: 1rem
+                background-color: $main
+                border-radius: .1rem
+                transform: rotate(-45deg) translateY(-70%)
+                position: absolute
+                top: 50%
+                left: 0px                 
+            &::after
+                content: attr(data-label)
+                position: relative                       
+                z-index: 1                               
+        &__btns
+            position: sticky
+            bottom: 0
+        &__container, &__btns
+            background-color: $light
+            padding: 2rem
+        &__container            
+            flex-grow: 1            
+            border-radius: .6rem .6rem 0 0
+        &__btns
+            padding-top: 0
+            border-radius: 0 0 .6rem .6rem
+            & button
+                padding: 1.5rem 2rem 
+        &__block
+            padding-bottom: 2rem
+            border-bottom: 1px solid rgba(0, 0, 0, .1)   
+        &__block:not(:last-child)
+            margin-bottom: 2rem                        
+    &-sort
+        width: 26rem
+    &-checkbox
+        cursor: pointer
+        position: relative
+        & input
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            opacity: 0
+        & input:focus-within ~ .category-checkbox__item
+            font-weight: bold            
+        & input:checked ~ .category-checkbox__item .category-checkbox__icon            
+            & i
+                &::before
+                    content: '\e904'
+        &__item
+            font-size: 1.6rem
+            line-height: 1
+            position: relative
+            display: flex
+            align-items: flex-start
+            gap: 1rem 
+        // &__icon
+        //     position: relative                
+        //     min-width: 1.3rem
+        //     max-width: 1.3rem
+        //     height: 1.3rem
+        //     border: 1px solid $black
+        //     border-radius: 
+        //     &::before
+        //         content: none
+        //         width: 8px
+        //         height: 5px
+        //         border-left: 1px solid $black    
+        //         border-bottom: 1px solid $black
+        //         transform: rotate(-45deg)
+        //         position: absolute
+        //         top: 2px
+        //         left: 2px                                               
+    &-wrapper
+        position: absolute
+        left: 0
+        top: 0
+        bottom: 0
+        z-index: 2
+        width: 70%
+        height: 100%           
+        min-width: 20rem           
+        max-width: 44rem
+        transition-property: transform           
+        transition-duration: .3s            
+        transition-timing-function: ease
+        transform: translate3d(-100%,0,0)
+        overflow: auto
+        display: flex
+        flex-direction: column          
+    &-filter.active
+        right: 0
+        background: rgba(0,0,0,.25)                
+        transition-delay: 0s
+        & .category-wrapper
+            transform: translate3d(0,0,0)    
+    &-products
+        display: grid                              
+        grid-template-columns: repeat(2, 1fr)
+        gap: 1rem                                                                                                                                           
+.btn-filter
+    display: flex                                            
+@media screen and ( min-width: 1250px )
+    .category           
+        &-info
+            grid-template-columns: 100%
+            gap: 1.82vw
+            &__img
+                display: none
+            &__desc
+                gap: 3.5rem    
+        &-tabs
+            & .js-tabs__tab
+                padding: 1.5rem 2rem               
+            &__content
+                padding: 4rem                                               
+                column-count: 4                                                
+        &-filter
+            position: static
+            overflow: visible
+            z-index: 10
+            &__btns
+                position: static                
+            &__float-btn
+                display: block                                               
+        &-wrapper
+            position: relative
+            width: auto
+            height: auto
+            min-width: unset
+            max-width: none
+            transform: translate3d(0,0,0)
+            overflow: visible           
+        &-grid            
+            grid-template-columns: 28rem 1fr                                                                                                                 
+    .btn-filter
+        display: none    
+    .category-products
+        &.grid-block    
+            grid-template-columns: repeat(3, 1fr)
+            gap: 2rem                         
+@media screen and ( min-width: 1470px )
+    .category        
+        &-info, &-grid            
+            gap: 2.19%
+        &-info            
+            grid-template-columns: minmax(37.15%, 1fr) 34.96%            
+            &__img
+                display: block                                                                                                             
+        &-grid                        
+            grid-template-columns: 17.54% minmax(80.27%, 1fr)            
+    .category-products
+        &.grid-block    
+            grid-template-columns: repeat(4, 1fr)
+                                   
+            
+/*! purgecss end ignore */                
+                               
+                                         
+            
+                
+                    

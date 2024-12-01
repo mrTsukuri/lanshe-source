@@ -1,0 +1,37 @@
+extends template/main
+
+block variables
+    -var title = ''
+block content
+    main
+        section.error
+            .container
+                .contact-grid
+                    .contact-main.d-flex.flex-column.align-items-start
+                        .contact-main__heading.d-flex.flex-column
+                            .d-flex.flex-column.gap-4
+                                .fs-14.fs-lg-16.lh-1_4 Ошибка 404
+                                h1.fs-20.fs-lg-32.fw-md.mb-0 К сожалению, <br> страница не найдена
+                            p Позвоните нам или напишите в мессенджер, мы ответим на все вопросы и подберем продукт индивидуально для вас. <br> Приносим извинения за неудобства.
+                        .contact-main__feedback.d-flex.flex-column
+                            a(href="tel:88001234567").href-main.fs-20.fs-lg-32.fw-md 8 800 123-45-67
+                            .contact-main__social.d-flex
+                                a(href="#" title="Написать в Telegram").href-main.contact-main__social-item.d-flex.align-items-center
+                                    i.icon-tg.fs-32
+                                    span.fs-14.fs-lg-16 Написать <br> в Telegram                                
+                                a(href="#" title="Написать в WhatsApp").href-main.contact-main__social-item.d-flex.align-items-center
+                                    i.icon-wa.fs-32
+                                    span.fs-14.fs-lg-16 Написать <br> в WhatsApp
+                    .contact-form
+                        .questions-feedback.d-flex.flex-column.bg-grey.rounded-12
+                            .questions-feedback__desc.d-flex.flex-column
+                                .fs-14.fs-lg-16.fw-md Или оставьте номер телефона. Мы перезвоним вам в течение 15 минут и ответим на все вопросы
+                            form(name='error').questions-feedback__form.d-flex.flex-column
+                                label.main-input.main-input_white
+                                    input(type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required).w-100
+                                button.btn.btn_main Задать вопрос
+                                label.main-checkbox
+                                    input(type="checkbox" name="processing" checked)
+                                    span.main-checkbox__item.o-0_7.fs-14.fs-lg-16
+                                        i.icon-checkbox.fs-20
+                                        span Согласен на <a href='policy.html' class='text-decoration-underline pointer btn-inline'> обработку <br> персональных данных</a>

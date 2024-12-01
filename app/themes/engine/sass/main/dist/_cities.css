@@ -1,0 +1,9 @@
+.cities-search input {
+  min-width: 250px;
+  max-width: 260px;
+  height: 50px;
+}
+.cities-alphabet-item {
+  width: 25px;
+  height: 25px;
+}

@@ -1,0 +1,17 @@
+extends template/main
+
+block variables
+    -var title = ''
+block content
+    main
+        +banner
+        +catalog('Каталог', true)
+        section.about
+            .container
+                .about-block.d-flex.flex-column
+                    a(href="about.html").about-heading.position-relative.d-flex.align-items-end.rounded-12.overflow-hidden
+                        h2.fs-18.fs-lg-32.fw-md.mb-0 Lanshe — <br> это не просто бренд материалов <br> для наращивания ресниц
+                        .about-heading__img.position-absolute.w-100.h-100
+                            img(src= start+"images/about/about-img.jpg", alt="Lanshe — это не просто бренд материалов для наращивания ресниц", loading="lazy").h-100
+        +reviews
+        +questions

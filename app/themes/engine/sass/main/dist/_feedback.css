@@ -1,0 +1,15 @@
+.feedback-grid {
+  display: grid;
+  grid-template-columns: auto 40rem 1fr;
+  gap: 10rem;
+}
+.feedback-desc__top {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.feedback-desc__top p {
+  max-width: 340px;
+}
+.feedback-desc__social img {
+  width: 30px;
+}

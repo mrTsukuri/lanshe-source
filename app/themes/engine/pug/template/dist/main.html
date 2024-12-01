@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..600&display=swap" rel="stylesheet">
+    <link rel="preload" href="themes/engine/css/boots.css" as="style">
+    <link rel="preload" href="themes/engine/css/main.css" as="style">
+    <link rel="preload" href="themes/engine/css/libs.css" as="style">
+    <link rel="stylesheet" href="themes/engine/css/boots.css">
+    <link rel="stylesheet" href="themes/engine/css/main.css">
+    <link rel="stylesheet" href="themes/engine/css/libs.css">
+    <title></title>
+  </head>
+  <body class="steps-spy">
+    <header class="header">
+      <div class="header-block">
+        <div class="container">
+          <div class="header-container d-flex align-items-center justify-content-between">
+            <div class="header-logo"><img src="images/logo.svg" alt="Логотип сайта"></div>
+            <nav class="header-nav d-xl-block d-none">
+              <ul class="list-unstyled m-0 p-0 d-flex">
+                <li><a class="href-main href-line fw-sb fs-14 text-uppercase" href="#">станки</a></li>
+                <li><a class="href-main href-line fw-sb fs-14 text-uppercase" href="#">запчасти</a></li>
+                <li><a class="href-main href-line fw-sb fs-14 text-uppercase" href="#">услуги</a></li>
+                <li><a class="href-main href-line fw-sb fs-14 text-uppercase" href="#">О компании</a></li>
+                <li><a class="href-main href-line fw-sb fs-14 text-uppercase" href="#">Контакты</a></li>
+              </ul>
+            </nav><a class="href-main href-line fw-sb fs-14 text-uppercase d-none d-lg-block" href="#">Расшифровка Кодов ошибок</a>
+            <div class="header-social d-flex"><a class="href-main header-social__item" href="#" title="Написать в Telegram"><i class="icon tg"></i></a><a class="href-main header-social__item" href="#" title="Написать в WhatsApp"><i class="icon wa"></i></a>
+            </div><a class="href-main href-line fs-lg-22 fs-18 fw-bl lh-1_2" href="tel:88001234567">8 800 123-45-67</a>
+            <button class="btn btn_empty d-none d-lg-flex" data-bs-toggle="modal" data-bs-target=".modal-call"><span>Заказать звонок</span><i class="icon arrow-d"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="banner position-relative">
+        <div class="container">
+          <div class="banner-wrapper d-flex flex-column align-items-start justify-content-between position-relative">
+            <div class="banner-top">
+              <div class="banner-heading d-flex flex-column align-items-start">
+                <h1 class="lh-1_1 fw-md mb-0 text-uppercase">Продажа и ремонт <br>  станков CNC <br><span class='text-main'>по всей России</span></h1>
+                <div class="banner-heading__btns d-flex align-items-center">
+                  <button class="btn btn_main btn_bg" data-bs-toggle="modal" data-bs-target=".modal-call"><span>Сделать заказ</span><i class="icon arrow-d"></i></button><a class="fs-14 fs-lg-16 href-main fw-sb text-uppercase" href="#products">Перейти <br> в каталог</a>
+                </div>
+              </div>
+              <div class="banner-video btn_empty btn d-none d-lg-flex flex-column align-items-start justify-content-between pointer"><i class="icon play"></i>
+                <div class="fw-sb lh-1_2 text-uppercase">смотрите <br> процесс <br> ремонта <br> станка</div>
+              </div>
+            </div>
+            <div class="banner-mid">
+              <p>Мы предлагаем комплексное технологическое оснащение производств, сопровождая каждый шаг нашего сотрудничества честностью и надежностью: от выбора оборудования до его установки, послепродажного обслуживания и обучения.</p>
+            </div>
+            <div class="banner-bot d-flex">
+              <div class="banner-bot__item d-flex flex-column align-items-start"><i class="icon arrow-d"></i><span class="fw-sb text-uppercase">Станки <br> в наличии <br> и под заказ</span></div>
+              <div class="banner-bot__item d-flex flex-column align-items-start"><i class="icon arrow-d"></i><span class="fw-sb text-uppercase">Оплата <br> удобным <br> способом</span></div>
+              <div class="banner-bot__item d-flex flex-column align-items-start"><i class="icon arrow-d"></i><span class="fw-sb text-uppercase">Возможность <br> оформления <br> в лизинг и кредит</span></div>
+            </div>
+            <div class="banner-img position-absolute d-none d-lg-block">
+              <picture>
+                <source srcset="images/banner/banner-img.webp" type="image/webp"><img class="h-100" src="images/banner/banner-img.png" alt="">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="modal fade modal-call" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modalc-call">
+              <div class="modalc-top d-flex flex-column gap-20">
+                <div class="fs-lg-24 fs-18 fw-md lh-1_1 text-uppercase">Обратный звонок</div>
+                <p>Мы предлагаем комплексное технологическое оснащение производств, сопровождая каждый шаг нашего сотрудничества честностью и надёжностью: от выбора оборудования до его установки, послепродажного обслуживания и обучения.   </p>
+              </div>
+              <div class="modalc-bot">
+                <form class="modalc-form d-flex flex-column gap-10" name="modal_call">
+                  <div class="main-input">
+                    <input class="w-100" type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required>
+                  </div>
+                  <button class="btn btn_main btn_bg"><span>сделать заказ</span><i class="icon arrow-d"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-product" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modalc-product">
+              <div class="modalc-top d-flex flex-column gap-20">
+                <div class="modalc-product__img">
+                  <picture>
+                    <source srcset="images/product/3.webp" type="image/webp"><img class="h-100 mbm-darken" src="images/product/3.jpg" alt="Токарно-револьверный станок с ЧПУ по металлу TL-20F" loading="lazy">
+                  </picture>
+                </div>
+                <div class="fs-lg-24 fs-18 fw-md lh-1_1 text-uppercase">Токарно-револьверный станок с ЧПУ по металлу TL-20F</div>
+                <div class="fs-lg-16 fs-14 fw-sb lh-1_1">от  <span class="fs-lg-24 fs-18">5 514 205 ₽</span></div>
+                <div class="modalc-product__chars d-flex flex-column gap-2">
+                  <div class="modalc-product__char d-flex align-items-baseline justify-content-between"><span><span>Диаметр патрона</span></span><span><span>203 мм</span></span></div>
+                  <div class="modalc-product__char d-flex align-items-baseline justify-content-between"><span><span>Макс. обороты шпинделя</span></span><span><span>4 500 об/мин</span></span></div>
+                  <div class="modalc-product__char d-flex align-items-baseline justify-content-between"><span><span>Мощность шпинделя</span></span><span><span>15 кВт</span></span></div>
+                </div>
+                <p>Мы предлагаем комплексное технологическое оснащение производств, сопровождая каждый шаг нашего сотрудничества честностью и надёжностью: от выбора оборудования до его установки, послепродажного обслуживания и обучения.                                    </p>
+              </div>
+              <div class="modalc-bot">
+                <form class="modalc-form d-flex flex-column gap-10" name="modal_product">
+                  <div class="main-input">
+                    <input class="w-100" type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required>
+                  </div>
+                  <button class="btn btn_main btn_bg"><span>сделать заказ</span><i class="icon arrow-d"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-service" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modalc-call">
+              <div class="modalc-top d-flex flex-column gap-20">
+                <div class="fs-lg-24 fs-18 fw-md lh-1_1 text-uppercase">Техническая поддержка</div>
+                <p>Мы предлагаем комплексное технологическое оснащение производств, сопровождая каждый шаг нашего сотрудничества честностью и надёжностью: от выбора оборудования до его установки, послепродажного обслуживания и обучения.</p>
+              </div>
+              <div class="modalc-bot">
+                <form class="modalc-form d-flex flex-column gap-10" name="modal_service">
+                  <div class="main-input">
+                    <input class="w-100" type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required>
+                  </div>
+                  <button class="btn btn_main btn_bg"><span>сделать заказ</span><i class="icon arrow-d"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-success" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">           
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modalc-success d-flex align-items-center">
+              <div class="modalc-success__wrapper d-flex flex-column align-items-center text-center w-100">
+                <div class="fs-lg-24 fs-18 fw-md lh-1_1 text-uppercase">Спасибо за заявку!</div>
+                <p>Наш менеджер скоро свяжется с вами <br> и проконсультирует  по всем вопросам.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="themes/engine/js/slider.bundle.js"></script>
+    <script src="themes/engine/js/main.bundle.js"></script>
+    <script src="themes/engine/js/gallery.bundle.js"></script>
+    <script src="themes/engine/js/wizardForm.bundle.js"></script>
+  </body>
+</html>

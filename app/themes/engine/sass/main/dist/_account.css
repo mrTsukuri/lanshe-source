@@ -1,0 +1,22 @@
+.account-heading {
+  gap: 3.2rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.1);
+  margin-bottom: 2.4rem;
+}
+.account-order__block {
+  gap: 2.4rem;
+}
+
+@media screen and (min-width: 1232px) {
+  .account-heading {
+    padding-bottom: 3.2rem;
+    margin-bottom: 3.2rem;
+  }
+  .account-block {
+    max-width: 90.4rem;
+  }
+  .account-order__block {
+    gap: 3.2rem;
+  }
+}

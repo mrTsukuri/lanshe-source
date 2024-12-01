@@ -1,0 +1,30 @@
+extends template/main
+
+block variables
+    -var title = ''
+block content
+    main
+        .page-grid
+            -
+                let catBread = [
+                                {href: 'index', title: 'Главная'},
+                                {title: 'Каталог'},                            
+                            ]
+            +breadcrumbs(catBread)                                
+            .page-sections.d-flex.flex-column
+                section.catalog
+                    .container
+                        .section-heading.d-flex.align-items-center.justify-content-between
+                            h1.fs-20.fs-lg-32.fw-md.mb-0 Каталог                    
+                        .catalog-grid
+                                -
+                                    let catalogArr = [
+                                                        {img: '1', name: 'Total White Minimal form',  desc: 'Патчи для наращивания ресниц', count: '50 шт.', price: '2 600 ₽', type: 1},
+                                                        {img: '2', name: 'Total White Minimal form',  desc: 'Патчи для наращивания ресниц', count: '50 шт.', price: '2 600 ₽', type: 2},
+                                                        {img: '1', name: 'Total White Minimal form',  desc: 'Патчи для наращивания ресниц', count: '100 шт.', price: '2 600 ₽', type: 3},
+                                                        {img: '1', name: 'Total White Minimal form',  desc: 'Патчи для наращивания ресниц', count: '100 шт.', price: '2 600 ₽', type: 1},
+                                                    ]
+                                -for(let i = 1; i <= 3; i++)
+                                    each val in catalogArr                                
+                                        +product-item(val['img'], val['name'], val['desc'], val['count'], val['price'], val['type'])
+                +questions                                        

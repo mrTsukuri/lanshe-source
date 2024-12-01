@@ -1,0 +1,62 @@
+.questions
+    &-grid
+        display: grid
+        grid-template-columns: 100%
+        gap: 1.6rem
+        align-items: flex-start
+    &-container
+        gap: 3.2rem
+    &-feedback
+        gap: 1.6rem
+        padding: 2.4rem
+        position: sticky
+        top: 0
+        &__desc
+            padding-bottom: 1.6rem
+            gap: .8rem
+            border-bottom: 1px solid rgba(34, 34, 34, .1)
+        &__form
+            gap: 1.6rem
+            & input, & button
+                text-align: center
+                justify-content: center
+    &-block
+        & .content
+            & ol
+                opacity: 1
+                & li:not(:last-child)
+                    margin-bottom: 2.4rem
+                & li > ul
+                    opacity: .85
+                    & li:not(:last-child)
+                        margin-bottom: .8rem 
+@media screen and ( min-width: 1080px )
+    .questions
+        &-grid            
+            grid-template-columns: 1fr 37rem
+            gap: 3.2rem
+        &-feedback
+            gap: 2.4rem
+            padding: 3.2rem
+            &__desc    
+                padding-bottom: 2.4rem
+                gap: 1.6rem                                                      
+@media screen and ( min-width: 1400px )
+    .questions
+        &-grid                        
+            gap: 6.4rem            
+                      
+                                           
+
+
+    
+
+
+        
+                
+
+                                                 
+                                                                                       
+
+        
+    

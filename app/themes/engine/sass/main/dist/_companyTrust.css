@@ -1,0 +1,12 @@
+.companyTrust-item {
+  max-height: 110px;
+  min-height: 108px;
+}
+
+.companyTrust-item img {
+  width: auto;
+}
+
+.companies .swiper-slide {
+  max-width: 135.75px;
+}

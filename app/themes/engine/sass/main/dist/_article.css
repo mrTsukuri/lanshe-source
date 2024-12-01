@@ -1,0 +1,9 @@
+.article-item-img img {
+  max-height: 180px;
+}
+.article-item-desc {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}

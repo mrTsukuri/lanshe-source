@@ -1,0 +1,52 @@
+.documents
+    &-grid
+        display: grid
+        // grid-template-columns: 1fr 113.5rem
+        grid-template-columns: 100%
+        gap: 2rem
+    & .js-tabs__tabs-container
+        gap: 1.5rem
+    & .js-tabs__tab
+        font-size: 1.4rem
+        & span
+            opacity: .5
+        & svg
+            top: 0
+            display: inline-block
+            height: 1.8rem
+            left: -2.3rem 
+        &:hover
+            & svg
+                opacity: 0    
+        &.active
+            color: $black
+            & span
+                opacity: 1
+            & svg
+                opacity: 1
+    &-item        
+        padding: 3rem
+        &__img
+            &::before
+                content: ''
+                width: 100%
+                height: 100%
+                background: linear-gradient(to bottom, rgba(255, 255, 255, .0) 10%, $white 100%)
+                position: absolute
+                top: 0
+                left: 0
+@media screen and ( min-width: 1250px )
+    .documents
+        &-grid                      
+            grid-template-columns: 1fr 78rem
+            gap: 3rem
+        & .js-tabs__tabs-container
+            gap: 2rem
+        & .js-tabs__tab
+            font-size: 1.8rem            
+@media screen and ( min-width: 1470px )
+    .documents
+        &-grid                      
+            grid-template-columns: 1fr minmax(59.115vw, 100rem)
+            gap: 5.31917vw
+                    

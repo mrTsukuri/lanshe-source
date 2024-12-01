@@ -1,0 +1,151 @@
+.calculator
+    & .container:first-child
+        margin-bottom: 30px        
+        --baner-container: 1570px
+        max-width: calc(var(--baner-container) + 24px)
+    &-wrapper
+        display: grid
+        grid-template-columns: 100%        
+        padding: 15px
+        box-shadow: 0px 0px 0px 10px rgba(69, 148, 229, 0.10)
+    &-form
+        &-sizes, &-temperatura
+            &-inputs                
+                & .main-input
+                    border: 2px solid $main
+                    border-radius: 50rem                                                                                  
+                    & input
+                        width: 100%                                                                                              
+        &-sizes
+            &-title
+                display: none
+            &-inputs
+                display: grid
+                grid-template-columns: 100%
+                gap: 10px
+            &-inputs                
+                & > div .main-input                    
+                    & i
+                        transform: rotate(-45deg)                                          
+                & > div:first-child                        
+                    & i
+                        transform: rotate(0deg)
+                & > div:last-child                        
+                    & i
+                        transform: rotate(-90deg)                                                 
+        &-temperatura
+            &-title
+                display: none
+            &-inputs
+                display: grid
+                grid-template-columns: 100%
+                gap: 10px
+    &-img
+        & > *:not(.calculator-img-back)
+            position: relative
+            z-index: 1
+        &-back
+            top: -60px
+            right: -60px
+    &-feedback
+        display: grid
+        grid-template-columns: 100%                
+        padding: 20px
+        border-radius: 30px
+        & .section-heading-icon
+            & path
+                fill: $white 
+        &-form
+            gap: 10px           
+            & > *
+                width: 100%
+            & label, & button
+                border-radius: 50rem                        
+        &-back            
+            &-img                
+                top: 50%
+                transform: translateY(-50%)
+                right: -170px
+                width: 782px
+                aspect-ratio: 1 / 1
+        & > *:not(.calculator-feedback-back)
+            position: relative
+            z-index: 1
+@media screen and ( min-width: 576px )
+    .calculator
+        & .container:first-child
+            margin-bottom: 0px
+        &-wrapper                        
+            padding: 30px
+        &-form
+            &-sizes, &-temperatura
+                &-inputs
+                    border: 2px solid $main
+                    border-radius: 50rem
+                    & .main-input
+                        border-right-width: 1px
+                        border-left-width: 1px
+                        border-style: solid
+                        border-color: $light
+                        border-radius: 0px                                            
+                        & input
+                            width: 100%                        
+                        &:first-child
+                            border-left-width: 0px                                                    
+                        &:last-child
+                            border-right-width: 0px                                                    
+            &-sizes
+                &-title
+                    display: grid
+                &-title, &-inputs                    
+                    grid-template-columns: repeat(3, 1fr)                                                                
+                    gap: 0px
+            &-temperatura
+                &-title
+                    display: grid
+                &-title, &-inputs                    
+                    grid-template-columns: repeat(2, 1fr)
+                    gap: 0px
+        &-feedback                                    
+            padding: 30px
+            border-radius: 0px 0px 30px 30px                          
+@media screen and ( min-width: 768px )
+    .calculator
+        &-wrapper                        
+            padding: 40px
+        &-feedback                                    
+            padding: 40px
+            &-form
+                gap: 0px 
+                box-shadow: 0px 0px 0px 8px rgba(255, 255, 255, 0.10)              
+                & > *
+                    width: 50%
+                & label 
+                    border-radius: 50px 0 0 50px
+                & button
+                    border-radius: 0 50px 50px 0   
+@media screen and ( min-width: 992px )
+    .calculator
+        &-wrapper
+            display: grid
+            grid-template-columns: minmax(490px, 1fr) 1fr
+            gap: 20px
+        &-feedback            
+            grid-template-columns: 610px 1fr
+            gap: 30px                                           
+@media screen and ( min-width: 1200px )
+    .calculator
+        &-wrapper
+            display: grid
+            grid-template-columns: 570px 1fr
+            gap: 40px                                         
+@media screen and ( min-width: 1460px )
+    .calculator
+        &-wrapper            
+            gap: 80px
+            padding: 80px
+        &-feedback            
+            padding: 80px    
+                         
+                
+            

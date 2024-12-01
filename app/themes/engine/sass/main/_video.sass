@@ -1,0 +1,35 @@
+.video 
+    & h2
+        & img
+            width: auto
+            height: 5rem
+    &-grid
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(auto, 70vw))
+        grid-auto-flow: column
+        overflow: auto
+        gap: 2rem
+    &-item
+        width: 35rem
+        max-width: 70vw
+        &__img
+            height: 20rem
+            & picture
+                & img
+                    height: 100%
+        &__icon
+            top: 2rem 
+            right: 2rem
+            & img
+                width: auto
+                height: 4rem
+@media screen and ( min-width: 1250px )
+    .video    
+        &-grid  
+            grid-template-columns: repeat(3, 1fr)                      
+            gap: 3.5rem
+        &-item
+            width: auto
+            max-width: unset
+            &__img
+                height: 30rem            

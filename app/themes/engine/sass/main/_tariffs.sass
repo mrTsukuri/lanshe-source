@@ -1,0 +1,60 @@
+.tariffs
+    &-wrapper
+        border: 1px solid rgba(36, 38, 51, 0.05)
+    &-table
+        width: 100%        
+        & th, & td
+            padding: 15px            
+            outline: 1px solid rgba(36, 38, 51, 0.05)
+            font-size: 14px
+            text-align: center
+            white-space: nowrap
+            & a
+                position: relative
+                &::after
+                    content: ''
+                    width: 0%
+                    height: 2px
+                    position: absolute
+                    left: 0
+                    bottom: -3px
+                    background-color: $black
+                    transition: .3s
+            & a:hover
+                color: $black
+                &::after
+                    width: 100%
+        & th
+            font-weight: bold
+        & tbody
+            & td, & th
+                background-color: $white
+            & tr:hover
+                & td, & th
+                    background-color: #F2E6AA    
+        & thead
+            & td, & th
+                background-color: #EDEEF2
+        & thead, tbody
+            & td:first-child, & th:first-child
+                min-width: 200px
+                max-width: 200px
+                text-align: start
+                white-space: normal                      
+        & thead, tbody
+            & td:last-child, & th:last-child
+                min-width: 140px
+                max-width: 140px
+                text-align: end
+        & thead:first-child, & tbody:first-child
+            & tr:first-child
+                & td:first-child, & th:first-child
+                    border-top-left-radius: 20px                           
+                & td:last-child, & th:last-child
+                    border-top-right-radius: 20px                           
+        & thead:last-child, & tbody:last-child
+            & tr:last-child
+                & td:first-child, & th:first-child
+                    border-bottom-left-radius: 20px                           
+                & td:last-child, & th:last-child
+                    border-bottom-right-radius: 20px                           

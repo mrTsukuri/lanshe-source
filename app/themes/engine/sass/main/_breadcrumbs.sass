@@ -1,0 +1,47 @@
+.breadcrumbs             
+    &-nav
+        gap: .4rem
+        flex-direction: row       
+        &-item            
+            display: flex
+            flex-direction: row
+            align-items: center
+            line-height: 1
+            font-size: 1.4rem
+            gap: .4rem
+            text-wrap: wrap
+            word-break: break-word
+            & i
+                transform: rotate(-90deg)           
+        &-item:not(.breadcrumbs-nav-item-disabled)
+            opacity: .85
+            &:hover
+                opacity: 1            
+@media screen and ( min-width: 1080px )
+    .breadcrumbs 
+        position: sticky
+        top: 10rem     
+        align-items: flex-start 
+        &-nav
+            flex-direction: column                    
+            &-item
+                flex-direction: column
+                align-items: flex-start
+                font-size: 1.4rem
+                & i
+                    transform: rotate(0)
+        & .container
+            max-width: unset
+            margin: 0
+            padding: 0                                 
+@media screen and ( min-width: 1400px )
+    .breadcrumbs 
+        position: sticky
+        top: 10rem     
+        align-items: flex-start 
+        &-nav
+            flex-direction: column                    
+            &-item
+                flex-direction: column
+                align-items: flex-start                                
+                                                         

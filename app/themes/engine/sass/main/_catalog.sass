@@ -1,0 +1,43 @@
+.catalog, .reviews
+    &-grid
+        display: grid
+        grid-template-columns: 100%
+.catalog
+    &-grid                
+        gap: 3.2rem
+.reviews
+    &-grid
+        gap: 1.6rem       
+@media screen and ( min-width: 1080px )
+    .catalog
+        &-grid
+            grid-template-columns: repeat(3, 1fr)
+    .reviews
+        &-grid
+            grid-template-columns: repeat(2, 1fr)
+            gap: 3.2rem             
+@media screen and ( min-width: 1400px )
+    .catalog
+        &-grid
+            grid-template-columns: repeat(4, 1fr)
+    .reviews
+        &-grid
+            grid-template-columns: repeat(2, 1fr)
+            gap: 3.2rem             
+
+              
+                                          
+
+
+
+    
+
+                
+
+                    
+                    
+
+
+                        
+                    
+                    

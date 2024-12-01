@@ -1,0 +1,17 @@
+.compare-table__row {
+  display: flex;
+  padding: 2rem 0 1.5rem 0;
+  gap: 1rem;
+}
+.compare-table__row .visible-in-active {
+  visibility: hidden;
+}
+.compare-table__row:not(:last-of-type) {
+  border-bottom: 1px solid rgba(34, 34, 34, 0.1);
+}
+.compare-item .product-item__img {
+  height: 17rem;
+}
+.compare .swiper-slide.active .visible-in-active {
+  visibility: visible;
+}

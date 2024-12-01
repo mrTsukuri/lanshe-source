@@ -1,0 +1,50 @@
+.about
+    &-block, &-content
+        gap: 1.6rem
+    &-heading
+        padding: 1.6rem
+        background-color: #eae5e2
+        height: 20rem
+        & h1, & h2
+            position: relative
+            z-index: 1
+            max-width: 60%
+        &__img
+            display: block
+            top: 0
+            left: 0
+            & img
+                object-position: top
+                height: 150% !important
+            // display: none
+    &-content
+        & > :not(:last-child)
+            padding-bottom: 1.6rem                    
+@media screen and ( min-width: 1080px )
+    .about
+        &-block
+            gap: 3.2rem
+        &-heading
+            padding: 3.2rem            
+            height: 40rem                                  
+        &-content
+            gap: 3rem
+            & > :not(:last-child)
+                padding-bottom: 3rem
+                border-bottom: 1px solid rgba(34, 34, 34, .1)                               
+            
+            
+                    
+
+
+
+
+                 
+                                           
+            
+
+
+                    
+
+                       
+

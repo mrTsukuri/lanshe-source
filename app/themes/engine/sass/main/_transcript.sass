@@ -1,0 +1,33 @@
+.transcript
+    --tnsMG: 1rem   
+    &-wrapper
+        padding: calc(var(--tnsMG) * 1.5)
+        gap: 0        
+    &-block
+        gap: calc(var(--tnsMG) * 1.5)
+        flex-direction: column
+    &-form
+        flex-direction: column
+        flex: 1 0 0%
+        gap: var(--tnsMG)
+        & > *
+            flex: 0 0 calc( 50% - 1rem )
+        & button.spoiler-btn.active
+            & i
+                transform: unset
+    &-answer
+        margin-top: calc(var(--tnsMG) * 2)
+        padding-top: calc(var(--tnsMG) * 2)
+        border-top: 2px solid $white
+@media screen and ( min-width: 992px )
+    .transcript
+        --tnsMG: 2rem               
+        &-form   
+            flex-direction: row    
+@media screen and ( min-width: 1400px )
+    .transcript
+        &-block
+            flex-direction: row
+            align-items: center
+        &-form   
+            flex: 0 0 53rem    

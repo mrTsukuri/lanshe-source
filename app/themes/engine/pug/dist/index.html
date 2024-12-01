@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..600&display=swap" rel="stylesheet">
+    <link rel="preload" href="themes/engine/css/boots.css" as="style">
+    <link rel="preload" href="themes/engine/css/main.css" as="style">
+    <link rel="preload" href="themes/engine/css/libs.css" as="style">
+    <link rel="stylesheet" href="themes/engine/css/boots.css">
+    <link rel="stylesheet" href="themes/engine/css/main.css">
+    <link rel="stylesheet" href="themes/engine/css/libs.css">
+    <title></title>
+  </head>
+  <body class="steps-spy">
+    <header class="header">
+      <div class="header-container">
+        <div class="header-wrapepr d-flex align-items-center justify-content-between">
+          <div class="header-left d-flex align-items-center">
+            <div class="header-logo__wrapper"><a class="header-logo" href="index.html"><img class="w-auto" src="images/logo.svg" alt="Логотип сайта"></a></div>
+            <nav class="header-nav d-lg-block d-none">
+              <ul class="list-unstyled m-0 p-0 d-flex">
+                <li><a class="fs-14" href="#">О Бренде</a></li>
+                <li><a class="fs-14" href="#">Как купить</a></li>
+                <li><a class="fs-14" href="#">Контакты</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header-right d-flex align-items-center"><a class="btn btn_white fs-14 d-none d-lg-block" href="#">Каталог </a>
+            <div class="header-hrefs d-flex"><a class="header-cart d-none d-lg-flex align-items-center" href="cart.html"><i class="icon-local_mall fs-30"></i><span class="fs-14">8</span></a><a class="header-login d-none d-lg-flex align-items-center" href="#"><i class="icon-login fs-30">  </i><span class="fs-14">Войти</span></a><a class="header-menu d-flex d-lg-none align-items-center" href="#mobile-menu"><i class="icon-menu fs-32"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="banner">       
+        <div class="slider-banner swiper h-100 position-relative">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide d-flex">                   
+              <div class="banner-block d-flex h-100 w-100 position-relative overflow-hidden">
+                <div class="container">
+                  <div class="banner-wrapper d-flex flex-column align-items-start">
+                    <h2 class="fs-lg-40 fs-24 fw-md mb-0">Cкидка 20% на средства <br> для ухода за кожей</h2>
+                    <button class="btn btn_main">Сделать заказ</button>
+                  </div>
+                </div>
+                <div class="banner-img position-absolute"><img class="w-auto" src="images/banner/banner-img.jpg" alt=""></div>
+              </div>
+            </div>
+            <div class="swiper-slide d-flex h-100">                   
+              <div class="banner-block d-flex h-100 w-100 position-relative overflow-hidden">
+                <div class="container">
+                  <div class="banner-wrapper d-flex flex-column align-items-start">
+                    <h2 class="fs-lg-40 fs-24 fw-md">Cкидка 20% на средства <br> для ухода за кожей</h2>
+                    <button class="btn btn_main">Сделать заказ</button>
+                  </div>
+                </div>
+                <div class="banner-img position-absolute"><img class="w-auto" src="images/banner/banner-img.jpg" alt=""></div>
+              </div>
+            </div>
+            <div class="swiper-slide d-flex h-100">                   
+              <div class="banner-block d-flex h-100 w-100 position-relative overflow-hidden">
+                <div class="container">
+                  <div class="banner-wrapper d-flex flex-column align-items-start">
+                    <h2 class="fs-lg-40 fs-24 fw-md">Cкидка 20% на средства <br> для ухода за кожей</h2>
+                    <button class="btn btn_main">Сделать заказ</button>
+                  </div>
+                </div>
+                <div class="banner-img position-absolute"><img class="w-auto" src="images/banner/banner-img.jpg" alt=""></div>
+              </div>
+            </div>
+            <div class="swiper-slide d-flex h-100">                   
+              <div class="banner-block d-flex h-100 w-100 position-relative overflow-hidden">
+                <div class="container">
+                  <div class="banner-wrapper d-flex flex-column align-items-start">
+                    <h2 class="fs-lg-40 fs-24 fw-md">Cкидка 20% на средства <br> для ухода за кожей</h2>
+                    <button class="btn btn_main">Сделать заказ</button>
+                  </div>
+                </div>
+                <div class="banner-img position-absolute"><img class="w-auto" src="images/banner/banner-img.jpg" alt=""></div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-navigation__banner position-absolute d-flex align-items-center justify-content-between">
+            <div class="slider-prev"><i class="icon-arrow fs-32"></i></div>
+            <div class="slider-pagination">                   </div>
+            <div class="slider-next"><i class="icon-arrow fs-32"></i></div>
+          </div>
+        </div>
+      </section>
+      <section class="catalog">
+        <div class="container">
+          <div class="section-heading d-flex align-items-center justify-content-between">
+            <h2 class="fs-20 fs-xl-32 fw-md mb-0">Каталог</h2>
+            <div class="section-nav d-flex align-items-center justify-content-between"><a class="href-main href-line ms-auto ms-lg-0" href="catalog.html">Все товары</a>
+              <div class="slider-navigation__4 d-lg-flex d-none gap-24 ms-auto">
+                <div class="slider-prev"><i class="icon-arrow fs-32">                       </i></div>
+                <div class="slider-next"><i class="icon-arrow fs-32"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-4 swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide h-auto d-flex">
+                <div class="product-item d-flex flex-column w-100">
+                  <div class="product-item__wrapper rounded-12 overflow-hidden position-relative">           <a class="product-item__img d-block w-100" href="product.html"><img src="images/catalog/1.jpg" alt="Total White Minimal form"></a>
+                    <button class="btn-icon rounded-circle" title="Добавить в корзину"><i class="icon-local_mall fs-24"></i></button>
+                  </div>
+                  <div class="product-item__info d-flex flex-column">
+                    <div class="product-item__desc d-flex flex-column"><a class="fs-14 fs-xl-16 fw-sb" href="product.html">Total White Minimal form</a>
+                      <div class="d-flex flex-column lh-1_4 fs-14 o-0_7"><span>Патчи для наращивания ресниц</span><span>50 шт.</span></div>
+                    </div>
+                    <div class="product-item__price fs-14 fs-xl-16 fw-sb lh-1_4">2 600 ₽</div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide h-auto d-flex">
+                <div class="product-item d-flex flex-column w-100">
+                  <div class="product-item__wrapper rounded-12 overflow-hidden position-relative">           <a class="product-item__img d-block w-100" href="product.html"><img src="images/catalog/2.jpg" alt="Total White Minimal form"></a><a class="btn-icon rounded-circle active" href="#" title="Товар в корзине"><i class="icon-check fs-24"></i></a>
+                  </div>
+                  <div class="product-item__info d-flex flex-column">
+                    <div class="product-item__desc d-flex flex-column"><a class="fs-14 fs-xl-16 fw-sb" href="product.html">Total White Minimal form</a>
+                      <div class="d-flex flex-column lh-1_4 fs-14 o-0_7"><span>Патчи для наращивания ресниц</span><span>50 шт.</span></div>
+                    </div>
+                    <div class="product-item__price fs-14 fs-xl-16 fw-sb lh-1_4">2 600 ₽</div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide h-auto d-flex">
+                <div class="product-item d-flex flex-column w-100">
+                  <div class="product-item__wrapper rounded-12 overflow-hidden position-relative">           <a class="product-item__img d-block w-100" href="product.html"><img src="images/catalog/1.jpg" alt="Total White Minimal form"></a><a class="btn-icon rounded-pill pe-12" href="#" title="Добавить в корзину"><i class="icon-local_mall fs-24"></i><span class="fs-14">Под заказ</span></a>
+                  </div>
+                  <div class="product-item__info d-flex flex-column">
+                    <div class="product-item__desc d-flex flex-column"><a class="fs-14 fs-xl-16 fw-sb" href="product.html">Total White Minimal form</a>
+                      <div class="d-flex flex-column lh-1_4 fs-14 o-0_7"><span>Патчи для наращивания ресниц</span><span>100 шт.</span></div>
+                    </div>
+                    <div class="product-item__price fs-14 fs-xl-16 fw-sb lh-1_4">2 600 ₽</div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide h-auto d-flex">
+                <div class="product-item d-flex flex-column w-100">
+                  <div class="product-item__wrapper rounded-12 overflow-hidden position-relative">           <a class="product-item__img d-block w-100" href="product.html"><img src="images/catalog/1.jpg" alt="Total White Minimal form"></a>
+                    <button class="btn-icon rounded-circle" title="Добавить в корзину"><i class="icon-local_mall fs-24"></i></button>
+                  </div>
+                  <div class="product-item__info d-flex flex-column">
+                    <div class="product-item__desc d-flex flex-column"><a class="fs-14 fs-xl-16 fw-sb" href="product.html">Total White Minimal form</a>
+                      <div class="d-flex flex-column lh-1_4 fs-14 o-0_7"><span>Патчи для наращивания ресниц</span><span>100 шт.</span></div>
+                    </div>
+                    <div class="product-item__price fs-14 fs-xl-16 fw-sb lh-1_4">2 600 ₽</div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide h-auto d-flex">
+                <div class="product-item d-flex flex-column w-100">
+                  <div class="product-item__wrapper rounded-12 overflow-hidden position-relative">           <a class="product-item__img d-block w-100" href="product.html"><img src="images/catalog/1.jpg" alt="Total White Minimal form"></a>
+                    <button class="btn-icon rounded-circle" title="Добавить в корзину"><i class="icon-local_mall fs-24"></i></button>
+                  </div>
+                  <div class="product-item__info d-flex flex-column">
+                    <div class="product-item__desc d-flex flex-column"><a class="fs-14 fs-xl-16 fw-sb" href="product.html">Total White Minimal form</a>
+                      <div class="d-flex flex-column lh-1_4 fs-14 o-0_7"><span>Патчи для наращивания ресниц</span><span>50 шт.</span></div>
+                    </div>
+                    <div class="product-item__price fs-14 fs-xl-16 fw-sb lh-1_4">2 600 ₽</div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide h-auto d-flex">
+                <div class="product-item d-flex flex-column w-100">
+                  <div class="product-item__wrapper rounded-12 overflow-hidden position-relative">           <a class="product-item__img d-block w-100" href="product.html"><img src="images/catalog/2.jpg" alt="Total White Minimal form"></a><a class="btn-icon rounded-circle active" href="#" title="Товар в корзине"><i class="icon-check fs-24"></i></a>
+                  </div>
+                  <div class="product-item__info d-flex flex-column">
+                    <div class="product-item__desc d-flex flex-column"><a class="fs-14 fs-xl-16 fw-sb" href="product.html">Total White Minimal form</a>
+                      <div class="d-flex flex-column lh-1_4 fs-14 o-0_7"><span>Патчи для наращивания ресниц</span><span>50 шт.</span></div>
+                    </div>
+                    <div class="product-item__price fs-14 fs-xl-16 fw-sb lh-1_4">2 600 ₽</div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide h-auto d-flex">
+                <div class="product-item d-flex flex-column w-100">
+                  <div class="product-item__wrapper rounded-12 overflow-hidden position-relative">           <a class="product-item__img d-block w-100" href="product.html"><img src="images/catalog/1.jpg" alt="Total White Minimal form"></a><a class="btn-icon rounded-pill pe-12" href="#" title="Добавить в корзину"><i class="icon-local_mall fs-24"></i><span class="fs-14">Под заказ</span></a>
+                  </div>
+                  <div class="product-item__info d-flex flex-column">
+                    <div class="product-item__desc d-flex flex-column"><a class="fs-14 fs-xl-16 fw-sb" href="product.html">Total White Minimal form</a>
+                      <div class="d-flex flex-column lh-1_4 fs-14 o-0_7"><span>Патчи для наращивания ресниц</span><span>100 шт.</span></div>
+                    </div>
+                    <div class="product-item__price fs-14 fs-xl-16 fw-sb lh-1_4">2 600 ₽</div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide h-auto d-flex">
+                <div class="product-item d-flex flex-column w-100">
+                  <div class="product-item__wrapper rounded-12 overflow-hidden position-relative">           <a class="product-item__img d-block w-100" href="product.html"><img src="images/catalog/1.jpg" alt="Total White Minimal form"></a>
+                    <button class="btn-icon rounded-circle" title="Добавить в корзину"><i class="icon-local_mall fs-24"></i></button>
+                  </div>
+                  <div class="product-item__info d-flex flex-column">
+                    <div class="product-item__desc d-flex flex-column"><a class="fs-14 fs-xl-16 fw-sb" href="product.html">Total White Minimal form</a>
+                      <div class="d-flex flex-column lh-1_4 fs-14 o-0_7"><span>Патчи для наращивания ресниц</span><span>100 шт.</span></div>
+                    </div>
+                    <div class="product-item__price fs-14 fs-xl-16 fw-sb lh-1_4">2 600 ₽</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about">
+        <div class="container">
+          <div class="about-block d-flex flex-column"><a class="about-heading position-relative d-flex align-items-end rounded-12 overflow-hidden" href="about.html">
+              <h2 class="fs-18 fs-lg-32 fw-md mb-0">Lanshe — <br> это не просто бренд материалов <br> для наращивания ресниц</h2>
+              <div class="about-heading__img position-absolute w-100 h-100"><img class="h-100" src="images/about/about-img.jpg" alt="Lanshe — это не просто бренд материалов для наращивания ресниц" loading="lazy"></div></a></div>
+        </div>
+      </section>
+      <section class="reviews">
+        <div class="container">
+          <div class="section-heading d-flex align-items-center justify-content-between">
+            <h2 class="fs-20 fs-xl-32 fw-md mb-0">Отзывы</h2>
+            <div class="section-nav d-flex align-items-center justify-content-between"><a class="href-main href-line ms-auto ms-lg-0" href="#">Все отзывы</a>
+              <div class="slider-navigation__2 d-lg-flex d-none gap-24 ms-auto">
+                <div class="slider-prev"><i class="icon-arrow fs-32">                       </i></div>
+                <div class="slider-next"><i class="icon-arrow fs-32"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-2 swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide h-auto d-flex">
+                <div class="reviews-item d-flex flex-column bg-grey flex-grow-1 rounded-12">
+                  <div class="reviews-item__heading d-flex align-items-center">
+                    <div class="reviews-item__ava d-flex"><i class="fs-40 icon-face_girl"></i></div>
+                    <div class="d-flex flex-column align-items-start">
+                      <div class="fs-14 fs-xl-16 fw-md">Акулина Волкова</div>
+                      <div class="fs-14 fs-xl-16 o-0_7">г. Чебоксары</div>
+                    </div>
+                  </div>
+                  <div class="reviews-item__text flex-grow-1">
+                    <p>Мы верим, что каждый человек уникален, поэтому наша продукция разрабатывается с учётом индивидуальных потребностей.</p>
+                  </div>
+                  <div class="reviews-item__gallery d-flex flex-wrap">
+                    <div class="reviews-item__img pointer rounded-12 overflow-hidden" data-fancybox data-src="images/reviews/1_org.jpg"><img class="h-100" src="images/reviews/1.jpg" alt=""></div>
+                    <div class="reviews-item__img pointer rounded-12 overflow-hidden" data-fancybox data-src="images/reviews/2_org.jpg"><img class="h-100" src="images/reviews/2.jpg" alt=""></div>
+                    <div class="reviews-item__img pointer rounded-12 overflow-hidden" data-fancybox data-src="images/reviews/3_org.jpg"><img class="h-100" src="images/reviews/3.jpg" alt=""></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide h-auto d-flex">
+                <div class="reviews-item d-flex flex-column bg-grey flex-grow-1 rounded-12">
+                  <div class="reviews-item__heading d-flex align-items-center">
+                    <div class="reviews-item__ava d-flex"><i class="fs-40 icon-face_boy"></i></div>
+                    <div class="d-flex flex-column align-items-start">
+                      <div class="fs-14 fs-xl-16 fw-md">Валентин Кзоло</div>
+                      <div class="fs-14 fs-xl-16 o-0_7">г. Чебоксары</div>
+                    </div>
+                  </div>
+                  <div class="reviews-item__text flex-grow-1">
+                    <p>Преимущества наших патчей в том, что они изготовлены из материалов высочайшего качества, признанных медицински безопасными. Патчи обеспечивают безупречный результат в процессе наращивания ресниц за счет липкого и влажного гидрогеля, который не оставляет раздражения на коже.</p>
+                  </div>
+                  <div class="reviews-item__gallery d-flex flex-wrap">
+                    <div class="reviews-item__img pointer rounded-12 overflow-hidden" data-fancybox data-src="images/reviews/1_org.jpg"><img class="h-100" src="images/reviews/1.jpg" alt=""></div>
+                    <div class="reviews-item__img pointer rounded-12 overflow-hidden" data-fancybox data-src="images/reviews/2_org.jpg"><img class="h-100" src="images/reviews/2.jpg" alt=""></div>
+                    <div class="reviews-item__img pointer rounded-12 overflow-hidden" data-fancybox data-src="images/reviews/3_org.jpg"><img class="h-100" src="images/reviews/3.jpg" alt=""></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide h-auto d-flex">
+                <div class="reviews-item d-flex flex-column bg-grey flex-grow-1 rounded-12">
+                  <div class="reviews-item__heading d-flex align-items-center">
+                    <div class="reviews-item__ava d-flex"><i class="fs-40 icon-face_girl"></i></div>
+                    <div class="d-flex flex-column align-items-start">
+                      <div class="fs-14 fs-xl-16 fw-md">Акулина Волкова</div>
+                      <div class="fs-14 fs-xl-16 o-0_7">г. Чебоксары</div>
+                    </div>
+                  </div>
+                  <div class="reviews-item__text flex-grow-1">
+                    <p>Мы верим, что каждый человек уникален, поэтому наша продукция разрабатывается с учётом индивидуальных потребностей.</p>
+                  </div>
+                  <div class="reviews-item__gallery d-flex flex-wrap">
+                    <div class="reviews-item__img pointer rounded-12 overflow-hidden" data-fancybox data-src="images/reviews/1_org.jpg"><img class="h-100" src="images/reviews/1.jpg" alt=""></div>
+                    <div class="reviews-item__img pointer rounded-12 overflow-hidden" data-fancybox data-src="images/reviews/2_org.jpg"><img class="h-100" src="images/reviews/2.jpg" alt=""></div>
+                    <div class="reviews-item__img pointer rounded-12 overflow-hidden" data-fancybox data-src="images/reviews/3_org.jpg"><img class="h-100" src="images/reviews/3.jpg" alt=""></div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide h-auto d-flex">
+                <div class="reviews-item d-flex flex-column bg-grey flex-grow-1 rounded-12">
+                  <div class="reviews-item__heading d-flex align-items-center">
+                    <div class="reviews-item__ava d-flex"><i class="fs-40 icon-face_boy"></i></div>
+                    <div class="d-flex flex-column align-items-start">
+                      <div class="fs-14 fs-xl-16 fw-md">Валентин Кзоло</div>
+                      <div class="fs-14 fs-xl-16 o-0_7">г. Чебоксары</div>
+                    </div>
+                  </div>
+                  <div class="reviews-item__text flex-grow-1">
+                    <p>Преимущества наших патчей в том, что они изготовлены из материалов высочайшего качества, признанных медицински безопасными. Патчи обеспечивают безупречный результат в процессе наращивания ресниц за счет липкого и влажного гидрогеля, который не оставляет раздражения на коже.</p>
+                  </div>
+                  <div class="reviews-item__gallery d-flex flex-wrap">
+                    <div class="reviews-item__img pointer rounded-12 overflow-hidden" data-fancybox data-src="images/reviews/1_org.jpg"><img class="h-100" src="images/reviews/1.jpg" alt=""></div>
+                    <div class="reviews-item__img pointer rounded-12 overflow-hidden" data-fancybox data-src="images/reviews/2_org.jpg"><img class="h-100" src="images/reviews/2.jpg" alt=""></div>
+                    <div class="reviews-item__img pointer rounded-12 overflow-hidden" data-fancybox data-src="images/reviews/3_org.jpg"><img class="h-100" src="images/reviews/3.jpg" alt=""></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="questions">
+        <div class="container">           
+          <div class="questions-grid">
+            <div class="questions-container d-flex flex-column">
+              <h2 class="fs-20 fs-xl-32 fw-md mb-0">Возникли вопросы? <br> Отвечаем на самые частые:</h2>
+              <div class="questions-block d-flex flex-column">
+                <div class="spoiler spoiler-item">
+                  <div class="spoiler-btn d-flex align-items-center justify-content-between">
+                    <div class="fs-14 fs-xl-16 fw-md lh-1_4">Возврат товара</div>
+                    <div class="spoiler-item-icon"></div>
+                  </div>
+                  <div class="spoiler-block">
+                    <div class="content">
+                      <ol>
+                        <li>В соответствии с законодательством РФ парфюмерно-косметические товары надлежащего качества не подлежат обмену или возврату.</li>
+                        <li>Возврат парфюмерно-косметических средств и вспомогательныхкосметических товаров производится только:
+                          <ul>
+                            <li>При наличии производственного брака; </li>
+                            <li>Товар не был в употреблении; </li>
+                            <li>При наличии товарного чека или кассового чека  <br> (иной документ, подтверждающий оплату товара);</li>
+                            <li>Сохранены его товарный вид и потребительские свойства, <br> пломбы, фабричные ярлыки.</li>
+                          </ul>
+                        </li>
+                        <li> Покупатель вправе отказаться от заказанного товара, подлежащего возврату в соответствии с действующим законодательством РФ, в любое время до его получения, а после получения товара — в течение 7 дней, не считая дня покупки. Для этого достаточно написать нам в <a href='#'>Telegram</a>, <a href='#'>WhatsApp</a> или на электронную почту <a href='#'>lanshe.professional@gmail.com</a></li>
+                        <li>Возврат денежных средств покупателю осуществляется следующими способами:
+                          <ul>
+                            <li>При оплате банковской картой возврат денежных средств осуществляется <br> на банковскую карту покупателя, указанную в заказе;</li>
+                            <li>Срок перечисления денежных средств составляет 10 дней. Срок зачисления денежных средств на банковский счет покупателя зависит от внутреннего регламента банка-получателя.</li>
+                          </ul>
+                        </li>
+                        <li>Ответственность за сохранность товара и его упаковки до его возврата продавцу лежит на покупателе.</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+                <div class="spoiler spoiler-item">
+                  <div class="spoiler-btn d-flex align-items-center justify-content-between">
+                    <div class="fs-14 fs-xl-16 fw-md lh-1_4">Доставка товара</div>
+                    <div class="spoiler-item-icon"></div>
+                  </div>
+                  <div class="spoiler-block">
+                    <div class="content">
+                      <ol>
+                        <li>Стоимость доставки
+                          <p>Стоимость доставки зависит от выбранного способа доставки и рассчитывается индивидуально при оформлении заказа.</p>
+                        </li>
+                        <li><strong>БЕСПЛАТНАЯ доставка</strong> заказов в пределах РФ доступна при сумме заказа от 4000 рублей службами доставки СДЭК, Почта России до пунктов самовывоза.  </li>
+                        <li>Изменение адреса доставки и номера телефона получател
+                          <ul>
+                            <li>Если вы хотите изменить адрес курьерской доставки или телефон получателя, обратитесь в службу поддержки клиентов в Telegram, WhatsApp или на электронную почту lanshe.professional@gmail.com</li>
+                          </ul>
+                        </li>
+                        <li>Самовывоз в г. Санкт-Петербург по адресу: ул. .............. Самовывоз интернет-заказов возможен на следующий день после даты оформления. Забирать заказы можно после 19:00.</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+                <div class="spoiler spoiler-item">
+                  <div class="spoiler-btn d-flex align-items-center justify-content-between">
+                    <div class="fs-14 fs-xl-16 fw-md lh-1_4">Какие преимущества продукции бренда Lanshe?</div>
+                    <div class="spoiler-item-icon"></div>
+                  </div>
+                  <div class="spoiler-block">
+                    <div class="content">
+                      <p>Наша продукция отличается высоким качеством, безопасностью, долговечностью, удобством использования и доступной ценой. Мы постоянно совершенствуем наши продукты, чтобы предлагать лучшую продукцию для мастеров по наращиванию ресниц.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="spoiler spoiler-item">
+                  <div class="spoiler-btn d-flex align-items-center justify-content-between">
+                    <div class="fs-14 fs-xl-16 fw-md lh-1_4">Какие преимущества использования продукции Lanshe для мастеров? </div>
+                    <div class="spoiler-item-icon"></div>
+                  </div>
+                  <div class="spoiler-block">
+                    <div class="content">
+                      <p>Использование продукции Lanshe обеспечивает: высокое качество и долговечность работы, комфортные условия для клиента, уменьшает время процедуры, минимизирует риск осложнений, повышает уровень доверия клиентов.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="spoiler spoiler-item">
+                  <div class="spoiler-btn d-flex align-items-center justify-content-between">
+                    <div class="fs-14 fs-xl-16 fw-md lh-1_4">Является ли продукция Lanshe безопасной?</div>
+                    <div class="spoiler-item-icon"></div>
+                  </div>
+                  <div class="spoiler-block">
+                    <div class="content">
+                      <p>Продукция Lanshe разработана с учетом всех стандартов безопасности и качества. Она гипоаллергенна, не содержит вредных химических веществ и прошла дерматологические испытания.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="spoiler spoiler-item">
+                  <div class="spoiler-btn d-flex align-items-center justify-content-between">
+                    <div class="fs-14 fs-xl-16 fw-md lh-1_4">Есть ли у Lanshe сертификаты качества?</div>
+                    <div class="spoiler-item-icon"></div>
+                  </div>
+                  <div class="spoiler-block">
+                    <div class="content">
+                      <p>Да, продукция Lanshe имеет все необходимые сертификаты качества, подтверждающие соответствие международным стандартам.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="questions-feedback d-flex flex-column bg-grey rounded-12">
+              <div class="questions-feedback__desc d-flex flex-column">
+                <div class="fs-14 fs-xl-16 fw-md">Не нашли ответ на свой вопрос?</div>
+                <p class="o-0_7">Оставьте номер телефона, мы перезвоним вам в течение 15 минут и ответим на все вопросы</p>
+              </div>
+              <form class="questions-feedback__form d-flex flex-column" name="question">
+                <label class="main-input main-input_white">
+                  <input class="w-100" type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required>
+                </label>
+                <button class="btn btn_main">Задать вопрос</button>
+                <label class="main-checkbox">
+                  <input type="checkbox" name="processing"><span class="main-checkbox__item o-0_7 fs-14 fs-xl-16"><i class="icon-checkbox fs-20"></i><span>Согласен на <span class='text-decoration-underline pointer btn-inline'> обработку <br> персональных данных</span></span></span>
+                </label>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="modal fade modal-call" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modalc-call">
+              <div class="modalc-top d-flex flex-column gap-20">
+                <div class="fs-lg-24 fs-18 fw-md lh-1_1 text-uppercase">Обратный звонок</div>
+                <p>Мы предлагаем комплексное технологическое оснащение производств, сопровождая каждый шаг нашего сотрудничества честностью и надёжностью: от выбора оборудования до его установки, послепродажного обслуживания и обучения.   </p>
+              </div>
+              <div class="modalc-bot">
+                <form class="modalc-form d-flex flex-column gap-10" name="modal_call">
+                  <div class="main-input">
+                    <input class="w-100" type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required>
+                  </div>
+                  <button class="btn btn_main btn_bg"><span>сделать заказ</span><i class="icon arrow-d"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-product" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modalc-product">
+              <div class="modalc-top d-flex flex-column gap-20">
+                <div class="modalc-product__img">
+                  <picture>
+                    <source srcset="images/product/3.webp" type="image/webp"><img class="h-100 mbm-darken" src="images/product/3.jpg" alt="Токарно-револьверный станок с ЧПУ по металлу TL-20F" loading="lazy">
+                  </picture>
+                </div>
+                <div class="fs-lg-24 fs-18 fw-md lh-1_1 text-uppercase">Токарно-револьверный станок с ЧПУ по металлу TL-20F</div>
+                <div class="fs-lg-16 fs-14 fw-sb lh-1_1">от  <span class="fs-lg-24 fs-18">5 514 205 ₽</span></div>
+                <div class="modalc-product__chars d-flex flex-column gap-2">
+                  <div class="modalc-product__char d-flex align-items-baseline justify-content-between"><span><span>Диаметр патрона</span></span><span><span>203 мм</span></span></div>
+                  <div class="modalc-product__char d-flex align-items-baseline justify-content-between"><span><span>Макс. обороты шпинделя</span></span><span><span>4 500 об/мин</span></span></div>
+                  <div class="modalc-product__char d-flex align-items-baseline justify-content-between"><span><span>Мощность шпинделя</span></span><span><span>15 кВт</span></span></div>
+                </div>
+                <p>Мы предлагаем комплексное технологическое оснащение производств, сопровождая каждый шаг нашего сотрудничества честностью и надёжностью: от выбора оборудования до его установки, послепродажного обслуживания и обучения.                                    </p>
+              </div>
+              <div class="modalc-bot">
+                <form class="modalc-form d-flex flex-column gap-10" name="modal_product">
+                  <div class="main-input">
+                    <input class="w-100" type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required>
+                  </div>
+                  <button class="btn btn_main btn_bg"><span>сделать заказ</span><i class="icon arrow-d"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-service" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modalc-call">
+              <div class="modalc-top d-flex flex-column gap-20">
+                <div class="fs-lg-24 fs-18 fw-md lh-1_1 text-uppercase">Техническая поддержка</div>
+                <p>Мы предлагаем комплексное технологическое оснащение производств, сопровождая каждый шаг нашего сотрудничества честностью и надёжностью: от выбора оборудования до его установки, послепродажного обслуживания и обучения.</p>
+              </div>
+              <div class="modalc-bot">
+                <form class="modalc-form d-flex flex-column gap-10" name="modal_service">
+                  <div class="main-input">
+                    <input class="w-100" type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required>
+                  </div>
+                  <button class="btn btn_main btn_bg"><span>сделать заказ</span><i class="icon arrow-d"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-success" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">           
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modalc-success d-flex align-items-center">
+              <div class="modalc-success__wrapper d-flex flex-column align-items-center text-center w-100">
+                <div class="fs-lg-24 fs-18 fw-md lh-1_1 text-uppercase">Спасибо за заявку!</div>
+                <p>Наш менеджер скоро свяжется с вами <br> и проконсультирует  по всем вопросам.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="themes/engine/js/slider.bundle.js"></script>
+    <script src="themes/engine/js/main.bundle.js"></script>
+    <script src="themes/engine/js/gallery.bundle.js"></script>
+    <script src="themes/engine/js/wizardForm.bundle.js"></script>
+  </body>
+</html>

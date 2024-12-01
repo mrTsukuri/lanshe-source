@@ -1,0 +1,46 @@
+extends template/main
+
+block variables
+    -var title = ''
+block content
+    main
+        section.cart
+            .container
+                .cart-wrapper.d-flex.flex-column.align-items-start
+                    h1.fs-20.fs-lg-32.fw-md.mb-0 Корзина
+                    .cart-grid.w-100
+                        .cart-main.d-flex.flex-column
+                            -for(let i = 1; i <= 4; i++)
+                                .cart-item.d-flex.align-items-center
+                                    a(href="product.html").cart-item__img.position-relative.rounded-12.overflow-hidden
+                                        img(src=start+"images/cart/1.jpg", alt="Патчи 50 шт для наращивания ресниц").h-100
+                                        button.cart-item__close.d-flex.rounded-circle.position-absolute
+                                            i.icon-close.fs-16
+                                    .cart-item__desc.d-flex.flex-column
+                                        a(href="product.html").fs-14.fs-xl-18.fw-md.lh-1_4 Патчи 50 шт для наращивания ресниц
+                                        .cart-item__buy.d-flex
+                                            .cart-item__count
+                                                .count-number
+                                                    .count-btn.count-btn_min
+                                                        i.icon-remove.fs-32
+                                                    label.flex-grow-1
+                                                        input(type="number" min="1" max="999" value="1").count-input
+                                                    .count-btn.count-btn_plus
+                                                        i.icon-add.fs-32
+                                            .cart-item__price.fs-18.fs-xl-24.fw-sb.lh-1_2 2 600 ₽
+                        .cart-order.d-flex.flex-column.bg-grey.rounded-12
+                            .cart-order__desc.d-flex.flex-column
+                                .fs-14.fs-xl-18.fw-md.lh-1_4 Итого
+                                .fs-24.fw-sb.lh-1_2 62 600 ₽
+                            .cart-order__form.d-flex.flex-column
+                                .fs-14.fs-xl-18.fw-md.lh-1_4 Зарегистрируйтесь на сайте для оформления заказа
+                                form(name='cart_order' action='order.html').questions-feedback__form.d-flex.flex-column
+                                    label.main-input.main-input_white
+                                        input(type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required).w-100
+                                    button.btn.btn_main Оформить заказ
+                                    label.main-checkbox
+                                        input(type="checkbox" name="processing" checked)
+                                        span.main-checkbox__item.o-0_7.fs-14.fs-xl-16
+                                            i.icon-checkbox.fs-20
+                                            span Согласен на <a href='policy.html' class='text-decoration-underline pointer btn-inline'> обработку <br> персональных данных</a>
+        +catalog('Не забудьте добавить в корзину', false)                                        

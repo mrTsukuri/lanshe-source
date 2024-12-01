@@ -1,0 +1,141 @@
+.rent
+    &-main, &-second
+        display: grid
+    &-main        
+        grid-template-columns: repeat(3, 250px)
+        overflow: auto
+        gap: 5px
+        &-item
+            display: grid
+            & > *
+                grid-row: 1 / 1
+                grid-column: 1 / 1
+            &-img                
+                & img                    
+                    object-fit: contain
+                    aspect-ratio: 16 / 9
+            &-wrapper
+                z-index: 1
+                & > *
+                    width: 100%
+            &-back
+                background: url('/images/rent/back.jpg') no-repeat
+                background-size: cover
+                opacity: 0
+                transition: .3s
+            &:hover
+                & .rent-main-item-back  
+                    opacity: 1
+    &-second        
+        --second-item: 4        
+        grid-template-columns: repeat(var(--second-item), 200px)
+        overflow: auto
+        & .rent-main-item:not(:nth-child(4n))
+            position: relative
+            &::before
+                content: ''
+                display: inline-block
+                width: 1px
+                height: 100%
+                background-color: $light
+                position: absolute
+                top: 0
+                right: 0
+    &-links
+        & a
+            & svg use
+                stroke-width: 2px
+    &-terms
+        &-grid
+            display: grid            
+            grid-template-columns: repeat(12, 80px)
+            gap: 5px
+            overflow: auto        
+        &-item
+            grid-column: span 4
+        // &-item:nth-child(-n+4)
+        //     grid-column: span 3    
+        &-comment
+            &-ava
+                flex: 0 0 auto
+                & img
+                    min-width: 50px
+                    max-width: 50px
+                    aspect-ratio: 1 / 1
+            &-desc
+                & svg
+                    left: 50%
+                    top: -6px
+                    transform: translateX(-50%) rotate(90deg)                
+@media screen and ( min-width: 576px )
+    .rent
+        &-main
+            grid-template-columns: 100%
+            overflow: unset
+            &-item                            
+                &-wrapper > *
+                    width: 50%
+        &-second
+            overflow: unset
+            --second-item: 2
+            grid-template-columns: repeat(var(--second-item), 1fr)
+            & .rent-main-item-wrapper
+                & > *
+                    width: 100%
+            & .rent-main-item:not(:nth-child(4n))
+                &::before
+                    content: none        
+            & .rent-main-item:not(:nth-child(2n))
+                position: relative
+                &::before
+                    content: ''
+                    display: inline-block
+                    width: 1px
+                    height: 100%
+                    background-color: $light
+                    position: absolute
+                    top: 0
+                    right: 0
+        &-terms
+            &-comment
+                &-ava                    
+                    & img
+                        min-width: 100px
+                        max-width: 100px
+                &-desc
+                    & svg
+                        left: 0
+                        top: 50%
+                        transform: translateY(-50%)
+@media screen and ( min-width: 992px )
+    .rent
+        &-main
+            grid-template-columns: repeat(3, 1fr)
+            &-item
+                &-img
+                    & img
+                        aspect-ratio: 4 / 3
+                &-wrapper > *
+                    width: 100%
+        &-second
+            --second-item: 4
+            & .rent-main-item:not(:nth-child(2n))
+                &::before
+                    content: none
+            & .rent-main-item:not(:nth-child(4n))
+                position: relative
+                &::before
+                    content: ''
+                    display: inline-block
+                    width: 1px
+                    height: 100%
+                    background-color: $light
+                    position: absolute
+                    top: 0
+                    right: 0
+        &-terms
+            &-grid                        
+                grid-template-columns: repeat(12, 1fr)
+                overflow: unset                   
+                                                      
+            

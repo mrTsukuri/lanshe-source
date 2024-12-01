@@ -1,0 +1,36 @@
+.pagination
+    gap: 1rem       
+    &-prev
+        transform: rotate(-180deg)
+    &-item
+        padding: 1rem 0      
+        background-color: $light              
+        width: 5rem              
+        align-items: center
+        justify-content: center
+        font-size: 1.4rem
+        font-weight: 500
+        line-height: 1.2
+        border-radius: .6rem 
+        &:hover, &.active
+            background-color: $second            
+            color: $white
+        &.active
+            pointer-events: none
+            cursor: default             
+    &-item.pagination-next, &-item.pagination-prev
+        border: none
+        background-color: transparent
+        padding: 0        
+        &.active            
+            & i
+                opacity: .3                                              
+    &-block        
+        justify-content: center
+        gap: 1rem
+@media screen and ( min-width: 1250px )
+    .pagination    
+        &-item
+            padding: 1.5rem 0
+            width: 6rem 
+            font-size: 1.6rem

@@ -1,0 +1,58 @@
+.error
+    &-block
+        padding: 5rem
+        gap: 2rem
+    &-num
+        font-size: 10rem
+        & svg
+            height: 9rem
+            width: auto
+.inwork
+    height: 100vh
+    padding: 5rem 0
+    background-color: $light
+    margin-bottom: 0
+    overflow: hidden 
+    & .container
+        height: 100%
+    &-block
+        height: 100%
+        gap: 3rem
+    &-logo
+        height: 4rem
+        & img
+            height: 100%
+            width: auto
+    &-social
+        & img
+            width: 3rem
+        &:hover
+            filter: drop-shadow(0 0 1px $black)                        
+@media screen and ( min-width: 1250px )
+    .error
+        &-block
+            padding: 8rem
+            gap: 3rem
+        &-num
+            font-size: 14rem
+            & svg
+                height: 13rem
+    .inwork        
+        padding: 10rem 2rem
+        background-color: $white           
+        &-block            
+            gap: 6rem
+        &-logo
+            height: 5.4rem            
+        &-social
+            & img
+                width: 4rem                                               
+@media screen and ( min-width: 1470px )
+    .error
+        &-block
+            padding: 10rem
+            gap: 5rem    
+                
+
+           
+                

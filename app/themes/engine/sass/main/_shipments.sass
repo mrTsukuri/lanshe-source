@@ -1,0 +1,37 @@
+.shipments
+    mix-blend-mode: darken
+    &-block
+        & .swiper-slide
+            &::after
+                content: none
+                width: 2px
+                height: 100%
+                background-color: $black                
+                position: absolute
+                top: 0
+                right: -3rem
+    &-item
+        gap: 1rem
+        &__img
+            height: 15rem
+            & img
+                width: 100%
+                object-fit: contain
+@media screen and ( min-width: 1200px )
+    .shipments                                  
+        &-block                                    
+            & .swiper-slide
+                &::after                    
+                    content: ''
+                    right: -2rem
+        &-item
+            gap: 2rem
+            &__img                
+                & img
+                    width: auto
+@media screen and ( min-width: 1450px )
+    .shipments
+        &-block       
+            & .swiper-slide
+                &::after                    
+                    right: -3rem         

@@ -1,0 +1,4 @@
+.documents-item:hover {
+  box-shadow: 0 50px 50px -30px rgba(36, 38, 51, 0.3);
+  color: #242633;
+}

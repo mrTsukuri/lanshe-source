@@ -1,0 +1,36 @@
+.contact-grid {
+  display: grid;
+  grid-template-columns: 100%;
+  justify-content: space-between;
+  gap: 3.2rem;
+}
+.contact-main {
+  gap: 6.4rem;
+}
+.contact-main__heading {
+  gap: 1.6rem;
+}
+.contact-main__feedback {
+  gap: 3.2rem;
+}
+.contact-main__social {
+  gap: 4rem;
+}
+.contact-main__social-item {
+  gap: 1.2rem;
+}
+
+@media screen and (min-width: 1080px) {
+  .contact-grid {
+    grid-template-columns: 60rem 37rem;
+    padding: 10rem 0;
+    gap: 0rem;
+  }
+  .contact-main {
+    gap: 3.2rem;
+    justify-content: space-between;
+  }
+  .contact-main__mail {
+    gap: 0.4rem;
+  }
+}

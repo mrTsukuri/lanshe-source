@@ -1,0 +1,75 @@
+.articles-grid, .articles-items, .articles-tabs {
+  display: grid;
+}
+.articles-tabs, .articles-grid {
+  grid-template-columns: 100%;
+  gap: 2rem;
+}
+.articles-tabs .js-tabs__tab {
+  opacity: 0.5;
+}
+.articles-tabs .js-tabs__tab.active {
+  opacity: 1;
+}
+.articles-grid {
+  align-items: flex-start;
+}
+.articles-aside {
+  padding: 2rem;
+  gap: 1rem;
+}
+.articles-items {
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 60vw));
+  grid-auto-flow: column;
+  overflow: auto;
+  gap: 1rem;
+}
+.articles-items > * {
+  min-width: 25rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 1250px) {
+  .articles-tabs, .articles-grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.82vw;
+  }
+  .articles-tabs .js-tabs__nav {
+    grid-column: 3 span;
+  }
+  .articles-tabs .js-tabs__content-container {
+    grid-column: 9 span;
+  }
+  .articles-aside {
+    grid-column: span 3;
+    padding: 3rem;
+    gap: 1.5rem;
+    position: sticky;
+    top: 7.2rem;
+  }
+  .articles-items {
+    grid-column: span 9;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: unset;
+    overflow: unset;
+    gap: 2rem;
+  }
+  .articles-items > * {
+    min-width: unset;
+  }
+}
+@media screen and (min-width: 1470px) {
+  .articles-tabs .js-tabs__nav {
+    grid-column: 2 span;
+  }
+  .articles-tabs .js-tabs__content-container {
+    grid-column: 10 span;
+  }
+  .articles-aside {
+    grid-column: span 2;
+  }
+  .articles-items {
+    grid-column: span 10;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

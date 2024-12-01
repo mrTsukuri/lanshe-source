@@ -1,0 +1,30 @@
+.main-filter {
+  z-index: 10;
+}
+.main-filter__content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+}
+.main-filter__content-grid {
+  display: flex;
+  gap: 20px;
+}
+.main-filter__content-grid > *:not(button) {
+  flex: 1 0 0%;
+  max-width: 200px;
+}
+.main-filter__content-grid button {
+  margin-left: auto;
+  width: auto;
+  flex: 0 0 auto;
+}
+.main-filter__content-grid_stretch > *:not(button) {
+  flex: 0 0 auto;
+  max-width: unset;
+  width: calc(33% - calc(40px / 3));
+}
+.main-filter__content-grid_stretch button {
+  width: calc(33% - calc(40px / 3));
+  margin-left: unset;
+}

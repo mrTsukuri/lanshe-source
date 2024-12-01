@@ -1,0 +1,140 @@
+.strange-map-block {
+  display: grid;
+}
+.strange-map-block-wrapper {
+  z-index: 1;
+}
+.strange-map-block-wrapper h2 {
+  right: 390px;
+  bottom: 230px;
+}
+.strange-map-block-item-1 {
+  right: 360px;
+  top: 30px;
+}
+.strange-map-block-item-2 {
+  left: 480px;
+  top: 80px;
+}
+.strange-map-block-item-3 {
+  left: 40px;
+  top: 160px;
+}
+.strange-map-block-img img {
+  width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  .strange-map-block > * {
+    grid-row: 1/1;
+    grid-column: 1/1;
+  }
+  .strange-map-block-wrapper h2 {
+    position: absolute;
+    right: 100px;
+    bottom: 70px;
+  }
+  .strange-map-block-img img {
+    height: 295px;
+    width: auto;
+  }
+  .strange-map-block-item-1, .strange-map-block-item-2, .strange-map-block-item-3 {
+    position: absolute;
+  }
+  .strange-map-block-item-1 {
+    right: 120px;
+    top: 30px;
+  }
+  .strange-map-block-item-2 {
+    left: 120px;
+    top: 50px;
+  }
+  .strange-map-block-item-3 {
+    left: 0px;
+    top: 80px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .strange-map-block-wrapper h2 {
+    right: 190px;
+    bottom: 100px;
+  }
+  .strange-map-block-img img {
+    height: 390px;
+  }
+  .strange-map-block-item-1 {
+    right: 170px;
+    top: 20px;
+  }
+  .strange-map-block-item-2 {
+    left: 180px;
+    top: 70px;
+  }
+  .strange-map-block-item-3 {
+    left: 10px;
+    top: 120px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .strange-map-block-wrapper h2 {
+    right: 300px;
+    bottom: 140px;
+  }
+  .strange-map-block-img img {
+    height: 528px;
+  }
+  .strange-map-block-item-1 {
+    right: 300px;
+    top: 50px;
+  }
+  .strange-map-block-item-2 {
+    left: 230px;
+    top: 100px;
+  }
+  .strange-map-block-item-3 {
+    left: 30px;
+    top: 200px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .strange-map-block-wrapper h2 {
+    right: 330px;
+    bottom: 170px;
+  }
+  .strange-map-block-img img {
+    height: 628px;
+  }
+  .strange-map-block-item-1 {
+    right: 300px;
+    top: 30px;
+  }
+  .strange-map-block-item-2 {
+    left: 300px;
+    top: 80px;
+  }
+  .strange-map-block-item-3 {
+    left: 40px;
+    top: 160px;
+  }
+}
+@media screen and (min-width: 1460px) {
+  .strange-map-block-wrapper h2 {
+    right: 390px;
+    bottom: 230px;
+  }
+  .strange-map-block-img img {
+    height: 786px;
+  }
+  .strange-map-block-img-item-1 {
+    right: 360px;
+    top: 30px;
+  }
+  .strange-map-block-img-item-2 {
+    left: 480px;
+    top: 80px;
+  }
+  .strange-map-block-img-item-3 {
+    left: 40px;
+    top: 160px;
+  }
+}

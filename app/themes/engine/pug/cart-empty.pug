@@ -1,0 +1,45 @@
+extends template/main
+
+block variables
+    -var title = ''
+block content
+    main
+        //- section.cart            
+            .container
+                .cart-wrapper.d-flex.flex-column.align-items-start
+                    h1.fs-20.fs-xl-32.fw-md.mb-0 Корзина
+                    p.o-0_7 Пеерйдите в каталог для выбора товаров
+                    a(href="catalog.html").btn.btn_main Перейти в каталог
+        section.cart            
+            .container
+                .contact-grid
+                    .contact-main.d-flex.flex-column.align-items-start
+                        .contact-main__heading.d-flex.flex-column.align-items-start.gap-32
+                            h1.fs-20.fs-lg-32.fw-md.mb-0 Корзина пуста
+                            p Перейдите в каталог для добавления товаров или свяжитесь с нами, мы поможем с подбором, оформлением и доставкой товара
+                            a(href="catalog.html").btn.btn_main Перейти в каталог
+                        .contact-main__feedback.d-flex.align-items-center.justify-content-between.flex-wrap                          
+                            a(href="tel:88001234567").href-main.fs-20.fs-lg-32.fw-md 8 800 123-45-67
+                            .contact-main__social.d-flex.gap-32                               
+                                a(href="#" title="Написать в Telegram").href-main.contact-main__social-item.d-flex.align-items-center
+                                    i.icon-tg.fs-32
+                                    span.fs-14.fs-xl-16 Написать <br> в Telegram                                
+                                a(href="#" title="Написать в WhatsApp").href-main.contact-main__social-item.d-flex.align-items-center
+                                    i.icon-wa.fs-32
+                                    span.fs-14.fs-xl-16 Написать <br> в WhatsApp
+                        //- .contact-main__mail.d-none.d-lg-flex.flex-column
+                            .fs-16.lh-1_4 По вопросам партнерства
+                            a(href="mailto:partner@lanshe-professional.com").href-main.fs-20.fw-md partner@lanshe-professional.com                         
+                    .cart-order.d-flex.flex-column.bg-grey.rounded-12
+                        .cart-order__form.d-flex.flex-column
+                            .fs-14.fs-xl-18.fw-md.lh-1_4 Зарегистрируйтесь на сайте для оформления заказа
+                            form(name='cart_order' action='order.html').questions-feedback__form.d-flex.flex-column
+                                label.main-input.main-input_white
+                                    input(type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required).w-100
+                                button.btn.btn_main Оформить заказ
+                                label.main-checkbox
+                                    input(type="checkbox" name="processing" checked)
+                                    span.main-checkbox__item.o-0_7.fs-14.fs-xl-16
+                                        i.icon-checkbox.fs-20
+                                        span Согласен на <a href='policy.html' class='text-decoration-underline pointer btn-inline'> обработку <br> персональных данных</a>
+        +catalog('Не забудьте добавить в корзину', false)                     

@@ -1,0 +1,33 @@
+.advantages-item {
+  min-height: 260px;
+  min-width: 240px;
+  max-width: 240px;
+}
+.advantages-item-block {
+  border-top-right-radius: 20px;
+}
+
+.advantages-block > *:not(.advantages-vector) {
+  position: relative;
+  z-index: 1;
+}
+
+.advantages-vector {
+  width: 1027px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -140px;
+}
+
+@media screen and (min-width: 768px) {
+  .advantages-item {
+    min-height: 280px;
+    min-width: unset;
+    max-width: unset;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .advantages-item {
+    min-height: 300px;
+  }
+}

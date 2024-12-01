@@ -1,0 +1,37 @@
+extends template/main
+
+block variables
+    -var title = ''
+block content
+    main
+        section.account
+            .container
+                .cart-wrapper.d-flex.flex-column
+                    h1.fs-20.fs-lg-32.fw-md.mb-0 Заказ № 12345 <span class='o-0_5'>на сумму 62 600 ₽
+                    .account-order__block.d-flex.flex-column                            
+                        .account-order__info-block.d-flex.flex-column                                
+                            .account-order__info-lists.d-flex.flex-column
+                                -
+                                    let accoutList = [
+                                                        {key: 'Дата заказа', value: '18.08.2024'},
+                                                        {key: 'Покупатель', value: 'Иванов Иван Иванович'},
+                                                        {key: 'Телефон', value: '+7 (123) 456-78-90'},
+                                                        {key: 'Email', value: 'ivanov@mail.ru'},
+                                                        {key: 'Адрес доставки', value: 'Россия, г. Москва, ул. Ленина, д. 100, к. 2, кв. 100'},
+                                                        {key: 'Способ оплаты', value: 'Банковской картой'},
+                                                        {key: 'Статус оплаты', value: 'Не оплачен'},
+                                                    ]
+                                each val in accoutList
+                                    .account-order__info-list.d-flex
+                                        span.fs-14.fs-xl-16
+                                            span= val['key']
+                                        span.fs-14.fs-xl-16
+                                            span= val['value']
+                        .account-order__products.d-flex.flex-column
+                            .fs-16.fw-md Товары в заказе
+                            .account-order__products-grid.scroll
+                                -for(let i = 1; i <= 12; i++)
+                                    a(href="product.html").account-order__product.position-relative.rounded-12.overflow-hidden
+                                        img(src= start+ "images/cart/1.jpg", alt="Патчи 50 шт для наращивания ресниц").h-100
+                                        .account-order__product-count.rounded-circle.bg-white.position-absolute.fs-14.fw-md 99
+                        button.btn.btn_main.align-self-start Оплатить заказ онлайн                                            

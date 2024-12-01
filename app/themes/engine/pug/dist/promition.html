@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="themes/engine/css/boots.css" as="style">
+    <link rel="preload" href="themes/engine/css/main.css" as="style">
+    <link rel="preload" href="themes/engine/css/libs.css" as="style"><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="themes/engine/fonts/icons/icomoon.woff" as="font" type="font/woff" crossorigin>
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/images/apple-icon-180x180.png">
+    <link rel="stylesheet" href="themes/engine/css/boots.css">
+    <link rel="stylesheet" href="themes/engine/css/main.css">
+    <link rel="stylesheet" href="themes/engine/css/libs.css">
+    <title>Туристам везет!</title>
+  </head>
+  <body>
+    <header class="header pt-sm-50 pt-30 mb-md-40 mb-20 position-relative">
+      <div class="container position-relative">
+        <div class="header-top mb-lg-30 mb-20">
+          <div class="row g-0 align-items-center justify-content-between">                           
+            <div class="col-auto">                   <a class="d-inline-block header-logo" href="/">
+                <picture>
+                  <source srcset="images/logo.svg" media="(min-width: 576px)"><img src="/images/mobileLogo.svg" alt="Логотип" width="114" height="51">
+                </picture></a></div>
+            <div class="col-auto d-none d-md-block">
+              <button class="d-flex align-items-center header-href border-0 bg-transparent p-0" title="Выбор города"><i class="u_location-point fs-18 p-8 rounded-circle me-10 bg-white"></i><span class="fs-14">Петропавловск-Камчатский</span></button>
+            </div>
+            <div class="col-auto d-none d-lg-block"><a class="d-flex align-items-center header-href fw-sb" href="mailto:info@dl24.su" title="Написать на почту"><i class="u_at fs-18 p-8 rounded-circle me-10 bg-white"></i><span class="fs-14">info@dl24.su                </span></a></div>
+            <div class="col-auto">
+              <div class="row g-xxl-20 g-10">
+                <div class="col-auto">
+                  <div class="d-flex flex-column align-items-lg-end align-items-center">                       <a class="fs-xxl-18 fs-16 lh-1 fw-eb mb-5" href="tel:+78002000600">8 (800) 20-00-600</a><span class="fs-12">Бесплатно по России                </span></div>
+                </div>
+                <div class="col-auto d-none d-lg-block">                   
+                  <div class="d-flex flex-column align-items-lg-end align-items-center">                       <a class="fs-xxl-18 fs-16 lh-1 fw-eb mb-5" href="tel:+79520014442">+7 (952) 001-44-42</a><span class="fs-12">Телефон в Барнауле                </span></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto d-none d-xl-block">
+              <div class="row g-xxl-15 g-10">
+                <div class="col-auto"><a class="p-10 rounded-circle header-social bg-white d-flex align-items-center" href="#" title="Написал в WhatsApp"><img src="/images/whatsApp.svg" alt="WhatsApp"></a></div>
+                <div class="col-auto"><a class="p-10 rounded-circle header-social bg-white d-flex align-items-center" href="#" title="Написать в VK"><img src="/images/vk.svg" alt="VK"></a></div>
+              </div>
+            </div>
+            <div class="col-auto d-none d-sm-block"><a class="d-flex align-items-center header-href fw-sb" href="#" title="Зайти в личный кабинет"><i class="u_user-circle fs-18 p-10 rounded-circle me-xxl-10 bg-white"></i><span class="fs-14 d-none d-xxl-inline">Личный<br>кабинет </span></a></div>
+            <div class="col-auto">               
+              <button class="rounded-pill fw-sb d-flex border-0 align-items-center p-0 btn-call bg-white p-5 ps-xl-20" data-bs-toggle="modal" data-bs-target=".modal-policy" title="Заказать обратный звонок"><span class="d-none d-xl-block me-10 lh-0_9 fs-14">Заказать<br> звонок</span><span class="bg-main rounded-circle d-flex p-8 btn-call-icon position-relative"><i class="u_phone-volume icon fs-20"></i></span></button>
+            </div>
+          </div>
+        </div>
+        <div class="header-bot rounded-pill bg-white p-5">
+          <div class="row g-0 align-items-center justify-content-between">
+            <div class="col-auto"><a class="d-flex align-items-center p-5 pe-20 bg-main rounded-pill header-calcBtn" href="#">                           <i class="u_calculator p-8 bg-white fs-xl-24 fs-18 me-10 rounded-circle"></i><span class="fs-14 lh-0_9 fw-sb">Калькулятор<br>грузоперевозок</span></a></div>
+            <div class="col-auto d-none d-lg-block">
+              <ul class="list-unstyled m-0 p-0 d-flex header-list">
+                <li class="d-flex align-items-center">
+                  <div class="dropdawn position-relative">
+                    <div class="d-flex dropdawn-btn align-items-center"><a class="fw-sb fs-14 me-2 d-flex align-items-center" href="#"><span>Грузоперевозки</span></a><i class="u_angle-down icon fs-14 arrow"></i></div>
+                    <div class="dropdawn-menu p-30 rounded-20 bg-white position-absolute">
+                      <ul class="list-unstyled m-0">
+                        <li><a class="fw-sb fs-14" href="#">Грузоперевозки</a></li>
+                        <li><a class="fw-sb fs-14" href="#">Грузоперевозки</a></li>
+                        <li><a class="fw-sb fs-14" href="#">Грузоперевозки</a></li>
+                        <li><a class="fw-sb fs-14" href="#">Грузоперевозки</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="d-flex align-items-center"><a class="fw-sb fs-14" href="#">Переезд</a></li>
+                <li class="d-flex align-items-center">
+                  <div class="dropdawn position-relative">
+                    <div class="d-flex dropdawn-btn align-items-center"><a class="fw-sb fs-14 me-2 d-flex align-items-center" href="#"><span>О компании</span></a><i class="u_angle-down icon fs-14 arrow"></i></div>
+                    <div class="dropdawn-menu p-30 rounded-20 bg-white position-absolute">
+                      <ul class="list-unstyled m-0">
+                        <li><a class="fw-sb fs-14" href="#">О компании</a></li>
+                        <li><a class="fw-sb fs-14" href="#">О компании</a></li>
+                        <li><a class="fw-sb fs-14" href="#">О компании</a></li>
+                        <li><a class="fw-sb fs-14" href="#">О компании</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="d-flex align-items-center"><a class="fw-sb fs-14" href="#">Контакты</a></li>
+              </ul>
+            </div>
+            <div class="col-auto d-none d-md-block"><a class="btn-light rounded-pill py-10 px-15 fs-14 fw-sb" href="#">Отследить груз</a></div>
+            <div class="col-auto d-none d-sm-block">
+              <form class="header-search d-flex position-relative">
+                <input class="rounded-pill ps-20 bg-grey fs-14 lh-0_9 border-0" type="text" placeholder="Поиск по сайту">
+                <button class="rounded-circle p-xl-15 p-10 bg-main border-0 d-flex position-absolute end-0 top-50 translate-middle-y"><i class="u_search fs-20"></i></button>
+              </form>
+            </div>
+            <div class="col-auto d-lg-none"><a class="d-flex pe-10" href="#mobile-menu"><i class="u_bars fs-24"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <nav class="breadcrumbs mb-40">
+          <div class="breadcrumbs-nav d-flex align-items-center pt-0 text-nowrap overflow-auto pb-5"><span><a class="breadcrumbs-nav-item position-relative fs-14 lh-1" href="index.html"><span>Главная</span></a></span><span><a class="breadcrumbs-nav-item position-relative fs-14 lh-1" href="#"><span>Внутренняя страницы</span></a></span><span><span class="breadcrumbs-nav-item breadcrumbs-nav-item-disabled text-light fs-14 lh-1">Текущая страница                           </span></span></div>
+        </nav>
+      </div>
+      <section class="service">
+        <div class="container">
+          <div class="baner-service rounded-20 bg-white overflow-hidden position-relative mb-40 d-flex">
+            <div class="row g-0 align-items-center position-relative flex-grow-1">                 
+              <div class="col-xxl-7">
+                <div class="p-50 d-flex flex-column align-items-center align-items-lg-start">
+                  <div class="rounded-pill px-10 py-5 bg-main fs-14 fw-bl lh-1_2 mb-20">До 20 июля 2022г.                           </div>
+                  <h1 class="fs-sm-35 fs-25 lh-1 fw-eb baner-heading text-g mb-20">Туристам везет!</h1>
+                  <div class="fs-18 lh-1_4 fw-sb text-light mb-35">Скидка 10% на отправку товаров для туризма!</div>
+                  <div class="row g-xxl-30 g-xl-25 g-15 align-items-center">   
+                    <div class="col-md-auto d-flex">
+                      <form class="d-flex baner-form flex-grow-1 flex-column flex-sm-row" name="baner-form" autocomplete="off">                                   
+                        <input class="input-phone border border-2 border-main px-xl-30 px-20 py-xl-20 py-15 fs-18 lh-1 fw-rg main-input" type="tel" placeholder="+7 (___) ___-__-__">
+                        <button class="px-xl-30 px-xl-25 py-20 border border-2 border-main fw-bl bg-main">Оставить заявку</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="position-absolute top-0 end-0 h-100 baner-service-img">                       <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/promotions/promotion-3(big).jpg" alt="Туристам везет" width="700">
+            </div>
+          </div>
+          <div class="content article">
+            <div class="content-imgText">
+              <div class="content-imgText-img ratio-3x2 ratio left">                          <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/articles/article-1.jpg" alt="Картинка с текстом">
+              </div>
+              <p>В полиции 40-летний потерпевший рассказал, что на популярном сайте нашел объявление о продаже грузовых колес. Связался с продавцом, обговорил условия сделки и перевел 109 тысяч за комплект шин для КамАЗа. Шины покупателю так и не пришли, а продавец перестал выходить на связь. По факту возбуждено уголовное дело. Всего за сутки в полицию региона поступило восемь заявлений о мошенничестве, сообщает пресс-служба УМВД.</p>
+            </div>
+            <p>Разнообразный и богатый опыт сложившаяся структура организации способствует подготовки и реализации дальнейших направлений развития. Товарищи! новая модель организационной деятельности способствует подготовки и реализации систем массового участия. Товарищи! новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании соответствующий условий активизации. Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение существенных финансовых и административных условий.</p>
+            <div class="content-bordered">
+              <p>С другой стороны рамки и место обучения кадров способствует подготовки и реализации существенных финансовых и административных условий. Равным образом начало повседневной работы по формированию позиции играет важную роль в формировании систем массового участия. Разнообразный и богатый опыт начало повседневной работы по формированию позиции способствует подготовки и реализации форм развития. Не следует, однако забывать, что укрепление и развитие структуры требуют от нас анализа форм развития. Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности позволяет оценить значение систем массового участия.</p>
+            </div>
+            <div class="row g-20">
+              <div class="col-6">
+                <ol>
+                  <li>Разнообразный и богатый опыт сложившаяся структура организации способствует подготовки и реализации дальнейших направлений развития. Товарищи! новая модель организационной деятельности способствует подготовки и реализации систем массового участия.</li>
+                  <li>Товарищи! новая модель организационной деятельности способствует подготовки и реализации систем массового участия.</li>
+                  <li>Товарищи! новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании соответствующий условий активизации.</li>
+                  <li>Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение существенных финансовых и административных условий.</li>
+                </ol>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li>Разнообразный и богатый опыт сложившаяся структура организации способствует подготовки и реализации дальнейших направлений развития. Товарищи! новая модель организационной деятельности способствует подготовки и реализации систем массового участия.</li>
+                  <li>Товарищи! новая модель организационной деятельности способствует подготовки и реализации систем массового участия.</li>
+                  <li>Товарищи! новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании соответствующий условий активизации.</li>
+                  <li>Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение существенных финансовых и административных условий.</li>
+                </ul>
+              </div>
+            </div>
+            <table class="tariffs-table rounded-20 overflow-hidden">
+              <thead>
+                <tr>
+                  <th>Направление</th>
+                  <th>50кг - 100кг</th>
+                  <th>101кг - 0,5т</th>
+                  <th>0,5т - 1,5т</th>
+                  <th>1,5т - 3т</th>
+                  <th>3т - 5т</th>
+                  <th>5т - 7,5т</th>
+                  <th>7,5т - 10т</th>
+                  <th>Срок доставки</th>
+                </tr>
+              </thead>
+              <tbody>                   
+                <tr>
+                  <th><a href="#"><span>Петропавловск-Камчатский</span> → <span>Барнаул</span></a></th>
+                  <td> <span>18,2 </span>₽</td>
+                  <td> <span>45,6 </span>₽</td>
+                  <td> <span>15,3 </span>₽</td>
+                  <td> <span>64,8 </span>₽</td>
+                  <td> <span>91,7 </span>₽</td>
+                  <td> <span>45,5 </span>₽</td>
+                  <td> <span>54,2 </span>₽</td>
+                  <th>6-8 дней</th>
+                </tr>
+                <tr>
+                  <th><a href="#"><span>Москва</span> → <span>Бийск</span></a></th>
+                  <td> <span>54,2 </span>₽</td>
+                  <td> <span>18,2 </span>₽</td>
+                  <td> <span>45,6 </span>₽</td>
+                  <td> <span>15,3 </span>₽</td>
+                  <td> <span>64,8 </span>₽</td>
+                  <td> <span>91,7 </span>₽</td>
+                  <td> <span>45,5 </span>₽</td>
+                  <th>7-10 дней    </th>
+                </tr>
+                <tr>
+                  <th>
+                     <a href="#"><span>Москва</span> → <span>Благовещенск</span></a></th>
+                  <td> <span>18,2 </span>₽</td>
+                  <td> <span>45,6 </span>₽</td>
+                  <td> <span>15,3 </span>₽</td>
+                  <td> <span>64,8 </span>₽</td>
+                  <td> <span>54,2 </span>₽</td>
+                  <td> <span>91,7 </span>₽</td>
+                  <td> <span>45,5 </span>₽</td>
+                  <th>5-9 дней    </th>
+                </tr>
+                <tr>
+                  <th>
+                     <a href="#"><span>Москва</span> → <span>Владивосток</span></a></th>
+                  <td> <span>45,6 </span>₽</td>
+                  <td> <span>15,3 </span>₽</td>
+                  <td> <span>64,8 </span>₽</td>
+                  <td> <span>18,2 </span>₽</td>
+                  <td> <span>91,7 </span>₽</td>
+                  <td> <span>54,2 </span>₽</td>
+                  <td> <span>45,5 </span>₽</td>
+                  <th>6-12 дней    </th>
+                </tr>
+                <tr>
+                  <th>
+                     <a href="#"><span>Москва</span> → <span>Екатеринбург</span></a></th>
+                  <td> <span>45,6 </span>₽</td>
+                  <td> <span>15,3 </span>₽</td>
+                  <td> <span>18,2 </span>₽</td>
+                  <td> <span>64,8 </span>₽</td>
+                  <td> <span>91,7 </span>₽</td>
+                  <td> <span>45,5 </span>₽</td>
+                  <td> <span>54,2 </span>₽</td>
+                  <th>10-15 дней    </th>
+                </tr>
+                <tr>
+                  <th>
+                     <a href="#"><span>Москва</span> → <span>Иркутск</span></a></th>
+                  <td> <span>91,7 </span>₽</td>
+                  <td> <span>54,2 </span>₽</td>
+                  <td> <span>18,2 </span>₽</td>
+                  <td> <span>45,6 </span>₽</td>
+                  <td> <span>15,3 </span>₽</td>
+                  <td> <span>64,8 </span>₽</td>
+                  <td> <span>45,5 </span>₽</td>
+                  <th>2-4 дней    </th>
+                </tr>
+                <tr>
+                  <th>
+                     <a href="#"><span>Москва</span> → <span>Кемерово</span></a></th>
+                  <td> <span>64,8 </span>₽</td>
+                  <td> <span>54,2 </span>₽</td>
+                  <td> <span>18,2 </span>₽</td>
+                  <td> <span>45,6 </span>₽</td>
+                  <td> <span>15,3 </span>₽</td>
+                  <td> <span>91,7 </span>₽</td>
+                  <td> <span>45,5 </span>₽</td>
+                  <th>3-8 дней    </th>
+                </tr>
+                <tr>
+                  <th>
+                     <a href="#"><span>Москва</span> → <span>Таганрог</span></a></th>
+                  <td> <span>15,3 </span>₽</td>
+                  <td> <span>54,2 </span>₽</td>
+                  <td> <span>18,2 </span>₽</td>
+                  <td> <span>45,6 </span>₽</td>
+                  <td> <span>64,8 </span>₽</td>
+                  <td> <span>91,7 </span>₽</td>
+                  <td> <span>45,5 </span>₽</td>
+                  <th>4-6 дней    </th>
+                </tr>
+                <tr>
+                  <th>
+                     <a href="#"><span>Москва</span> → <span>Алейск</span></a></th>
+                  <td> <span>45,5 </span>₽</td>
+                  <td> <span>54,2 </span>₽</td>
+                  <td> <span>18,2 </span>₽</td>
+                  <td> <span>45,6 </span>₽</td>
+                  <td> <span>64,8 </span>₽</td>
+                  <td> <span>15,3 </span>₽</td>
+                  <td> <span>91,7 </span>₽</td>
+                  <th>1-3 дней    </th>
+                </tr>
+                <tr>
+                  <th>
+                     <a href="#"><span>Москва</span> → <span>Новосибирск</span></a></th>
+                  <td> <span>91,7 </span>₽</td>
+                  <td> <span>54,2 </span>₽</td>
+                  <td> <span>18,2 </span>₽</td>
+                  <td> <span>45,6 </span>₽</td>
+                  <td> <span>15,3 </span>₽</td>
+                  <td> <span>64,8 </span>₽</td>
+                  <td> <span>45,5 </span>₽</td>
+                  <th>3-7 дней</th>
+                </tr>
+              </tbody>
+            </table>
+            <div class="ratio ratio-21x9 rounded-20 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/content/content-img-1.jpg" alt="Большая картинка в контенте">
+            </div>
+            <div class="questions">
+              <div class="questions-item spoiler overflow-hidden rounded-20">
+                <div class="questions-item-btn position-relative">
+                  <div class="position-relative d-flex">
+                    <div class="d-flex flex-column flex-grow-1 p-30">
+                      <div class="lh-1 fw-bl pe-5">Можно ли снизить стоимость грузоперевозки?</div>
+                    </div>
+                    <div class="spoiler-btn pointer p-10 d-flex align-items-center justify-content-center">
+                                         <i class="u_angle-down icon fs-md-30 fs-20"></i></div>
+                  </div>
+                </div>
+                <div class="questions-item-block spoiler-block mt-5">
+                  <div class="p-md-40 p-20">
+                    <div class="content">
+                      <ol>
+                        <li> 
+                          <p>Предмет Договора</p>
+                          <ol>
+                            <li>Заказчик заказывает, а Перевозчик выполняет автомобильную перевозку груза на основании Заявки, подписанной сторонами, согласно условиям настоящего договора (далее - Договор).</li>
+                            <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                            <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                            <li>Перевозка груза выполняется Перевозчиком на основании Заявки, представляемой Заказчиком (далее - Заявка). Заказчик представляет Заявку на перевозку грузов в письменной форме.</li>
+                            <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                            <li>Договор содержит условия осуществления перевозки в рамках Заявки, согласованной Сторонами и ссылающейся на настоящий Договор. Договор является приложением и неотъемлемой частью Заявки. Договор размещен в сети Интернет и представлен Заказчиком в электронном виде по ссылке, указанной в Заявке с возможностью открытого доступа Перевозчика. Соглашение с условиями Договора подтверждается подписанием Заявки, ссылающейся на настоящей Договор. Подписание Заявки является одновременно подписанием настоящего Договора.</li>
+                          </ol>
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="questions-item spoiler overflow-hidden rounded-20">
+                <div class="questions-item-btn position-relative">
+                  <div class="position-relative d-flex">
+                    <div class="d-flex flex-column flex-grow-1 p-30">
+                      <div class="lh-1 fw-bl pe-5">Можно ли снизить стоимость грузоперевозки?</div>
+                    </div>
+                    <div class="spoiler-btn pointer p-10 d-flex align-items-center justify-content-center">
+                                         <i class="u_angle-down icon fs-md-30 fs-20"></i></div>
+                  </div>
+                </div>
+                <div class="questions-item-block spoiler-block mt-5">
+                  <div class="p-md-40 p-20">
+                    <div class="content">
+                      <ol>
+                        <li> 
+                          <p>Предмет Договора</p>
+                          <ol>
+                            <li>Заказчик заказывает, а Перевозчик выполняет автомобильную перевозку груза на основании Заявки, подписанной сторонами, согласно условиям настоящего договора (далее - Договор).</li>
+                            <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                            <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                            <li>Перевозка груза выполняется Перевозчиком на основании Заявки, представляемой Заказчиком (далее - Заявка). Заказчик представляет Заявку на перевозку грузов в письменной форме.</li>
+                            <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                            <li>Договор содержит условия осуществления перевозки в рамках Заявки, согласованной Сторонами и ссылающейся на настоящий Договор. Договор является приложением и неотъемлемой частью Заявки. Договор размещен в сети Интернет и представлен Заказчиком в электронном виде по ссылке, указанной в Заявке с возможностью открытого доступа Перевозчика. Соглашение с условиями Договора подтверждается подписанием Заявки, ссылающейся на настоящей Договор. Подписание Заявки является одновременно подписанием настоящего Договора.</li>
+                          </ol>
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="questions-item spoiler overflow-hidden rounded-20">
+                <div class="questions-item-btn position-relative">
+                  <div class="position-relative d-flex">
+                    <div class="d-flex flex-column flex-grow-1 p-30">
+                      <div class="lh-1 fw-bl pe-5">Можно ли снизить стоимость грузоперевозки?</div>
+                    </div>
+                    <div class="spoiler-btn pointer p-10 d-flex align-items-center justify-content-center">
+                                         <i class="u_angle-down icon fs-md-30 fs-20"></i></div>
+                  </div>
+                </div>
+                <div class="questions-item-block spoiler-block mt-5">
+                  <div class="p-md-40 p-20">
+                    <div class="content">
+                      <ol>
+                        <li> 
+                          <p>Предмет Договора</p>
+                          <ol>
+                            <li>Заказчик заказывает, а Перевозчик выполняет автомобильную перевозку груза на основании Заявки, подписанной сторонами, согласно условиям настоящего договора (далее - Договор).</li>
+                            <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                            <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                            <li>Перевозка груза выполняется Перевозчиком на основании Заявки, представляемой Заказчиком (далее - Заявка). Заказчик представляет Заявку на перевозку грузов в письменной форме.</li>
+                            <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                            <li>Договор содержит условия осуществления перевозки в рамках Заявки, согласованной Сторонами и ссылающейся на настоящий Договор. Договор является приложением и неотъемлемой частью Заявки. Договор размещен в сети Интернет и представлен Заказчиком в электронном виде по ссылке, указанной в Заявке с возможностью открытого доступа Перевозчика. Соглашение с условиями Договора подтверждается подписанием Заявки, ссылающейся на настоящей Договор. Подписание Заявки является одновременно подписанием настоящего Договора.</li>
+                          </ol>
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="questions-item spoiler overflow-hidden rounded-20">
+                <div class="questions-item-btn position-relative">
+                  <div class="position-relative d-flex">
+                    <div class="d-flex flex-column flex-grow-1 p-30">
+                      <div class="lh-1 fw-bl pe-5">Можно ли снизить стоимость грузоперевозки?</div>
+                    </div>
+                    <div class="spoiler-btn pointer p-10 d-flex align-items-center justify-content-center">
+                                         <i class="u_angle-down icon fs-md-30 fs-20"></i></div>
+                  </div>
+                </div>
+                <div class="questions-item-block spoiler-block mt-5">
+                  <div class="p-md-40 p-20">
+                    <div class="content">
+                      <ol>
+                        <li> 
+                          <p>Предмет Договора</p>
+                          <ol>
+                            <li>Заказчик заказывает, а Перевозчик выполняет автомобильную перевозку груза на основании Заявки, подписанной сторонами, согласно условиям настоящего договора (далее - Договор).</li>
+                            <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                            <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                            <li>Перевозка груза выполняется Перевозчиком на основании Заявки, представляемой Заказчиком (далее - Заявка). Заказчик представляет Заявку на перевозку грузов в письменной форме.</li>
+                            <li>В своей деятельности стороны руководствуются положениями Заявки на перевозку, настоящего Договора, Гражданского кодекса и Устава автомобильного транспорта.</li>
+                            <li>Договор содержит условия осуществления перевозки в рамках Заявки, согласованной Сторонами и ссылающейся на настоящий Договор. Договор является приложением и неотъемлемой частью Заявки. Договор размещен в сети Интернет и представлен Заказчиком в электронном виде по ссылке, указанной в Заявке с возможностью открытого доступа Перевозчика. Соглашение с условиями Договора подтверждается подписанием Заявки, ссылающейся на настоящей Договор. Подписание Заявки является одновременно подписанием настоящего Договора.</li>
+                          </ol>
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ratio ratio-21x9 rounded-20 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/content/content-img-2.jpg" alt="Большая картинка в контенте">
+            </div>
+            <div class="cargoType-tabs">
+              <div class="js-tabs__nav mb-20">
+                <div class="js-tabs__no-marker js-tabs__tabs-container d-flex overflow-auto pb-5">
+                  <div class="js-tabs__tab" data-article="1">
+                    <button class="rounded-pill py-8 px-20 border-0 fw-sb">Междугородние</button>
+                  </div>
+                  <div class="js-tabs__tab" data-article="2">
+                    <button class="rounded-pill py-8 px-20 border-0 fw-sb">По россии</button>
+                  </div>
+                  <div class="js-tabs__tab" data-article="3">
+                    <button class="rounded-pill py-8 px-20 border-0 fw-sb">По городу</button>
+                  </div>
+                </div>
+              </div>
+              <div class="js-tabs__content-container">
+                <div class="js-tabs__content" data-article="0">
+                  <div class="content-block p-5 rounded-20 bg-white d-flex">
+                    <div class="p-25 d-flex flex-column">
+                      <div class="fs-18 fw-sb mb-20">Заголовок текста</div>
+                      <div class="fs-14 lh-base text-light">Не следует, однако забывать, что реализация намеченных плановых заданий представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.Не следует, однако забывать, что реализация намеченных плановых заданий представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.Не следует, однако забывать, что реализация намеченных плановых заданий представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="js-tabs__content" data-article="1">
+                  <div class="content-block p-5 rounded-20 bg-white d-flex">
+                    <div class="p-25 d-flex flex-column">
+                      <div class="fs-18 fw-sb mb-20">Заголовок текста</div>
+                      <div class="fs-14 lh-base text-light">Не следует, однако забывать, что реализация намеченных плановых заданий представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.Не следует, однако забывать, что реализация намеченных плановых заданий представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.Не следует, однако забывать, что реализация намеченных плановых заданий представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="js-tabs__content" data-article="2">
+                  <div class="content-block p-5 rounded-20 bg-white d-flex">
+                    <div class="p-25 d-flex flex-column">
+                      <div class="fs-18 fw-sb mb-20">Заголовок текста</div>
+                      <div class="fs-14 lh-base text-light">Не следует, однако забывать, что реализация намеченных плановых заданий представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.Не следует, однако забывать, что реализация намеченных плановых заданий представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.Не следует, однако забывать, что реализация намеченных плановых заданий представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="promotions">
+        <div class="container">
+          <div class="d-flex align-items-center justify-content-between mb-md-35 mb-20 slider-navigation-3" data-category="2">
+            <div class="slider-prev rounded-circle p-5 d-flex"><i class="u_arrow-right icon fs-lg-40 fs-md-35 fs-30"></i></div>
+            <h2 class="fs-md-35 fs-sm-30 fs-20 fw-bl text-g lh-1_1 text-center">Другие акции и специальные предложения</h2>
+            <div class="slider-next rounded-circle p-5 d-flex"><i class="u_arrow-right icon fs-lg-40 fs-md-35 fs-30"></i></div>
+          </div>
+          <div class="swiper slider-3" data-category="2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide h-auto d-flex"><a class="d-flex flex-column flex-grow-1 rounded-20 p-5 promotions-item" href="#">
+                  <div class="position-relative">
+                    <div class="ratio ratio-3x2 rounded-15 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/promotions/promotion-1.jpg" alt="Туристам везет!">
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 ms-10 mb-10 rounded-pill px-10 py-5 bg-main text-black fs-12 lh-1_2 fw-bl">До 20 июля 2022г.</div>
+                  </div>
+                  <div class="p-25 d-flex flex-column">
+                    <div class="fw-bl lh-1_2 mb-10 promotions-item-title">Туристам везет!</div>
+                    <div class="fs-14 lh-1_3 promotions-item-text">Скидка 10% на отправку товаров для туризма!</div>
+                  </div></a>
+              </div>
+              <div class="swiper-slide h-auto d-flex"><a class="d-flex flex-column flex-grow-1 rounded-20 p-5 promotions-item" href="#">
+                  <div class="position-relative">
+                    <div class="ratio ratio-3x2 rounded-15 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/promotions/promotion-2.jpg" alt="Туристам везет!">
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 ms-10 mb-10 rounded-pill px-10 py-5 bg-main text-black fs-12 lh-1_2 fw-bl">До 20 июля 2022г.</div>
+                  </div>
+                  <div class="p-25 d-flex flex-column">
+                    <div class="fw-bl lh-1_2 mb-10 promotions-item-title">Туристам везет!</div>
+                    <div class="fs-14 lh-1_3 promotions-item-text">Скидка 10% на отправку товаров для туризма!</div>
+                  </div></a>
+              </div>
+              <div class="swiper-slide h-auto d-flex"><a class="d-flex flex-column flex-grow-1 rounded-20 p-5 promotions-item" href="#">
+                  <div class="position-relative">
+                    <div class="ratio ratio-3x2 rounded-15 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/promotions/promotion-3.jpg" alt="Туристам везет!">
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 ms-10 mb-10 rounded-pill px-10 py-5 bg-main text-black fs-12 lh-1_2 fw-bl">До 20 июля 2022г.</div>
+                  </div>
+                  <div class="p-25 d-flex flex-column">
+                    <div class="fw-bl lh-1_2 mb-10 promotions-item-title">Туристам везет!</div>
+                    <div class="fs-14 lh-1_3 promotions-item-text">Скидка 10% на отправку товаров для туризма!</div>
+                  </div></a>
+              </div>
+              <div class="swiper-slide h-auto d-flex"><a class="d-flex flex-column flex-grow-1 rounded-20 p-5 promotions-item" href="#">
+                  <div class="position-relative">
+                    <div class="ratio ratio-3x2 rounded-15 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/promotions/promotion-1.jpg" alt="Туристам везет!">
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 ms-10 mb-10 rounded-pill px-10 py-5 bg-main text-black fs-12 lh-1_2 fw-bl">До 20 июля 2022г.</div>
+                  </div>
+                  <div class="p-25 d-flex flex-column">
+                    <div class="fw-bl lh-1_2 mb-10 promotions-item-title">Туристам везет!</div>
+                    <div class="fs-14 lh-1_3 promotions-item-text">Скидка 10% на отправку товаров для туризма!</div>
+                  </div></a>
+              </div>
+              <div class="swiper-slide h-auto d-flex"><a class="d-flex flex-column flex-grow-1 rounded-20 p-5 promotions-item" href="#">
+                  <div class="position-relative">
+                    <div class="ratio ratio-3x2 rounded-15 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/promotions/promotion-2.jpg" alt="Туристам везет!">
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 ms-10 mb-10 rounded-pill px-10 py-5 bg-main text-black fs-12 lh-1_2 fw-bl">До 20 июля 2022г.</div>
+                  </div>
+                  <div class="p-25 d-flex flex-column">
+                    <div class="fw-bl lh-1_2 mb-10 promotions-item-title">Туристам везет!</div>
+                    <div class="fs-14 lh-1_3 promotions-item-text">Скидка 10% на отправку товаров для туризма!</div>
+                  </div></a>
+              </div>
+              <div class="swiper-slide h-auto d-flex"><a class="d-flex flex-column flex-grow-1 rounded-20 p-5 promotions-item" href="#">
+                  <div class="position-relative">
+                    <div class="ratio ratio-3x2 rounded-15 overflow-hidden"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/promotions/promotion-3.jpg" alt="Туристам везет!">
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 ms-10 mb-10 rounded-pill px-10 py-5 bg-main text-black fs-12 lh-1_2 fw-bl">До 20 июля 2022г.</div>
+                  </div>
+                  <div class="p-25 d-flex flex-column">
+                    <div class="fw-bl lh-1_2 mb-10 promotions-item-title">Туристам везет!</div>
+                    <div class="fs-14 lh-1_3 promotions-item-text">Скидка 10% на отправку товаров для туризма!</div>
+                  </div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="section formBlock">
+        <div class="container">
+          <div class="position-relative rounded-20 p-20 overflow-hidden">
+            <div class="row g-xl-40 g-20 align-items-center position-relative">
+              <div class="col-md">
+                <div class="formBlock-desc p-xl-50 p-lg-20 p-sm-10">
+                  <div class="fs-xl-50 fs-lg-40 fs-sm-30 fs-20 fw-eb text-white mb-20"><span class="text-main">Снизим затраты</span><br>на грузоперевозки</div>
+                  <div class="fs-xl-18 fs-lg-16 fs-14 fw-sb lh-1_4 text-white">из Петропавловска-Камчатского в Камень-на-Оби.<br>Закажите услугу и получите в подарок страхование<br>до 1 млн. руб!</div>
+                </div>
+              </div>
+              <div class="col-md-auto">
+                <form class="formBlock-form p-xl-50 p-sm-30 p-10 rounded-10 d-flex flex-column text-align" autocomplete="off" name="order-2">
+                  <div class="fs-md-18 fs-14 lh-1 fw-bl text-white mb-10 text-center">Оставьте номер телефона и мы свяжемся с вами</div>
+                  <input class="input-phone text-center border-0 rounded-pill py-20 px-30 mb-20" type="tel" placeholder="+7 (___) ___-__-__">
+                  <button class="rounded-pill border-0 py-20 px-30 bg-main fs-18 fw-sb">Оставить заявку</button>
+                </form>
+              </div>
+            </div>
+            <div class="formBlock-img position-absolute w-100 h-100 start-0 top-0"><img class="lazy h-100" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/images/formBack_1.jpg" alt="Выгодное предложение">
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer py-lg-60 py-sm-40 py-20 position-relative overflow-hidden">
+      <div class="container position-relative">
+        <div class="footer-top mb-lg-30 mb-20">
+          <div class="row g-0 align-items-center justify-content-between">
+            <div class="col-auto">
+              <div class="header-logo"><a class="d-inline-block" href="/">
+                  <picture>
+                    <source srcset="images/footerLogo.svg" media="(min-width: 576px)"><img src="images/mobileFooterLogo.svg" alt="Логотип" width="136" height="60">
+                  </picture></a></div>
+            </div>
+            <div class="col-auto d-none d-lg-block"><a class="d-flex align-items-center header-href fw-sb" href="mailto:info@dl24.su" title="Написать на почту"><i class="u_at fs-18 p-8 rounded-circle me-10 bg-white"></i><span class="fs-14">info@dl24.su               </span></a></div>
+            <div class="col-auto">
+              <div class="row g-20">
+                <div class="col-auto">
+                  <div class="d-flex flex-column align-items-lg-end align-items-center">                       <a class="fs-xxl-18 fs-16 lh-1 fw-eb mb-5" href="tel:+78002000600">8 (800) 20-00-600</a><span class="fs-12">Бесплатно по России                </span></div>
+                </div>
+                <div class="col-auto d-none d-lg-block">                    
+                  <div class="d-flex flex-column align-items-lg-end align-items-center">                       <a class="fs-xxl-18 fs-16 lh-1 fw-eb mb-5" href="tel:+79520014442">+7 (952) 001-44-42</a><span class="fs-12">Телефон в Барнауле                </span></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto d-none d-xl-block">
+              <div class="row g-15">
+                <div class="col-auto"><a class="p-10 rounded-circle header-social bg-white d-flex align-items-center" href="#" title="Написал в WhatsApp"><img src="/images/whatsApp.svg" alt="WhatsApp"></a></div>
+                <div class="col-auto"><a class="p-10 rounded-circle header-social bg-white d-flex align-items-center" href="#" title="Написать в VK"><img src="/images/vk.svg" alt="VK"></a></div>
+              </div>
+            </div>
+            <div class="col-auto d-none d-sm-block"><a class="d-flex align-items-center header-href fw-sb" href="#" title="Зайти в личный кабинет"><i class="u_user-circle fs-18 p-10 rounded-circle me-10 bg-white me-xxl-10"></i><span class="fs-14 d-none d-xxl-inline">Личный<br>кабинет </span></a></div>
+            <div class="col-auto">               
+              <button class="rounded-pill fw-sb d-flex border-0 align-items-center p-0 btn-call bg-white p-5 ps-xl-20" data-bs-toggle="modal" data-bs-target=".modal-contentBlock"><span class="d-none d-xl-block me-10 lh-0_9 fs-14">Заказать<br> звонок</span><span class="bg-main rounded-circle d-flex p-8 btn-call-icon position-relative"><i class="u_phone-volume icon fs-20"></i></span></button>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bot rounded-pill bg-white p-5 mb-35 d-none d-sm-block">
+          <div class="row g-0 align-items-center justify-content-between">
+            <div class="col-auto"><a class="d-flex align-items-center p-5 pe-20 bg-main rounded-pill header-calcBtn" href="#">                           <i class="u_calculator p-8 bg-white fs-xl-24 fs-18 me-10 rounded-circle"></i><span class="fs-14 lh-0_9 fw-sb">Калькулятор<br>грузоперевозок</span></a></div>
+            <div class="col-auto d-none d-lg-block">
+              <ul class="list-unstyled m-0 p-0 d-flex header-list">
+                <li class="d-flex align-items-center">
+                  <div class="dropdawn position-relative">
+                    <div class="d-flex dropdawn-btn align-items-center"><a class="fw-sb fs-14 me-2 d-flex align-items-center" href="#"><span>Грузоперевозки</span></a><i class="u_angle-down icon fs-14 arrow"></i></div>
+                    <div class="dropdawn-menu p-30 rounded-20 bg-white position-absolute">
+                      <ul class="list-unstyled m-0">
+                        <li><a class="fw-sb fs-14" href="#">Грузоперевозки</a></li>
+                        <li><a class="fw-sb fs-14" href="#">Грузоперевозки</a></li>
+                        <li><a class="fw-sb fs-14" href="#">Грузоперевозки</a></li>
+                        <li><a class="fw-sb fs-14" href="#">Грузоперевозки</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="d-flex align-items-center"><a class="fw-sb fs-14" href="#">Переезд</a></li>
+                <li class="d-flex align-items-center">
+                  <div class="dropdawn position-relative">
+                    <div class="d-flex dropdawn-btn align-items-center"><a class="fw-sb fs-14 me-2 d-flex align-items-center" href="#"><span>О компании</span></a><i class="u_angle-down icon fs-14 arrow"></i></div>
+                    <div class="dropdawn-menu p-30 rounded-20 bg-white position-absolute">
+                      <ul class="list-unstyled m-0">
+                        <li><a class="fw-sb fs-14" href="#">О компании</a></li>
+                        <li><a class="fw-sb fs-14" href="#">О компании</a></li>
+                        <li><a class="fw-sb fs-14" href="#">О компании</a></li>
+                        <li><a class="fw-sb fs-14" href="#">О компании</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li class="d-flex align-items-center"><a class="fw-sb fs-14" href="#">Контакты</a></li>
+              </ul>
+            </div>
+            <div class="col-auto d-none d-md-block"><a class="btn-light rounded-pill py-10 px-15 fs-14 fw-sb" href="#">Отследить груз</a></div>
+            <div class="col-auto">
+              <form class="header-search d-flex position-relative">
+                <input class="rounded-pill ps-20 bg-grey fs-14 lh-0_9 border-0" type="text" placeholder="Поиск по сайту">
+                <button class="rounded-circle p-xl-15 p-10 bg-main border-0 d-flex position-absolute end-0 top-50 translate-middle-y"><i class="u_search fs-20">                            </i></button>
+              </form>
+            </div>
+          </div>
+        </div><p class="fs-12 lh-lg o-0_7 mb-0 text-white">Отправляя свои личные данные через формы на сайте, вы даёте своё согласие на обработку персональных данных согласно Федеральному закону №152-ФЗ «О персональных данных» от 27.07.2006 г.Посещая сайт компании «Деловая Логистика 24», вы соглашаетесь с <button class="p-0 bg-transparent text-decoration-underline border-0 text-white">Правилами и условиями использования</button> и <button class="p-0 bg-transparent text-decoration-underline border-0 text-white">политикой обработки персональных данных</button> данного сайта.</p>    
+      </div>
+    </footer>
+    <nav class="mobile-menu menu-scrolling" id="mobile-menu" style="display: none">
+      <ul>
+        <li class="d-flex"><a class="fw-rg fs-18 w-100" href="#discount">Акции </a></li>
+        <li class="d-flex"><a class="fw-rg fs-18 w-100" href="#about">О компании </a></li>
+        <li class="d-flex"><a class="fw-rg fs-18 w-100" href="#choosing-tabs">Расчет стоимости                                                             </a></li>
+        <li class="d-flex"><a class="fw-rg fs-18 w-100" href="#windows-type">Остекление                         </a></li>
+        <li class="d-flex"><a class="fw-rg fs-18 w-100" href="#interior-decoration">Отделка                    </a></li>
+        <li class="d-flex"><a class="fw-rg fs-18 w-100" href="#works">Кейсы                    </a></li>
+        <li class="d-flex"><a class="fw-rg fs-18 w-100" href="#reviews">Отзывы</a></li>
+        <li class="d-flex"><a class="fw-rg fs-18 w-100" href="https://masterkomforta.com/">Пластиковые окна    </a></li>
+        <li class="mobile-menu-feedback">
+          <div class="d-flex">                          <span class="fw-rg text-start p-0">г. Барнаул, ул. Полевая, 58Г</span></div>
+        </li>
+        <!--li.mobile-menu-feedback
+        .d-flex.flex-column.mb-20
+            a(href="mailto:info@m-k.group").fs-18.lh-1_6.me-40 info@m-k.group
+            a(href="mailto:info@m-k.group").fs-18.lh-1_6 kz@m-k.group                                  
+        -->
+        <li class="mobile-menu-feedback">
+          <div class="d-flex flex-column mb-20">                      <a class="fs-20 fw-bl mb-5" href="tel:+73852253257">8 (3852) 253-257</a><span class="p-0">Телефон в России            </span></div>
+        </li>
+        <!--li.mobile-menu-feedback
+        .d-flex.flex-column.mb-20                       
+            a(href="tel:+77232520055").fs-20.fw-bl.mb-5 +7 (7232) 520-055
+            span.p-0 Телефон в Казахстане
+        -->
+      </ul>
+    </nav><div aria-live="polite" aria-atomic="true">
+<div class="toast-container position-fixed top-0 end-0 p-3 js_toast_container" style="z-index: 10000;"> 
+</div>
+</div>               
+    <script src="themes/engine/js/main.bundle.js"></script>
+    <script src="themes/engine/js/slider.bundle.js"></script>
+  </body>
+</html>

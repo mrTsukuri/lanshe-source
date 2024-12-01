@@ -1,0 +1,185 @@
+.structure
+    overflow: hidden
+    &-img-hover, &-hover-num
+        transition: .3s
+        width: 25px
+        height: 25px            
+    &-hover
+        &-num            
+            background-color: $light
+            line-height: 1            
+    &-hover:hover
+        .structure-hover-num
+            background-color: $main
+    &-img
+        top: 50px        
+        left: 180px
+        & img
+            width: 436px
+            // height: 441px
+        &-hover:nth-child(odd)
+            left: 20px
+            & .structure-img-hover-desc
+                right: calc(40px + 22px)            
+        &-hover:nth-child(even)
+            left: 50px
+            & .structure-img-hover-desc
+                left: calc(40px + 22px)    
+        &-hover:nth-child(1)
+            top: 20px
+        &-hover:nth-child(2)
+            top: 55px
+        &-hover:nth-child(3)
+            top: 75px
+        &-hover:nth-child(4)
+            top: 105px
+        &-hover:nth-child(5)
+            top: 135px
+        &-hover:nth-child(6)
+            top: 180px
+        // &-hover:nth-child(7)
+        //     top: 280px    
+        &-hover
+            background-color: rgba(247, 247, 240, 0.3)
+            box-shadow: 0px 20px 25px -10px #000000
+            backdrop-filter: blur(8px)
+            line-height: 1
+            &-desc
+                box-shadow: 0px 30px 50px -20px rgba(0, 0, 0, 0.2)
+                opacity: 0
+                transition: .3s
+        &-hover:hover, &-hover.active
+            background-color: $main
+            box-shadow: 0px 20px 25px -10px #F39200
+            & .structure-img-hover-desc
+                opacity: 1                    
+@media screen and ( min-width: 576px )
+    .structure
+        &-img-hover, &-hover-num        
+            width: 40px
+            height: 40px
+        &-img
+            top: 110px
+            right: -260px
+            left: auto
+            transform: translateY(0)           
+            &-hover:nth-child(odd)
+                left: 75px
+                & .structure-img-hover-desc
+                    right: calc(40px + 22px)            
+            &-hover:nth-child(even)
+                left: 110px
+                & .structure-img-hover-desc
+                    left: calc(40px + 22px)             
+            & img
+                width: 570px
+                height: 354px
+            &-hover:nth-child(1)
+                top: 28px
+            &-hover:nth-child(2)
+                top: 75px
+            &-hover:nth-child(3)
+                top: 114px
+            &-hover:nth-child(4)
+                top: 158px
+            &-hover:nth-child(5)
+                top: 206px
+            &-hover:nth-child(6)
+                top: 255px
+            // &-hover:nth-child(7)
+            //     top: 358px
+            &-hover
+                &-desc
+                    min-width: 200px
+@media screen and ( min-width: 768px )
+    .structure
+        &-img
+            top: 80px
+            right: -230px
+            & img
+                width: 640px
+                height: 400px
+            &-hover:nth-child(1)
+                top: 35px
+            &-hover:nth-child(2)
+                top: 80px
+            &-hover:nth-child(3)
+                top: 126px
+            &-hover:nth-child(4)
+                top: 172px
+            &-hover:nth-child(5)
+                top: 230px
+            &-hover:nth-child(6)
+                top: 286px
+            // &-hover:nth-child(7)
+            //     top: 358px
+@media screen and ( min-width: 992px )
+    .structure
+        &-img
+            top: 0px
+            right: -130px
+            & img
+                width: 600px
+                height: 370px
+            &-hover:nth-child(1)
+                top: 30px
+            &-hover:nth-child(2)
+                top: 80px
+            &-hover:nth-child(3)
+                top: 120px
+            &-hover:nth-child(4)
+                top: 165px
+            &-hover:nth-child(5)
+                top: 215px
+            &-hover:nth-child(6)
+                top: 270px
+            // &-hover:nth-child(7)
+            //     top: 384px
+@media screen and ( min-width: 1200px )
+    .structure        
+        &-img
+            top: 0
+            right: -100px
+            & img
+                width: 695px
+                height: 434px
+            &-hover:nth-child(1)
+                top: 40px
+            &-hover:nth-child(2)
+                top: 95px
+            &-hover:nth-child(3)
+                top: 140px
+            &-hover:nth-child(4)
+                top: 185px
+            &-hover:nth-child(5)
+                top: 240px
+            &-hover:nth-child(6)
+                top: 305px
+            // &-hover:nth-child(7)
+            //     top: 456px
+@media screen and ( min-width: 1554px )
+    .structure
+        overflow: visible
+        &-img
+            right: 0            
+            & img
+                width: 819px
+                height: 496px
+            &-hover:nth-child(1)
+                top: 40px
+            &-hover:nth-child(2)
+                top: 95px
+            &-hover:nth-child(3)
+                top: 145px
+            &-hover:nth-child(4)
+                top: 200px
+            &-hover:nth-child(5)
+                top: 265px
+            &-hover:nth-child(6)
+                top: 350px
+            // &-hover:nth-child(7)
+            //     top: 350px       
+                                            
+
+                               
+                

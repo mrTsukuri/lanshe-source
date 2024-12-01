@@ -1,0 +1,109 @@
+.order
+    &-main
+        gap: 2.4rem
+        & > *:not(:last-child)
+            padding-bottom: 2.4rem
+            border-bottom: 1px solid rgba(34, 34, 34, .1)
+    &-block
+        gap: 1.6rem       
+    &-details
+        &__inputs
+            gap: 1.6rem
+        &__input
+            gap: .8rem
+            flex-direction: column
+            & label
+                order: 1
+    &-delivery
+        &__info
+            flex-direction: column
+            align-items: flex-start
+            gap: .8rem
+        &__company
+            gap: 1.6rem
+        &__img
+            & img
+                height: 2.5rem
+    &-payment
+        &__block                                           
+            flex-direction: column
+            gap: .8rem
+        &__label
+            & input
+                display: none
+            & input:checked ~ .order-payment__item
+                border-color: $black
+                & .order-payment__item-icon
+                    background-color: $black
+                    color: $white                         
+        &__item
+            border: 1px solid rgba(34, 34, 34, .1)
+            gap: 3.2rem
+            padding: 1.6rem
+            justify-content: space-between
+            transition: .3s
+            &-icon
+                border: 1px solid $black
+                color: $black
+                transition: .3s
+            &-desc
+                gap: .8rem
+                & img
+                    width: 2.4rem
+                    aspect-ratio: 1/1
+    &-cart
+        gap: 2.4rem
+        & > *:not(:last-child)
+            border: none
+            padding: 0
+        & > *:last-child
+            padding-top: 2.4rem
+            border-top: 1px solid rgba(34, 34, 34, .1)            
+        &__products
+            gap: 1.6rem
+            & > *:not(:last-child)
+                padding-bottom: 1.6rem
+                border-bottom: 1px solid rgba(34, 34, 34, .1)
+        &__buy
+            gap: 2.4rem                
+        &__product
+            gap: .4rem                                           
+@media screen and ( min-width: 1400px )
+    .order
+        &-main
+            gap: 3.2rem
+            & > *
+                padding-bottom: 3.2rem      
+        &-block
+            gap: 3.2rem
+        &-details                        
+            &__input
+                gap: 3.2rem
+                flex-direction: row
+                align-items: center
+                & label
+                    order: 0
+                & > *
+                    flex: 0 0 calc(50% - 1.6rem)
+        &-delivery
+            &__info
+                flex-direction: row
+                align-items: flex-start
+                gap: 1.6rem
+            &__company
+                gap: 3.2rem
+            &__img
+                & img
+                    height: 3.5rem
+        &-payment
+            &__block                                           
+                flex-direction: row
+                gap: 2.4rem
+                & > *
+                    flex: 0 0 calc(50% - 1.2rem)           
+            &__item                                
+                padding: 3.2rem
+                height: 18.1rem                                                                                                          
+
+
+    

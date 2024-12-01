@@ -1,0 +1,64 @@
+.children
+    &-block, &-roundedBtn
+        z-index: 2
+    &-img
+        z-index: 1    
+    &-block
+        max-width: unset
+        &-form
+            display: grid
+            grid-template-columns: 100%
+            gap: 10px    
+    &-roundedBtn
+        width: 280px
+        top: -40px
+        & .pain-btn
+            left: 0            
+        & .fun-btn 
+            right: 0
+    &-vector
+        overflow: hidden
+        &-img            
+            top: -190px            
+@media screen and ( min-width: 768px )
+    .children
+        &-block            
+            &-form
+                grid-template-columns: 1fr 1fr        
+        &-roundedBtn
+            width: 300px
+            top: -50px      
+@media screen and ( min-width: 992px )
+    .children
+        &-block
+            max-width: 424px
+            &-form
+                grid-template-columns: 100%
+        &-img
+            height: 320px
+            &-item-1, &-item-2
+                max-height: 320px
+        &-roundedBtn
+            width: 330px         
+@media screen and ( min-width: 1200px )
+    .children
+        &-block
+            max-width: 535px
+            &-form
+                grid-template-columns: 1fr auto
+        &-img
+            height: 350px
+            &-item-1, &-item-2
+                max-height: 350px
+        &-roundedBtn
+            width: 400px        
+@media screen and ( min-width: 1554px )
+    .children
+        &-img
+            height: 500px
+            &-item-1, &-item-2
+                max-height: unset
+            
+
+
+    

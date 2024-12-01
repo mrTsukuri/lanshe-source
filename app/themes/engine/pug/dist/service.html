@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="themes/engine/css/boots.css" as="style">
+    <link rel="preload" href="themes/engine/css/main.css" as="style">
+    <link rel="preload" href="themes/engine/css/libs.css" as="style">
+    <link rel="icon" href="images/favicon.png" as="" type="image/png">
+    <link rel="icon" href="images/favicon.svg" as="" type="image/svg+xml">
+    <link rel="stylesheet" href="themes/engine/css/boots.css">
+    <link rel="stylesheet" href="themes/engine/css/main.css">
+    <link rel="stylesheet" href="themes/engine/css/libs.css">
+    <title>Пуско-наладка котельной</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-wrapper d-flex">
+          <div class="header-logo d-flex flex-column justify-content-between align-items-start">
+            <div class="red-line"></div><a href="index.html"><img src="images/logo.svg" alt="Логотип сайта" width="88" height="70"></a>
+          </div>
+          <div class="header-main d-flex flex-column flex-grow-1">              
+            <div class="header-top flex-grow-1">
+              <button class="header-city btn-inline d-flex gap-6 align-items-start align-self-center fs-14" data-bs-toggle="modal" data-bs-target=".modal-city"><i class="icon near_me fs-18 text-main"></i><span>г. Петропавловск-Камчатский</span></button>
+              <form class="header-search position-relative" action="search.html" method="get" autocomplete="off">
+                <label class="main-input main-input_light w-100">
+                  <input type="text" name="stext" placeholder="Поиск по каталогу">
+                </label>
+                <button class="btn-inline d-flex position-absolute"><i class="icon search fs-24"></i></button>
+              </form>
+              <div class="header-phone flex-column align-items-end align-self-center"><a class="fs-xxl-20 fs-18 lh-1 fw-sb href-main" href="tel:84957775228">8 495 777-52-28</a><a class="fs-14 href-second" href="mailto:info@kotelzavod.ru">info@kotelzavod.ru</a></div>
+              <div class="header-phone flex-column align-items-end align-self-center"><a class="fs-xxl-20 fs-18 lh-1 fw-sb href-main" href="tel:88005511060">8 800 551-10-60</a>
+                <div class="fs-14 o-0_6">Бесплатно по России</div>
+              </div>
+              <button class="header-call btn btn-empty btn-empty_main fs-md fs-14 align-items-center" data-bs-toggle="modal" data-bs-target=".modal-call">Заказать звонок</button>
+              <button class="header-login btn-inline gap-6 fs-14 lh-1 align-self-center" data-bs-toggle="modal" data-bs-target=".modal-login"><i class="icon login fs-30 text-main"></i><span class="d-none d-xxl-inline-block">Личный <br> кабинет </span></button>
+            </div>
+            <div class="header-bottom"><a class="header-catalog btn btn-main d-flex align-items-center fw-sb" href="catalog.html"><i class="icon dashboard fs-24 d-none d-xxl-block"></i><span class="lh-1">Каталог <span class='d-none d-sm-inline-block'>продукции</span></span></a>
+              <nav class="header-nav bg-light d-none d-md-block">
+                <ul class="list-unstyled p-0 m-0 d-flex flex-wrap">
+                  <li><a class="href-main fs-14 fw-md" href="content.html" title="Перейти на страницу Как купить">Как купить</a></li>
+                  <li><a class="href-main fs-14 fw-md" href="content.html" title="Перейти на страницу Доставка и оплата">Доставка и оплата</a></li>
+                  <li><a class="href-main fs-14 fw-md" href="about.html" title="Перейти на страницу О заводе">О заводе</a></li>
+                  <li><a class="href-main fs-14 fw-md" href="contact.html" title="Перейти на страницу Контакты">Контакты</a></li>
+                  <li><a class="href-main fs-14 fw-md" href="worksheets.html" title="Перейти на страницу Опросные листы">Опросные листы</a></li>
+                  <li><a class="href-main fs-14 fw-md" href="articles.html" title="Перейти на страницу Статьи">Статьи</a></li>
+                </ul>
+              </nav>
+              <div class="header-tpage bg-light d-flex justify-content-end align-items-center"><a class="btn-icon position-relative header-tpage__href" href="compare.html"><i class="icon leaderboard fs-24"></i><span class="position-absolute o-0_5 fs-12 fw-md lh-1">6</span></a><a class="btn-icon align-items-center gap-10" href="cart.html">
+                  <div class="position-relative header-tpage__href d-flex"><i class="icon cart fs-24"></i><span class="position-absolute o-0_5 fs-12 fw-md lh-1">3</span></div>
+                  <div class="fs-12 fw-md lh-1 d-none d-xxl-block">450 000 ₽</div></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="breadcrumbs">
+        <div class="container">
+          <div class="breadcrumbs-nav d-flex flex-wrap align-items-center gap-6 text-nowrap"><a class="breadcrumbs-nav-item" href="index.html" title="Главная"><span>Главная</span></a><a class="breadcrumbs-nav-item" href="services.html" title="Услуги"><span>Услуги</span></a><span class="breadcrumbs-nav-item breadcrumbs-nav-item-disabled"><span>Пуско-наладка котельной</span></span>
+          </div>
+        </div>
+      </div>
+      <section class="service">
+        <div class="container">
+          <h1 class="fs-md-32 fs-24 fw-sb mb-sm-36 mb-24">Пуско-наладка котельной</h1>
+          <div class="service-grid">
+            <div class="service-img">
+              <picture>
+                <source srcset="images/services/1.webp" type="image/webp"><img src="images/services/1.jpg" alt="Пуско-наладка котельной" loading="lazy">
+              </picture>
+            </div>
+            <div class="service-desc">
+              <p>Для любого котельного оборудования, после выполнения монтажных работ, требуется проведение пуско-наладки котла (ПНР).  Пуск котла выполняется подготовленными специалистами, c большим опытом работы с оборудованием. Наши  инженеры прошли специальное обучение у производителей и получили соответствующие сертификаты.</p>
+              <p>Именно ПНР является залогом правильной, безопасной, экономичной и комфортной работы газового отопительного оборудования.</p>
+            </div>
+            <div class="product__buy d-flex flex-column bg-light position-relative">
+              <div class="product__buy-cost d-flex flex-column align-items-start">                           
+                <div class="d-flex flex-wrap align-items-end gap-10">
+                  <div class="fs-24 fw-sb">2 450 000 ₽</div>
+                  <div class="fs-14 lh-1_3 o-0_8">Цена с НДС                            </div>
+                </div>
+              </div>
+              <div class="product__buy-adv d-flex flex-wrap">
+                <div class="d-flex align-items-center gap-8">
+                  <div class="d-flex bg-white rounded-circle p-6"><i class="icon fs-16 credit_card"></i></div>
+                  <div class="fs-14 lh-1">Безопасная <br> онлайн оплата</div>
+                </div>
+                <div class="d-flex align-items-center gap-8">
+                  <div class="d-flex bg-white rounded-circle p-6"><i class="icon fs-16 undo"></i></div>
+                  <div class="fs-14 lh-1">Гарантия <br> возврата</div>
+                </div>
+              </div>
+              <button class="btn btn-main px-30 py-16 fw-sb">Заказать</button>
+              <button class="btn btn-empty btn-empty_main px-30 py-16 fw-sb">Получить консультацию</button>
+              <div class="product__buy-info">
+                <button class="btn-inline d-flex flex-column bg-white align-items-center p-12 gap-5"><i class="icon fs-24 credit_card"></i><span class="fs-14">Оплата</span></button>
+                <button class="btn-inline d-flex flex-column bg-white align-items-center p-12 gap-5"><i class="icon fs-24 verified_user"></i><span class="fs-14">Гарантии</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="service-content">
+        <div class="container">
+          <h2 class="fs-md-32 fs-24 fw-sb mb-sm-36 mb-24">Описание услуги</h2>
+          <div class="content">
+            <div>
+              <p>Для любого котельного оборудования, после выполнения монтажных работ, требуется проведение пуско-наладки котла (ПНР). Пуск котла выполняется подготовленными специалистами, c большим опытом работы с оборудованием. Наши инженеры прошли специальное обучение у производителей и получили соответствующие сертификаты.</p>
+              <p>Именно ПНР является залогом правильной, безопасной, экономичной и комфортной работы газового отопительного оборудования.</p>
+            </div>
+            <div>
+              <h2>При вводе газового оборудования в эксплуатацию производятся следующие работы:</h2>
+              <ul>
+                <li>опрессовка гидравлической части котла;</li>
+                <li>проверка правильной работы алгоритмов автоматики безопасности;</li>
+                <li>проверка на герметичность газового оборудования котла;</li>
+                <li>проверка и настройка газового оборудования котла.</li>
+              </ul>
+              <p>Для того чтобы вызвать нашего представителя для запуска газового оборудования необходимо подать заявку по телефону 284-000, 353-555, и сообщить оператору адрес, контактный телефон, модель котла, наличие (или отсутствие) дополнительных комплектующих (стабилизатора напряжения, газового подвода, электро. вилки, ИСНВ).</p>
+            </div>
+            <div class="content-gallery">
+              <picture>
+                <source srcset="images/services/2.webp" type="image/webp"><img src="images/services/2.jpg" alt="" loading="lazy">
+              </picture>
+              <picture>
+                <source srcset="images/services/3.webp" type="image/webp"><img src="images/services/3.jpg" alt="" loading="lazy">
+              </picture>
+            </div>
+            <div>
+              <h2>До выполнения ПНР инженер сервисного центра производит следующие работы:</h2>
+              <ul>
+                <li>осмотр места установки газового котла на предмет соблюдений требований СНИП;</li>
+                <li>осмотр подключения системы отопления и водоснабжения к газовому котлу на предмет соответствия требованиям заводов изготовителей;</li>
+                <li>осмотр отвода продуктов сгорания газа (дымохода) на предмет правильного монтажа и соответствия требованиям заводов изготовителей.</li>
+              </ul>
+              <p>По окончанию комплексного осмотра специалист делает заключение о возможности или невозможности произвести ПНР.Пуско-наладочные работы (ПНР) выполняются за счет заказчика, стоимость ПНР в черте города составляет 1500,00 рублей (за чертой города цена договорная), в стоимость ПНР не входит стоимость дополнительных комплектующих.</p>
+              <p>Так же после проведения ПНР наш инженер предложит вам заключить договор на ВДГО (скачать)</p>
+              <p>Внимание: при покупке газового оборудования требуйте наличие гарантийного талона с печатью и датой продажи. В гарантийном талоне по окончании ПНР обязательно должны быть указаны:</p>
+              <ul>
+                <li>даты проведения ПНР;</li>
+                <li>наименование организации, выполнившей ПНР;</li>
+                <li>печать организации, выполнившей ПНР;</li>
+                <li>ФИО и подпись специалиста, производившего ПНР.</li>
+              </ul>
+              <p>Гарантийный талон должен быть правильно заполнен. Отсутствие гарантийного талона, не заполненный, либо неправильно заполненного гарантийного талона являются основанием для отказа в предоставлении гарантийных обязательств.    </p>
+            </div>
+            <div class="content-products">
+              <div class="product-item position-relative d-flex flex-grow-1"><a class="product-item__img overflow-hidden" href="product.html">           
+                  <picture>
+                    <source srcset="images/products/1.webp" type="image/webp"><img src="images/products/1.jpg" alt="Котёл КВр-2.0 на угле" loading="lazy">
+                  </picture></a>
+                <div class="product-item__desc d-flex align-items-start">           <a class="href-main product-item__title fw-sb fs-md-16 fs-14" href="product.html">Котёл КВр-2.0 на угле</a>
+                </div>
+                <div class="product-item__buy d-flex">
+                  <div class="product-item__price d-flex">
+                    <div class="product-item__cost text-main fs-md-18 fs-16 fw-sb">450 000 руб.</div>
+                  </div>
+                  <div class="product-item__btns d-flex">
+                    <button class="btn btn-main flex-grow-1 fw-sb lh-1">Купить</button>
+                    <button class="btn-icon px-14 py-12 align-items-center"><i class="icon leaderboard fs-24"></i></button>
+                  </div>
+                  <button class="btn btn-inline href-main d-flex align-items-center gap-5" data-bs-toggle="modal" data-bs-target=".modal-buy"><span class="fs-14 fw-md text-decoration-underline">Купить в 1 клик</span><i class="icon arrow fs-16 text-main"></i></button>
+                </div>
+              </div>
+              <div class="product-item position-relative d-flex flex-grow-1"><a class="product-item__img overflow-hidden" href="product.html">           
+                  <picture>
+                    <source srcset="images/products/2.webp" type="image/webp"><img src="images/products/2.jpg" alt="Котёл КВр-2.0 на угле" loading="lazy">
+                  </picture></a>
+                <div class="product-item__desc d-flex align-items-start">           <a class="href-main product-item__title fw-sb fs-md-16 fs-14" href="product.html">Котёл КВр-2.0 на угле</a>
+                </div>
+                <div class="product-item__buy d-flex">
+                  <div class="product-item__price d-flex">
+                    <div class="product-item__cost text-main fs-md-18 fs-16 fw-sb">450 000 руб.</div>
+                  </div>
+                  <div class="product-item__btns d-flex">
+                    <button class="btn btn-main flex-grow-1 fw-sb lh-1">Купить</button>
+                    <button class="btn-icon px-14 py-12 align-items-center"><i class="icon leaderboard fs-24"></i></button>
+                  </div>
+                  <button class="btn btn-inline href-main d-flex align-items-center gap-5" data-bs-toggle="modal" data-bs-target=".modal-buy"><span class="fs-14 fw-md text-decoration-underline">Купить в 1 клик</span><i class="icon arrow fs-16 text-main"></i></button>
+                </div>
+              </div>
+              <div class="product-item position-relative d-flex flex-grow-1"><a class="product-item__img overflow-hidden" href="product.html">           
+                  <picture>
+                    <source srcset="images/products/3.webp" type="image/webp"><img src="images/products/3.jpg" alt="Котёл КВр-2.0 на угле" loading="lazy">
+                  </picture></a>
+                <div class="product-item__desc d-flex align-items-start">           <a class="href-main product-item__title fw-sb fs-md-16 fs-14" href="product.html">Котёл КВр-2.0 на угле</a>
+                </div>
+                <div class="product-item__buy d-flex">
+                  <div class="product-item__price d-flex">
+                    <div class="product-item__cost text-main fs-md-18 fs-16 fw-sb">450 000 руб.</div>
+                  </div>
+                  <div class="product-item__btns d-flex">
+                    <button class="btn btn-main flex-grow-1 fw-sb lh-1">Купить</button>
+                    <button class="btn-icon px-14 py-12 align-items-center"><i class="icon leaderboard fs-24"></i></button>
+                  </div>
+                  <button class="btn btn-inline href-main d-flex align-items-center gap-5" data-bs-toggle="modal" data-bs-target=".modal-buy"><span class="fs-14 fw-md text-decoration-underline">Купить в 1 клик</span><i class="icon arrow fs-16 text-main"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="feedback">
+        <div class="container">
+          <div class="feedback-grid bg-main position-relative text-white">
+            <div class="feedback-left d-flex flex-column">
+              <h2 class="fs-xxl-40 fs-md-35 fs-24 fw-sb lh-1_1 mb-0">Возникли сложности <br> при выборе продукции?</h2>
+              <div class="fs-md-18 fs-16 fw-md lh-1_3">Получите консультацию по телефону</div>
+              <div class="feedback-phone bg-white"><a class="href-main fs-md-24 fs-18 fw-bl" href="tel:88005511060">8 800 551-10-60 </a></div>
+            </div>
+            <div class="feedback-right d-flex align-items-center justify-content-center">
+              <div class="feedback-right__wrapper d-flex flex-column">
+                <div class="fs-md-18 fs-16 fw-md lh-1_5">Оставьте номер телефона, мы вам перезвоним и ответим на все вопросы</div>
+                <form class="feedback-form d-flex flex-column" name="consulatation_form" autocomplete="off">
+                  <label class="main-input main-input_empty">
+                    <input type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required>
+                  </label>
+                  <button class="btn btn-white fw-sb">Получить консультацию     </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="services">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-10 mb-36">
+            <h2 class="fs-md-32 fs-24 fw-sb mb-0">Другие услуги завода</h2>
+            <div class="slider-navigation-5 d-none d-sm-flex align-items-center gap-15" data-category="1">
+              <div class="slider-prev"><i class="icon arrow_next">                   </i></div>
+              <div class="slider-pagination-wrapper">
+                <div class="slider-pagination"></div>
+              </div>
+              <div class="slider-next"><i class="icon arrow_next"></i></div>
+            </div>
+          </div>
+          <div class="swiper slider-5" data-category="1">
+            <div class="swiper-wrapper">                   
+              <div class="swiper-slide d-flex h-auto">
+                <div class="services-item flex-grow-1 d-flex flex-column"><a class="services-item__img" href="service.html">
+                    <picture>
+                      <source srcset="images/services/1.webp" type="image/webp"><img src="images/services/1.jpg" alt="Пуско-наладка котельной" loading="lazy">
+                    </picture></a>
+                  <div class="services-item__desc d-flex flex-column flex-grow-1 justify-content-between"><a class="fs-md-16 fs-14 fw-sb href-main" href="service.html">Пуско-наладка котельной</a>
+                    <hr class="bg-grey my-0">
+                    <div class="services-item__price d-flex flex-column">
+                      <div class="fs-md-18 fs-16 fw-sb text-main">450 000 руб.</div>
+                      <button class="btn btn-main fw-sb">Заказать</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide d-flex h-auto">
+                <div class="services-item flex-grow-1 d-flex flex-column"><a class="services-item__img" href="service.html">
+                    <picture>
+                      <source srcset="images/services/2.webp" type="image/webp"><img src="images/services/2.jpg" alt="Пуско-наладка котельной" loading="lazy">
+                    </picture></a>
+                  <div class="services-item__desc d-flex flex-column flex-grow-1 justify-content-between"><a class="fs-md-16 fs-14 fw-sb href-main" href="service.html">Пуско-наладка котельной</a>
+                    <hr class="bg-grey my-0">
+                    <div class="services-item__price d-flex flex-column">
+                      <div class="fs-md-18 fs-16 fw-sb text-main">450 000 руб.</div>
+                      <button class="btn btn-main fw-sb">Заказать</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide d-flex h-auto">
+                <div class="services-item flex-grow-1 d-flex flex-column"><a class="services-item__img" href="service.html">
+                    <picture>
+                      <source srcset="images/services/3.webp" type="image/webp"><img src="images/services/3.jpg" alt="Пуско-наладка котельной" loading="lazy">
+                    </picture></a>
+                  <div class="services-item__desc d-flex flex-column flex-grow-1 justify-content-between"><a class="fs-md-16 fs-14 fw-sb href-main" href="service.html">Пуско-наладка котельной</a>
+                    <hr class="bg-grey my-0">
+                    <div class="services-item__price d-flex flex-column">
+                      <div class="fs-md-18 fs-16 fw-sb text-main">450 000 руб.</div>
+                      <button class="btn btn-main fw-sb">Заказать</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide d-flex h-auto">
+                <div class="services-item flex-grow-1 d-flex flex-column"><a class="services-item__img" href="service.html">
+                    <picture>
+                      <source srcset="images/services/4.webp" type="image/webp"><img src="images/services/4.jpg" alt="Пуско-наладка котельной" loading="lazy">
+                    </picture></a>
+                  <div class="services-item__desc d-flex flex-column flex-grow-1 justify-content-between"><a class="fs-md-16 fs-14 fw-sb href-main" href="service.html">Пуско-наладка котельной</a>
+                    <hr class="bg-grey my-0">
+                    <div class="services-item__price d-flex flex-column">
+                      <div class="fs-md-18 fs-16 fw-sb text-main">450 000 руб.</div>
+                      <button class="btn btn-main fw-sb">Заказать</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide d-flex h-auto">
+                <div class="services-item flex-grow-1 d-flex flex-column"><a class="services-item__img" href="service.html">
+                    <picture>
+                      <source srcset="images/services/5.webp" type="image/webp"><img src="images/services/5.jpg" alt="Пуско-наладка котельной" loading="lazy">
+                    </picture></a>
+                  <div class="services-item__desc d-flex flex-column flex-grow-1 justify-content-between"><a class="fs-md-16 fs-14 fw-sb href-main" href="service.html">Пуско-наладка котельной</a>
+                    <hr class="bg-grey my-0">
+                    <div class="services-item__price d-flex flex-column">
+                      <div class="fs-md-18 fs-16 fw-sb text-main">450 000 руб.</div>
+                      <button class="btn btn-main fw-sb">Заказать</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide d-flex h-auto">
+                <div class="services-item flex-grow-1 d-flex flex-column"><a class="services-item__img" href="service.html">
+                    <picture>
+                      <source srcset="images/services/5.webp" type="image/webp"><img src="images/services/5.jpg" alt="Пуско-наладка котельной" loading="lazy">
+                    </picture></a>
+                  <div class="services-item__desc d-flex flex-column flex-grow-1 justify-content-between"><a class="fs-md-16 fs-14 fw-sb href-main" href="service.html">Пуско-наладка котельной</a>
+                    <hr class="bg-grey my-0">
+                    <div class="services-item__price d-flex flex-column">
+                      <div class="fs-md-18 fs-16 fw-sb text-main">450 000 руб.</div>
+                      <button class="btn btn-main fw-sb">Заказать</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="watched">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-10 mb-36">
+            <h2 class="fs-md-32 fs-24 fw-sb mb-0">Вы смотрели</h2>
+            <div class="slider-navigation-6 d-none d-md-flex align-items-center gap-15" data-category="1">
+              <div class="slider-prev"><i class="icon arrow_next">                   </i></div>
+              <div class="slider-pagination-wrapper">
+                <div class="slider-pagination"></div>
+              </div>
+              <div class="slider-next"><i class="icon arrow_next"></i></div>
+            </div>
+          </div>
+          <div class="swiper slider-6" data-category="1">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide d-flex h-auto">
+                <div class="product-item position-relative d-flex flex-grow-1"><a class="product-item__img overflow-hidden" href="product.html">           
+                    <picture>
+                      <source srcset="images/products/1.webp" type="image/webp"><img src="images/products/1.jpg" alt="Котёл КВр-2.0 на угле" loading="lazy">
+                    </picture></a>
+                  <div class="product-item__desc d-flex align-items-start">           <a class="href-main product-item__title fw-sb fs-md-16 fs-14" href="product.html">Котёл КВр-2.0 на угле</a>
+                  </div>
+                  <div class="product-item__buy d-flex">
+                    <div class="product-item__price d-flex">
+                      <div class="product-item__cost text-main fs-md-18 fs-16 fw-sb">450 000 руб.</div>
+                    </div>
+                    <div class="product-item__btns d-flex">
+                      <button class="btn btn-main flex-grow-1 fw-sb lh-1">Купить</button>
+                      <button class="btn-icon px-14 py-12 align-items-center"><i class="icon leaderboard fs-24"></i></button>
+                    </div>
+                    <button class="btn btn-inline href-main d-flex align-items-center gap-5" data-bs-toggle="modal" data-bs-target=".modal-buy"><span class="fs-14 fw-md text-decoration-underline">Купить в 1 клик</span><i class="icon arrow fs-16 text-main"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide d-flex h-auto">
+                <div class="product-item position-relative d-flex flex-grow-1"><a class="product-item__img overflow-hidden" href="product.html">           
+                    <picture>
+                      <source srcset="images/products/2.webp" type="image/webp"><img src="images/products/2.jpg" alt="Котёл КВр-2.0 на угле" loading="lazy">
+                    </picture></a>
+                  <div class="product-item__desc d-flex align-items-start">           <a class="href-main product-item__title fw-sb fs-md-16 fs-14" href="product.html">Котёл КВр-2.0 на угле</a>
+                  </div>
+                  <div class="product-item__buy d-flex">
+                    <div class="product-item__price d-flex">
+                      <div class="product-item__cost text-main fs-md-18 fs-16 fw-sb">450 000 руб.</div>
+                    </div>
+                    <div class="product-item__btns d-flex">
+                      <button class="btn btn-main flex-grow-1 fw-sb lh-1">Купить</button>
+                      <button class="btn-icon px-14 py-12 align-items-center"><i class="icon leaderboard fs-24"></i></button>
+                    </div>
+                    <button class="btn btn-inline href-main d-flex align-items-center gap-5" data-bs-toggle="modal" data-bs-target=".modal-buy"><span class="fs-14 fw-md text-decoration-underline">Купить в 1 клик</span><i class="icon arrow fs-16 text-main"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide d-flex h-auto">
+                <div class="product-item position-relative d-flex flex-grow-1"><a class="product-item__img overflow-hidden" href="product.html">           
+                    <picture>
+                      <source srcset="images/products/3.webp" type="image/webp"><img src="images/products/3.jpg" alt="Котёл КВр-2.0 на угле" loading="lazy">
+                    </picture></a>
+                  <div class="product-item__desc d-flex align-items-start">           <a class="href-main product-item__title fw-sb fs-md-16 fs-14" href="product.html">Котёл КВр-2.0 на угле</a>
+                  </div>
+                  <div class="product-item__buy d-flex">
+                    <div class="product-item__price d-flex">
+                      <div class="product-item__cost text-main fs-md-18 fs-16 fw-sb">450 000 руб.</div>
+                    </div>
+                    <div class="product-item__btns d-flex">
+                      <button class="btn btn-main flex-grow-1 fw-sb lh-1">Купить</button>
+                      <button class="btn-icon px-14 py-12 align-items-center"><i class="icon leaderboard fs-24"></i></button>
+                    </div>
+                    <button class="btn btn-inline href-main d-flex align-items-center gap-5" data-bs-toggle="modal" data-bs-target=".modal-buy"><span class="fs-14 fw-md text-decoration-underline">Купить в 1 клик</span><i class="icon arrow fs-16 text-main"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide d-flex h-auto">
+                <div class="product-item position-relative d-flex flex-grow-1"><a class="product-item__img overflow-hidden" href="product.html">           
+                    <picture>
+                      <source srcset="images/products/4.webp" type="image/webp"><img src="images/products/4.jpg" alt="Котёл КВр-2.0 на угле" loading="lazy">
+                    </picture></a>
+                  <div class="product-item__desc d-flex align-items-start">           <a class="href-main product-item__title fw-sb fs-md-16 fs-14" href="product.html">Котёл КВр-2.0 на угле</a>
+                  </div>
+                  <div class="product-item__buy d-flex">
+                    <div class="product-item__price d-flex">
+                      <div class="product-item__cost text-main fs-md-18 fs-16 fw-sb">450 000 руб.</div>
+                    </div>
+                    <div class="product-item__btns d-flex">
+                      <button class="btn btn-main flex-grow-1 fw-sb lh-1">Купить</button>
+                      <button class="btn-icon px-14 py-12 align-items-center"><i class="icon leaderboard fs-24"></i></button>
+                    </div>
+                    <button class="btn btn-inline href-main d-flex align-items-center gap-5" data-bs-toggle="modal" data-bs-target=".modal-buy"><span class="fs-14 fw-md text-decoration-underline">Купить в 1 клик</span><i class="icon arrow fs-16 text-main"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide d-flex h-auto">
+                <div class="product-item position-relative d-flex flex-grow-1"><a class="product-item__img overflow-hidden" href="product.html">           
+                    <picture>
+                      <source srcset="images/products/5.webp" type="image/webp"><img src="images/products/5.jpg" alt="Котёл КВр-2.0 на угле" loading="lazy">
+                    </picture></a>
+                  <div class="product-item__desc d-flex align-items-start">           <a class="href-main product-item__title fw-sb fs-md-16 fs-14" href="product.html">Котёл КВр-2.0 на угле</a>
+                  </div>
+                  <div class="product-item__buy d-flex">
+                    <div class="product-item__price d-flex">
+                      <div class="product-item__cost text-main fs-md-18 fs-16 fw-sb">450 000 руб.</div>
+                    </div>
+                    <div class="product-item__btns d-flex">
+                      <button class="btn btn-main flex-grow-1 fw-sb lh-1">Купить</button>
+                      <button class="btn-icon px-14 py-12 align-items-center"><i class="icon leaderboard fs-24"></i></button>
+                    </div>
+                    <button class="btn btn-inline href-main d-flex align-items-center gap-5" data-bs-toggle="modal" data-bs-target=".modal-buy"><span class="fs-14 fw-md text-decoration-underline">Купить в 1 клик</span><i class="icon arrow fs-16 text-main"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide d-flex h-auto">
+                <div class="product-item position-relative d-flex flex-grow-1"><a class="product-item__img overflow-hidden" href="product.html">           
+                    <picture>
+                      <source srcset="images/products/5.webp" type="image/webp"><img src="images/products/5.jpg" alt="Котёл КВр-2.0 на угле" loading="lazy">
+                    </picture></a>
+                  <div class="product-item__desc d-flex align-items-start">           <a class="href-main product-item__title fw-sb fs-md-16 fs-14" href="product.html">Котёл КВр-2.0 на угле</a>
+                  </div>
+                  <div class="product-item__buy d-flex">
+                    <div class="product-item__price d-flex">
+                      <div class="product-item__cost text-main fs-md-18 fs-16 fw-sb">450 000 руб.</div>
+                    </div>
+                    <div class="product-item__btns d-flex">
+                      <button class="btn btn-main flex-grow-1 fw-sb lh-1">Купить</button>
+                      <button class="btn-icon px-14 py-12 align-items-center"><i class="icon leaderboard fs-24"></i></button>
+                    </div>
+                    <button class="btn btn-inline href-main d-flex align-items-center gap-5" data-bs-toggle="modal" data-bs-target=".modal-buy"><span class="fs-14 fw-md text-decoration-underline">Купить в 1 клик</span><i class="icon arrow fs-16 text-main"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide d-flex h-auto">
+                <div class="product-item position-relative d-flex flex-grow-1"><a class="product-item__img overflow-hidden" href="product.html">           
+                    <picture>
+                      <source srcset="images/products/5.webp" type="image/webp"><img src="images/products/5.jpg" alt="Котёл КВр-2.0 на угле" loading="lazy">
+                    </picture></a>
+                  <div class="product-item__desc d-flex align-items-start">           <a class="href-main product-item__title fw-sb fs-md-16 fs-14" href="product.html">Котёл КВр-2.0 на угле</a>
+                  </div>
+                  <div class="product-item__buy d-flex">
+                    <div class="product-item__price d-flex">
+                      <div class="product-item__cost text-main fs-md-18 fs-16 fw-sb">450 000 руб.</div>
+                    </div>
+                    <div class="product-item__btns d-flex">
+                      <button class="btn btn-main flex-grow-1 fw-sb lh-1">Купить</button>
+                      <button class="btn-icon px-14 py-12 align-items-center"><i class="icon leaderboard fs-24"></i></button>
+                    </div>
+                    <button class="btn btn-inline href-main d-flex align-items-center gap-5" data-bs-toggle="modal" data-bs-target=".modal-buy"><span class="fs-14 fw-md text-decoration-underline">Купить в 1 клик</span><i class="icon arrow fs-16 text-main"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer bg-light">
+      <div class="container">
+        <div class="footer-wrapper d-flex mb-36">
+          <div class="footer-logo d-flex flex-column justify-content-between align-items-start">
+            <div class="red-line"></div><a href="index.html"><img src="images/logo.svg" alt="Логотип сайта" width="88" height="70"></a>
+            <div class="footer-logo__hrefs">
+              <ul class="list-unstyled m-0 p-0 d-flex flex-wrap">
+                <li><a class="href-main fs-lg-16 fs-14 fw-md" href="content.html" title="Перейти на страницу Как купить">Как купить</a></li>
+                <li><a class="href-main fs-lg-16 fs-14 fw-md" href="content.html" title="Перейти на страницу Доставка и оплата">Доставка и оплата</a></li>
+                <li><a class="href-main fs-lg-16 fs-14 fw-md" href="about.html" title="Перейти на страницу О заводе">О заводе</a></li>
+                <li><a class="href-main fs-lg-16 fs-14 fw-md" href="contact.html" title="Перейти на страницу Контакты">Контакты</a></li>
+                <li><a class="href-main fs-lg-16 fs-14 fw-md" href="worksheets.html" title="Перейти на страницу Опросные листы">Опросные листы</a></li>
+                <li><a class="href-main fs-lg-16 fs-14 fw-md" href="articles.html" title="Перейти на страницу Статьи">Статьи</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-main d-flex flex-column flex-grow-1">
+            <div class="footer-top d-none d-lg-flex align-items-center justify-content-between">
+              <div class="footer-top__feedback d-flex">
+                <div class="d-flex flex-column align-items-end align-self-center"><a class="fs-lg-20 fs-18 lh-1 fw-sb href-main" href="tel:84957775228">8 495 777-52-28</a>
+                  <div class="fs-14 o-0_6">Москва и область</div>
+                </div>
+                <div class="d-flex flex-column align-items-end align-self-center"><a class="fs-lg-20 fs-18 lh-1 fw-sb href-main" href="tel:88005511060">8 800 551-10-60</a>
+                  <div class="fs-14 o-0_6">Бесплатно по России</div>
+                </div>
+                <div class="d-flex flex-column align-items-end align-self-center"><a class="fs-lg-20 fs-18 lh-1 fw-sb href-main" href="mailto:info@kotelzavod.ru">info@kotelzavod.ru</a>
+                  <div class="fs-14 o-0_6">Пишите нам</div>
+                </div>
+              </div>
+              <button class="btn btn-empty btn-empty_main px-24 py-12 fs-md fs-14">Заказать звонок                            </button>
+            </div>
+            <div class="footer-bottom bg-white"><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Отопительные котлы</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Промышленные насосы</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Комплектующие и запчасти</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Трубные системы котла</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Котельные установки</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Дымовые трубы для котельной</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Циклоны</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Электроды сварочные</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Топки котлов</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Горелки для котлов</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Паровые котлы</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Теплообменники</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Топливоподача и шлакоудаление</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Колосники чугунные</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Деаэраторы для котельной</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Водоподготовка и водоочистка</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Вентиляторы промышленные</span></a><a class="href-main baner-category__item d-flex align-items-center gap-12 fs-16 fw-md" href="category.html"><i class="icon arrow_diag fs-10"></i><span class="fs-lg-16 fs-14">Котловая автоматика</span></a>
+            </div>
+          </div>
+        </div>
+        <p class="lh-n">Посещая сайт компании «КотлоЭнергоПром», Вы соглашаетесь c условиями <button class='btn-inline text-decoration-underline'>политики конфиденциальности</button> и <button class='btn-inline text-decoration-underline'>политики обработки персональных данных</button></p>
+      </div>
+      <div class="position-absolute top-0 end-0 pe-10 pe-sm-0">
+        <div class="d-flex scroll-top position-fixed pointer scroll-item"><i class="icon arrow_top fs-24"></i></div>
+      </div>
+    </footer>
+    <div class="footer-sticky d-xl-none py-15 bg-light">
+      <div class="container">
+        <div class="footer-sticky__wrapper d-flex align-items-center justify-content-around"><a class="btn btn-icon d-flex flex-column align-items-center gap-5 btn-menu" href="#mobile-menu"><i class="icon fs-30 menu"></i><span class="fs-12 fw-rg">Меню</span></a><a class="btn btn-icon d-flex flex-column align-items-center gap-5" href="cart.html"><i class="icon fs-30 cart"></i><span class="fs-12 fw-rg">Корзина</span></a><a class="btn btn-icon d-flex flex-column align-items-center gap-5" href="compare.html"><i class="icon fs-30 leaderboard"></i><span class="fs-12 fw-rg">Сравнить</span></a>
+          <button class="btn btn-icon d-flex flex-column align-items-center gap-5" data-bs-toggle="modal" data-bs-target=".modal-login"><i class="icon fs-30 login"></i><span class="fs-12 fw-rg">Кабинет</span></button>
+        </div>
+      </div>
+    </div>
+    <nav class="mobile-menu menu-scrolling" id="mobile-menu" style="display: none">
+      <ul>
+        <li class="mobile-menu-logo">
+          <div class="header-logo d-flex p-0"><img class="w-auto" src="images/logo.svg" alt="холодильное и торговое оборудование"></div>
+        </li>
+        <li class="mobile-menu-feedback d-flex flex-column align-items-start"><a class="btn btn-main fs-14 px-20 py-10 w-auto" href="catalog.html" title="Каталог продукции">Каталог продукции</a></li>
+        <li><a class="href-main fs-lg-16 fs-14 fw-md" href="content.html" title="Перейти на страницу Как купить">Как купить</a></li>
+        <li><a class="href-main fs-lg-16 fs-14 fw-md" href="content.html" title="Перейти на страницу Доставка и оплата">Доставка и оплата</a></li>
+        <li><a class="href-main fs-lg-16 fs-14 fw-md" href="about.html" title="Перейти на страницу О заводе">О заводе</a></li>
+        <li><a class="href-main fs-lg-16 fs-14 fw-md" href="contact.html" title="Перейти на страницу Контакты">Контакты</a></li>
+        <li><a class="href-main fs-lg-16 fs-14 fw-md" href="worksheets.html" title="Перейти на страницу Опросные листы">Опросные листы</a></li>
+        <li><a class="href-main fs-lg-16 fs-14 fw-md" href="articles.html" title="Перейти на страницу Статьи">Статьи</a></li>
+        <li class="mobile-menu-feedback d-flex flex-column align-items-start">           
+          <div class="d-flex flex-column"><a class="fs-lg-20 fs-18 lh-1 fw-sb href-main w-auto" href="tel:84957775228">8 495 777-52-28</a>
+            <div class="fs-14 o-0_6">Москва и область</div>
+          </div>
+          <div class="d-flex flex-column"><a class="fs-lg-20 fs-18 lh-1 fw-sb href-main w-auto" href="tel:88005511060">8 800 551-10-60</a>
+            <div class="fs-14 o-0_6">Бесплатно по России</div>
+          </div>
+          <div class="d-flex flex-column"><a class="fs-lg-20 fs-18 lh-1 fw-sb href-main w-auto" href="mailto:info@kotelzavod.ru">info@kotelzavod.ru</a>
+            <div class="fs-14 o-0_6">Пишите нам</div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div aria-live="polite" aria-atomic="true">
+      <div class="toast-container position-fixed top-0 end-0 p-3 js_toast_container" style="z-index: 10000;"></div>
+    </div>
+    <div class="modal fade modal-login" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">   
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">               
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-wrapper">
+              <h3 class="fs-24 fw-sb mb-0">Вход в личный кабинет</h3>
+              <form class="modal-form" name="modal-login" autocomplete="off">                       
+                <div class="d-flex flex-column gap-12">
+                  <div class="fs-14 fw-md lh-1_5">Введите номер телефона. Мы отправим код для входа по СМС.</div>
+                  <div class="concat-input">
+                    <label class="main-input main-input_light">
+                      <input type="tel" name="phone" placeholder="+7 (123) 123-45-67" required>
+                    </label>
+                    <button class="btn btn-empty btn-empty_main fw-sb">Получить СМС-код</button>
+                  </div>
+                </div>
+                <div class="d-flex flex-column gap-12">
+                  <div class="fs-14 fw-md lh-1_5">Введите СМС-код</div>
+                  <div class="concat-input">
+                    <label class="main-input main-input_light">
+                      <input type="password" name="password" placeholder="____" required>
+                    </label>
+                    <button class="btn btn-main fw-sb">Войти в личный кабинет</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-call" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">   
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">               
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close"></i></button>
+          </div>
+          <div class="modal-body">                                   
+            <div class="modal-wrapper">
+              <h3 class="fs-24 fw-sb mb-0">Обратный звонок</h3>
+              <form class="modal-form" name="modal-call" autocomplete="off">
+                <div class="order-block__wrapper d-flex flex-column">
+                  <div class="d-flex flex-column gap-12">
+                    <div class="fs-14 fw-md lh-1_5">Оставьте комментарий для менеджера</div>
+                    <label class="main-input main-input_empty-l">
+                      <textarea name="comment" cols="30" rows="4" placeholder="Например: перезвоните с 9 до 12 утра"></textarea>
+                    </label>
+                  </div>
+                  <div class="d-flex flex-column gap-12">
+                    <div class="fs-14 fw-md lh-1_5">Прикрепите файлы</div>
+                    <div class="main-file js_file-form d-flex flex-column align-items-start">
+                      <div class="main-file__wrapper js_file-wrapper"><i class="icon attachment fs-24"></i><span class="main-file__list js_file-list">Файл не выбран</span><i class="icon close fs-24 pointer js_file-remove"></i></div>
+                      <label class="main-file__label d-flex align-items-center pointer" title="Прикрепить файл"><span>Добавить файл</span>
+                        <input class="d-none" type="file" name="file">
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex flex-column gap-12">
+                  <div class="fs-14 fw-md lh-1_5">Укажите номер телефона и мы свяжемся с вами в ближайшее рабочее время</div>
+                  <div class="concat-input">
+                    <label class="main-input main-input_light">
+                      <input type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required>
+                    </label>
+                    <button class="btn btn-main fw-sb">Заказать звонок</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-buy" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">               
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-wrapper">
+              <h3 class="fs-24 fw-sb mb-0">Купить котёл КВр-2.0 на угле</h3>
+              <div class="modal-product">
+                <div class="modal-product__img">
+                  <picture>
+                    <source srcset="images/products/4.webp" type="image/webp"><img src="images/products/4.jpg" alt="Купить котёл КВр-2.0 на угле" loading="lazy">
+                  </picture>
+                </div>
+                <p class="lh-1_4 o-1">Для любого котельного оборудования, после выполнения монтажных работ, требуется проведение пуско-наладки котла (ПНР).  Пуск котла выполняется подготовленными специалистами, c большим опытом работы с оборудованием. Наши  инженеры прошли специальное обучение у производителей и получили соответствующие сертификаты.</p>
+                <div class="modal-product__info d-flex flex-wrap justify-content-between gap-20 p-sm-24 p-15 bg-light">
+                  <div class="d-flex align-items-end gap-10">
+                    <div class="fs-24 fw-sb lh-1">2 450 000 ₽</div>
+                    <div class="fs-14 lh-1_3 o-0_8">Цена с НДС</div>
+                  </div>
+                  <div class="product-buy__adv d-flex flex-wrap">
+                    <div class="d-flex align-items-center gap-8">
+                      <div class="d-flex bg-white rounded-circle p-6"><i class="icon fs-16 credit_card"></i></div>
+                      <div class="fs-14 lh-1">Безопасная <br> онлайн оплата</div>
+                    </div>
+                    <div class="d-flex align-items-center gap-8">
+                      <div class="d-flex bg-white rounded-circle p-6"><i class="icon fs-16 undo"></i></div>
+                      <div class="fs-14 lh-1">Гарантия <br> возврата</div>
+                    </div>
+                  </div>
+                </div>
+                <form class="modal-form" name="modal-buy" autocomplete="off">
+                  <div class="d-flex flex-column gap-12">
+                    <div class="fs-14 fw-md lh-1_5">Оставьте комментарий для менеджера</div>
+                    <label class="main-input main-input_empty-l">
+                      <textarea name="comment" cols="30" rows="4" placeholder="Например: перезвоните с 9 до 12 утра"></textarea>
+                    </label>
+                  </div>
+                  <div class="d-flex flex-column gap-12">
+                    <div class="fs-14 fw-md lh-1_5">Укажите номер телефона и мы свяжемся с вами в ближайшее время</div>
+                    <div class="concat-input">
+                      <label class="main-input main-input_light">
+                        <input type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required>
+                      </label>
+                      <button class="btn btn-main fw-sb">Заказать звонок</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-kp" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">               
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-wrapper">
+              <h3 class="fs-24 fw-sb mb-0">Коммерческое проедложение на котёл КВр-2.0 на угле</h3>
+              <div class="modal-product">
+                <div class="modal-product__img">
+                  <picture>
+                    <source srcset="images/products/4.webp" type="image/webp"><img src="images/products/4.jpg" alt="Купить котёл КВр-2.0 на угле" loading="lazy">
+                  </picture>
+                </div>
+                <p class="lh-1_4 o-1">Для любого котельного оборудования, после выполнения монтажных работ, требуется проведение пуско-наладки котла (ПНР).  Пуск котла выполняется подготовленными специалистами, c большим опытом работы с оборудованием. Наши  инженеры прошли специальное обучение у производителей и получили соответствующие сертификаты.</p>
+                <div class="modal-product__info d-flex flex-wrap justify-content-between gap-20 p-sm-24 p-15 bg-light">
+                  <div class="d-flex align-items-end gap-10">
+                    <div class="fs-24 fw-sb lh-1">2 450 000 ₽</div>
+                    <div class="fs-14 lh-1_3 o-0_8">Цена с НДС</div>
+                  </div>
+                  <div class="product-buy__adv d-flex flex-wrap">
+                    <div class="d-flex align-items-center gap-8">
+                      <div class="d-flex bg-white rounded-circle p-6"><i class="icon fs-16 credit_card"></i></div>
+                      <div class="fs-14 lh-1">Безопасная <br> онлайн оплата</div>
+                    </div>
+                    <div class="d-flex align-items-center gap-8">
+                      <div class="d-flex bg-white rounded-circle p-6"><i class="icon fs-16 undo"></i></div>
+                      <div class="fs-14 lh-1">Гарантия <br> возврата</div>
+                    </div>
+                  </div>
+                </div>
+                <form class="modal-form" name="modal-kp" autocomplete="off">
+                  <div class="d-flex flex-column gap-12">
+                    <div class="fs-14 fw-md lh-1_5">Оставьте комментарий для менеджера</div>
+                    <label class="main-input main-input_empty-l">
+                      <textarea name="comment" cols="30" rows="4" placeholder="Например: перезвоните с 9 до 12 утра"></textarea>
+                    </label>
+                  </div>
+                  <div class="d-flex flex-column gap-12">
+                    <div class="fs-14 fw-md lh-1_5">Укажите номер телефона и мы свяжемся с вами в ближайшее время</div>
+                    <div class="concat-input">
+                      <label class="main-input main-input_light">
+                        <input type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required>
+                      </label>
+                      <button class="btn btn-main fw-sb">Заказать звонок</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-mcontent" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">               
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-wrapper">
+              <h3 class="fs-24 fw-sb mb-0">Контент</h3>
+              <div class="content">
+                <p>Котельный завод «Котлоэнергопром» — алтайский производитель, специализирующийся на проектировании, изготовлении и установке современного котельного оборудования. За первые годы работы завод обеспечил теплом и горячей водой более 200 предприятий не только в своём регионе, но и по всей России, зарекомендовав себя как отзывчивого производителя, а продукцию — образцом надёжности.</p>
+                <p>Перед покупкой котельного оборудования, наши клиенты интересуются какая мощность у агрегата и сколько топлива он расходует. Чтобы определить приблизительный расход топлива котла, необходимо знать КПД агрегата, и калорийность топлива. В своем производстве, мы берем за основу следующие показатели КПД/калорийность: для каменного угля – 80/5000, для бурого – 78/4000, для древесных отходов – 75/4000. На самом деле, расход топлива котельной рассчитывается очень легко, для этого нужно применить простую формулу, которой пользуемся и мы.</p>
+              </div>
+              <button class="btn btn-main fw-sb" data-bs-dismiss="modal">Закрыть</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-city" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">               
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-wrapper">
+              <h3 class="fs-24 fw-sb mb-0">Выберите город</h3>
+              <form class="header-search position-relative d-block" action="search.html" method="get" autocomplete="off">
+                <label class="main-input main-input_light w-100">
+                  <input type="text" name="stext" placeholder="Поиск по каталогу">
+                </label>
+                <button class="btn-inline d-flex position-absolute"><i class="icon search fs-24"></i></button>
+              </form>
+              <ul class="list-unstyled p-0 m-0 modal-city__list scroll scroll-visible">
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Абакан">                                <span class="city_option">Абакан</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Самара">                                <span class="city_option">Самара</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Барнаул">                                <span class="city_option">Барнаул</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Уфа">                                <span class="city_option">Уфа</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Владивосток">                                <span class="city_option">Владивосток</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Краснодар">                                <span class="city_option">Краснодар</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Москва">                                <span class="city_option">Москва</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Омск">                                <span class="city_option">Омск</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Санкт-Петербург">                                <span class="city_option">Санкт-Петербург</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Воронеж">                                <span class="city_option">Воронеж</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Новосибирск">                                <span class="city_option">Новосибирск</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Пермь">                                <span class="city_option">Пермь</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Екатеринбург">                                <span class="city_option">Екатеринбург</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Волгоград">                                <span class="city_option">Волгоград</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Казань">                                <span class="city_option">Казань</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Саратов">                                <span class="city_option">Саратов</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Красноярск">                                <span class="city_option">Красноярск</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Тюмень">                                <span class="city_option">Тюмень</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Челябинск">                                <span class="city_option">Челябинск</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Тольятти">                                <span class="city_option">Тольятти</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Архангельск">                                <span class="city_option">Архангельск</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Пермь">                                <span class="city_option">Пермь</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Петропавловск-Камчатский">                                <span class="city_option">Петропавловск-Камчатский</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Белгород">                                <span class="city_option">Белгород</span></a></li>
+                <li class="js_city_element"><a class="href-main modal-city__item lh-1_4 fs-16" href="#" title="Выбрать Симферополь">                                <span class="city_option">Симферополь</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-agree" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">               
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close">          </i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-wrapper">
+              <h3 class="fs-24 fw-sb mb-0">Заявка принята</h3>
+              <p class="o-1">Мы свяжемся с вами в ближайшее рабочее время</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-fail" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">               
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close">         </i></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-wrapper">
+              <h3 class="fs-24 fw-sb mb-0">Заявка отклонена</h3>
+              <p class="o-1">Необходимо заполнить обязательные поля</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade modal-error" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">   
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">               
+            <button class="btn-close position-absolute end-0 top-0 border-0 ms-auto d-flex bg-transparent" data-bs-dismiss="modal"><i class="icon close"></i></button>
+          </div>
+          <div class="modal-body">               
+            <div class="d-flex flex-column gap-30">
+              <h3 class="fs-24 fw-md mb-0 text-center">Ошибка! <br> Свяжитесь с администратором </h3>
+              <button class="btn btn-main" data-bs-dismiss="modal">Закрыть   </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="themes/engine/js/slider.bundle.js"></script>
+    <script src="themes/engine/js/main.bundle.js"></script>
+    <script src="themes/engine/js/gallery.bundle.js"></script>
+    <script src="themes/engine/js/wizardForm.bundle.js"></script>
+  </body>
+</html>

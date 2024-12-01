@@ -1,0 +1,20 @@
+.documents-grid {
+  display: grid;
+  grid-template-columns: 1fr 113.5rem;
+  gap: 10rem;
+}
+.documents .js-tabs__tab span {
+  opacity: 0.5;
+}
+.documents .js-tabs__tab:hover svg {
+  opacity: 0;
+}
+.documents .js-tabs__tab.active span {
+  opacity: 1;
+}
+.documents .js-tabs__tab.active svg {
+  opacity: 1;
+}
+.documents-item {
+  padding: 3rem;
+}

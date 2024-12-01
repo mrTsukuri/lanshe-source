@@ -1,0 +1,121 @@
+extends template/main
+
+block variables
+    -var title = ''
+block content
+    main
+        section.account
+            .container
+                .account-tabs.d-flex.flex-column                
+                    //- .fs-20.fs-lg-32.fw-md Мои данные 
+                    //- a(href="account-orders.html").href-opacity.fs-20.fs-lg-32.fw-md Мои заказы
+                    .js-tabs__nav                
+                        .js-tabs__no-marker.js-tabs__tabs-container.account-heading.d-flex.scroll                            
+                            .js-tabs__tab.fs-20.fs-lg-32.fw-md.pointer.href-opacity.active(data-article= '1') Мои данные 
+                            .js-tabs__tab.fs-20.fs-lg-32.fw-md.pointer.href-opacity(data-article= '2') Мои заказы
+                    .js-tabs__content-container                                            
+                        .js-tabs__content.active(data-article= '1')
+                            .account-block.order-main.d-flex.flex-column
+                                .order-block.order-details.d-flex.flex-column                        
+                                    .fs-20.fw-md Контактные данные                            
+                                    .order-details__inputs.d-flex.flex-column    
+                                        .order-details__input.d-flex
+                                            label.main-input.main-input_border
+                                                input(type="tel" name='phone' placeholder='+7 (9__) ___-__-__' required).w-100
+                                            .fs-14.fs-xl-16.fw-md Номер телефона
+                                        .order-details__input.d-flex
+                                            label.main-input.main-input_border
+                                                input(type="text" name='name' placeholder='Иванов Иван Иванович' required).w-100
+                                            .fs-14.fs-xl-16.fw-md ФИО
+                                        .order-details__input.d-flex
+                                            label.main-input.main-input_border
+                                                input(type="email" name='email' placeholder='Ваш email' required).w-100
+                                            .fs-14.fs-xl-16.fw-md Email
+                                    button.btn.btn_main.align-self-start Сохранить
+                                .order-block.order-delivery.d-flex.flex-column
+                                    .fs-20.fw-md Предпочитаемый адрес доставки
+                                    label.main-input.main-input_border
+                                        input(type="text" name='address' placeholder='Например: Москва, ул. Ленина, 100, кв. 100' required).w-100
+                                    .order-delivery__info.d-flex
+                                        .order-delivery__img
+                                            img(src= start+"images/cdek.svg", alt="СДЭК").w-auto
+                                        p.o-0_7 Мы доставляем ТК СДЭК. Стоимость доставки рассчитывается индивидуально и оплачивается при получении заказа.
+                                    button.btn.btn_main.align-self-start Сохранить
+                                .order-block.order-payment.d-flex.flex-column
+                                    .fs-20.fw-md Предпочитаемый способ оплаты
+                                    .order-payment__block.d-flex
+                                        label.order-payment__label
+                                            input(type="radio" name="payment" checked)
+                                            span.order-payment__item.d-flex.flex-column.align-items-start.rounded-12.pointer
+                                                span.order-payment__item-icon.d-flex.rounded-circle
+                                                    i.icon-check.fs-32
+                                                span.order-payment__item-desc.d-flex.align-items-center
+                                                    i.icon-credit_card.fs-24
+                                                    span.fs-14.fs-xl-16.fw-md Банковской картой
+                                        label.order-payment__label
+                                            input(type="radio" name="payment")
+                                            span.order-payment__item.d-flex.flex-column.align-items-start.rounded-12.pointer
+                                                span.order-payment__item-icon.d-flex.rounded-circle
+                                                    i.icon-check.fs-32
+                                                span.order-payment__item-desc.d-flex.align-items-center
+                                                    img(src=start+"images/dolyame-sm.svg", alt="")
+                                                    span.fs-14.fs-xl-16.fw-md Долями по 2 040 ₽
+                                    button.btn.btn_main.align-self-start Сохранить
+                        .js-tabs__content.active(data-article= '2')
+                            .account-order.d-flex.flex-column
+                                .account-order__block.d-flex.flex-column
+                                    .account-order__info
+                                        .account-order__info-block.d-flex.flex-column
+                                            a(href="account-order.html").href-main.fs-16.fw-md Заказ № 12345 на сумму 62 600 ₽
+                                            .account-order__info-lists.d-flex.flex-column
+                                                -
+                                                    let accoutList = [
+                                                                        {key: 'Дата заказа', value: '18.08.2024'},
+                                                                        {key: 'Покупатель', value: 'Иванов Иван Иванович'},
+                                                                        {key: 'Телефон', value: '+7 (123) 456-78-90'},
+                                                                        {key: 'Email', value: 'ivanov@mail.ru'},
+                                                                        {key: 'Адрес доставки', value: 'Россия, г. Москва, ул. Ленина, д. 100, к. 2, кв. 100'},
+                                                                        {key: 'Способ оплаты', value: 'Банковской картой'},
+                                                                        {key: 'Статус оплаты', value: 'Не оплачен'},
+                                                                    ]
+                                                each val in accoutList
+                                                    .account-order__info-list.d-flex
+                                                        span.fs-14.fs-xl-16
+                                                            span= val['key']
+                                                        span.fs-14.fs-xl-16
+                                                            span= val['value']
+                                        .account-order__info-buy.d-flex.flex-column.bg-grey.rounded-12.justify-content-between
+                                            .fs-14.fs-xl-16.fw-md.lh-1_4 Успейте оплатить заказ до его автоматической отмены 25.08.24
+                                            button.btn.btn_main.justify-content-center Оплатить онлайн
+                                    .account-order__products.d-flex.flex-column
+                                        .fs-16.fw-md Товары в заказе
+                                        .account-order__products-grid.scroll
+                                            -for(let i = 1; i <= 9; i++)
+                                                a(href="product.html").account-order__product.position-relative.rounded-12.overflow-hidden
+                                                    img(src= start+ "images/cart/1.jpg", alt="Патчи 50 шт для наращивания ресниц").h-100
+                                                    .account-order__product-count.bg-white.position-absolute.fs-14.fw-md 99                                            
+                                            .account-order__more.bg-grey.rounded-12.d-flex.align-items-center.justify-content-center.text-center.pointer
+                                                .fs-16.fw-md и еще <br> 2 товара
+                                .account-order__block.d-flex.flex-column
+                                    .account-order__info
+                                        .account-order__info-block.d-flex.flex-column
+                                            a(href="account-order.html").fs-16.fw-md Заказ № 12345 на сумму 62 600 ₽
+                                            .account-order__info-lists.d-flex.flex-column
+                                                each val in accoutList
+                                                    .account-order__info-list.d-flex
+                                                        span.fs-14.fs-xl-16
+                                                            span= val['key']
+                                                        span.fs-14.fs-xl-16
+                                                            span= val['value']
+                                        .account-order__info-buy.d-flex.flex-column.bg-grey.rounded-12.justify-content-between
+                                            .fs-14.fs-xl-16.fw-md.lh-1_4 Заказ полностью оплачен. Приятного пользования!
+                                            button.btn.btn_main.justify-content-center Повторить заказ
+                                    .account-order__products.d-flex.flex-column
+                                        .fs-16.fw-md Товары в заказе
+                                        .account-order__products-grid.scroll
+                                            -for(let i = 1; i <= 9; i++)
+                                                a(href="product.html").href-main.account-order__product.position-relative.rounded-12.overflow-hidden
+                                                    img(src= start+ "images/cart/1.jpg", alt="Патчи 50 шт для наращивания ресниц").h-100
+                                                    .account-order__product-count.rounded-circle.bg-white.position-absolute.fs-14.fw-md 99                                            
+                                            .account-order__more.bg-grey.rounded-12.d-flex.align-items-center.justify-content-center.text-center.pointer
+                                                .fs-16.fw-md и еще <br> 2 товара                                   

@@ -1,0 +1,37 @@
+.characteristic                  
+    display: flex
+    &::before
+        content: ""
+        position: absolute
+        width: 100%
+        border-bottom: 1px dashed $black            
+        top: 10px                           
+        opacity: .2
+    & span
+        font-size: 1.2rem        
+        z-index: 1
+        line-height: 1.2                       
+    & > span:first-of-type > span
+        padding-right: 1rem        
+    & > span:first-of-type
+        max-width: 60%
+    & > span:last-of-type
+        text-align: end    
+    & > span:last-of-type > span
+        padding-left: 1rem
+        text-align: end
+        white-space: nowrap
+        font-weight: 500           
+    & span span
+        box-decoration-break: clone
+        line-height: normal
+        background-color: $white
+@media screen and ( min-width: 576px )
+    .characteristic     
+        & span
+            font-size: 1.4rem                                     
+@media screen and ( min-width: 1250px )
+    .characteristic     
+        & span
+            font-size: 1.6rem                                     
+                        

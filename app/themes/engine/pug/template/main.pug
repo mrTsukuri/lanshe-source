@@ -1,0 +1,29 @@
+doctype html
+
+include ../moduls/sections
+
+block variables
+
+html(lang='ru-RU')
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400..600&display=swap" rel="stylesheet">
+        +link("preload", "themes/engine/css/boots.css", "style")
+        +link("preload", "themes/engine/css/main.css", "style")
+        +link("preload", "themes/engine/css/libs.css", "style")               
+        +link("stylesheet", "themes/engine/css/boots.css")
+        +link("stylesheet", "themes/engine/css/main.css")
+        +link("stylesheet", "themes/engine/css/libs.css")             
+        title #{title}
+    body.steps-spy
+        include ../moduls/header
+        block content        
+        include ../moduls/footer     
+        include ../moduls/modals                        
+        +script("themes/engine/js/slider.bundle.js")        
+        +script("themes/engine/js/main.bundle.js")        
+        +script("themes/engine/js/gallery.bundle.js")        
+        +script("themes/engine/js/wizardForm.bundle.js")        

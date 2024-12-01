@@ -1,0 +1,771 @@
+-let start = ""
+mixin link(rel, href, as, type, crossorigin= false)
+    if crossorigin
+        link(rel= rel, href= start + href, as= as, type= type, crossorigin)
+    else
+        link(rel= rel, href= start + href, as= as, type= type)
+mixin script(src, defer=false)
+    if defer
+        script(src= start + src, defer)
+    else
+        script(src= start + src)
+mixin char(key, value)
+    .characteristic.justify-content-between.position-relative.flex-grow-1
+        span
+            span!= key
+        span
+            span!= value
+mixin img(dataSrc, alt, load=true)
+    if load
+        img(src= start + 'images/' +dataSrc, alt= alt, loading='lazy', class!=attributes.class, width!=attributes.width, height!=attributes.height)
+    else
+        img(src= start + 'images/' +dataSrc, alt= alt, class!=attributes.class, width!=attributes.width, height!=attributes.height)
+mixin picture(url, alt, load=true, typeImg='.jpg')
+    picture
+        source(srcset= start+ 'images/'+url+'.webp' type='image/webp')
+        if load
+            img(src= start+ 'images/'+url+ typeImg alt= alt loading='lazy' class!=attributes.class width!=attributes.width, height!=attributes.height)
+        else
+            img(src= start+ 'images/'+url+ typeImg alt= alt class!=attributes.class width!=attributes.width, height!=attributes.height)
+mixin arrow-link(title, href, typeH = '.html')
+    a(href= href + typeH title= title class!=attributes.class)
+        i.icon.arrow.fs-18
+        span= title
+mixin unit-item
+    a(href='unit.html').unit-item.d-flex.flex-column.rounded-20.p-5
+        .unit-item__img.rounded-15.overflow-hidden
+            +picture('units/unit-item/unit-img', 'Узел Cylinder head')
+        .fs-lg-18.fs-16.lh-1_1.fw-sb.px-xl-25.px-sm-20.px-15.py-xl-20.py-sm-15.py-10 Cylinder head
+mixin main-section__menu
+    .main-section__menu
+        .main-section__menu-wrapper.d-flex.flex-column.gap-10.position-sticky.top-0
+            block
+            .main-section__menu-grid.gap-10
+                each val in [{title: 'Подберите <br> котел по мощности', modal: ''}, {title: 'Заполните <br> опросный лист', modal: ''}]
+                    .main-section__menu-item.d-flex.align-items-center.position-relative.p-md-30.p-20.rounded-15.pointer
+                        .fs-md-16.fs-14.fw-md!= val['title']
+                        i.icon.arrow_top.fs-24.position-absolute
+                .main-section__menu-item.d-flex.align-items-center.position-relative.p-md-30.p-20.rounded-15.pointer
+                    .d-flex.flex-column.align-items-start.gap-10
+                        .fs-md-24.fs-18.fw-sb.lh-1.bg-main.py-4 -10%
+                        .fs-md-16.fs-14.fw-md Получите скидку
+                    i.icon.arrow_top.fs-24.position-absolute
+mixin gear-item(num, name, subname, price, type)
+    if type === 'out'
+        .gear-item.d-flex.disabled
+            a(href='product.html').gear-item__main.d-flex.align-items-center.p-5.rounded-15.flex-grow-1
+                .gear-item__num.p-xl-15.p-sm-10.p-5.d-flex.align-items-center.justify-content-center
+                    .fs-14.fw-sb.lh-1_1= num
+                .gear-item__img.rounded-10.overflow-hidden.d-none.d-sm-block
+                    +picture('gears/gear-item/gear-img', name)
+                .gear-item__desc.flex-grow-1.d-flex.align-items-center.justify-content-between.gap-15.px-sm-15.px-10.py-5
+                    .d-flex.flex-column.gap-2
+                        .fs-14.lh-1_1.fw-sb= name
+                        .fs-14.lh-1_1= subname
+                    .gear-item__desc-price.fs-14.lh-1_1.fw-sb= price
+            .gear-item__btns.d-flex.flex-column.flex-sm-row.gap-xl-15.gap-10.p-xl-15.p-10
+                button.btn.btn-icon
+                    i.icon.u_star.fs-20
+                button.btn.btn-icon
+                    i.icon.u_shopping-cart.fs-20
+    else
+        .gear-item.d-flex
+            a(href='product.html').gear-item__main.d-flex.align-items-center.p-5.rounded-15.flex-grow-1
+                .gear-item__num.p-xl-15.p-sm-10.p-5.d-flex.align-items-center.justify-content-center
+                    .fs-14.fw-sb.lh-1_1= num
+                .gear-item__img.rounded-10.overflow-hidden.d-none.d-sm-block
+                    +picture('gears/gear-item/gear-img', name)
+                .gear-item__desc.flex-grow-1.d-flex.align-items-center.justify-content-between.gap-15.px-sm-15.px-10.py-5
+                    .d-flex.flex-column.gap-2
+                        .fs-14.lh-1_1.fw-sb= name
+                        .fs-14.lh-1_1= subname
+                    .gear-item__desc-price.fs-14.lh-1_1.fw-sb= price
+            .gear-item__btns.d-flex.flex-column.flex-sm-row.gap-xl-15.gap-10.p-xl-15.p-10
+                button.btn.btn-icon
+                    i.icon.u_star.fs-20
+                button.btn.btn-icon
+                    i.icon.u_shopping-cart.fs-20
+mixin main-select(name, id, values, libs= false, placeholder, disabled)
+    .main-select.position-relative
+        if libs
+            if disabled
+                select.main-select-item.ps-xl-30.ps-20.pe-40.py-xl-20.py-15.fs-16.rounded-pill.w-100.js-choice(name= name id= id data-placeholder= placeholder disabled)
+                    each val in values
+                        option(value= val['value'])= val['title']
+                    //- each val in selectArr[index]
+                        option(value='model')= val
+                .main-select-btn.position-absolute.d-flex.align-items-center
+                    i.u_angle-down.icon.fs-20.text-main
+            else
+                select.main-select-item.ps-xl-30.ps-20.pe-40.py-xl-20.py-15.fs-16.rounded-pill.w-100.js-choice(name= name id= id data-placeholder= placeholder)
+                    each val in values
+                        option(value= val['value'])= val['title']
+                    //- each val in selectArr[index]
+                        option(value='model')= val
+                .main-select-btn.position-absolute.d-flex.align-items-center
+                    i.u_angle-down.icon.fs-20.text-main
+        else
+            if disabled
+                select.main-select-item.ps-xl-30.ps-20.pe-40.py-xl-20.py-15.fs-16.rounded-pill.w-100(name= name id= id disabled)
+                    each val in values
+                        option(value= val['value'])= val['title']
+                    //- each val in selectArr[index]
+                        option(value='model')= val
+                .main-select-btn.position-absolute.d-flex.align-items-center
+                    i.u_angle-down.icon.fs-20.text-main
+            else
+                select.main-select-item.ps-xl-30.ps-20.pe-40.py-xl-20.py-15.fs-16.rounded-pill.w-100(name= name id= id)
+                    each val in values
+                        option(value= val['value'])= val['title']
+                    //- each val in selectArr[index]
+                        option(value='model')= val
+                .main-select-btn.position-absolute.d-flex.align-items-center
+                    i.u_angle-down.icon.fs-20.text-main
+mixin catalog-item(title, img, big= false, arr)
+    if big
+        .catalog-item.catalog-item_big.position-relative.rounded-15
+            a(href='category.html').catalog-item__img
+                +picture('product/'+img, title)
+            .catalog-item__info.d-flex.flex-column
+                a(href='category.html').fs-16.fw-md= title
+                .catalog-item__categorys
+                    ul.list-unstyled.m-0.p-0
+                        each val in arr
+                            li
+                                a.catalog-item__category.d-flex.align-items-start.gap-10(href='category.html' title= title)
+                                    i.icon.arrow.fs-14
+                                    span.fs-14.fw-rg= val
+            .baner__catalog-item__icon.position-absolute
+                i.icon.arrow.fs-24.text-black
+    else
+        a(href='category.html').catalog-item.position-relative.rounded-15
+            .catalog-item__img
+                +picture('product/'+img, title)
+            .catalog-item__info.d-flex.flex-column
+                .fs-16.fw-md= title
+            .baner__catalog-item__icon.position-absolute
+                i.icon.arrow.fs-24.text-black
+mixin category-filter__block(title, isOpen= false)
+    if isOpen
+        .category-filter__block.spoiler.d-flex.flex-column.active(class!=attributes.class)
+            .spoiler-btn.d-flex.align-items-center.justify-content-between.gap-10.pointer.active
+                .fs-16.fw-md.lh-1_2= title
+                i.icon.more.fs-16
+            .spoiler-block.flex-grow-1.active
+                .spoiler-wrapper.pt-15
+                    block
+    else
+        .category-filter__block.spoiler.d-flex.flex-column(class!=attributes.class)
+            .spoiler-btn.d-flex.align-items-center.justify-content-between.gap-10.pointer
+                .fs-16.fw-md.lh-1_2= title
+                i.icon.more.fs-16
+            .spoiler-block.flex-grow-1
+                .spoiler-wrapper.pt-15
+                    block
+mixin catalog-page-item(title, img)
+    a(href='category.html').catalog-item.catalog-page-item.d-flex.flex-column.flex-grow-1.rounded-20.overflow-hidden
+        .catalog-item-img
+            +picture('catalog/'+img, title).mbm-darken
+        .catalog-item-desc.d-flex.flex-column.gap-20.p-sm-25.p-15.flex-grow-1
+            .d-flex.flex-column.gap-10.flex-grow-1
+                .fs-sm-16.fs-14.fw-sb= title
+                .fs-sm-14.fs-12.o-0_5 128 запчастей
+            .d-flex.align-items-center.gap-5
+                span.fs-sm-14.fs-12.fw-rg.text-decoration-underline Перейти в раздел
+                i.icon.arrow-right.text-main
+mixin article-item(title, img, desc)
+    a(href='article.html').article-item.d-flex.align-items-start
+        .article-item__img
+            +picture('products/'+img, title)
+        .article-item__desc.d-flex.flex-column
+            .article-item__title.fs-md-24.fs-18.fw-md.lh-1_5= title
+            .article-item__text
+                p!= desc
+            .fs-md-18.fs-16.underline-dashed.text-main Читать далее
+mixin service-item(title= 'Пуско-наладка котельной', img)
+    .services-item.flex-grow-1.d-flex.flex-column
+        a(href='service.html').services-item__img
+            +picture('services/'+img, title)
+        .services-item__desc.d-flex.flex-column.flex-grow-1.justify-content-between
+            a(href='service.html').fs-md-16.fs-14.fw-sb.href-main= title
+            hr.bg-grey.my-0
+            .services-item__price.d-flex.flex-column
+                .fs-md-18.fs-16.fw-sb.text-main 450 000 руб.
+                button.btn.btn-main.fw-sb Заказать
+mixin product-item(img, name, desc, count, price, type= 1)
+    .product-item.d-flex.flex-column.w-100
+        .product-item__wrapper.rounded-12.overflow-hidden.position-relative            
+            a(href="product.html").product-item__img.d-block.w-100
+                img(src= start+"images/catalog/"+img+'.jpg', alt= name)
+            case type
+                when 1
+                    button.btn-icon.rounded-circle(title="Добавить в корзину")
+                        i.icon-local_mall.fs-24
+                when 2
+                    a(href='#' title="Товар в корзине").btn-icon.rounded-circle.active
+                        i.icon-check.fs-24
+                when 3
+                    a(href='#' title="Добавить в корзину").btn-icon.rounded-pill.pe-12
+                        i.icon-local_mall.fs-24
+                        span.fs-14 Под заказ
+        .product-item__info.d-flex.flex-column
+            .product-item__desc.d-flex.flex-column
+                a(href="product.html").fs-14.fs-xl-16.fw-sb= name
+                .d-flex.flex-column.lh-1_4.fs-14.o-0_7
+                    span= desc
+                    span= count
+            .product-item__price.fs-14.fs-xl-16.fw-sb.lh-1_4= price                                               
+mixin reviews-item(name, ava, city, text, revImg, gallery)
+    .reviews-item.d-flex.flex-column.bg-grey.flex-grow-1.rounded-12
+        .reviews-item__heading.d-flex.align-items-center
+            .reviews-item__ava.d-flex
+                i.fs-40(class='icon-face_'+ava)
+            .d-flex.flex-column.align-items-start
+                .fs-14.fs-xl-16.fw-md= name
+                .fs-14.fs-xl-16.o-0_7= city
+        .reviews-item__text.flex-grow-1
+            p= text
+        .reviews-item__gallery.d-flex.flex-wrap
+            each img in revImg
+                .reviews-item__img.pointer.rounded-12.overflow-hidden(data-fancybox= gallery data-src= start+'images/reviews/'+img+'_org.jpg')
+                    img(src= start+"images/reviews/"+img+".jpg", alt="").h-100    
+mixin content-product(title, img, type= 0)
+    .product-item.content-product.position-relative.d-flex.flex-grow-1
+        a(href='product.html').product-item__img.content-product__img.overflow-hidden
+            +picture('products/'+img, title)
+        .product-item__desc.d-flex.align-items-start
+            a(href='product.html').href-main.product-item__title.fw-md.lh-1_2.fs-md-16.fs-14= title
+        .product-item__buy.content-product__buy.d-flex
+            case type
+                when 0
+                    .product-item__price.d-flex
+                        .product-item__cost.fs-sm-16.fs-14.fw-md <span class='o-0_5'>Цена</span> <span class='text-nowrap'>385 000 тнг.</span>
+                    .product-item__btns.d-flex.gap-lg-20.gap-10.justify-content-between
+                        button.btn.btn-main.fw-sb.lh-1.fs-14.fs-lg-16 Купить
+                        .d-flex.gap-lg-20.gap-10
+                            button.btn-icon.align-items-center.justify-content-center.flex-grow-1
+                                i.icon.leaderboard.fs-30
+                            button.btn-icon.align-items-center.justify-content-center.flex-grow-1.active
+                                i.icon.cart.fs-30
+                when 1
+                    .product-item__price.d-flex
+                        .product-item__cost.fs-sm-16.fs-14.fw-md Цена по запросу
+                    .product-item__btns.d-flex.gap-lg-20.gap-10.justify-content-between
+                        button.btn.btn-main.fw-sb.lh-1.fs-14.fs-lg-16 Узнать цену
+                        .d-flex.gap-lg-20.gap-10
+                            button.btn-icon.align-items-center.justify-content-center.flex-grow-1
+                                i.icon.leaderboard.fs-30
+                            button.btn-icon.align-items-center.justify-content-center.flex-grow-1.active
+                                i.icon.cart.fs-30
+                when 2
+                    .product-item__price.d-flex
+                        .product-item__cost.fs-sm-16.fs-14.fw-md Нет в наличии
+                    .product-item__btns.d-flex.gap-lg-20.gap-10.justify-content-between
+                        button.btn.btn-main.fw-sb.lh-1.fs-14.fs-lg-16 Заказать
+                        .d-flex.gap-lg-20.gap-10
+                            button.btn-icon.align-items-center.justify-content-center.flex-grow-1
+                                i.icon.leaderboard.fs-30
+                            button.btn-icon.align-items-center.justify-content-center.flex-grow-1.active
+                                i.icon.cart.fs-30
+mixin compare-item(title, img, type= 0)
+    .product-item.compare-item.position-relative.d-flex.flex-grow-1
+        a(href='product.html').product-item__img.overflow-hidden
+            +picture('products/'+img, title)
+        .product-item__desc.d-flex.flex-column.align-items-start
+            a(href='product.html').href-main.product-item__title.fw-md.lh-1_2.fs-md-16.fs-14= title
+        .product-item__buy.d-flex
+            case type
+                when 0
+                    .product-item__price.d-flex
+                        .product-item__cost.fs-sm-16.fs-14.fw-md <span class='o-0_5'>Цена</span> <span class='text-nowrap'>4 385 000 тнг.</span>
+                    .product-item__btns.d-flex.gap-lg-20.gap-10
+                        button.btn.btn-main.flex-grow-1.fs-14.fs-lg-16.fw-sb.lh-1 Купить
+                        .d-flex.gap-10
+                            button.btn-icon.align-items-center.justify-content-center.p-8.flex-grow-1.active
+                                i.icon.cart.fs-25
+                                span.d-flex.btn-icon__active
+                                    i.icon.done
+                when 1
+                    .product-item__price.d-flex
+                        .product-item__cost.fs-sm-16.fs-14.fw-md Цена по запросу
+                    .product-item__btns.d-flex.gap-lg-20.gap-10
+                        button.btn.btn-main.flex-grow-1.fs-14.fs-lg-16.fw-sb.lh-1 Узнать цену
+                        .d-flex.gap-10
+                            button.btn-icon.align-items-center.justify-content-center.p-8.flex-grow-1.active
+                                i.icon.cart.fs-25
+                                span.d-flex.btn-icon__active
+                                    i.icon.done
+                when 2
+                    .product-item__price.d-flex
+                        .product-item__cost.fs-sm-16.fs-14.fw-md Нет в наличии
+                    .product-item__btns.d-flex.gap-lg-20.gap-10
+                        button.btn.btn-main.flex-grow-1.fs-14.fs-lg-16.fw-sb.lh-1 Заказать
+                        .d-flex.gap-10
+                            button.btn-icon.align-items-center.justify-content-center.p-8.flex-grow-1.active
+                                i.icon.cart.fs-25
+                                span.d-flex.btn-icon__active
+                                    i.icon.done
+            button.product-item__close.btn-icon.align-tiems-center.p-5
+                i.icon.close.fs-25
+mixin cart-item(title, img)
+    .cart-item.product-item.d-flex.position-relative
+        a(href='product.html').cart-item__img.product-item__img.overflow-hidden
+            +picture('products/'+img, title)
+        .cart-item__desc
+            .cart-item__descWr.d-flex.flex-column
+                a(href='product.html').fs-lg-16.fs-14.fw-md.lh-1_2= title
+                .d-flex.flex-wrap.gap-xxl-20.gap-10
+                    label.category-checkbox
+                        input(type="checkbox" name="kp")
+                        span.category-checkbox__item.fs-gl-16.fs-14
+                            span.category-checkbox__icon
+                                i.icon.fs-18.check_box
+                            span Получить КП
+                    label.category-checkbox
+                        input(type="checkbox" name="lizing")
+                        span.category-checkbox__item.fs-gl-16.fs-14
+                            span.category-checkbox__icon
+                                i.icon.fs-18.check_box
+                            span Купить в лизинг
+                //- .fs-lg-16.fs-14.underline-dashed Дополнительно потребуются
+        .cart-item__buy.d-flex.align-items-center.justify-content-lg-between
+            .count-number.count-number_white.position-relative.d-flex.flex-column
+                button.count-btn.count-btn-plus.d-flex
+                    i.icon.add.fs-18
+                input(type='number' name='count' value='1').count-input
+                button.count-btn.count-btn-min.d-flex
+                    i.icon.remove.fs-18
+            .d-flex.flex-column.gap-5
+                .fs-lg-18.fs-16.fw-md 99 999 999 тнг.
+                .fs-lg-14.fs-12.o-0_6 9 999 999 тнг./шт
+        button.btn-inline.d-flex.cart-item__close
+            i.icon.close.fs-24
+mixin content__product-item
+    .content__product-item.p-10.bg-light.d-flex.flex-column.flex-md-row.position-relative.product-item_light.rounded-15
+        a(href='product.html').content__product-item__img.rounded-5.overflow-hidden
+            +picture('product/1', 'Автоматический котел кв на дровах 1.05 мвт').h-100
+        .content__product-item__info.d-flex.flex-column.gap-20.p-md-20.p-10.flex-grow-1
+            .d-flex.flex-column.gap-10
+                .product-item__tags.d-flex.flex-wrap.gap-5
+                    each val in ['-10%', 'Новинка']
+                        .product-item__tag.rounded-pill.fs-12.fw-lg= val
+                a(href='product.html').href-main.fs-14.fw-md Автоматический котел кв на дровах 1.05 мвт
+            .d-flex.flex-column.gap-10
+                .fs-18.fw-sb.py-4.bg-main.align-self-start.lh-1 10 115 000 ₽
+                .d-flex.gap-10
+                    button.btn.btn-main.flex-grow-1.product-item__modal.fw-md.fs-14(data-bs-toggle="modal", data-bs-target=".modal-buy") Купить
+                    button.btn.btn-icon.product-item__cart
+                        i.icon.cart.fs-18
+        button.btn.btn-icon.product-item__compare.position-absolute
+            i.icon.checklist.fs-20
+mixin pagination
+    .d-flex.flex-column.gap-20
+        button.btn.btn-empty.btn-empty_main Показать еще
+        .pagination.d-flex.justify-content-center
+            a(href='#').pagination-item.d-flex.pagination-prev.active
+                i.icon.arrow_next.fs-lg-30.fs-20.text-second
+            .pagination-block.d-flex
+                a(href='#').pagination-item.d-flex
+                    span 1
+                a(href='#').pagination-item.d-flex
+                    span 2
+                a(href='#').pagination-item.d-md-flex.d-none
+                    span 3
+                .pagination-item.d-flex
+                    span ...
+                a(href='#').pagination-item.d-md-flex.d-none
+                    span 40
+                a(href='#').pagination-item.d-md-flex.d-none
+                    span 50
+                a(href='#').pagination-item.d-flex
+                    span 60
+            a(href='#').pagination-item.d-flex.pagination-next
+                i.icon.arrow_next.fs-lg-30.fs-20.text-second
+mixin order-item(status, active=false)
+    if active
+        .order-item.spoiler.overflow-hidden.active
+            .order-item-wrapper.d-flex.flex-wrap.align-items-center.border.border-2.border-grey.gap-lg-40.gap-20
+                .d-flex.align-items-md-center.gap-lg-40.gap-20.flex-grow-1
+                    .d-flex.align-items-center.p-lg-20.p-10.gap-lg-40.gap-10.flex-grow-1.flex-wrap
+                        .d-flex.flex-wrap.align-items-center.gap-10
+                            a(href="order-value.html").d-flex.align-items-center.gap-md-10.gap-5
+                                i.icon.u_external-link.text-main
+                                span.fw-sb.pt-4.fs-lg-16.fs-14 Заказ №6
+                            .fs-lg-16.fs-14.o-0_5.pt-4 От 20.10.2023
+                        .fs-lg-16.fs-14.pt-4 3 товара на <span class='fw-bl'>163 496 ₽</span>
+                        case status
+                            when 1
+                                .d-flex.align-items-center.gap-5
+                                    i.icon.u_clock-eight.text-main.fs-14
+                                    span.pt-4.fs-lg-16.fs-14 Принят
+                            when 2
+                                .d-flex.align-items-center.gap-5
+                                    i.icon.u_exclamation-mark.text-main.fs-14
+                                    span.pt-4.fs-lg-16.fs-14 Требует внимания
+                            when 3
+                                .d-flex.align-items-center.gap-5
+                                    i.icon.u_check.text-main.fs-14
+                                    span.pt-4.fs-lg-16.fs-14 Доставлен
+                            when 4
+                                .d-flex.align-items-center.gap-5
+                                    i.icon.u_multiply.text-main.fs-14
+                                    span.pt-4.fs-lg-16.fs-14 Отменен
+                            default
+                                .d-flex.align-items-center.gap-5
+                                    i.icon.u_clock-eight.text-main.fs-14
+                                    span.pt-4.fs-lg-16.fs-14 Принят
+                    .d-flex.flex-column.flex-sm-row.align-items-sm-center.gap-sm-20.gap-10.pt-10.pe-10.pt-md-0.pe-md-0
+                        button.d-flex.border-0.p-10.rounded-circle.bg-grey
+                            i.icon.u_repeat.fs-sm-18.text-main
+                        button.d-flex.border-0.p-10.rounded-circle.bg-grey
+                            i.icon.u_multiply.fs-sm-18.text-main
+                .order-item-btn.p-sm-20.p-10.d-flex.align-items-center.justify-content-center.spoiler-btn.bg-grey.active
+                    i.icon.u_angle-down.fs-sm-30.fs-20
+            .order-item-block.spoiler-block.active
+                .content.p-lg-30.p-15.border.border-2.border-grey.border-top-0
+                    .table-responsive
+                        table
+                            tr
+                                each val in ['Наименование', 'Кол-во', 'Цена', 'Сумма']
+                                    th= val
+                            tr
+                                td Двигатель honda cb400 sf nc23e
+                                each val in ['1 шт']
+                                    td= val
+                                td.fw-sb.text-main 62 996 ₽
+                                td.fw-sb.text-main 62 996 ₽
+                            tr
+                                td Двигатель honda dio af63
+                                each val in ['1 шт']
+                                    td= val
+                                td.fw-sb.text-main 44 900 ₽
+                                td.fw-sb.text-main 44 900 ₽
+                            tr
+                                td Двигатель kawasaki estrella 250 bj250ae
+                                each val in ['1 шт']
+                                    td= val
+                                td.fw-sb.text-main 55 600 ₽
+                                td.fw-sb.text-main 55 600 ₽
+                            tr
+                                td.fw-sb(colspan="3" style="text-align:left;") Итого
+                                td.fw-sb.text-main 163 496 ₽
+    else
+        .order-item.spoiler.overflow-hidden
+            .order-item-wrapper.d-flex.flex-wrap.align-items-center.border.border-2.border-grey.gap-lg-40.gap-20
+                .d-flex.align-items-md-center.gap-lg-40.gap-20.flex-grow-1
+                    .d-flex.align-items-center.p-lg-20.p-10.gap-lg-40.gap-10.flex-grow-1.flex-wrap
+                        .d-flex.flex-wrap.align-items-center.gap-10
+                            a(href="order-value.html").d-flex.align-items-center.gap-md-10.gap-5
+                                i.icon.u_external-link.text-main
+                                span.fw-sb.pt-4.fs-lg-16.fs-14 Заказ №6
+                            .fs-lg-16.fs-14.o-0_5.pt-4 От 20.10.2023
+                        .fs-lg-16.fs-14.pt-4 3 товара на <span class='fw-bl'>163 496 ₽</span>
+                        case status
+                            when 1
+                                .d-flex.align-items-center.gap-5
+                                    i.icon.u_clock-eight.text-main.fs-14
+                                    span.fs-lg-16.fs-14 Принят
+                            when 2
+                                .d-flex.align-items-center.gap-5
+                                    i.icon.u_exclamation-mark.text-main.fs-14
+                                    span.fs-lg-16.fs-14 Требует внимания
+                            when 3
+                                .d-flex.align-items-center.gap-5
+                                    i.icon.u_check.text-main.fs-14
+                                    span.fs-lg-16.fs-14 Доставлен
+                            when 4
+                                .d-flex.align-items-center.gap-5
+                                    i.icon.u_multiply.text-main.fs-14
+                                    span.fs-lg-16.fs-14 Отменен
+                            default
+                                .d-flex.align-items-center.gap-5
+                                    i.icon.u_clock-eight.text-main.fs-14
+                                    span.fs-lg-16.fs-14 Принят
+                    .d-flex.flex-column.flex-sm-row.align-items-sm-center.gap-sm-20.gap-10.pt-10.pe-10.pt-md-0.pe-md-0
+                        button.d-flex.border-0.p-10.rounded-circle.bg-grey
+                            i.icon.u_repeat.fs-sm-18.text-main
+                        button.d-flex.border-0.p-10.rounded-circle.bg-grey
+                            i.icon.u_multiply.fs-sm-18.text-main
+                .order-item-btn.p-sm-20.p-10.d-flex.align-items-center.justify-content-center.spoiler-btn.bg-grey
+                    i.icon.u_angle-down.fs-sm-30.fs-20
+            .order-item-block.spoiler-block
+                .content.p-lg-30.p-15.border.border-2.border-grey.border-top-0
+                    .table-responsive
+                        table
+                            tr
+                                each val in ['Наименование', 'Кол-во', 'Цена', 'Сумма']
+                                    th= val
+                            tr
+                                td Двигатель honda cb400 sf nc23e
+                                each val in ['1 шт']
+                                    td= val
+                                td.fw-sb.text-main 62 996 ₽
+                                td.fw-sb.text-main 62 996 ₽
+                            tr
+                                td Двигатель honda dio af63
+                                each val in ['1 шт']
+                                    td= val
+                                td.fw-sb.text-main 44 900 ₽
+                                td.fw-sb.text-main 44 900 ₽
+                            tr
+                                td Двигатель kawasaki estrella 250 bj250ae
+                                each val in ['1 шт']
+                                    td= val
+                                td.fw-sb.text-main 55 600 ₽
+                                td.fw-sb.text-main 55 600 ₽
+                            tr
+                                td.fw-sb(colspan="3" style="text-align:left;") Итого
+                                td.fw-sb.text-main 163 496 ₽
+mixin order-newItem(status, active=false)
+    .order-newItem.d-flex.flex-column.p-lg-30.p-20.rounded-20.bg-light
+        .d-flex.flex-column.flex-md-row.align-items-md-center.align-items-start.justify-content-between.gap-10
+            .d-flex.flex-wrap.align-items-center.gap-lg-20.gap-10
+                .fs-14.fw-sb.d-block
+                    span Заказ №239
+                    |  от
+                    span 10.10.2010
+                    |  на
+                    span 16 460 ₽
+                a(href='order-value.html').order-newItem-href.fs-14.btn.btn-inline.text-decoration-underline Открыть заказ
+            case status
+                when 1
+                    .d-flex.align-items-center.px-10.py-5.bg-white.rounded-10
+                        span.fs-14 Ожидает оплаты
+                when 2
+                    .d-flex.align-items-center.px-10.py-5.bg-white.rounded-10
+                        span.fs-14 Оплачен
+                when 3
+                    .d-flex.align-items-center.px-10.py-5.bg-white.rounded-10
+                        span.fs-14 Отменен
+                when 4
+                    .d-flex.align-items-center.px-10.py-5.bg-white.rounded-10
+                        span.fs-14 Возврат
+                when 5
+                    .d-flex.align-items-center.px-10.py-5.bg-white.rounded-10
+                        span.fs-14 Выполнен
+                default
+                    .d-flex.align-items-center.px-10.py-5.bg-white.rounded-10
+                        span.fs-14 Ожидает оплаты
+        hr.o-0_1.my-20
+        if active
+            .spoiler.overflow-hidden.active
+                .spoiler-btn.d-flex.align-items-center.gap-5.active
+                    .underline-dashed.py-2.fs-14.lh-1.closed Показать список товаров
+                    .underline-dashed.py-2.fs-14.lh-1.opened Скрыть список товаров
+                    i.icon.u_angle-down.fs-20
+                .order-newItem-block.spoiler-block.active
+                    -
+                        let orderArr = [
+                                        {title: 'Двигатель Yamaha DragStar 400 26M', value: [{valueCount: '10 шт', valuePrice: '5 480 ₽'}]},
+                                        {title: 'Двигатель Yamaha FZS1000 Fazer N505E', value: [{valueCount: '10 шт', valuePrice: '5 480 ₽'}]},
+                                        {title: 'Двигатель Yamaha FZ400 Fazer 4YR', value: [{valueCount: '10 шт', valuePrice: '5 480 ₽'}]},
+                                    ]
+                    .pt-15
+                        .order-newItem-chars.d-flex.flex-column.gap-10
+                            each val in orderArr
+                                .order-newItem-chars-line.d-flex.justify-content-between.position-relative.flex-grow-1
+                                    span.fs-14
+                                        a(href='product.html')!= val['title']
+                                    span.d-flex.gap-10.fs-14
+                                        each itemV in val['value']
+                                            span.o-0_6= itemV['valueCount']
+                                            span= itemV['valuePrice']
+        else
+            .spoiler.overflow-hidden
+                .spoiler-btn.d-flex.align-items-center.gap-5
+                    .underline-dashed.py-2.fs-14.lh-1.closed Показать список товаров
+                    .underline-dashed.py-2.fs-14.lh-1.opened Скрыть список товаров
+                    i.icon.u_angle-down.fs-20
+                .order-newItem-block.spoiler-block
+                    -
+                        let orderArr = [
+                                        {title: 'Двигатель Yamaha DragStar 400 26M', value: [{valueCount: '10 шт', valuePrice: '5 480 ₽'}]},
+                                        {title: 'Двигатель Yamaha FZS1000 Fazer N505E', value: [{valueCount: '10 шт', valuePrice: '5 480 ₽'}]},
+                                        {title: 'Двигатель Yamaha FZ400 Fazer 4YR', value: [{valueCount: '10 шт', valuePrice: '5 480 ₽'}]},
+                                    ]
+                    .pt-15
+                        .order-newItem-chars.d-flex.flex-column.gap-10
+                            each val in orderArr
+                                .order-newItem-chars-line.d-flex.justify-content-between.position-relative.flex-grow-1
+                                    span.fs-14
+                                        a(href='product.html')!= val['title']
+                                    span.d-flex.gap-10.fs-14
+                                        each itemV in val['value']
+                                            span.o-0_6= itemV['valueCount']
+                                            span= itemV['valuePrice']
+        hr.o-0_1.my-20
+        case status
+            when 1
+                .d-flex.flex-column.flex-sm-row.align-items-sm-center.align-items-stretch.justify-content-between.gap-10
+                    a(href='order.html').btn.btn-main.px-xl-30.px-20.py-xl-20.py-15.fw-sb Оплатить
+                    button.btn.btn-inline.text-main.text-decoration-underline.fs-14.fw-sb.align-self-center(data-bs-toggle="modal", data-bs-target=".modal-order-cancel") Отменить заказ
+            when 2
+                .d-flex.flex-column.flex-sm-row.align-items-sm-center.align-items-stretch.justify-content-between.gap-10
+                    button.btn.btn-main.px-xl-30.px-20.py-xl-20.py-15.fw-sb(data-bs-toggle="modal", data-bs-target=".modal-order") Задать вопрос по заказу
+                    button.btn.btn-inline.text-main.text-decoration-underline.fs-14.fw-sb.align-self-center(data-bs-toggle="modal", data-bs-target=".modal-order-cancel") Отменить заказ
+            default
+                .d-flex.flex-column.flex-sm-row.align-items-sm-center.align-items-stretch.justify-content-between.gap-10
+                    button.btn.btn-main.px-xl-30.px-20.py-xl-20.py-15.fw-sb(data-bs-toggle="modal", data-bs-target=".modal-order") Задать вопрос по заказу
+                    button.btn.btn-inline.text-black.text-decoration-underline.fs-14.fw-sb.align-self-center Повторить заказ
+    //- if active
+        .order-newItem.spoiler.overflow-hidden.active
+            .order-newItem-wrapper.d-flex.align-item-center.justify-content-between.position-relative
+                a(href='order-value.html').fs-14.fw-sb.d-block
+                    span Заказ №239
+                    |  от
+                    span 10.10.2010
+                    |  на
+                    span 16 460 ₽
+                .spoiler-btn.d-flex.active
+                    i.icon.u_angle-down.fs-20
+            .order-newItem-block.spoiler-block.active
+                -
+                    let orderArr = [
+                                    {title: 'Двигатель Yamaha DragStar 400 26M', value: [{valueCount: '10 шт', valuePrice: '5 480 ₽'}]},
+                                    {title: 'Двигатель Yamaha FZS1000 Fazer N505E', value: [{valueCount: '10 шт', valuePrice: '5 480 ₽'}]},
+                                    {title: 'Двигатель Yamaha FZ400 Fazer 4YR', value: [{valueCount: '10 шт', valuePrice: '5 480 ₽'}]},
+                                   ]
+                .pt-10
+                    .d-flex.flex-column.gap-20.p-lg-30.p-20.rounded-20.bg-light
+                        .order-newItem-chars.d-flex.flex-column.gap-10
+                            each val in orderArr
+                                .order-newItem-chars-line.d-flex.justify-content-between.position-relative.flex-grow-1
+                                    span.fs-14
+                                        a(href='product.html')!= val['title']
+                                    span.d-flex.gap-10.fs-14
+                                        each itemV in val['value']
+                                            span.o-0_6= itemV['valueCount']
+                                            span= itemV['valuePrice']
+                        hr.o-0_1.my-0
+                        .d-flex.flex-wrap.gap-10.justify-content-between
+                            case status
+                                when 1
+                                    .d-flex.align-items-center.gap-5
+                                        i.icon.u_clock-eight.text-main.fs-14
+                                        span.fs-14.fw-rg Принят
+                                when 2
+                                    .d-flex.align-items-center.gap-5
+                                        i.icon.u_exclamation-mark.text-main.fs-14
+                                        span.fs-14.fw-rg Требует внимания
+                                when 3
+                                    .d-flex.align-items-center.gap-5
+                                        i.icon.u_check.text-main.fs-14
+                                        span.fs-14.fw-rg Доставлен
+                                when 4
+                                    .d-flex.align-items-center.gap-5
+                                        i.icon.u_multiply.text-main.fs-14
+                                        span.fs-14.fw-rg Отменен
+                                default
+                                    .d-flex.align-items-center.gap-5
+                                        i.icon.u_clock-eight.text-main.fs-14
+                                        span.fs-14.fw-rg Принят
+                            .d-flex.gap-30
+                                button.btn.btn-inline.fs-14 Отменить заказ
+                                button.btn.btn-inline.fs-14 Повторить заказ
+    //- else
+        .order-newItem.spoiler.overflow-hidden
+            .order-newItem-wrapper.d-flex.align-item-center.justify-content-between.position-relative
+                a(href='order-value.html').fs-14.fw-sb.d-block
+                    span Заказ №239
+                    |  от
+                    span 10.10.2010
+                    |  на
+                    span 16 460 ₽
+                .spoiler-btn.d-flex
+                    i.icon.u_angle-down.fs-20
+            .order-newItem-block.spoiler-block
+                -
+                    let orderArr = [
+                                    {title: 'Двигатель Yamaha DragStar 400 26M', value: [{valueCount: '10 шт', valuePrice: '5 480 ₽'}]},
+                                    {title: 'Двигатель Yamaha FZS1000 Fazer N505E', value: [{valueCount: '10 шт', valuePrice: '5 480 ₽'}]},
+                                    {title: 'Двигатель Yamaha FZ400 Fazer 4YR', value: [{valueCount: '10 шт', valuePrice: '5 480 ₽'}]},
+                                   ]
+                .pt-10
+                    .d-flex.flex-column.gap-20.p-lg-30.p-20.rounded-20.bg-light
+                        .order-newItem-chars.d-flex.flex-column.gap-10
+                            each val in orderArr
+                                .order-newItem-chars-line.d-flex.justify-content-between.position-relative.flex-grow-1
+                                    span.fs-14
+                                        a(href='product.html')!= val['title']
+                                    span.d-flex.gap-10.fs-14
+                                        each itemV in val['value']
+                                            span.o-0_6= itemV['valueCount']
+                                            span= itemV['valuePrice']
+                        hr.o-0_1.my-0
+                        .d-flex.flex-wrap.gap-10.justify-content-between
+                            case status
+                                when 1
+                                    .d-flex.align-items-center.gap-5
+                                        i.icon.u_clock-eight.text-main.fs-14
+                                        span.fs-14.fw-rg Принят
+                                when 2
+                                    .d-flex.align-items-center.gap-5
+                                        i.icon.u_exclamation-mark.text-main.fs-14
+                                        span.fs-14.fw-rg Требует внимания
+                                when 3
+                                    .d-flex.align-items-center.gap-5
+                                        i.icon.u_check.text-main.fs-14
+                                        span.fs-14.fw-rg Доставлен
+                                when 4
+                                    .d-flex.align-items-center.gap-5
+                                        i.icon.u_multiply.text-main.fs-14
+                                        span.fs-14.fw-rg Отменен
+                                default
+                                    .d-flex.align-items-center.gap-5
+                                        i.icon.u_clock-eight.text-main.fs-14
+                                        span.fs-14.fw-rg Принят
+                            .d-flex.gap-30
+                                button.btn.btn-inline.fs-14 Отменить заказ
+                                button.btn.btn-inline.fs-14 Повторить заказ
+mixin section-heading(title)
+    .section-heading.d-flex.align-items-center.gap-15
+        .section-heading-icon.d-flex
+            svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 26 27" fill="none")
+                path(d="M8.28533 18.0002L7.23363 25.0159L11.8632 26.2198L14.4871 19.6346L19.9276 23.9628L23.3184 20.5464L19.0228 15.0646L25.5585 12.4209L24.3638 7.75627L17.4009 8.81582L18.496 1.84396L13.8665 0.640103L11.2426 7.22527L5.80206 2.89705L2.41125 6.31348L6.70684 11.7953L0.171147 14.4389L1.36588 19.1036L8.28533 18.0002Z" fill="#4594E6")
+            svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 26 27" fill="none")
+                path(d="M6.80536 11.749L0.203781 14.346L1.47599 18.9572L8.49085 17.937L7.46276 24.8127L12.1169 26.041L14.7165 19.58L20.2738 23.9183L23.7161 20.5513L19.3171 15.051L25.9025 12.5135L24.6303 7.90229L17.6154 8.92254L18.6435 2.04679L13.9894 0.818482L11.3898 7.27948L5.83246 2.94122L2.39011 6.30821L6.80536 11.749Z" fill="#4594E6")
+        span.fs-lg-24.fs-sm-20.fs-16.fw-rg.o-0_5= title
+mixin steps-item(num)
+    .steps-item.d-flex.flex-column.bg-light.p-xxl-40.p-20
+        .d-flex.align-items-center.justify-content-between
+            .fs-40.lh-1_3.text-main= num
+            svg(xmlns="http://www.w3.org/2000/svg" width="52" height="23" viewBox="0 0 52 23" fill="none")
+                path(opacity="0.3" d="M0.333252 11.5H50.3333M50.3333 11.5L40.3333 1.5M50.3333 11.5L40.3333 21.5" stroke="#C41515" stroke-width="2")
+        hr.my-30.o-0_1
+        .d-flex.flex-column.gap-20.align-items-start
+            block
+mixin choosing-tabs-btn(num)
+    .choosing-tabs-btn.rounded-pill.border-0.d-flex.align-items-center.p-5.pe-xl-20.pe-5
+        i.u_check-circleE.fs-20.p-8.rounded-circle.me-xl-15.me-sm-10.me-5.text-black
+        .fw-rg.lh-10.fs-12.fs-md-14.fs-xl-16.text-black.text-nowrap
+            span.num
+            span= num
+mixin choosing-tabs-block(name, num, title)
+    .zangdar__step(data-step= name data-article= num)
+        .choosing__block
+            block
+mixin questions-item(question)
+    .questions-item.spoiler.spoiler-item.overflow-hidden
+        .spoiler-btn.pointer
+            .d-flex.align-items-center.justify-content-between
+                .fs-18.fw-sb= question
+                .spoiler-item-icon.position-relative
+            .questions-item-block.spoiler-block
+                block
+mixin spoiler-item(question, active=false)
+    if active
+        .spoiler-item.spoiler.overflow-hidden.active
+            .spoiler-btn.pointer.active
+                .d-flex.align-items-center.justify-content-between
+                    .fs-md-24.fs-18.fw-sb= question
+                    i.icon.more.d-flex.fs-16
+            .spoiler-block.active
+                block
+    else
+        .spoiler-item.spoiler.overflow-hidden
+            .spoiler-btn.pointer
+                .d-flex.align-items-center.justify-content-between
+                    .fs-md-24.fs-18.fw-sb= question
+                    i.icon.more.d-flex.fs-16
+            .spoiler-block
+                block

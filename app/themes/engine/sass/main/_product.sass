@@ -1,0 +1,167 @@
+.product
+    &-grid
+        display: grid
+        grid-template-columns: 100%
+        gap: 3.2rem
+    &-main
+        gap: 3.2rem
+    &-heading
+        gap: 1.6rem
+    &-desc
+        gap: 2.4rem
+    &-info
+        gap: 3.2rem
+    &-buy
+        display: grid
+        grid-template-areas: 'price count' 'btn btn'
+        grid-template-columns: repeat(2, auto)
+        justify-content: space-between
+        align-items: center
+        gap: 1.6rem
+        &__price
+            grid-area: price                                 
+        &__count
+            grid-area: count
+            & .count-number
+                padding: calc(.8rem - 1px) calc(1.4rem - 1px)
+                gap: 1rem
+            & .count-input
+                font-size: 1.4rem                                
+        &__btn
+            grid-area: btn
+            & button
+                width: 100%
+                justify-content: center
+                padding: 1.2rem 2.4rem 1.4rem 2.4rem
+    &-radio
+        border: 1px solid rgba(34, 34, 34, .2)
+        & label
+            flex: 0 0 50%
+        & input
+            display: none
+        &__item
+            padding: .8rem 1.6rem            
+            opacity: .85
+            transition: .3s
+            cursor: pointer
+            & i
+                // display: none
+                width: 0px
+                overflow: hidden
+                min-width: 0px
+                transition: .3s
+                margin-left: 0
+        & input:checked ~ .product-radio__item
+            box-shadow: 0 0 0 2px $black
+            opacity: 1
+            & i
+                // display: block
+                width: 2rem
+                min-width: 2rem
+                margin-left: 1rem
+    &-gallery
+        & .swiper-slider
+            display: flex
+            height: auto
+        &__img
+            height: 100%
+        &__img img
+            height: 100%            
+    &-shares
+        background-color: rgba(0, 0, 0, .04)
+        padding: 1.2rem
+        gap: 1rem
+        &__icon
+            padding: .6rem
+            & img
+                height: .8rem
+        & i
+            color: #C7C9CC
+            transform: rotate(-90deg)                   
+.count
+    &-number
+        display: flex        
+        align-items: center
+        justify-content: space-between        
+        border: 1px solid rgba(34, 34, 34, .2)
+        border-radius: 50rem
+    &-input
+        line-height: 1.4
+        border: none
+        text-align: center
+        padding: 0
+        min-width: 3ch
+        width: 100%
+        max-width: 3ch
+        &:focus-visible
+            outline: none
+    &-btn
+        display: flex
+        cursor: pointer                  
+@media screen and ( min-width: 1080px )
+    .product
+        &-grid
+            grid-template-columns: 2fr 1.5fr
+            align-items: flex-start
+        &-gallery
+            gap: .8rem
+            position: sticky
+            top: 0
+            &__thumbs
+                flex: 0 0 6rem
+            &__thumb
+                aspect-ratio: 2 / 3
+                & img
+                    height: 100%   
+            &__slider
+                width: 100%
+                aspect-ratio: 2 / 3        
+        &-buy            
+            grid-template-areas: 'price count' 'btn btn'
+            grid-template-columns: repeat(2, auto)            
+            &__count
+                & .count-number
+                    padding: calc(1rem - 1px) calc(1.6rem - 1px)
+                & .count-input
+                    font-size: 1.8rem
+            &__btn
+                & button
+                    padding: 1rem 3.2rem
+        &-desc
+            align-items: flex-start
+        &-radio            
+            & label
+                flex: unset                        
+@media screen and ( min-width: 1400px )
+    .product
+        &-grid
+            grid-template-columns: repeat(2, 1fr)
+            align-items: flex-start
+        &-gallery
+            gap: .8rem
+            position: sticky
+            top: 0
+            &__thumbs
+                flex: 0 0 8rem
+            &__thumb
+                aspect-ratio: 2 / 3
+                & img
+                    height: 100%   
+            &__slider
+                width: 100%
+                aspect-ratio: 2 / 3
+        &-main
+            gap: 6.4rem
+        &-buy
+            grid-template-areas: 'price count btn'
+            display: flex
+            flex-wrap: wrap
+            &__price
+                flex-grow: 1
+            &__btn
+                flex-grow: 1    
+            grid-template-columns: 1fr repeat(2, auto)           
+        &-desc
+            align-items: flex-start            
+                   
+                        

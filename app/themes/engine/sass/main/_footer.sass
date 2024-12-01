@@ -1,0 +1,89 @@
+.footer
+    padding: 6.4rem 0 12.8rem 
+    & .href-main
+        color: $white
+        &:hover
+            color: color-mix(in srgb,#fff 60%,#222)
+    &-wrapper
+        gap: 4rem
+    &-top
+        flex-direction: column
+        gap: 4rem       
+        &__left
+            gap: 4rem
+            flex-direction: column
+        &__right
+            gap: 1.6rem
+            flex-direction: column        
+    &-logo
+        & img
+            height: 2.2rem
+    &-nav
+        text-align: center
+        & ul
+            flex-direction: column
+            gap: 1.6rem
+    &-social
+        gap: 1.6rem
+    &-bot
+        flex-direction: column
+        gap: 40px
+        &__left
+            order: 1
+            gap: .8rem
+            flex-direction: column           
+        &__right
+            gap: .8rem
+            align-items: center
+            flex-direction: column
+            & > *:first-child
+                order: 1
+    &-wb
+        & svg
+            transition: .3s
+            & path
+                fill: currentColor
+            &:hover
+                color: color-mix(in srgb, $white 60%, $black)    
+.sticky-menu
+    padding:  1.6rem
+    background-color: $white    
+    position: sticky
+    bottom: 0
+    z-index: 10
+    border-top: 1px solid rgba(34, 34, 34, .1)
+    &__wrapper
+        // max-width: 51.6rem
+        width: 100%
+        & > *
+            flex: 0 0 33.33%           
+@media screen and ( min-width: 1080px )
+    .footer
+        padding: 6.4rem 0 
+        &-wrapper
+            gap: 12rem
+        &-top
+            flex-direction: row
+            &__left
+                gap: 6.4rem
+                flex-direction: row
+            &__right
+                gap: 3.2rem
+                flex-direction: row
+        &-nav
+            text-align: start
+            & ul
+                flex-direction: row
+                gap: 2.4rem
+        &-bot
+            flex-direction: row
+            &__left
+                order: 0
+                gap: 2.4rem
+                flex-direction: row
+            &__right
+                gap: 1.4rem
+                align-items: flex-end
+                flex-direction: row
+                & > *:first-child
+                    order: 0                                                                                                         

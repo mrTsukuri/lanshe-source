@@ -1,0 +1,76 @@
+.unit
+    &-search                
+        & input
+            padding: 20px 30px 20px 55px
+            border: none
+            background: linear-gradient(90deg,rgba(255,85,51,.1) 0,rgba(255,85,51,0) 25%,rgba(255,85,51,0) 50%,rgba(255,85,51,0) 75%,rgba(255,85,51,0) 100%)
+            border: 2px solid $light
+        &__btn, &__href
+            top: 50%
+            transform: translateY(-50%)
+        &__btn
+            left: 20px
+            & i
+                opacity: .5
+            &:hover
+                & i
+                    opacity: 1                           
+        &__href
+            right: 30px            
+    &-catalog
+        &__grid
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            gap: 10px
+    &-item
+        background-color: $light
+        &:hover
+            background-color: $main
+            color: $white
+        &__img
+            height: 150px
+            & img
+                height: 100%    
+    &-page
+        &__grid
+            display: grid
+            grid-template-columns: 100%
+            gap: 20px
+            align-items: flex-start
+        &__img
+            border: 2px solid $light
+            position: static            
+            // height: 473px
+            aspect-ratio: 4/3
+            & img
+                height: 100%
+@media screen and ( min-width: 576px )
+    .unit    
+        &-catalog
+            &__grid                
+                grid-template-columns: repeat(3, 1fr)
+        &-item
+            &__img
+                height: 170px                
+@media screen and ( min-width: 768px )
+    .unit    
+        &-catalog
+            &__grid
+                grid-template-columns: repeat(4, 1fr)                        
+@media screen and ( min-width: 1200px )
+    .unit    
+        &-catalog
+            &__grid                
+                grid-template-columns: repeat(5, 1fr)                                        
+        &-page
+            &__grid                
+                grid-template-columns: repeat(2, 1fr)
+                gap: 30px
+            &__img                
+                position: sticky
+                top: 0
+                // height: 473px
+                aspect-ratio: 4/3                           
+
+
+

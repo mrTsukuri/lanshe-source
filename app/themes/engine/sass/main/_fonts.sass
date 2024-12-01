@@ -1,0 +1,19 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false )
+  @font-face
+    font-family: $font-family
+    font-weight: $weight
+    font-style: $style
+    font-display: swap
+
+    @if $asset-pipeline == true      
+      src: local("WixMadeforDisplay"), font-url('#{$file-path}.woff') format('woff'), font-url('#{$file-path}.ttf') format('truetype')
+    @else      
+      src: url('#{$file-path}.woff2') format('woff2')
+
+
+
+
++font-face("WixMadeforDisplay", "../fonts/WixMadeforDisplay-Bold/WixMadeforDisplay-Bold", bold)
++font-face("WixMadeforDisplay", "../fonts/WixMadeforDisplay-Regular/WixMadeforDisplay-Regular", normal)
++font-face("WixMadeforDisplay", "../fonts/WixMadeforDisplay-Medium/WixMadeforDisplay-Medium", 500)
++font-face("WixMadeforDisplay", "../fonts/WixMadeforDisplay-SemiBold/WixMadeforDisplay-SemiBold", 600)

@@ -1,0 +1,65 @@
+.company  
+    // height: 300px
+    // overflow: hidden
+    &-back
+        width: 100%        
+        height: 1386px
+        background: radial-gradient(50% 50.00% at 50% 50.00%, #4594E5 0%, rgba(255, 255, 255, 0.00) 100%)
+        top: 50%
+        transform: translateY(-50%)       
+        opacity: .2
+        border-radius: 100%
+    &-wrapper
+        position: relative
+        z-index: 1   
+    &-marquee
+        z-index: 0                         
+        &-items            
+            width: auto
+            flex: 0 0 auto            
+            & img
+                width: auto            
+        &-wrapper            
+            display: grid            
+        &-back, &-block
+            grid-row: 1 / 1
+            grid-column: 1 / 1
+        &-block            
+            gap: 30px
+            width: auto                                 
+        &-back
+            background: url('/images/company/back.jpg') no-repeat
+            background-size: cover               
+        & .js_marquee
+            position: relative
+            z-index: 1
+        &-item
+            position: relative
+            padding-right: 30px
+            &::after
+                content: ''
+                width: 2px
+                height: 42px
+                background: $black
+                opacity: .1
+                position: absolute
+                right: 0px
+                top: 50%
+                transform: translateY(-50%)
+            &:first-child
+                padding-left: 30px
+@media screen and ( min-width: 768px )
+    .company     
+        &-marquee
+            &-block            
+                gap: 60px
+            &-item                
+                padding-right: 60px                
+                &:first-child
+                    padding-left: 60px
+
+                              
+                      
+                                     
+                       
+                

@@ -1,0 +1,20 @@
+extends template/main
+
+block variables
+    -var title = ''
+block content
+    main
+        section.about
+            .container
+                .about-block.d-flex.flex-column
+                    .about-heading.position-relative.d-flex.align-items-end.rounded-12.overflow-hidden
+                        h1.fs-20.fs-lg-32.fw-md.mb-0 Lanshe — <br> это не просто бренд материалов <br> для наращивания ресниц
+                        .about-heading__img.position-absolute.w-100.h-100
+                            img(src= start+"images/about/about-img.jpg", alt="Lanshe — это не просто бренд материалов для наращивания ресниц").h-100
+                    .about-content.d-flex.flex-column
+                        p Мы применяем передовые технологии, чтобы создавать материалы, превосходящие по качеству <br> и уникальности все, что было до этого. Каждый наш продукт — это шедевр, рожденный из инноваций.
+                        p Мы предлагаем материалы премиум-класса, которые подчёркивают индивидуальность  <br> и позволяют создавать не просто красивые, а истинно роскошные образы.
+                        p Ваше предпочтение дает нам возможность заниматься тем, что мы любим, и предоставлять  <br> Вам самые лучшие продукы высочайшего качества.
+                    .fs-20.fs-lg-32.fw-md.mb-0 Lanshe — <br> это роскошь для каждого
+        +reviews
+        +questions

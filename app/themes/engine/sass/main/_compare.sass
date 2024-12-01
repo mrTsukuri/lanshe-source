@@ -1,0 +1,18 @@
+.compare
+    &-table
+        &__row
+            display: flex
+            padding: 2rem 0 1.5rem 0
+            gap: 1rem
+            & .visible-in-active
+                visibility: hidden
+        &__row:not(:last-of-type)            
+            border-bottom: 1px solid rgba(34, 34, 34,  .1)        
+    &-item
+        & .product-item__img
+            height: 17rem            
+    & .swiper-slide.active
+        & .visible-in-active
+            visibility: visible                   
+    // & .swiper-slide:not(:first-child)
+    //     margin-left: -1px

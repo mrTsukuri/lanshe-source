@@ -1,0 +1,2171 @@
+include ../component/component
+                            
+mixin banner
+    section.banner        
+        .slider-banner.swiper.h-100.position-relative
+            .swiper-wrapper
+                .swiper-slide.d-flex                    
+                    .banner-block.d-flex.h-100.w-100.position-relative.overflow-hidden
+                        .container
+                            .banner-wrapper.d-flex.flex-column.align-items-start
+                                h2.fs-xl-40.fs-lg-35.fs-24.fw-md.mb-0 Lanshe Clean System <br> Лимитированное предложение — <br> будьте первыми!
+                                button.btn.btn_main(data-bs-toggle="modal", data-bs-target=".modal-product") Сделать заказ
+                        .banner-img.position-absolute
+                            img(src= start+ "images/banner/banner-test.jpg", alt="")
+                            //- picture
+                                source(media='(min-width: 1080px )', srcset='images/banner/banner-img2.jpg')
+                                img(src='images/banner/banner-test_m.jpg', alt='')                                
+                //- .swiper-slide.d-flex.h-100                    
+                    .banner-block.d-flex.h-100.w-100.position-relative.overflow-hidden
+                        .container
+                            .banner-wrapper.d-flex.flex-column.align-items-start
+                                h2.fs-lg-40.fs-24.fw-md Cкидка 20% на средства <br> для ухода за кожей
+                                button.btn.btn_main(data-bs-toggle="modal", data-bs-target=".modal-product") Сделать заказ
+                        .banner-img.position-absolute
+                            img(src= start+ "images/banner/banner-img.jpg", alt="").w-auto                                
+                //- .swiper-slide.d-flex.h-100                    
+                    .banner-block.d-flex.h-100.w-100.position-relative.overflow-hidden
+                        .container
+                            .banner-wrapper.d-flex.flex-column.align-items-start
+                                h2.fs-lg-40.fs-24.fw-md Cкидка 20% на средства <br> для ухода за кожей
+                                button.btn.btn_main(data-bs-toggle="modal", data-bs-target=".modal-product") Сделать заказ
+                        .banner-img.position-absolute
+                            img(src= start+ "images/banner/banner-img.jpg", alt="").w-auto                                
+                //- .swiper-slide.d-flex.h-100                    
+                    .banner-block.d-flex.h-100.w-100.position-relative.overflow-hidden
+                        .container
+                            .banner-wrapper.d-flex.flex-column.align-items-start
+                                h2.fs-lg-40.fs-24.fw-md Cкидка 20% на средства <br> для ухода за кожей
+                                button.btn.btn_main(data-bs-toggle="modal", data-bs-target=".modal-product") Сделать заказ
+                        .banner-img.position-absolute
+                            img(src= start+ "images/banner/banner-img.jpg", alt="").w-auto                                
+            .slider-navigation__banner.position-absolute.d-flex.align-items-center.justify-content-between
+                .slider-prev
+                    i.icon-arrow.fs-32
+                .slider-pagination                    
+                .slider-next
+                    i.icon-arrow.fs-32
+mixin catalog(name, haveHref)
+    section.catalog#products
+        .container
+            .section-heading.d-flex.align-items-center.justify-content-between
+                h2.fs-20.fs-lg-32.fw-md.mb-0= name
+                .section-nav.d-flex.align-items-center.justify-content-between
+                    if haveHref
+                        a(href="catalog.html").href-main.href-line.ms-auto.ms-lg-0 Все товары
+                    .slider-navigation__4.d-lg-flex.d-none.gap-24.ms-auto
+                        .slider-prev
+                            i.icon-arrow.fs-32                        
+                        .slider-next
+                            i.icon-arrow.fs-32
+            .slider-4.swiper
+                .swiper-wrapper
+                    -
+                        let catalogArr = [
+                                            {img: '1', name: 'Total White Minimal form',  desc: 'Патчи для наращивания ресниц', count: '50 шт.', price: '2 600 ₽', type: 1},
+                                            {img: '2', name: 'Total White Minimal form',  desc: 'Патчи для наращивания ресниц', count: '50 шт.', price: '2 600 ₽', type: 2},
+                                            {img: '1', name: 'Total White Minimal form',  desc: 'Патчи для наращивания ресниц', count: '100 шт.', price: '2 600 ₽', type: 3},
+                                            {img: '1', name: 'Total White Minimal form',  desc: 'Патчи для наращивания ресниц', count: '100 шт.', price: '2 600 ₽', type: 1},
+                                         ]
+                    -for(let i = 1; i <= 2; i++)
+                        each val in catalogArr
+                            .swiper-slide.h-auto.d-flex
+                                +product-item(val['img'], val['name'], val['desc'], val['count'], val['price'], val['type'])
+mixin reviews
+    section.reviews#reviews
+        .container
+            .section-heading.d-flex.align-items-center.justify-content-between
+                h2.fs-20.fs-lg-32.fw-md.mb-0 Отзывы
+                .section-nav.d-flex.align-items-center.justify-content-between
+                    a(href="reviews.html").href-main.href-line.ms-auto.ms-lg-0 Все отзывы
+                    .slider-navigation__2.d-lg-flex.d-none.gap-24.ms-auto
+                        .slider-prev
+                            i.icon-arrow.fs-32                        
+                        .slider-next
+                            i.icon-arrow.fs-32
+            .slider-2.swiper
+                .swiper-wrapper
+                    -
+                        let reviewsArr = [
+                                            {name: 'Акулина Волкова', ava: 'girl', city: 'г. Чебоксары', text: 'Мы верим, что каждый человек уникален, поэтому наша продукция разрабатывается с учётом индивидуальных потребностей.', revImg: ['1', '2', '3'], gallery: '1'},
+                                            {name: 'Валентин Кзоло', ava: 'boy', city: 'г. Чебоксары', text: 'Преимущества наших патчей в том, что они изготовлены из материалов высочайшего качества, признанных медицински безопасными. Патчи обеспечивают безупречный результат в процессе наращивания ресниц за счет липкого и влажного гидрогеля, который не оставляет раздражения на коже.', revImg: ['1', '2', '3'], gallery: '2'},
+                                            {name: 'Валентин Кзоло', ava: 'boy', city: 'г. Чебоксары', text: 'Преимущества наших патчей в том, что они изготовлены из материалов высочайшего качества, признанных медицински безопасными. Патчи обеспечивают безупречный результат в процессе наращивания ресниц за счет липкого и влажного гидрогеля, который не оставляет раздражения на коже.', revImg: ['1', '2', '3'], gallery: '3'}
+                                         ]                    
+                    each val in reviewsArr
+                        .swiper-slide.h-auto.d-flex
+                            +reviews-item(val['name'], val['ava'], val['city'], val['text'], val['revImg'], val['gallery'])
+mixin questions
+    section.questions#questions
+        .container            
+            .questions-grid
+                .questions-container.d-flex.flex-column
+                    h2.fs-20.fs-lg-32.fw-md.mb-0 Возникли вопросы? <br> Отвечаем на самые частые:
+                    .questions-block.d-flex.flex-column
+                        .spoiler.spoiler-item
+                            .spoiler-btn.d-flex.align-items-center.justify-content-between
+                                .fs-14.fs-lg-16.fw-md.lh-1_4 Возврат товара
+                                .spoiler-item-icon
+                            .spoiler-block
+                                .content
+                                    ol
+                                        li В соответствии с законодательством РФ парфюмерно-косметические товары надлежащего качества не подлежат обмену или возврату.
+                                        li Возврат парфюмерно-косметических средств и вспомогательныхкосметических товаров производится только:
+                                            ul
+                                                li При наличии производственного брака; 
+                                                li Товар не был в употреблении; 
+                                                li При наличии товарного чека или кассового чека  <br> (иной документ, подтверждающий оплату товара);
+                                                li Сохранены его товарный вид и потребительские свойства, <br> пломбы, фабричные ярлыки.
+                                        li  Покупатель вправе отказаться от заказанного товара, подлежащего возврату в соответствии с действующим законодательством РФ, в любое время до его получения, а после получения товара — в течение 7 дней, не считая дня покупки. Для этого достаточно написать нам в <a href='#'>Telegram</a>, <a href='#'>WhatsApp</a> или на электронную почту <a href='#'>lanshe.professional@gmail.com</a>
+                                        li Возврат денежных средств покупателю осуществляется следующими способами:
+                                            ul
+                                                li При оплате банковской картой возврат денежных средств осуществляется <br> на банковскую карту покупателя, указанную в заказе;
+                                                li Срок перечисления денежных средств составляет 10 дней. Срок зачисления денежных средств на банковский счет покупателя зависит от внутреннего регламента банка-получателя.
+                                        li Ответственность за сохранность товара и его упаковки до его возврата продавцу лежит на покупателе.
+                            
+                        .spoiler.spoiler-item
+                            .spoiler-btn.d-flex.align-items-center.justify-content-between
+                                .fs-14.fs-lg-16.fw-md.lh-1_4 Доставка товара
+                                .spoiler-item-icon
+                            .spoiler-block
+                                .content
+                                    ol
+                                        li Стоимость доставки
+                                            p Стоимость доставки зависит от выбранного способа доставки и рассчитывается индивидуально при оформлении заказа.
+                                        li <strong>БЕСПЛАТНАЯ доставка</strong> заказов в пределах РФ доступна при сумме заказа от 4000 рублей службами доставки СДЭК, Почта России до пунктов самовывоза.  
+                                        li Изменение адреса доставки и номера телефона получател
+                                            ul
+                                                li Если вы хотите изменить адрес курьерской доставки или телефон получателя, обратитесь в службу поддержки клиентов в Telegram, WhatsApp или на электронную почту lanshe.professional@gmail.com
+                                        li Самовывоз в г. Санкт-Петербург по адресу: ул. .............. Самовывоз интернет-заказов возможен на следующий день после даты оформления. Забирать заказы можно после 19:00.
+                        .spoiler.spoiler-item
+                            .spoiler-btn.d-flex.align-items-center.justify-content-between
+                                .fs-14.fs-lg-16.fw-md.lh-1_4 Какие преимущества продукции бренда Lanshe?
+                                .spoiler-item-icon
+                            .spoiler-block
+                                .content
+                                    p Наша продукция отличается высоким качеством, безопасностью, долговечностью, удобством использования и доступной ценой. Мы постоянно совершенствуем наши продукты, чтобы предлагать лучшую продукцию для мастеров по наращиванию ресниц.
+                        .spoiler.spoiler-item
+                            .spoiler-btn.d-flex.align-items-center.justify-content-between
+                                .fs-14.fs-lg-16.fw-md.lh-1_4 Какие преимущества использования продукции Lanshe для мастеров? 
+                                .spoiler-item-icon
+                            .spoiler-block
+                                .content
+                                    p Использование продукции Lanshe обеспечивает: высокое качество и долговечность работы, комфортные условия для клиента, уменьшает время процедуры, минимизирует риск осложнений, повышает уровень доверия клиентов.
+                        .spoiler.spoiler-item
+                            .spoiler-btn.d-flex.align-items-center.justify-content-between
+                                .fs-14.fs-lg-16.fw-md.lh-1_4 Является ли продукция Lanshe безопасной?
+                                .spoiler-item-icon
+                            .spoiler-block
+                                .content
+                                    p Продукция Lanshe разработана с учетом всех стандартов безопасности и качества. Она гипоаллергенна, не содержит вредных химических веществ и прошла дерматологические испытания.
+                        .spoiler.spoiler-item
+                            .spoiler-btn.d-flex.align-items-center.justify-content-between
+                                .fs-14.fs-lg-16.fw-md.lh-1_4 Есть ли у Lanshe сертификаты качества?
+                                .spoiler-item-icon
+                            .spoiler-block
+                                .content
+                                    p Да, продукция Lanshe имеет все необходимые сертификаты качества, подтверждающие соответствие международным стандартам.
+                .questions-feedback.d-flex.flex-column.bg-grey.rounded-12
+                    .questions-feedback__desc.d-flex.flex-column
+                        .fs-14.fs-lg-16.fw-md Не нашли ответ на свой вопрос?
+                        p.o-0_7 Оставьте номер телефона, мы перезвоним вам в течение 15 минут и ответим на все вопросы
+                    form(name='question').questions-feedback__form.d-flex.flex-column.js_callModal
+                        label.main-input.main-input_white
+                            input(type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required).w-100
+                        button.btn.btn_main Задать вопрос
+                        label.main-checkbox
+                            input(type="checkbox" name="processing" checked)
+                            span.main-checkbox__item.o-0_7.fs-14.fs-xl-16
+                                i.icon-checkbox.fs-20
+                                span Согласен на <a href='policy.html' class='text-decoration-underline pointer btn-inline'> обработку <br> персональных данных</a>
+mixin breadcrumbs(arr)
+    .breadcrumbs        
+        .container
+            .breadcrumbs-nav.d-flex.flex-wrap.text-nowrap
+                -for(let i = 0; i < arr.length; i++)
+                    if i === arr.length - 1                        
+                        span.breadcrumbs-nav-item.breadcrumbs-nav-item-disabled
+                            span= arr[i]['title']
+                    else                                                
+                        a(href= arr[i]['href']+ '.html' title= arr[i]['title']).breadcrumbs-nav-item
+                            span= arr[i]['title']
+                            i.icon-chevron.fs-16
+            
+mixin products
+    section.products#products
+        .container
+            h2.fw-md.fs-xl-40.fs-lg-30.fs-25.lh-1_1.text-uppercase Оборудование на продажу или в лизинг
+            .products-block.d-flex.flex-column.products-tabs
+                .js-tabs__nav                 
+                    .js-tabs__no-marker.js-tabs__tabs-container.scroll
+                        each val in [{title: 'Фрезерные <br>  станки', num: '1', class: 'active'}, {title: 'Токарные <br> станки', num: '2', class: 'right_sibling'}, {title: 'Электроэрозионные <br>  станки', num: '3'}, {title: 'Листогибочные <br>  прессы', num: '4'}, {title: 'Лазерные <br> станки', num: '5'}]
+                            .js-tabs__tab.products-catalog.d-flex.flex-column.align-items-center.text-center.pointer(class= val['class'] data-article= val['num'])
+                                .products-catalog__img
+                                    +picture('catalog/'+val['num'], val['title']).h-100.mbm-darken
+                                span.products-catalog__title.fw-sb.fs-xl-18.fs-14.lh-1_1!= val['title']  
+                .js-tabs__content-container                    
+                    each val in [{num: '1', class: 'active'}, {num: '2'}, {num: '3'}, {num: '4'}, {num: '5'}]
+                        .js-tabs__content(class= val['class'] data-article= val['num'])
+                            .products-wrapper.d-flex.flex-column
+                                -
+                                    let productArr = [
+                                                        {title: 'Токарно-револьверные станки', items: [{name: 'Токарно-револьверный станок с ЧПУ по металлу TL-20F', img: '1'}, {name: 'Токарно-револьверный станок с ЧПУ по металлу', img: '2'}, {name: 'Токарно-револьверный станок с ЧПУ по металлу TL-20F', img: '3'}, {name: 'Токарно-револьверный станок с ЧПУ по металлу TL-20F', img: '4'}, {name: 'Токарно-револьверный', img: '3'}, {name: 'Токарно-револьверный станок с ЧПУ по металлу TL-20F', img: '2'}]},
+                                                        {title: 'Токарно-фрезерные обрабатывающие центры', items: [{name: 'Токарно-револьверный станок с ЧПУ по металлу TL-20F', img: '1'}, {name: 'Токарно-револьверный станок с ЧПУ по металлу TL-20F', img: '2'}, {name: 'Токарно-револьверный станок с ЧПУ по металлу TL-20F', img: '3'}, {name: 'Токарно-револьверный станок с ЧПУ по металлу TL-20F', img: '4'}, {name: 'Токарно-револьверный станок с ЧПУ по металлу TL-20F', img: '2'}]},
+                                                        {title: 'Вертикальные токарные станки', items: [{name: 'Токарно-револьверный станок с ЧПУ по металлу TL-20F', img: '1'}, {name: 'Токарно-револьверный станок с ЧПУ по металлу TL-20F', img: '2'}, {name: 'Токарно-револьверный станок с ЧПУ по металлу TL-20F', img: '3'}, {name: 'Токарно-револьверный станок с ЧПУ по металлу TL-20F', img: '4'}]},
+                                                     ]
+                                each val in productArr
+                                    .products-group.d-flex.flex-column
+                                        .products-group__heading.fs-lg-24.fs-18.fw-md.lh-1_1.text-uppercase= val['title']
+                                        .products-group__grid
+                                            each item in val['items']
+                                                +product-item(item['name'], item['img'])            
+mixin choosing
+    section.choosing#choosing
+        .container
+            .choosing-wrapper.d-flex.flex-column.text-white.position-relative
+                .choosing-heading
+                    h2.fw-md.fs-xl-40.fs-lg-30.fs-18.lh-1_1.text-uppercase.mb-0 Ответьте на несколько вопросов и мы подберем оптимальный станок под ваши задачи
+                form#zangdar-form.choosing-content.position-relative.zangdar__wizard.js_callModal(autocomplete='off' name='choosing')
+                    +choosing-tabs-block('step-1', '1')
+                        .choosing-block
+                            .choosing-block__heading.d-flex.flex-column.align-items-start
+                                .fs-lg-24.fs-16.fw-md.lh-1_1.text-uppercase 01.
+                                .fs-lg-24.fs-16.fw-md.lh-1_1.text-uppercase Для каких целей будет использоваться станок?
+                                button.btn.btn_white(data-article="1" data-next)
+                                    span Следующий вопрос
+                                    i.icon.arrow-d
+                            .choosing-block__inputs
+                                each val in [{title: 'Обработка дерева', name: 'wood-1'}, {title: 'Обработка дерева', name: 'wood-2'}, {title: 'Обработка дерева', name: 'wood-3'}, {title: 'Обработка дерева', name: 'wood-4'}]
+                                    label.choosing-radio
+                                        input(type='checkbox' name= val['name'])
+                                        span.choosing-radio__item.d-flex.flex-column.align-items-start
+                                            span.choosing-radio__icon.rounded-circle.position-relative
+                                            span.fs-14.fw-sb.text-uppercase= val['title']
+                    +choosing-tabs-block('step-2', '2')
+                        .choosing-block
+                            .choosing-block__heading.d-flex.flex-column.align-items-start
+                                .fs-lg-24.fs-16.fw-md.lh-1_1.text-uppercase 02.
+                                .fs-lg-24.fs-16.fw-md.lh-1_1.text-uppercase Для каких целей будет использоваться станок?
+                                button.btn.btn_white(data-article="2" data-next)
+                                    span Следующий вопрос
+                                    i.icon.arrow-d
+                                button.btn.btn_white.d-none(data-article="2" data-prev)                                   
+                            .choosing-block__inputs
+                                each val in [{title: 'Обработка дерева', name: 'wood-1'}, {title: 'Обработка дерева', name: 'wood-2'}, {title: 'Обработка дерева', name: 'wood-3'}, {title: 'Обработка дерева', name: 'wood-4'}]
+                                    label.choosing-radio
+                                        input(type='checkbox' name= val['name'])
+                                        span.choosing-radio__item.d-flex.flex-column.align-items-start
+                                            span.choosing-radio__icon.rounded-circle.position-relative
+                                            span.fs-14.fw-sb.text-uppercase= val['title']
+                    +choosing-tabs-block('step-3', '3')
+                        .choosing-block
+                            .choosing-block__heading.d-flex.flex-column.align-items-start
+                                .fs-lg-24.fs-16.fw-md.lh-1_1.text-uppercase 03.
+                                .fs-lg-24.fs-16.fw-md.lh-1_1.text-uppercase Оставьте контактные данные и мы подберём оптимальный станок под ваши задачи                                
+                            .choosing-block__form.d-flex
+                                label.main-input.main-input_white
+                                    input(type="tel" name="phone" placeholder="+7 (9__) ___-__-__" required).w-100
+                                button.btn.btn_white.btn_bg
+                                    span Подобрать станок
+                                    i.icon.arrow-d    
+mixin offers
+    section.offers#offer
+        .container
+            .offers-wrapper.d-flex.flex-column
+                .section-grid.offers-top.align-items-start
+                    .section-grid__heading
+                        h2.fw-md.fs-xl-40.fs-lg-30.fs-25.lh-1_1.text-uppercase.mb-0 Специальное предложение
+                    .section-grid__block.offers-content.d-flex
+                        p Мы предлагаем комплексное технологическое оснащение производств, сопровождая каждый шаг нашего сотрудничества честностью и надёжностью: от выбора оборудования до его установки, послепродажного обслуживания и обучения.
+                        p Мы предлагаем комплексное технологическое оснащение производств, сопровождая каждый шаг нашего сотрудничества честностью и надёжностью.
+                .offers-bot.align-items-center.justify-content-between
+                    .offers-bot__feedback.d-flex.flex-column.align-items-start
+                        a(href="tel:88001234567").href-main.fs-xl-30.fs-24.fw-bl.lh-1_2 8 800 123-45-67
+                        a(href="mailto:order@cncplus.ru").href-main.fs-xl-24.fs-20 order@cncplus.ru
+                    .offers-bot__social.d-flex
+                        each val in [{title: 'Пишите <br> в Telegram', icon: 'tg', alt: 'Пишите в Telegram'}, {title: 'Пишите <br> в WhatsApp', icon: 'wa', alt: 'Пишите в WhatsApp'}]
+                            a(href="#" title= val['alt']).href-main.d-flex.align-items-center.gap-15
+                                i.icon(class= val['icon'])
+                                span.fs-16.fw-md!= val['title']
+                    form(name='offers').offers-bot__form.d-flex.js_callModal
+                        label.main-input.main-input_black
+                            input(type="tel" name="phone" placeholder="+7 (9__) ___-__-__").w-100
+                        button.btn.btn_main.btn_bg
+                            span Получить КП
+                            i.icon.arrow-d
+mixin offers-black
+    section.offers.offers_black#offer
+        .container
+            .offers-wrapper.d-flex.flex-column
+                .section-grid.offers-top.align-items-start
+                    .section-grid__heading
+                        h2.fw-md.fs-xl-40.fs-lg-30.fs-25.lh-1_1.text-uppercase.mb-0 Возникли <br>  вопросы?
+                    .section-grid__block.offers-content.d-flex
+                        p Мы предлагаем комплексное технологическое оснащение производств, сопровождая каждый шаг нашего сотрудничества честностью и надёжностью: от выбора оборудования до его установки, послепродажного обслуживания и обучения.
+                        p Мы предлагаем комплексное технологическое оснащение производств, сопровождая каждый шаг нашего сотрудничества честностью и надёжностью.
+                .offers-bot.align-items-center.justify-content-between
+                    .offers-bot__feedback.d-flex.flex-column.align-items-start
+                        a(href="tel:88001234567").href-white.fs-xl-30.fs-24.fw-bl.lh-1_2 8 800 123-45-67
+                        a(href="mailto:order@cncplus.ru").href-white.fs-xl-24.fs-20 order@cncplus.ru
+                    .offers-bot__social.d-flex
+                        each val in [{title: 'Пишите <br> в Telegram', icon: 'tg', alt: 'Пишите в Telegram'}, {title: 'Пишите <br> в WhatsApp', icon: 'wa', alt: 'Пишите в WhatsApp'}]
+                            a(href="#" title= val['alt']).href-white.d-flex.align-items-center.gap-15
+                                i.icon(class= val['icon'])
+                                span.fs-16.fw-md!= val['title']
+                    form(name='questions').offers-bot__form.d-flex.js_callModal
+                        label.main-input.main-input_white
+                            input(type="tel" name="phone" placeholder="+7 (9__) ___-__-__").w-100
+                        button.btn.btn_white.btn_bg
+                            span Получить КП
+                            i.icon.arrow-d
+mixin advantages
+    section.advantages#advantages
+        .container
+            .section-grid.align-items-start
+                .section-grid__heading
+                    h2.fw-md.fs-xl-40.fs-lg-30.fs-25.lh-1_1.text-uppercase.mb-0 Почему с нами выгодно
+                    button.btn.btn_main.btn_bg.section-grid__btn
+                        span Начать сотрудничество
+                        i.icon.arrow-d
+                .section-grid__block.advantages-block
+                    -
+                        let advArr = [
+                                        {title: 'Станки <br> в наличии <br> и под заказ', type: 'bg', line: 'top'},
+                                        {title: 'Оплата <br> удобным <br> способом', line: 'top'},
+                                        {title: 'Возможность <br> оформления <br> в лизинг и кредит',line: 'top'},
+                                        {title: 'Станки <br> в наличии <br> и под заказ', line: 'bot'},
+                                        {title: 'Оплата <br> удобным <br> способом', line: 'bot'},
+                                        {title: 'Оплата <br> удобным <br> способом', type: 'bg', line: 'bot'},
+                                     ]
+                    each val in advArr
+                        if val['type']
+                            .advantages-item.d-flex.flex-column(class='advantages-item_'+val['type'])
+                                i.icon.arrow-d.fs-15
+                                span.fs-lg-18.fs-14.fw-sb.text-uppercase!= val['title']
+
+                        else
+                            .advantages-item.d-flex.flex-column
+                                i.icon.arrow-d.fs-15
+                                span.fs-lg-18.fs-14.fw-sb.text-uppercase!= val['title']
+mixin services
+    section.services#services
+        .container
+            .section-grid.align-items-start
+                .section-grid__heading
+                    h2.fw-md.fs-xl-40.fs-lg-30.fs-25.lh-1_1.text-uppercase.mb-0 Сервисное обслуживание
+                    button.btn.btn_main.btn_bg.section-grid__btn(data-bs-toggle="modal", data-bs-target=".modal-service")
+                        span Оставить заявку
+                        i.icon.arrow-d
+                .section-grid__block.services-block
+                    -for(let i = 1; i <= 6; i++)
+                        .services-item.d-flex.flex-column
+                            .fs-lg-24.fs-18.fw-sb.text-uppercase Техническая поддержка
+                            p Мы предлагаем комплексное технологическое оснащение производств, сопровождая каждый шаг нашего сотрудничества честностью и надежностью.
+                            button.btn.btn_main(data-bs-toggle="modal", data-bs-target=".modal-service")
+                                span Сделать заказ
+                                i.icon.arrow-d
+mixin shipments 
+    section.shipments#shipments
+        .container
+            .section-grid.align-items-start
+                .section-grid__heading
+                    h2.fw-md.fs-xl-40.fs-lg-30.fs-25.lh-1_1.text-uppercase.mb-0 Последние <br> отгрузки
+                    .slider-navigation__shipments.d-flex.gap-30
+                        .slider-prev
+                            i.icon.arrow.fs-40
+                        .slider-next
+                            i.icon.arrow.fs-40
+                .section-grid__block.shipments-block
+                    .slider-shipments.swiper
+                        .swiper-wrapper
+                            -for(let i = 1; i <= 4; i++)
+                                if i < 4
+                                    .swiper-slide.h-auto
+                                        .shipments-item.d-flex.flex-column.align-items-start
+                                            .shipments-item__img
+                                                +picture('product/'+i, 'Токарно-револьверный станок с ЧПУ по металлу TL–20F').mbm-darken.h-100
+                                            .shipments-item__date.d-flex.flex-column.o-0_5
+                                                span.fs-lg-16.fs-12.fw-sb.text-uppercase.d-inline-block 22.07.2024
+                                                span.fs-lg-16.fs-12.fw-sb.text-uppercase.d-inline-block г. Ростов-На-Дону
+                                            .shipments-item__title
+                                                span.fs-lg-16.fs-12.fw-sb.text-uppercase.d-inline-block Токарно-револьверный станок с ЧПУ по металлу TL–20F
+                                else
+                                    .swiper-slide.h-auto
+                                        .shipments-item.d-flex.flex-column.align-items-start
+                                            .shipments-item__img
+                                                +picture('product/3', 'Токарно-револьверный станок с ЧПУ по металлу TL–20F').mbm-darken.h-100
+                                            .shipments-item__date.d-flex.flex-column.o-0_5
+                                                span.fs-lg-16.fs-12.fw-sb.text-uppercase.d-inline-block 22.07.2024
+                                                span.fs-lg-16.fs-12.fw-sb.text-uppercase.d-inline-block г. Ростов-На-Дону
+                                            .shipments-item__title
+                                                span.fs-lg-16.fs-12.fw-sb.text-uppercase.d-inline-block Токарно-револьверный станок с ЧПУ по металлу TL–20F    
+mixin about
+    section.about#about
+        .container
+            .section-grid
+                .section-grid__heading.d-none.d-xl-block
+                    .about-img
+                        +picture('about/about-img', '')
+                .section-grid__block.about-block.d-flex.flex-column.justify-content-between
+                    .about-top.d-flex.flex-column
+                        .about-heading.align-items-center                      
+                            h2.fw-md.fs-xl-40.fs-lg-30.fs-25.lh-1_1.text-uppercase.mb-0 О компании
+                            p Мы находимся в г. Екатеринбурге по адресу <br> ул. Екатеринбургская, дом 4, корпус 3
+                            .about-logo.header-logo
+                                img(src=start+"images/logo.svg", alt="логотип сайта", loading="lazy")
+                        p «CNC-PLUS» был основан в 1990 году и за более чем три десятилетия превратился в одного из ведущих поставщиков оборудования для металлообработки и его сервисного обслуживания в России и Республике Беларусь. Наша компания начала со штата всего из двух человек, но постепенно выросла, наращивая масштабы и охватывая все больше предприятий.
+                    .about-feedback.align-items-center.justify-content-between
+                        .about-feedback__phone.d-flex.flex-column.align-items-start
+                            a(href="tel:88001234567").href-main.fs-xl-30.fs-24.fw-bl.lh-1_2 8 800 123-45-67
+                            a(href="mailto:order@cncplus.ru").fs-xl-24.fs-20.lh-1_4 order@cncplus.ru
+                        form(name="about__form").about-form.d-flex.js_callModal
+                            .main-input.main-input_black
+                                input(type='tel' name='phone' placeholder='+7 (9__) ___-__-__' required).w-100
+                            button.btn.btn_main.btn_bg
+                                span Заказать звонок
+                                i.icon.arrow-d
+                        .about-social.d-flex
+                            each val in [{href: '#', icon: 'tg', title: 'Написать в Telegram', alt: "Ссылка на Telegram"}, {href: '#', icon: 'wa', title: 'Написать в WhatsApp', alt: "Ссылка на WhatsApp"}]
+                                a(href= val['href'] title= val['title']).href-main.about-social__item
+                                    i.icon(class= val['icon'])
+                    .about-adv.advantages-block
+                        -
+                            let abAdvArr = [
+                                            {title: 'Более 10 000 станков обслужили <br> за 10 лет работы', type: 'bg', line: 'top'},
+                                            {title: 'более 100 <br> сотрудников', line: 'top'},
+                                            {title: '30 сервисных <br> инженеров',line: 'top'},
+                                            {title: 'Работаем напрямую с<br> производителями', line: 'bot'},
+                                            {title: 'Собственная <br> доставка', line: 'bot'},
+                                            {title: 'более 5000 активных клиентов из 76 субъектов России и Беларуси', type: 'bg', line: 'bot'},
+                                        ]
+                        each val in abAdvArr
+                            if val['type']
+                                .advantages-item.d-flex.flex-column(class='advantages-item_'+val['type'])
+                                    i.icon.arrow-d.fs-15
+                                    span.fs-lg-18.fs-14.fw-sb.text-uppercase!= val['title']
+
+                            else
+                                .advantages-item.d-flex.flex-column
+                                    i.icon.arrow-d.fs-15
+                                    span.fs-lg-18.fs-14.fw-sb.text-uppercase!= val['title']
+
+mixin contact
+    section.contact#contact.d-none.d-lg-block
+        .container
+            .contact-map.position-relative
+                +picture('map/features', 'Карта', '.png')
+                .contact-titles
+                    .contact-title.contact-title_1.fs-xl-40.fs-lg-30.fs-18.fw-md.lh-1_1 Работаем <br> по всей <br> россии
+                    .contact-title.contact-title_2.fs-xl-40.fs-lg-30.fs-18.fw-md.lh-1_1 Доставили <br> в 76 субъектов <br> россии
+                    .contact-title.contact-title_3.fs-xl-40.fs-lg-30.fs-18.fw-md.lh-1_1 Работаем <br> по всей <br> россии
+                    .contact-title.contact-title_4.fs-xl-40.fs-lg-30.fs-18.fw-md.lh-1_1 Возможно <br> Что-то еще
+                .contact-points
+                    -for(let i = 1; i <= 32; i++)
+                        .contact-point.d-flex.flex-column.align-items-center.text-center(class='contact-point_'+i)
+                            .contact-point__item.rounded-circle
+                    .contact-point.d-flex.flex-column.align-items-center.text-center.contact-point_33.active
+                        .contact-point__item.rounded-circle
+                        .contact-point__desc Мы находимся <br> здесь
+mixin transcript
+    section.transcript#transcript
+        .container
+            .transcript-wrapper.choosing-wrapper.spoiler.text-white.d-flex.flex-column.position-relative
+                .section-grid
+                    .section-grid__heading
+                        h2.fw-md.fs-xl-40.fs-lg-30.fs-25.lh-1_1.text-uppercase.mb-0 Расшифровка <br> кодов ошибок
+                    .transcript-block.section-grid__block.d-flex
+                        p Мы предлагаем комплексное технологическое оснащение производств, сопровождая каждый шаг нашего сотрудничества честностью и надежностью.
+                        form(name="transcript").transcript-form.d-flex.js_callModal
+                            .main-input.main-input_white
+                                input(type="text" name="code" placeholder="e-__-___").w-100
+                            button.btn.btn_white.btn_bg.spoiler-btn
+                                span Расшифровать
+                                i.icon.arrow-d     
+                .spoiler-block
+                    .section-grid.transcript-answer
+                        .section-grid__heading
+                            .fs-lg-24.fs-18.fw-md.lh-1_1.text-uppercase Ошибка E-00-323
+                        .section-grid__block
+                            p Мы предлагаем комплексное технологическое оснащение производств, сопровождая каждый шаг нашего сотрудничества честностью и надежностью.    
+
+
+
+
+
+
+
+mixin feedback
+    section.feedback.section_light
+        .container
+            .feedback-grid
+                .feedback-desc.d-flex.flex-column.gap-lg-30.gap-20
+                    .feedback-desc__top.d-flex.flex-column.gap-lg-20.gap-15
+                        h2.fw-md.fs-md-35.fs-24.lh-1_2.mb-0 Возникли вопросы <br> по продукции?
+                        p.lh-1_4 Позвоните по телефону или оставьте сообщение в мессенджере и мы ответим на все ваши вопросы
+                    .feedback-desc__bottom.d-flex
+                        .d-flex.flex-column.gap-5
+                            a(href='tel:+77172695973').href-main.fw-md.fs-sm-24.fs-18 +7 (7172) 69-59-73
+                            .fs-14.o-0_5 звоните Пн—Пт с 9:00 до 18:00
+                        .feedback-desc__social.d-flex.gap-15
+                            each val in [{title: 'Написать в Вконтакте', icon: 'vk'}, {title: 'Написать в Telegram', icon: 'tg'}, {title: 'Написать в WhatsApp', icon: 'wa'}]
+                                a(href='#' target='_blank' title= val['title'])
+                                    img(src= start+ 'images/'+val['icon']+'.svg', alt='')
+                form(name='feedback_form' autocomplete='off').feedback-form.js_callModal.d-flex.flex-column.gap-20
+                    .fs-16.fw-md.lh-1_2 Или заказжите обратный звонок
+                    label.main-input.main-input_light
+                        input(type='tel' name='phone' placeholder='+7 (9__) ___-__-__' required)
+                    button.btn.btn-main Заказать звонок
+                    .fs-14.o-0_5.lh-1_3 Отправляя форму, вы соглашаетесь на обработку персональных данных
+            .feedback-img.position-absolute
+                +picture('feedback/feedback__main', '')
+mixin articles
+    section.articles
+        .container
+            .articles-tabs
+                .js-tabs__nav.d-flex.flex-column.gap-lg-35.gap-20
+                    h2.fw-md.fs-md-35.fs-24.lh-1_2.mb-0 Статьи
+                    .js-tabs__no-marker.js-tabs__tabs-container.d-flex.flex-column.gap-lg-20.gap-15
+                        each val in [{title: 'Водогрейные котлы', num: '1', class: 'active'}, {title: 'Паровые котлы', num: '2'}, {title: 'Автоматика котлов', num: '3'}, {title: 'Циклонах', num: '4'}, {title: 'О котельных', num: '4'}]
+                            .js-tabs__tab.position-relative.fs-lg-18.fs-16.fw-md.pointer(class= val['class'] data-article= val['num'])
+                                span.d-inline-block= val['title']
+                .js-tabs__content-container
+                    -
+                        let articleItems = [
+                                            {title: 'Технические характеристики паровых котлов', img: '1', desc: 'Технические характеристики паровых котлов на разных видах топлива паропроизводительностью 300 - 1000 кг/ч.'},
+                                            {title: 'Оборудование парового котола', img: '2', desc: 'Перечень вспомогательного оборудования парового котла, как правильно подобрать вспомогательное оборудование, чтобы обеспечить надежность теплоснабжения, монтаж, эксплуатация.'},
+                                            {title: 'Гидравлические испытания паровых котлов', img: '3', desc: 'Когда нужно проводить гидравлические испытания, требования и порядок проведения гидравлических испытаний.'},
+                                            {title: 'Монтаж паровых котлов', img: '4', desc: 'Правила монтажа парового котла, размещение котла и оборудования в котельной, подключение КИП и запорной арматуры, монтаж вентилятора и подключение дымососа.'},
+                                            {title: 'Технические характеристики паровых котлов', img: '1', desc: 'Технические характеристики паровых котлов на разных видах топлива паропроизводительностью 300 - 1000 кг/ч.'},
+                                           ]
+                    each val in [{num: '1', class: 'active'}, {num: '2'}, {num: '3'}, {num: '4'}, {num: '4'}]
+                        .js-tabs__content(class= val['class'] data-article= val['num'])
+                            .slider-navigation-articles.d-flex.align-items-center.gap-20(data-category= val['num'])
+                                .slider-prev.d-none.d-lg-flex
+                                    i.icon.arrow_next.fs-30
+                                .swiper.slider-articles(data-category= val['num'])
+                                    .swiper-wrapper
+                                        each val in articleItems
+                                            .swiper-slide.d-flex.h-auto
+                                                a(href='content.html').articles-item.d-flex.flex-column.bg-light.rounded-6.overflow-hidden.flex-grow-1
+                                                    .articles-item__img.overflow-hidden.position-relative
+                                                        +picture('article/'+val['img'], val['title'])
+                                                    .articles-item__desc.d-flex.flex-column
+                                                        .fs-lg-16.fs-14.fw-md.lh-1_2= val['title']
+                                                        p.fs-lg-14.fs-12.lh-1_3= val['desc']
+                                .slider-next.d-none.d-lg-flex
+                                    i.icon.arrow_next.fs-30
+mixin documents
+    section.documents.section_light
+        .container
+            .documents-grid.documents-tabs
+                .js-tabs__nav.d-flex.flex-column.gap-lg-35.gap-20
+                    h2.fw-md.fs-md-35.fs-24.lh-1_2.mb-0 Документы завода
+                    .js-tabs__no-marker.js-tabs__tabs-container.d-flex.flex-column
+                        each val in [{title: 'Патенты на котельное оборудование', num: '1', class: 'active'}, {title: 'Подбор по номеру запчасти', num: '2'}, {title: 'Членство в сро', num: '3'}, {title: 'Аттестованная технология сварки', num: '4'}]
+                            .js-tabs__tab.baner-category__item.position-relative.fw-md.lh-1_2.pointer(class= val['class'] data-article= val['num'])
+                                span.d-inline-block= val['title']
+                                svg(width="21" height="30" viewBox="0 0 21 30" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                    path(d="M7.89742 30.5V15.834H0.508545L13.6921 0.5V15.834H21.4912L7.89742 30.5Z" fill="#FFDD33")
+                    a(href='#').btn.btn-main Все документы завода
+                .js-tabs__content-container
+                    .js-tabs__content.active(data-article= '1')
+                        .slider-navigation-document.d-flex.align-items-center.gap-20(data-category='1')
+                            .slider-prev.d-none.d-lg-flex
+                                i.icon.arrow_next.fs-30
+                            .swiper.slider-document(data-category='1')
+                                .swiper-wrapper
+                                    each val in ['На водогрейные котлы на твердом и жидком топливе', 'На водогрейные котлы на газе и жидком топливе', 'На паровые котлы КП', 'На скиповые подъемники', 'На скиповые подъемники']
+                                        .swiper-slide.d-flex.h-auto
+                                            .documents-item.d-flex.flex-column.bg-white.rounded-6.flex-grow-1.pointer(data-fancybox data-src= start+ 'images/certificates/1_big.jpg')
+                                                .documents-item__img.rounded-6.overflow-hidden.position-relative
+                                                    +picture('certificates/1', val)
+                                                .fs-14.fw-md.lh-1_2= val
+                            .slider-next.d-none.d-lg-flex
+                                i.icon.arrow_next.fs-30
+                    .js-tabs__content(data-article= '2')
+                        .slider-navigation-document.d-flex.align-items-center.gap-20(data-category='2')
+                            .slider-prev.d-none.d-lg-flex
+                                i.icon.arrow_next.fs-30
+                            .swiper.slider-document(data-category='2')
+                                .swiper-wrapper
+                                    each val in ['На водогрейные котлы на твердом и жидком топливе', 'На водогрейные котлы на газе и жидком топливе', 'На паровые котлы КП', 'На скиповые подъемники', 'На скиповые подъемники']
+                                        .swiper-slide.d-flex.h-auto
+                                            .documents-item.d-flex.flex-column.bg-white.rounded-6.flex-grow-1.pointer(data-fancybox data-src= start+ 'images/certificates/1_big.jpg')
+                                                .documents-item__img.rounded-6.overflow-hidden.position-relative
+                                                    +picture('certificates/1', val)
+                                                .fs-14.fw-md.lh-1_2= val
+                            .slider-next.d-none.d-lg-flex
+                                i.icon.arrow_next.fs-30
+                    .js-tabs__content(data-article= '3')
+                        .slider-navigation-document.d-flex.align-items-center.gap-20(data-category='3')
+                            .slider-prev.d-none.d-lg-flex
+                                i.icon.arrow_next.fs-30
+                            .swiper.slider-document(data-category='3')
+                                .swiper-wrapper
+                                    each val in ['На водогрейные котлы на твердом и жидком топливе', 'На водогрейные котлы на газе и жидком топливе', 'На паровые котлы КП', 'На скиповые подъемники', 'На скиповые подъемники']
+                                        .swiper-slide.d-flex.h-auto
+                                            .documents-item.d-flex.flex-column.bg-white.rounded-6.flex-grow-1.pointer(data-fancybox data-src= start+ 'images/certificates/1_big.jpg')
+                                                .documents-item__img.rounded-6.overflow-hidden.position-relative
+                                                    +picture('certificates/1', val)
+                                                .fs-14.fw-md.lh-1_2= val
+                            .slider-next.d-none.d-lg-flex
+                                i.icon.arrow_next.fs-30
+                    .js-tabs__content(data-article= '4')
+                        .slider-navigation-document.d-flex.align-items-center.gap-20(data-category='4')
+                            .slider-prev.d-none.d-lg-flex
+                                i.icon.arrow_next.fs-30
+                            .swiper.slider-document(data-category='4')
+                                .swiper-wrapper
+                                    each val in ['На водогрейные котлы на твердом и жидком топливе', 'На водогрейные котлы на газе и жидком топливе', 'На паровые котлы КП', 'На скиповые подъемники', 'На скиповые подъемники']
+                                        .swiper-slide.d-flex.h-auto
+                                            .documents-item.d-flex.flex-column.bg-white.rounded-6.flex-grow-1.pointer(data-fancybox data-src= start+ 'images/certificates/1_big.jpg')
+                                                .documents-item__img.rounded-6.overflow-hidden.position-relative
+                                                    +picture('certificates/1', val)
+                                                .fs-14.fw-md.lh-1_2= val
+                            .slider-next.d-none.d-lg-flex
+                                i.icon.arrow_next.fs-30
+mixin production
+    section.production
+        .container
+            .production-wrapper.d-flex.flex-column.gap-lg-50.gap-30
+                .production-top
+                    .d-flex.flex-column.gap-lg-40.gap-20.align-items-start
+                        .d-flex.flex-column.gap-20
+                            h2.fw-md.fs-md-35.fs-24.lh-1_2.mb-0 Собственное производство на заводе в Казахстане
+                            ul.m-0
+                                each val in ['Паровые котлы от 300 кг до 1 тонны пара в час', 'Промышленные водогрейные котлы от 150 КВт до 4 МВт на всех видах топлива', 'Механические топки ТШПМ, шурующая планка и ТЛПХ, ленточное полотно прямого хода', 'Блочно-модульные котельные', 'Циклоны для очистки воздуха и дымовых газов для производств и пром-отраслей', 'Транспортеры и системы топливоподачи и шлакоудаления']
+                                    li= val
+                        a(href='productions.html').btn.btn-main Подробнее о производстве
+                    .production-video.position-relative.rounded-20.overflow-hidden.pointer(data-fancybox data-src='https://youtu.be/ZhTQcDIj_Ho')
+                        +picture('production/production__main', 'Собственное производство')
+                        .production-video__youtube.d-flex.align-items-center.rounded-6.bg-white.position-absolute
+                            img(src= start+'images/youtube.svg', alt='')
+                            .fs-sm-16.fs-14.fw-md.lh-1_2 Смотреть видео <br> с производства
+                .production-bot.scroll
+                    -
+                        let productionArr = [
+                                                {title: 'Производство паровых котлов', img: '1'},
+                                                {title: 'Производство топок', img: '2'},
+                                                {title: 'Производство водогрейных котлов', img: '3'},
+                                                {title: 'Производство модульных котельных', img: '4'},
+                                            ]
+                    each val in productionArr
+                        a(href='production.html').production-item.rounded-20.overflow-hidden.position-relative
+                            +picture('production/category/'+val['img'], val['title'])
+                            .production-item__title.fs-md-16.fs-12.fw-md.lh-1_2.bg-white.rounded-6.position-absolute= val['title']
+mixin worksheets
+    section.worksheets
+        .container
+            .d-flex.flex-wrap.align-items-center.justify-content-between.mb-lg-35.mb-20
+                h2.fw-md.fs-md-35.fs-24.lh-1_2.mb-0 Опросные листы
+                a(href='worksheets.html').href-second.text-decoration-underline Все опросные листы
+            .worksheets-grid.scroll
+                -
+                    let worksheetsArr = [
+                                            {title: 'Опросный лист <br> на модульную котельную', img: '1', imgTitle: 'Модульная котельная'},
+                                            {title: 'Опросный лист <br> на водогрейный котел', img: '2', imgTitle: 'Водогрейный котел'},
+                                            {title: 'Опросный лист <br> на паровой котел', img: '3', imgTitle: 'Паровой котел'},
+                                            {title: 'Опросный лист <br> на модульную котельную', img: '1', imgTitle: 'Модульная котельная'},
+                                            {title: 'Опросный лист <br> на водогрейный котел', img: '2', imgTitle: 'Водогрейный котел'},
+                                            {title: 'Опросный лист <br> на паровой котел', img: '3', imgTitle: 'Паровой котел'},
+                                        ]
+                each val in worksheetsArr
+                    .worksheets-item.bg-light.rounded-20
+                        .worksheets-item__img
+                            +picture('catalog/'+ val['img'], val['imgTitle'])
+                        .worksheets-item__desc.d-flex.flex-column.align-items-start.justify-content-between
+                            .fs-16.fw-md.lh-1_2!= val['title']
+                            button.btn.btn-main Заполнить опрос
+mixin video
+    section.video
+        .container
+            h2.fw-md.fs-md-35.fs-24.lh-1_2.mb-lg-35.mb-20.d-flex.align-items-center.gap-10
+                span Мы на
+                a(href='https://youtube.com/@youtube-kvzr?si=dCZI4AbFuKMIBbzd' target='_blank' title='Youtube канал')
+                    img(src= start+ 'images/youtube-logo.svg', alt='Youtube')
+            .video-grid.scroll
+                -for(let i = 0; i < 3; i++)
+                    .video-item.d-flex.flex-column.gap-sm-20.gap-10.pointer(data-fancybox data-src='https://youtu.be/ZhTQcDIj_Ho')
+                        .video-item__img.rounded-20.overflow-hidden.position-relative
+                            +picture('video/1', 'Автоматический котел на опилке большой мощности')
+                            .video-item__icon.position-absolute
+                                img(src= start+ 'images/youtube.svg', alt='Логотип Youtube')
+                        .fs-sm-16.fs-14.fw-md.lh-1_2 Автоматический котел на опилке большой мощности
+mixin content-block
+    section.content-block
+        .container
+            h2.fw-md.fs-35.lh-1_2.mb-lg-35.mb-20 Полное описание
+            .content-wrapper
+                .content
+                    p Твердотопливный котёл КВр 0.35 МВт мощностью 0.35 МВт предназначен для получения горячей воды номинальной температурой на выходе из котла 95 - 115 °С рабочим давлением до 0,6 (6,0) МПа (кгс/см), используемой в системах централизованного теплоснабжения на нужды отопления, горячего водоснабжения.
+                    .content-products.scroll
+                        -
+                            let contentProducts = [
+                                                    {title: 'Котёл КВр-1,5 на угле с топкой', img: '1'},
+                                                    {title: 'Котёл КВр-1,5 на угле с топкой', img: '2'},
+                                                    {title: 'Котёл КВр-1,5 на угле с топкой', img: '4'},
+                                                  ]
+                        each val in contentProducts
+                            +content-product(val['title'], val['img'])
+                    hr
+                    h3 Преимущества отопительного котла КВр 0.35 МВт
+                    ul
+                        li высокий КПД и экономичность;
+                        li минимальные требования к качеству питательной воды;
+                        li компактные размеры
+                        li быстрый выход на мощность
+                        li удобство эксплуатации и обслуживания, надёжность;
+                        li низкая цена.
+                    hr
+                    h3 Устройство твердотопливного котла КВр 0.35 МВт
+                    p Промышленный котёл КВр 0.35 МВт выполнен двухблочным — блок котла и ручная колосниковая топка. Блок котла КВр 0.35 МВт с колосниками представляет собой сварную конструкцию, состоящую из трубной системы (радиационной и конвективной поверхности нагрева), опорной рамы и каркаса с теплоизоляционными материалами, обшитого листовой сталью. Топочная камера котла состоит из труб Ø 57x3,5 мм. Конвективная поверхность нагрева состоит из пакетов выполненных из труб Ø 57x3,5 мм змеевиковой формы, для интенсификации теплообмена трубы пакетов расположены в шахматном порядке, между рёбрами змеевиков вварены пластины.
+                    .content-img(data-fancybox data-src= start+'images/content/content__blueprint.jpg')
+                        +picture('content/content__blueprint', 'Устройство твердотопливного котла КВр 0.35 МВт')
+                    p Газы в конвективной части проходят один ход и выходят через газоход в верхней части задней стенки котла. Топочная камера водогрейного котла выполнена газоплотной путём плавникового оребрения. В газоплотной части котельного блока изоляция выполнена облегчённой из плит ПТЭ. В негазоплотной части котельного блока теплоизоляция выполнена из муллитокремнеземистого картона и войлока. Обшивка водогрейных котлов выполнена из стальных листов. Для очистки конвективных поверхностей нагрева от сажистых и золовых отложений предусмотрен люк.
+                    p Под решёткой котельный блок имеет воздушный короб с лючком для очистки короба от золы и шлака. Короб служит для распределения воздушного потока, поданного вентилятором. В нижней части конвективной поверхности находится зольный бункер с лючком для очистки его от золы. Топливо забрасывают равномерным слоем на колосники через загрузочное окно, закрывающееся топочной дверцей. Зола проваливается через отверстия в колосниках в воздушный короб-зольник.
+                    p Для сжигания древесного топлива мы можем предложить модель производственного котла 350 кВт на дровах.
+                    .content-products.scroll
+                        -
+                            let contentArticles = [
+                                                {title: 'Технические характеристики паровых котлов', img: '1', desc: 'Технические характеристики паровых котлов на разных видах топлива паропроизводительностью 300 - 1000 кг/ч.'},
+                                                {title: 'Оборудование парового котола', img: '3', desc: 'Перечень вспомогательного оборудования парового котла, как правильно подобрать вспомогательное оборудование, чтобы обеспечить надежность теплоснабжения, монтаж, эксплуатация.'},
+                                                {title: 'Гидравлические испытания паровых котлов', img: '4', desc: 'Когда нужно проводить гидравлические испытания, требования и порядок проведения гидравлических испытаний.'},
+                                            ]
+                        each val in contentArticles
+                            a(href='content.html').articles-item.content-article.d-flex.flex-column.bg-light.rounded-6.overflow-hidden.flex-grow-1
+                                .articles-item__img.content-article__img.overflow-hidden.position-relative
+                                    +picture('article/'+val['img'], val['title'])
+                                .articles-item__desc.d-flex.flex-column
+                                    .fs-lg-16.fs-14.fw-md.lh-1_2= val['title']
+                                    p.fs-lg-14.fs-12.lh-1_3= val['desc']
+                    hr
+                    h3 Комплект поставки котла КВр 0.35 МВт на угле
+                    p Отопительный котёл КВр 0.35 МВт поставляется готовым блоком в обшивке с чугунной топочной дверкой, с зольником и комплектом колосников. С котлом поставляется паспорт и инструкция по эксплуатации водогрейного котла.
+                    p В комплект поставки котла входят: затворы дисковые — 2 шт, запорные вентили — комплект, предохранительные клапаны — 2 шт, термометры с оправой — 2 шт, манометры с кранами — 2 шт, дутьевой вентилятор — 1 шт.
+                    p Угольный котёл КВр 0.35 МВт может быть выполнен в двух вариантах изоляции: блок котла в обшивке и изоляции; блок котла (без обшивки и изоляции, под тяжёлую обмуровку).
+                    .content-products.scroll
+                        -
+                            let contentProducts2 = [
+                                                    {title: 'Котёл КВр-1,5 на угле с топкой', img: '9'},
+                                                    {title: 'Котёл КВр-1,5 на угле с топкой', img: '8'},
+                                                  ]
+                        each val in contentProducts2
+                            +content-product(val['title'], val['img'])
+                    hr
+                    h3 Дополнительная комплектация промышленного котла КВр 0.35 МВт
+                    p Автоматика водогрейного котла — подбирается по техзаданию.
+                    p Промышленный котёл КВр 0.35 МВт на твёрдом топливе работает с ДН 3,5 с дв. 3,0 кВт при сжигании угля. При установке дымососа на группу котлов, дымосос подбирается индивидуально согласно опросному листу.
+                    p При необходимости за котлом перед дымососом может устанавливаться золоуловитель ЗУ 0,4 или циклоны ЦН. При работе с золоуловителем устанавливается дымосос ДН 3,5 с дв. 3,0 кВт.
+                    p Для обеспечения циркуляции воды через котёл КВр 0.35 МВт либо группу котлов применяется циркуляционный насос, для подпитки котла применяется подпиточный насос.
+                    p Дымовая труба — подбирается по техзаданию, на котёл или группу котлов.
+                    hr
+                    h3 Купить котел КВр 0.35 МВт угольный
+                    p Цена на котёл КВр 0.35 для отопления указана на нашем сайте. Промышленные котлы мощностью до 1 МВт на твёрдом топливе всегда есть в наличии на заводе. Производство котлоагрегатов под заказ осуществляется в течении 10–20 дней.
+                    p Купить твердотопливный котёл российского производства КВр 0.35 МВт на угле можно в соответствии с представленным на сайте модификациями. Наш завод осуществляет изготовление котлов индивидуально, исходя из технических характеристик заказчика. Возможна любая комплектация котла. Чтобы купить котёл КВр-0.35 или обсудить возможность заказа проекта и его цену, позвоните по телефону в Казахстане +7–7172–69–59–73 или закажите онлайн. Организациям, участвующим в тендерах, предлагаем доработку и производство котлов и котельного оборудования, согласно аукционным заявкам. Также выполняем услуги по проектированию новых котельных и проведению реконструкции старых. В короткие сроки предоставляем все расчёты и стоимость.
+                    p Поставка осуществляется ТК по все регионы Казахстана и страны СНГ.
+                    .content-img(data-fancybox data-src= start+'images/content/content__img.jpg')
+                        +picture('content/content__img', 'Котел КВр 0.35 МВт угольный')
+mixin selection    
+    .selection-grid
+        -
+            let selectionArr = [
+                                    {title: 'Подберём отопительный котёл', img: '1', button: 'Подобрать котел'},
+                                    {title: 'Подберём модульную котельную', img: '2', button: 'Подобрать котельную'},
+                                    {title: 'Подберём котловую автоматику', img: '3', button: 'Подобрать автоматику'},
+                                ]
+        each val in selectionArr
+            .selection-item.bg-light
+                .selection-item__desc.d-flex.flex-column.align-items-start.gap-18
+                    .fs-lg-24.fs-18.fw-sb= val['title']
+                    a(href='category.html').btn.btn-empty.btn-empty_main.fs-14.fw-md= val['button']
+                .selection-item__img
+                    +picture('selection/'+val['img'], val['title']).mbm-darken
+mixin catalog-index
+    section.catalog-index
+        .container
+            .d-flex.align-items-center.justify-content-between.flex-wrap.gap-10.mb-sm-36.mb-24
+                h2.fs-md-32.fs-24.fw-sb.mb-0 Каталог продукции
+                a(href='catalog.html').href-main.d-flex.align-items-center.gap-5
+                    span.fs-14.fw-md.text-decoration-underline Перейти в каталог
+                    i.icon.arrow.fs-16.text-main
+            .catalog-index__grid
+                .catalog-index__bitem
+                    a(href='category.html').catalog-index__bitem-img.bg-light
+                        +picture('catalog/1_big', 'Отопительные котлы').mbm-darken
+                    .catalog-index__bitem-desc.d-flex.flex-column
+                        a(href='category.html').href-main.catalog-index__bitem-title.fs-16.fw-sb Отопительные котлы
+                        .catalog-index__bitem-category.d-flex.flex-column
+                            each val in ['Автоматические дровяные котлы', 'Автоматические котлы длительного горения', 'Автоматические котлы на отработанном масле', 'Автоматические пеллетные котлы']   
+                                a(href='category.html').href-main.d-flex.align-items-start.gap-10
+                                    i.icon.arrow.fs-16.text-main
+                                    span.fs-sm-16.fs-14.fw-md= val
+                -
+                    let catalogIArr = [
+                                        {title: 'Котельные установки', img: '2'},
+                                        {title: 'Топки котлов', img: '3'},
+                                        {title: 'Водоподготовка и водоочистка', img: '4'},
+                                        {title: 'Дымососы', img: '5'},
+                                        {title: 'Топливоподача и шлакоудаление', img: '6'},
+                                        {title: 'Вентиляторы промышленные', img: '7'},                                        
+                                      ]
+                each val in catalogIArr
+                    a(href='category.html').catalog-item.d-flex.flex-column.align-items-center.justify-content-center
+                        .catalog-item__img.mbm-darken
+                            +picture('catalog/'+val['img'], val['title'])
+                        .catalog-item__title.fs-sm-16.fs-14.fw-sb.text-center= val['title']
+                .catalog-index__bitem
+                    a(href='category.html').catalog-index__bitem-img.bg-light
+                        +picture('catalog/10_big', 'Промышленные насосы').mbm-darken
+                    .catalog-index__bitem-desc.d-flex.flex-column
+                        a(href='category.html').href-main.catalog-index__bitem-title.fs-16.fw-sb Промышленные насосы
+                        .catalog-index__bitem-category.d-flex.flex-column
+                            each val in ['Колосники топок рпк и зп-рпк', 'Автоматические дровяные котлы', 'Колосники топки ТЛПХ', 'Колосники топки ТШПМ', 'Колосники топки ТЧЗМ']   
+                                a(href='category.html').href-main.d-flex.align-items-start.gap-10
+                                    i.icon.arrow.fs-16.text-main
+                                    span.fs-sm-16.fs-14.fw-md= val
+                a(href='category.html').catalog-item.d-flex.flex-column.gap-12.p-24.align-items-center.justify-content-center
+                    .catalog-item__img.mbm-darken
+                        +picture('catalog/8', 'Циклоны')
+                    .catalog-item__title.fs-sm-16.fs-14.fw-sb.text-center Циклоны                                           
+                a(href='category.html').catalog-item.d-flex.flex-column.gap-12.p-24.align-items-center.justify-content-center
+                    .catalog-item__img.mbm-darken
+                        +picture('catalog/9', 'Теплообменники')
+                    .catalog-item__title.fs-sm-16.fs-14.fw-sb.text-center Теплообменники
+mixin geography
+    section.geography
+        .container
+            .geography-grid
+                .geography-count__wrapper.d-flex.align-items-center
+                    .geography-count 83
+                    .fs-md-24.fs-18.fw-md Региона <br> поставки
+                .line
+                .geography-desc.d-flex.flex-column
+                    h2.fs-md-32.fs-24.fw-sb.mb-0 География поставки
+                    p География поставок продукции «КотлоЭнергоПром» имеет широкий охват и распространяется практически на все регионы России от Камчатки до Калининграда, а так же на Казахстан, Беларусь, Монголию и другие страны ближайшего зарубежья.
+            //- .geography-map.js_geography_map
+                .map-block.h-100#map
+mixin certificates(title= 'Сертификаты', category = '1', repeat = 6)
+    section.certificates
+        .container
+            .d-flex.flex-wrap.align-items-center.justify-content-between.gap-10.mb-sm-36.mb-24
+                h2.fs-md-32.fs-24.fw-sb.mb-0= title
+                .slider-navigation-certificates.d-none.d-sm-flex.align-items-center.gap-15(data-categoryy= category)
+                    .slider-prev
+                        i.icon.arrow_next                    
+                    .slider-pagination-wrapper
+                        .slider-pagination
+                    .slider-next
+                        i.icon.arrow_next
+            .swiper.slider-certificates(data-categoryy= category)
+                .swiper-wrapper                    
+                    -for(let i = 1; i <= repeat; i++)
+                        if i <= 5
+                            .swiper-slide.d-flex.h-auto
+                                .certificates-item.flex-grow-1.pointer(data-fancybox='certificates', data-src= start+ 'images/certificates/'+i+'.jpg')
+                                    +picture('certificates/'+i+'_min', '').h-100                                    
+                        else 
+                            .swiper-slide.d-flex.h-auto
+                                .certificates-item.flex-grow-1.pointer(data-fancybox='certificates', data-src= start+ 'images/certificates/5.jpg')
+                                    +picture('certificates/5_min', '').h-100     
+mixin question
+    section.questions
+        .container
+            .d-flex.align-items-center.justify-content-between.flex-wrap.gap-10.mb-sm-36.mb-24
+                h2.fs-md-32.fs-24.fw-sb.mb-0 Частые вопросы
+                button.btn.btn-inline.href-main.d-flex.align-items-center.gap-5
+                    span.fs-14.fw-md.text-decoration-underline Задать вопрос
+                    i.icon.arrow.fs-16.text-main
+            -for(let i = 0; i < 5; i++)
+                +questions-item('Текст вопроса')
+                    .pt-20
+                        p.o-0_8 Таким образом постоянный количественный рост и сфера нашей активности играет важную роль                         
+mixin watched(title= 'Вы смотрели', category = '1', repeat = 7)
+    section.watched
+        .container
+            .d-flex.flex-wrap.align-items-center.justify-content-between.gap-10.mb-sm-36.mb-24
+                h2.fs-md-32.fs-24.fw-sb.mb-0= title
+                .slider-navigation-6.d-none.d-md-flex.align-items-center.gap-15(data-categoryy= category)
+                    .slider-prev
+                        i.icon.arrow_next                    
+                    .slider-pagination-wrapper
+                        .slider-pagination
+                    .slider-next
+                        i.icon.arrow_next
+            .swiper.slider-6(data-categoryy= category)
+                .swiper-wrapper
+                    -for(let i = 1; i <= repeat; i++)
+                        if i <= 5
+                            .swiper-slide.d-flex.h-auto
+                                +product-item('Котёл КВр-2.0 на угле', i, false)
+                        else                        
+                            .swiper-slide.d-flex.h-auto
+                                +product-item('Котёл КВр-2.0 на угле', 5, false)
+
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+mixin service
+    section.service
+        .custome-container
+            .slider-service.swiper
+                .swiper-wrapper
+                    -for(let i = 0; i < 5; i++)
+                        .swiper-slide
+                            .service-baner.overflow-hidden.rounded-15
+                                .service-baner__grid
+                                    .service-baner__desc.d-flex.flex-column.align-items-start.gap-15.gap-xl-30.bg-light
+                                        .slider-navigation-service.d-flex.align-items-center.gap-20
+                                            .slider-prev.white
+                                                i.icon.arrow.fs-18.fs-xl-24
+                                            .slider-pagination
+                                            .slider-next.white
+                                                i.icon.arrow.fs-18.fs-xl-24
+                                        .d-flex.flex-column.align-items-start.gap-10
+                                            h2.fs-24.fs-xl-40.fw-md.lh-1_2.mb-0 Услуга или преимущество <br> с ценой без цены
+                                            .bg-main.py-4.fs-24.lh-1.fw-sb 115 000 ₽
+                                        .d-flex.flex-wrap.gap-15.gap-xxl-30
+                                            button.btn.btn-main.d-flex.align-items-center(data-bs-toggle="modal", data-bs-target=".modal-service")
+                                                span.fw-md Оставить заявку
+                                                i.icon.arrow.fs-18
+                                            .fs-14.fs-md-16.fw-md.align-self-center Получить <br> консультацию
+                                    .service-baner__img
+                                        +picture('service-item/1', 'Картинка услуги')
+mixin steps
+    section.steps
+        .custome-container
+            h2.fs-24.fs-xl-40.fw-md.lh-1_2.mb-xl-40.mb-15 Как мы работаем
+            .steps__grid.scroll
+                -
+                    let stepsArr = [
+                                    {num: '1', title: 'Заявка', desc: 'Вы оставляете заявку на сайте или по телефону +7 (983) 123-45-67', haveBtn: true},
+                                    {num: '2', title: 'Заявка', desc: 'Вы оставляете заявку на сайте или по телефону +7 (983) 123-45-67'},
+                                    {num: '3', title: 'Заявка', desc: 'Вы оставляете заявку на сайте или по телефону +7 (983) 123-45-67'},
+                                    {num: '4', title: 'Заявка', desc: 'Вы оставляете заявку на сайте или по телефону +7 (983) 123-45-67'},
+                                    {num: '5', title: 'Заявка', desc: 'Вы оставляете заявку на сайте или по телефону +7 (983) 123-45-67'},
+                                    {num: '6', title: 'Заявка', desc: 'Вы оставляете заявку на сайте или по телефону +7 (983) 123-45-67'},
+                                   ]
+                each val in stepsArr
+                    .steps__item.d-flex.flex-column.align-items-start.gap-15.gap-xl-20.rounded-15.bg-light.position-relative
+                        .d-flex.flex-column.gap-10   
+                            .fs-14.fs-xl-18.fw-md= val['title']
+                            p.fs-14.fs-xl-16.lh-1_5= val['desc']
+                        if val['haveBtn']
+                            button.btn.btn-main.fw-sb Оставить заявку
+                        .advantages__item-corner.position-absolute.top-0.start-0
+                            svg(width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M33.6364 53.8182C44.7825 53.8182 53.8182 44.7825 53.8182 33.6364V20.1818C53.8182 9.03571 62.8539 2.85065e-06 74 3.33786e-06L15.0001 0C6.71582 0 9.0951e-05 6.71572 8.72676e-05 15L6.10352e-05 74C6.10352e-05 62.8539 9.03577 53.8182 20.1819 53.8182H33.6364Z" fill="white")
+                        .steps__num.position-absolute.top-0.start-0.fs-xl-40.fs-35.fw-md.text-main= val['num'] + '.'                      
+
+mixin search
+    .search-block.js-search
+        .search-wrapper.bg-light.scroll
+            .custome-container.w-100
+                .search-block__wrapper.d-flex.flex-column
+                    .search-block__main.d-flex.gap-md-40.gap-20.align-items-center
+                        form(method='get' name='search' autocomplite='off').search-block__input.position-relative.flex-grow-1
+                            label.main-input.w-100
+                                input(type='text' name="stext" placeholder='Поиск по сайту').js-search_input
+                            button.btn.btn-icon.position-absolute
+                                i.icon.search.fs-24
+                        button.btn.btn-icon.search-block__close.js-search_close
+                            i.icon.close
+                    .search-block__result.flex-column.js-search_result
+                        .search-block__value.d-flex.flex-column.gap-20
+                            .fs-24.fw-md Категории
+                            .search-block__value-category                        
+                                -
+                                    let searchCatArr = [
+                                                        {title: 'Топки водогрейных котлов', href: 'category'},
+                                                        {title: 'Топки ЗП-РПК', href: 'category'},
+                                                        {title: 'Топки ПТЛ-РПК', href: 'category'},
+                                                        {title: 'Топки РПК', href: 'category'},
+                                                        {title: 'Топки ТШПМ', href: 'category'},
+                                                        {title: 'Топки ТШПМ', href: 'category'},
+                                                        {title: 'Топки ТЛПХ', href: 'category'},
+                                                        {title: 'Топки водогрейных котлов', href: 'category'},
+                                                        {title: 'Топки ЗП-РПК', href: 'category'},
+                                                        {title: 'Топки ТЛПХ', href: 'category'},
+                                                        {title: 'Топки ТЛЗМ', href: 'category'},
+                                                        {title: 'Топки ТЛПХ', href: 'category'},
+                                                        {title: 'Топки ТЧЗМ', href: 'category'},
+                                                        {title: 'Топки ПТЛ-РПК', href: 'category'},
+                                                        {title: 'Топки РПК', href: 'category'},
+                                                    ] 
+                                each val in searchCatArr                               
+                                    a(href= val['href']+'.html').d-flex.align-items-start.gap-10
+                                        i.icon.arrow.fs-md-24.fs-16
+                                        span.fs-md-18.fs-14.fw-lg= val['title']
+                        .search-block__value.d-flex.flex-column.gap-20
+                            .fs-24.fw-md Товары
+                            .search-block__value-products
+                                -
+                                    let searchProdArr = [
+                                                            {title: 'Автоматический котёл кв на дровах 1.05 мвт', price: '10 115 000 р.', img: '4'},
+                                                            {title: 'Автоматический котёл кв на дровах 1.05 мвт', price: '10 115 000 р.', img: '1'},
+                                                            {title: 'Автоматический котёл кв на дровах 1.05 мвт', price: '10 115 000 р.', img: '3'},
+                                                            {title: 'Автоматический котёл кв на дровах 1.05 мвт', price: '10 115 000 р.', img: '4'},
+                                                            {title: 'Автоматический котёл кв на дровах 1.05 мвт', price: '10 115 000 р.', img: '1'},
+                                                            {title: 'Автоматический котёл кв на дровах 1.05 мвт', price: '10 115 000 р.', img: '4'},
+                                                            {title: 'Автоматический котёл кв на дровах 1.05 мвт', price: '10 115 000 р.', img: '1'},
+                                                            {title: 'Автоматический котёл кв на дровах 1.05 мвт', price: '10 115 000 р.', img: '3'},
+                                                            {title: 'Автоматический котёл кв на дровах 1.05 мвт', price: '10 115 000 р.', img: '4'},
+                                                            {title: 'Автоматический котёл кв на дровах 1.05 мвт', price: '10 115 000 р.', img: '1'},
+                                                            {title: 'Автоматический котёл кв на дровах 1.05 мвт', price: '10 115 000 р.', img: '3'},
+                                                            {title: 'Автоматический котёл кв на дровах 1.05 мвт', price: '10 115 000 р.', img: '1'},
+                                                            {title: 'Автоматический котёл кв на дровах 1.05 мвт', price: '10 115 000 р.', img: '1'},
+                                                        ]
+                                each val in searchProdArr
+                                    a(href='product.html').search-block__value-product.d-flex.flex-column.rounded-15
+                                        .search-block__value-product__img.rounded-5
+                                            +picture('product/'+val['img'], val['title']).h-100
+                                        .d-flex.flex-column.align-items-start.gap-10
+                                            .fs-md-16.fs-14.fw-lg= val['title']
+                                            .fs-md-18.fs-16.fw-sb.lh-1.py-4.bg-main 10 115 000 р.   
+                    .search-block__default.flex-column.js-search_default
+                        .search-block__fail
+                            p.fs-md-24.fs-18.lh-n Ничего не найдено, измените запрос или изучите каталог                
+                        .catalog__grid.search-block__catalog
+                            -
+                                let catalogArr = [
+                                                    {title: 'Модульные котельные', img: '1', big: true, subItems: ['Топки ЗП-РПК', 'Топки ПТЛ-РПК', 'Топки РПК', 'Топки ТЛЗМ', 'Топки ТЛПХ', 'Топки ТЧЗМ', 'Топки ТШПМ', 'Топки ЗП-РПК', 'Топки ПТЛ-РПК', 'Топки РПК', 'Топки ТЛЗМ', 'Топки ТЛПХ', 'Топки ТЧЗМ', 'Топки ТШПМ']},
+                                                    {title: 'Водогрейные котлы', img: '4', big: true, subItems: ['Топки ЗП-РПК', 'Топки ПТЛ-РПК', 'Топки РПК', 'Топки ТЛЗМ', 'Топки ТЛПХ']},
+                                                    {title: 'Водогрейные котлы', img: '3', big: true, subItems: ['Топки ЗП-РПК', 'Топки ПТЛ-РПК', 'Топки РПК', 'Топки ТЛЗМ', 'Топки ТЛПХ']},
+                                                    {title: 'Водогрейные котлы', img: '1', big: true, subItems: ['Топки ЗП-РПК', 'Топки ПТЛ-РПК', 'Топки РПК', 'Топки ТЛЗМ', 'Топки ТЛПХ']},
+                                                    {title: 'Топки водогрейных котлов', img: '4'},
+                                                    {title: 'Топки водогрейных котлов', img: '3'},
+                                                    {title: 'Топки водогрейных котлов', img: '1'},
+                                                ]
+                            each val in catalogArr
+                                +catalog-item(val['title'], val['img'], val['big'], val['subItems'])         
+mixin mobile-menu
+    .footer-sticky.d-xl-none.py-15.bg-main
+        .custome-container
+            .footer-sticky__wrapper.d-flex.align-items-center.justify-content-around
+                each val in [{title: 'Меню', classes: 'btn-menu', icon: 'menu'}, {title: 'Поиск', classes: 'js-search_btn', icon: 'search'}]
+                    button.btn.btn-icon.d-flex.flex-column.align-items-center.gap-5(class= val['classes'])
+                        i.icon.fs-30(class= val['icon'])
+                        span.fs-12.fw-rg= val['title']
+                each val in [{title: '2 500 ₽', icon: 'cart', href: 'cart'}, {title: 'Сравнить', icon: 'checklist', href: 'compare'}]
+                    a(href= val['href'] + '.html').btn.btn-icon.d-flex.flex-column.align-items-center.gap-5
+                        i.icon.fs-30(class= val['icon'])
+                        span.fs-12.fw-rg= val['title']
+                //- a(href = 'account.html').btn.btn-icon.d-flex.flex-column.align-items-center.gap-5
+                    i.icon.fs-30.account
+                    span.fs-12.fw-rg Кабинет                                
+                button.btn.btn-icon.d-flex.flex-column.align-items-center.gap-5(data-bs-toggle="modal", data-bs-target=".modal-login")
+                    i.icon.fs-30.account
+                    span.fs-12.fw-rg Кабинет                                
+
+mixin main-filter
+    section.main-filter
+        .container
+            .main-filter__wrapper.d-flex.flex-column.gap-md-50.gap-30
+                h1.fs-xxl-40.fs-md-35.fs-sm-25.fs-20.fw-sb.lh-1_1.mb-0 Новые запчасти для мототехники
+                .main-filter__tabs
+                    .js-tabs__nav
+                        .js-tabs__no-marker.js-tabs__tabs-container.d-flex.align-items-center.overflow-auto
+                            each val in [{title: 'Подбор по модели', num: '1', img: '1', class: 'active'}, {title: 'Подбор по номеру запчасти', num: '2', img: '2'}]
+                                .main-filter__tab.js-tabs__tab(data-article= val['num'] class= val['class']).d-flex.align-items-center.px-20.py-15                                   
+                                    span.fs-md-16.fw-rg.text-nowrap!= val['title']
+                    .js-tabs__content-container                        
+                        .main-filter__content.js-tabs__content.bg-light.p-xxl-60.p-lg-40.p-20.active(data-article= '1')
+                            .main-filter__content-grid.main-filter__content-grid_auto.w-100
+                                -
+                                    let banerFilterValues = [
+                                                                [
+                                                                    {title: 'Бренд', value: '0'}, 
+                                                                    {title: 'APE', value: '1'}, 
+                                                                    {title: 'APRILIA', value: '2'}, 
+                                                                    {title: 'APRILIA Scarabeo', value: '3'}, 
+                                                                    {title: 'BMW Motorrad', value: '4'}, 
+                                                                    {title: 'DUCATI', value: '5'}, 
+                                                                    {title: 'GASGAS', value: '6'}, 
+                                                                    {title: 'GILERA', value: '7'}, 
+                                                                    {title: 'HARLEY-DAVIDSON', value: '8'}, 
+                                                                    {title: 'HONDA', value: '9'}, 
+                                                                    {title: 'HUSABERG', value: '10'}, 
+                                                                    {title: 'HUSQVARNA', value: '11'}, 
+                                                                    {title: 'INDIAN', value: '12'}, 
+                                                                    {title: 'KAWASAKI', value: '13'}, 
+                                                                    {title: 'KTM', value: '14'}, 
+                                                                    {title: 'MOTOGUZZI', value: '15'}, 
+                                                                    {title: 'MV Agusta', value: '16'}, 
+                                                                    {title: 'PIAGGIO', value: '17'}, 
+                                                                    {title: 'POLARIS', value: '18'}, 
+                                                                    {title: 'SUZUKI', value: '19'}, 
+                                                                    {title: 'TRIUMPH', value: '20'}, 
+                                                                    {title: 'VESPA', value: '21'}, 
+                                                                    {title: 'VICTORY', value: '22'}, 
+                                                                    {title: 'YAMAHA', value: '23'}, 
+                                                                ],
+                                                                [
+                                                                    {title: 'Все модели', value: '0'},
+                                                                    {title: '50 CC', value: '1'},
+                                                                    {title: 'CALESSINO', value: '2'},
+                                                                    {title: 'CLASSIC', value: '3'},
+                                                                    {title: 'TM BENZINA', value: '4'},
+                                                                    {title: 'TM DIESEL', value: '5'},
+                                                                ],
+                                                                [
+                                                                    {title: 'Все мoдели', value: '0'},
+                                                                    {title: 'DT230 Lanza', value: '111'},
+                                                                    {title: 'FJ1200', value: '120'},
+                                                                    {title: 'FZ400 Fazer', value: '124'},
+                                                                    {title: 'FZR250', value: '131'},
+                                                                    {title: 'FZR400', value: '134'},
+                                                                    {title: 'FZR1000', value: '136'},
+                                                                    {title: 'FZX250 Zeal', value: '140'},
+                                                                    {title: 'FZX750', value: '142'},
+                                                                    {title: 'TW200', value: '149'},
+                                                                ],                                                                                                                                        
+                                                                [
+                                                                    {title: 'Все мoдели', value: '0'},
+                                                                    {title: 'DT230 Lanza', value: '111'},
+                                                                    {title: 'FJ1200', value: '120'},
+                                                                    {title: 'FZ400 Fazer', value: '124'},
+                                                                    {title: 'FZR250', value: '131'},
+                                                                    {title: 'FZR400', value: '134'},
+                                                                    {title: 'FZR1000', value: '136'},
+                                                                    {title: 'FZX250 Zeal', value: '140'},
+                                                                    {title: 'FZX750', value: '142'},
+                                                                    {title: 'TW200', value: '149'},
+                                                                ],                                                                                                                                        
+                                                                [
+                                                                    {title: 'Все мoдели', value: '0'},
+                                                                    {title: 'DT230 Lanza', value: '111'},
+                                                                    {title: 'FJ1200', value: '120'},
+                                                                    {title: 'FZ400 Fazer', value: '124'},
+                                                                    {title: 'FZR250', value: '131'},
+                                                                    {title: 'FZR400', value: '134'},
+                                                                    {title: 'FZR1000', value: '136'},
+                                                                    {title: 'FZX250 Zeal', value: '140'},
+                                                                    {title: 'FZX750', value: '142'},
+                                                                    {title: 'TW200', value: '149'},
+                                                                ],                                                                                                                                        
+                                                            ]
+                                -
+                                    let banerFilterArr = [
+                                                            {name: 'Все бренды', id: 'sparesType', libs: 'true', placeholder: 'Все бренды'},
+                                                            {name: 'Модель', id: 'motoBrand', libs: 'true', placeholder: 'Все модели'},
+                                                            {name: 'Модель', id: 'motoModel', libs: 'true', placeholder: 'Все модели'},                                                                                                                                
+                                                            {name: 'Модель', id: 'motoModel', libs: 'true', placeholder: 'Все модели'},                                                                                                                                
+                                                            {name: 'Модель', id: 'motoModel', libs: 'true', placeholder: 'Все модели'},                                                                                                                                
+                                                        ]
+                                each val, index in banerFilterArr
+                                    +main-select(val['name'], val['id'], banerFilterValues[index], val['libs'], val['placeholder'], val['disabled'])
+                                button.btn.btn-main.px-xl-30.px-20.py-xl-20.py-15.fw-sb.js_filter_button(disabled) Найти запчасти  
+                        .main-filter__content.js-tabs__content.bg-light.p-xxl-60.p-lg-40.p-20(data-article= '2')                            
+                            .main-filter__content-grid.main-filter__content-grid_stretch.w-100                                                                        
+                                +main-select(banerFilterArr[0]['name'], banerFilterArr[0]['id'], banerFilterValues[0], banerFilterArr[0]['libs'], banerFilterArr[0]['placeholder'])
+                                label.main-input
+                                    input.px-xl-30.px-20.py-xl-20.py-15.fs-14(type="text" placeholder="Номер запчасти" name="gear-number" disabled)            
+                                button.btn.btn-main.px-xl-30.px-20.py-xl-20.py-15.fw-sb.js_filter_button(disabled) Найти запчасти  
+mixin brand-catalog
+    section.brand-catalog
+        .container
+            h2.fs-md-30.fs-20.fw-sb.mb-md-30.mb-15 Каталог брендов
+            .baner-company.scroll
+                -
+                    let banerCompanyArr = [
+                                            {img: 'suzuki', title: 'Suzuki'}, 
+                                            {img: 'honda', title: 'Honda'}, 
+                                            {img: 'kawasaki', title: 'Kawasaki'}, 
+                                            {img: 'yamaha', title: 'Yamaha'}, 
+                                            {img: 'bmw', title: 'BMW'}, 
+                                            {img: 'ducati', title: 'Ducati'}, 
+                                            {img: 'aprilia', title: 'Aprilia'}, 
+                                            {img: 'ktm', title: 'KTM'}, 
+                                            {img: 'triumph', title: 'Triumph'}, 
+                                            {img: 'mv-agusta', title: 'MV Agusta'}, 
+                                            {img: 'harley-davidson', title: 'Harley Davidson'}, 
+                                            {img: 'buell', title: 'Buell'}, 
+                                        ]
+                -for(let i = 0; i < 2; i++)
+                    each val in banerCompanyArr 
+                        a(href='models.html').baner-company-item.d-flex.flex-column.align-items-center.gap-10.p-20.rounded-20.border.border-1.border-light.bg-white
+                            .baner-company-img.d-flex.align-items-center.flex-grow-1
+                                +img('company/' + val['img'] + '.png', val['title']).w-auto
+                            .fs-18.fw-rg.lh-0_9= val['title']
+            //- .brand-catalog__grid.scroll
+                -
+                    let banerCompanyArr = [
+                                            {img: 'suzuki', title: 'Suzuki'}, 
+                                            {img: 'honda', title: 'Honda'}, 
+                                            {img: 'kawasaki', title: 'Kawasaki'}, 
+                                            {img: 'yamaha', title: 'Yamaha'}, 
+                                            {img: 'bmw', title: 'BMW'}, 
+                                            {img: 'ducati', title: 'Ducati'}, 
+                                            {img: 'aprilia', title: 'Aprilia'}, 
+                                            {img: 'ktm', title: 'KTM'}, 
+                                            {img: 'triumph', title: 'Triumph'}, 
+                                            {img: 'mv-agusta', title: 'MV Agusta'}, 
+                                            {img: 'harley-davidson', title: 'Harley Davidson'}, 
+                                            {img: 'buell', title: 'Buell'}, 
+                                        ]
+                -for(let i = 0; i < 2; i++)
+                    each val in banerCompanyArr 
+                        a(href='models.html').brand-catalog__item.d-flex.flex-column.align-items-center.gap-10.p-20.rounded-20.border.border-1.border-light.bg-white
+                            .brand-catalog__img.d-flex.align-items-center.flex-grow-1
+                                +img('company/' + val['img'] + '.png', val['title']).w-auto
+                            .fs-18.fw-rg.lh-0_9= val['title']
+mixin units-slider(num, category)
+    section.units-slider
+        .container
+            .d-flex.align-items-center.justify-content-between.mb-md-30.mb-15
+                h2.fs-md-30.fs-20.fw-sb.mb-0 Узлы для Honda F76432 1990 
+                .slider-navigation-5.d-md-flex.d-none(data-categoryy= category)                   
+                    .slider-prev
+                        i.icon.fs-24.angle-right
+                    .slider-pagination-wrapper
+                        .slider-pagination
+                    .slider-next
+                        i.icon.fs-24.angle-right
+            .swiper.slider-5(data-categoryy= category)
+                .swiper-wrapper
+                    -for(let i = 0; i < num; i++)
+                        .swiper-slide
+                            +unit-item
+
+
+
+
+
+
+
+
+
+                                                               
+
+
+
+
+
+
+mixin solution
+    section.solution#solution
+        .container
+            .solution-wrapper.solution-tabs.d-flex.flex-column.gap-30
+                .solution-heading.d-flex.flex-column.gap-10.align-items-start
+                    +section-heading('Готовые решения')
+                    h2.fs-lg-45.fs-sm-35.fs-25.fw-bl.lh-1_1.m-0 Выберите решение для вашего бизнеса
+                .js-tabs__nav
+                    .js-tabs__no-marker.js-tabs__tabs-container.d-flex.align-items-center.gap-20.overflow-auto
+                        each val in [{title: 'Камеры <br> Minicella', num: '1', img: '1', class: 'active'}, {title: 'Модульные <br> камеры', num: '2', img: '2'}, {title: 'Расширительные <br> пояса', num: '3', img: '3'}, {title: 'Со стеклянным <br> фронтом', num: '4', img: '4'}]
+                            .js-tabs__tab(data-article= val['num'] class= val['class']).d-flex.align-items-center.py-md-15.py-10.ps-md-20.ps-15.pe-md-30.pe-20.gap-md-20.gap-10.bg-light.rounded-15
+                                +picture('solutions/tabs/'+val['img'])(class='mbm-darken')
+                                span.fs-md-18.fs-14.fw-rg.text-nowrap!= val['title']
+                .js-tabs__content-container
+                    each val in [{count: 5, num: '1', class: 'active'}, {count: 3, num: '2'}, {count: 6, num: '3'}, {count: 20, num: '4'}]
+                        .js-tabs__content(data-article= val['num'] class= val['class'])
+                            .d-flex.flex-column.gap-30
+                                .d-flex.align-items-center
+                                    .solution-filter.d-flex.flex-wrap.align-items-center.gap-20
+                                        each val in [{img: '1', title: 'Polair', value: 'polair'}, {img: '2', title: 'Север', value: 'sever'}, {img: '3', title: 'Марихолодмаш', value: 'mxm'}]
+                                            label.solution-filter-check
+                                                input(type='checkbox' value= val['value'] name='solution-company')
+                                                span.solution-filter-check-img
+                                                    +img('solutions/company/'+val['img']+'.svg', val['title']).w-auto
+                                    .slider-navigation-5.d-none.d-lg-flex.align-items-center.ms-auto(data-categoryy= val['num'])
+                                        .slider-prev
+                                            i.icon.u_angle.text-main.fs-40
+                                        .slider-pagination-wrapper
+                                            .slider-pagination
+                                        .slider-next
+                                            i.icon.u_angle.text-main.fs-40
+                                .swiper.slider-5.w-100(data-categoryy= val['num'])
+                                    .swiper-wrapper
+                                        -
+                                            let solutionArr = [
+                                                                {},
+                                                                {title: 'Промышленная холодильная камера, производственная холодильная камера'},
+                                                                {title: 'Промышленный холодильник'},
+                                                                {title: 'Сборные холодильные камеры'},
+                                                                {title: 'Сборные холодильные камеры'},
+                                                                {title: 'Сборные холодильные камеры'},
+                                                              ]
+                                        -for(let i = 1; i <= val['count']; i++)
+                                            .swiper-slide.h-auto.d-flex
+                                                .solution-item.d-flex.flex-column.gap-10.flex-grow-1
+                                                    .solution-item-img.rounded-15.overflow-hidden
+                                                        if(i > 4)
+                                                            +picture('solutions/products/4', solutionArr[4]['title']).h-100
+                                                        else
+                                                            +picture('solutions/products/'+i, solutionArr[i]['title']).h-100
+                                                    if(i > 4)        
+                                                        .fw-bl.lh-1_1.flex-grow-1= solutionArr[4]['title']
+                                                    else
+                                                        .fw-bl.lh-1_1.flex-grow-1= solutionArr[i]['title']
+                                                    .solution-item-char.d-flex.flex-column.gap-2
+                                                        -
+                                                            let solutionChar = [
+                                                                                {title: 'Габариты (Ш,Д,В)', value: '1960x3160x2200мм'},
+                                                                                {title: 'Объем', value: '11,02 м3'},
+                                                                                {title: 'Бренд', value: 'Polair'},
+                                                                                {title: 'Гарантия', value: '12 мес'},
+                                                                               ]
+                                                        +line(solutionChar)
+                                                    button.d-flex.align-items-center.gap-10.py-8.ps-15.pe-20.rounded-10.bg-light.border-0.text-start(data-bs-toggle="modal", data-bs-target=".modal-kp")
+                                                        i.icon.u_file-landscape.text-main.fs-24
+                                                        span.fs-14.lh-1_1.fw-rg Получить коммерческое <br> предложение
+                                                    .d-flex.align-items-end.gap-10
+                                                        span.fs-14.lh-1.o-0_5 Цена
+                                                        span.fs-18.fw-bl.lh-1.text-main 152 329 ₽
+                                                    button.btn.btn-main.px-20.py-15.fs-sm-18.fs-14.fw-bl.lh-1_2(data-bs-toggle="modal", data-bs-target=".modal-buy") Подробнее и купить
+                                                    
+mixin doors
+    section.doors#doors
+        .container                                                    
+            .doors-wrapper.d-flex.flex-column.gap-30
+                .doors-heading.d-flex.flex-column.gap-10.align-items-start
+                    +section-heading('Виды дверей')
+                    h2.fs-lg-45.fs-sm-35.fs-25.fw-bl.lh-1_1.m-0 Выберите дверь для камеры
+                .doors-grid.scroll
+                    -
+                        let doorType = [
+                                        {
+                                            title: 'Одностворчатые', 
+                                            img: '1', 
+                                            chars: [
+                                                    {title: 'Высота проёма', value: '1 800 - 2 200 мм'}, 
+                                                    {title: 'Ширина проёма', value: '800 - 1 400 мм'}, 
+                                                    {title: 'Толщина полотна', value: '80 - 150 мм'}
+                                                   ],
+                                            plus: ['Невысокая цена', 'Простота конструкции'],
+                                            minus: ['Максимальная ширина проёма 1400 мм', 'Необходимо пространство для открытия двери']       
+                                        },                                        
+                                        {
+                                            title: 'Двустворчатые', 
+                                            img: '2', 
+                                            chars: [
+                                                    {title: 'Высота проёма', value: '1 800 - 3 000 мм'}, 
+                                                    {title: 'Ширина проёма', value: '800 - 2 800 мм'}, 
+                                                    {title: 'Толщина полотна', value: '80 - 150 мм'}
+                                                   ],
+                                            plus: ['Возможно использовать только 1 створку в повседневной работе', 'Максимальная ширина проёма 2 800 мм'],
+                                            minus: ['Высокая цена']       
+                                        },                                        
+                                        {
+                                            title: 'Откатные', 
+                                            img: '3', 
+                                            chars: [
+                                                    {title: 'Высота проёма', value: '1 800 - 3 000 мм'}, 
+                                                    {title: 'Ширина проёма', value: '800 - 2 800 мм'}, 
+                                                    {title: 'Толщина полотна', value: '80 - 150 мм'}
+                                                   ],
+                                            plus: ['Экономит пространство', 'Можно поставить электропривод', 'Максимальная ширина проёма 2 800 мм'],
+                                            minus: ['Высокая цена', 'Минимальная длина стены камеры 3 м', 'Сложность установки']       
+                                        },                                        
+                                        {
+                                            title: 'Откатные', 
+                                            img: '3', 
+                                            chars: [
+                                                    {title: 'Высота проёма', value: '1 800 - 3 000 мм'}, 
+                                                    {title: 'Ширина проёма', value: '800 - 2 800 мм'}, 
+                                                    {title: 'Толщина полотна', value: '80 - 150 мм'}
+                                                   ],
+                                            plus: ['Экономит пространство', 'Можно поставить электропривод', 'Максимальная ширина проёма 2 800 мм'],
+                                            minus: ['Высокая цена', 'Минимальная длина стены камеры 3 м', 'Сложность установки']       
+                                        },                                        
+                                       ] 
+                    each val in doorType                        
+                        .doors-item.d-flex.flex-column.align-items-start.flex-grow-1.gap-md-30.gap-20
+                            .doors-item-img.rounded-15.w-100.overflow-hidden
+                                +picture('doors/'+ val['img'], val['title']).h-100 
+                            .doors-item-desc.d-flex.flex-column.align-items-start.gap-md-20.gap-10.flex-grow-1
+                                span.fs-18.fw-bl.lh-1_1= val['title']
+                                .doors-item-chars.d-flex.flex-column.gap-5
+                                    each char in val['chars']
+                                        .d-flex.flex-column
+                                            span.fs-14.o-0_5= char['title']
+                                            span.fw-rg= char['value']
+                                hr.border-main.m-0.o-0_2.align-self-stretch
+                                .d-flex.flex-column.gap-md-20.gap-10.flex-grow-1
+                                    .doors-item-advantages.d-flex.flex-column.gap-10
+                                        each plus in val['plus']
+                                            .d-flex.align-items-start.gap-10
+                                                i.icon.u_plus-circle.fs-18.text-main
+                                                span.lh-1.pt-2= plus
+                                    hr.border-main.m-0.o-0_2.align-self-stretch
+                                    .doors-item-advantages.d-flex.flex-column.gap-10
+                                        each minus in val['minus']
+                                            .d-flex.align-items-start.gap-10
+                                                i.icon.u_minus-circle.fs-18.text-main.o-0_3
+                                                span.lh-1.pt-2= minus
+                            button.btn.btn-main.d-flex.align-items-center.p-5(data-bs-toggle="modal", data-bs-target=".modal-door")
+                                span.fs-sm-18.fs-14.fw-bl.lh-1_2.px-30 Заказать дверь
+                                span.d-flex.rounded-circle.p-sm-10.p-8.bg-white
+                                    i.icon.u_arrow.fs-sm-35.fs-20.text-main
+mixin company
+    section.company-marquee.position-relative
+        .company-wrapper.d-flex.flex-column.gap-40
+            .container            
+                .company-heading.d-flex.flex-column.gap-10.align-items-start
+                    +section-heading('Наши клиенты')
+                    h2.fs-lg-45.fs-sm-35.fs-25.fw-bl.lh-1_1.m-0 Мы участвовали в развитии компаний
+            .js_marquee.overflow-hidden.mbm-darken
+                .js_marquee-inner.d-flex.w-100
+                    .company-marquee-items
+                        .company-marquee-wrapper
+                            .company-marquee-block.d-flex.align-items-center.py-10.bg-white
+                                each val in ['rosholod', 'carel', 'frascold', 'frino', 'intercold', 'copeland', 'biber', 'polair', 'morena', 'artica']
+                                    .company-marquee-item
+                                        img(src='images/company/'+val+'.svg', alt=val, loading='lazy').mbm-darken                                        
+        .company-back.position-absolute
+mixin works
+    section.works#works
+        .container
+            .works-wrapper.d-flex.flex-column               
+                +section-heading('Выполненные проекты')                        
+                .slider-works.swiper.w-100.mt-10.mb-30
+                    .swiper-wrapper
+                        -for(let i = 0; i < 6; i++)
+                            .swiper-slide
+                                h2.fs-lg-45.fs-sm-35.fs-25.fw-bl.lh-1_1.mb-30 Холодильная камера для хранения яблок
+                                .works-grid
+                                    .works-desc
+                                        .content
+                                            ul
+                                                each val in ['Дверь откатная (ОД) 2 500 х 3 000 мм', 'Усиливающий каркас (построена ферма из профильной трубы, включая двутавровую балку)', 'Холодильный агрегат ККБ на раме (на базе компрессора DorinН2500СС)', 'Конденсатор выносной Alfa-Laval', 'Воздухоохладитель — 2 шт']
+                                                    li= val                                        
+                                    .works-descb
+                                        .works-descb-grid
+                                            -
+                                                let worksGridArr = [
+                                                                    {title: 'Адрес', value: 'Московская область, Технопарк Сынково', icon: 'map'},
+                                                                    {title: 'Температура', value: '+4...+ 6 °С', icon: 'temperature'},
+                                                                    {title: 'Мощность', value: '40 кВт', icon: 'flash'},
+                                                                    {title: 'Камера', value: '10 000 х 15 000 х 6 000 мм (ППУ 80 мм, без пола)', icon: 'box'},
+                                                                    {title: 'Назначение', value: 'Хранение яблок 100 000 кг, суточный оборот 20 000 кг', icon: 'focus'},
+                                                                   ]
+                                            each val in worksGridArr
+                                                .works-descb-item.rounded-15.p-md-20.p-10.position-relative
+                                                    .d-flex.flex-column.gap-5
+                                                        span.o-0_5.fs-md-16.fs-14= val['title']
+                                                        span.fs-md-18.fs-16!= val['value']
+                                                    .d-flex.position-absolute.bottom-0.end-0.mb-md-15.mb-10.me-md-15.me-10
+                                                        i.icon.fs-md-24.fs-18.text-main(class='u_'+val['icon'])
+                                    .works-gallery.d-flex.flex-column.gap-10.js_gallery
+                                        .works-gallery-wrapper                                        
+                                            -for(let i = 1; i <= 4; i++)
+                                                .works-gallery-main.rounded-15.overflow-hidden.js_gallery-main.pointer(data-fancybox data-src= start+'images/works/'+i+'.jpg')
+                                                    +picture('works/main/'+i, 'Холодильная камера для хранения яблок')
+                                        .works-gallery-thumbs.scroll
+                                            -for(let i = 1; i <= 4; i++)                                                                                                                                                                                        
+                                                .works-gallery-thumb.rounded-15.overflow-hidden.pointer.js_gallery-thumb(data-img= start+'images/works/main/'+i+'.jpg')
+                                                    +picture('works/thumb/'+i, 'Холодильная камера для хранения яблок')
+                .slider-navigation-works.d-flex.align-items-center.justify-content-between.p-md-20.p-10.rounded-pill.border.border-2.border-light.bg-white
+                    .slider-prev.d-flex.align-items-center.gap-10
+                        i.icon.u_angle.text-main.fs-40
+                        span.fs-18.text-nowrap.d-none.d-md-inline Предыдущий кейс 
+                    .slider-pagination.d-flex.flex-grow-1.justify-content-center.align-items-center                       
+                    .slider-next.d-flex.align-items-center.gap-10
+                        span.fs-18.text-nowrap.d-none.d-md-inline Следующий кейс
+                        i.icon.u_angle.text-main.fs-40    
+mixin camera
+    section.camera
+        .container
+            .camera-wrapper.d-flex.flex-column.gap-30
+                .doors-heading.d-flex.flex-column.gap-10.align-items-start
+                    +section-heading('Классификация камер')
+                    h2.fs-lg-45.fs-sm-35.fs-25.fw-bl.lh-1_1.mb-0 Выберите камеру по типу
+                .camera-grid.scroll
+                    -
+                        let cameraType = [
+                                        {
+                                            title: 'Сборно разборные', 
+                                            img: '1',                                            
+                                            plus: ['Легко собирается и разбирается', 'Можно увеличить с помощью доп. модулей', 'Выше ценится на вторичном рынке', 'В наличии на складе (если камера нужна срочно)', 'Срок поставки — 1 день'],
+                                            minus: ['Размеры стандартизированы. Самая маленькая камера 136 х 136 см. И далее в любую сторону можно увеличивать с шагом 30 см.']       
+                                        },                                        
+                                        {
+                                            title: 'Из сэндвич панелей', 
+                                            img: '2',                                             
+                                            plus: ['Возможны любые размеры и конфигурации камер — повороты, перепады высоты, перегородки и т.д.'],
+                                            minus: ['Сложность монтажа', 'Срок от 7 дней']       
+                                        },                                        
+                                        {
+                                            title: 'Из сэндвич панелей', 
+                                            img: '3',                                             
+                                            plus: ['Жёсткая конструкция холодильной камеры', 'Плотное прилегание панелей в местах стыков', 'Эстетический внешний вид', 'В наличии на складе (если камера нужна срочно)', 'Срок поставки — 1 день'],
+                                            minus: ['Высокая цена', 'Сложности при переносе камер']       
+                                        },                                        
+                                       ] 
+                    each val in cameraType                        
+                        .doors-item.d-flex.flex-column.align-items-start.flex-grow-1.gap-30
+                            .doors-item-img.camera-img.rounded-15.overflow-hidden.p-30.bg-light.w-100
+                                +picture('cameras/'+ val['img'], val['title']).h-100.mbm-darken
+                            .doors-item-desc.d-flex.flex-column.align-items-start.gap-20.flex-grow-1
+                                span.fs-18.fw-bl.lh-1_1= val['title']                                    
+                                .d-flex.flex-column.gap-20.flex-grow-1
+                                    .doors-item-advantages.d-flex.flex-column.gap-10
+                                        each plus in val['plus']
+                                            .d-flex.align-items-start.gap-10
+                                                i.icon.u_plus-circle.fs-18.text-main
+                                                span.lh-1.pt-2= plus
+                                    hr.border-main.m-0.o-0_2.align-self-stretch
+                                    .doors-item-advantages.d-flex.flex-column.gap-10
+                                        each minus in val['minus']
+                                            .d-flex.align-items-start.gap-10
+                                                i.icon.u_minus-circle.fs-18.text-main.o-0_3
+                                                span.lh-1.pt-2= minus
+                                button.btn.btn-main.d-flex.align-items-center.p-5(data-bs-toggle="modal", data-bs-target=".modal-camera")
+                                    span.fs-sm-18.fs-14.fw-bl.lh-1_2.px-30 Заказать камеру
+                                    span.d-flex.rounded-circle.p-sm-10.p-8.bg-white
+                                        i.icon.u_arrow.fs-sm-35.fs-20.text-main                                        
+mixin calculator
+    section.calculator#calculator
+        .container
+            .calculator-wrapper.border.border-2.border-main.bg-white.rounded-30.overflow-hidden
+                .d-flex.flex-column.gap-30
+                    .d-flex.flex-column.gap-10
+                        +section-heading('Онлайн калькулятор')
+                        h2.fs-lg-45.fs-sm-35.fs-25.fw-bl.lh-1_1.mb-0 <span class='text-main'> Рассчитайте стоимость </span> холодильной камеры
+                    form(name='calculator-form' autocomplete='off').calculator-form.d-flex.flex-column.gap-30.p-xl-40.p-sm-30.p-15.bg-light.rounded-15
+                        .d-flex.flex-column.gap-20
+                            span.fw-rg Размеры камеры в метрах
+                            .calculator-form-sizes.d-flex.flex-column.gap-15
+                                .calculator-form-sizes-title
+                                    each val in ['Длина', 'Ширина', 'Высота']
+                                        span.lh-1_2.o-0_5= val
+                                .calculator-form-sizes-inputs.overflow-hidden
+                                    each val in [{name: 'length-value', title: 'Длина'}, {name: 'width-value', title: 'Ширина'}, {name: 'height-value', title: 'Высота'}]
+                                        .d-flex.flex-column.gap-5
+                                            span.lh-1_2.o-0_5.fs-14.d-sm-none= val['title']
+                                            label.main-input.px-30.py-sm-20.py-12.d-flex.align-items-center.gap-10.bg-white.pointer-text
+                                                input(type='number' name= val['name'] min='1' max='9999' required).order-1.fs-14.fs-sm-16.lh-1_2
+                                                i.icon.u_resize-diagonal.fs-sm-24.fs-18.text-main
+                                                span.lh-1_2.o-0_5.order-1.fs-sm-16.fs-14 м    
+                        .d-flex.flex-column.gap-20
+                            span.fw-rg Температурный режим
+                            .calculator-form-temperatura.d-flex.flex-column.gap-15
+                                .calculator-form-temperatura-title
+                                    each val in ['Минимальная t °C', 'Максимальная t °C']
+                                        span.lh-1_2.o-0_5= val
+                                .calculator-form-temperatura-inputs.overflow-hidden
+                                    each val in [{name: 'minTemperature-value', icon: 'minus', title: 'Минимальная t °C'}, {name: 'maxTemperature-value', icon: 'plus', title: 'Максимальная t °C'}]
+                                        .d-flex.flex-column.gap-5
+                                            span.lh-1_2.o-0_5.fs-14.d-sm-none= val['title']
+                                            label.main-input.px-30.py-sm-20.py-12.d-flex.align-items-center.gap-10.bg-white.pointer-text
+                                                input(type='number' name= val['name']).order-1.fs-14.fs-sm-16.lh-1_2
+                                                i.icon.fs-sm-24.fs-18.text-main(class='u_temperature-' +val['icon'])
+                                                span.lh-1_2.o-0_5.order-1.fs-sm-16.fs-14 °C
+                        button.btn.btn-main.d-flex.align-items-center.p-5.py-15.py-sm-5
+                            span.fs-xl-18.fs-sm-16.fs-14.fw-bl.lh-1_2.px-25.flex-grow-1 Получить индивидуальное предложение
+                            span.d-none.d-sm-flex.rounded-circle.p-10.bg-white
+                                i.icon.u_arrow.fs-sm-35.fs-20.text-main
+                .calculator-img.position-relative.d-none.d-lg-flex.align-items-center
+                    +picture('calculator/main', 'Холодильная камера', true, '.png')
+                    .calculator-img-back.position-absolute
+                        img(src= start+ 'images/calculator/snow.svg' alt='Логотип').w-auto
+        .container
+            .calculator-feedback.bg-main.text-white.overflow-hidden
+                .d-flex.flex-column.gap-sm-50.gap-30
+                    .d-flex.flex-column.gap-20
+                        .d-flex.flex-column.gap-10
+                            +section-heading('Бесплатная консультация специалиста')
+                            h3.fs-lg-60.fs-sm-40.fs-30.fw-bl.lh-1_1.m-0 Возникли сложности <br> с расчетами?
+                        .content
+                            p Оставьте номер телефона, наши специалисты перезвонят вам в ближайшее рабочее время и проконсультируют по любым вопросам.
+                            p.fw-rg Мы пработаем с понедельника по пятницу с 9:00 до 18:00.
+                    form.calculator-feedback-form.d-flex.flex-column.flex-md-row.input-block.rounded-pill(name="calculator-consultation" autocomplete="off")
+                        label.second-input.ps-25.pe-20.py-sm-20.py-md-15.py-12.d-flex.align-items-center.justify-content-start.pointer-text
+                            input.lh-1_2.fs-sm-16.fs-14.flex-grow-1.js_input_form(type="tel" placeholder="+7 (9__) ___-__-__" data-input_name="phone" required)
+                            i.icon.u_phone.fs-18.ms-18.text-white                            
+                        button.btn.btn-white.d-flex.align-items-center.p-5
+                            span.fw-bl.lh-1_2.px-xl-25.px-15.fs-sm-16.fs-14.flex-grow-1 Получить консультацию
+                            span.d-flex.rounded-circle.p-sm-12.p-8.bg-main
+                                i.icon.u_arrow.fs-sm-30.fs-20.text-white
+                .calculator-feedback-back.position-relative.d-none.d-lg-block
+                    .calculator-feedback-back-img.position-absolute
+                        +img('calculator/feedback-back.svg').h-100   
+mixin team
+    section.team
+        .container
+            .team-wrapper.d-flex.flex-column.gap-30
+                .team-heading.d-flex.flex-column.gap-10.align-items-start
+                    +section-heading('Команда')
+                    h2.fs-lg-45.fs-sm-35.fs-25.fw-bl.lh-1_1.mb-0 Специалисты нашей компании
+                .team-grid.scroll
+                    -
+                        let teamArr = [
+                                        {name: 'Максим Соломонов', exp: 'Стаж - 12 лет', prof: 'Главный техник', img: '1', bnf: 'Установил 500+ <br> кондиционеров'},
+                                        {name: 'Игорь Солдаткин', exp: 'Стаж - 12 лет', prof: 'Специалист по работе с клиентами', img: '2', bnf: 'Осчастливил <br> 600+ клиентов'},
+                                        {name: 'Василий Рублев', exp: 'Стаж - 12 лет', prof: 'Монтажник', img: '3', bnf: 'Установил <br> 400+ систем'},
+                                        {name: 'Виталий Каркуша', exp: 'Стаж - 12 лет', prof: 'Сантехник', img: '4', bnf: 'Обслужил 900+ <br> вентиляций'},
+                                      ]
+                    each val in teamArr
+                        .team-item.d-flex.flex-column.gap-15
+                            .team-item-img.position-relative.rounded-15.overflow-hidden
+                                +picture('team/'+val['img'], val['name']).h-100
+                                .team-item-badge.position-absolute.start-0.bg-white.p-10
+                                    span.fs-14.fw-bl.lh-1.text-main.d-inline-block!= val['bnf']    
+                            .team-desc.d-flex.flex-column.align-items-start.gap-5
+                                .rounded-pill.px-5.py-2.bg-light
+                                    span.fs-14.o-0_5= val['exp']
+                                .d-flex.flex-column
+                                    span.fs-18.fw-rg= val['name']
+                                    span.fs-14.o-0_5= val['prof']
+mixin rent
+    section.rent#catalog
+        .container
+            h2.fs-xl-35.fs-sm-25.fs-18.lh-1_3.fw-bl.text-uppercase.mb-lg-40.mb-20 ОПАЛУБКА В арендУ
+            .d-flex.flex-column.gap-20
+                .rent-main.scroll
+                    each val in [{title: 'Для перекрытий', img: '1'}, {title: 'Для фундамента', img: '2'}, {title: 'Для стен', img: '3'}]
+                        .rent-main-item.rounded-1.bg-light.pointer(data-bs-toggle="modal", data-bs-target=".modal-rent")
+                            .rent-main-item-wrapper.d-flex.flex-lg-column.flex-sm-row.flex-column.gap-20.p-xl-40.p-md-30.p-20
+                                .rent-main-item-img
+                                    //- picture
+                                    //-     source(srcset= start+ "images/rent/main-item/"+val['img']+'.webp', type="image/webp")
+                                    //-     img(src= start+ "images/rent/main-item/"+val['img']+'.png', alt= val['title'] loading='lazy')
+                                    //- +picture('rent/main-item/'+val['img'], val['title'], true, '.png')
+                                    +img('images/rent/main-item/'+val['img']+'.png', val['title'])(class='h-100')
+                                .rent-main-item-desc.d-flex.flex-column
+                                    .d-flex.flex-column
+                                        .fs-sm-18.fw-bl.lh-1_3= val['title']
+                                        .fw-bl.lh-1_3.fs-sm-16.fs-14 от <span class='text-main'> 350 000 </span> <span class='fs-12'> руб./мес.</span>
+                                    hr.my-sm-20.my-10.o-0_1
+                                    ul.list-unstyled.d-flex.flex-column.gap-5.m-0
+                                        each val in ['Щиты линейные', 'Щиты универсальные', 'Щиты угловые внутренние', 'Щиты угловые наружные', 'Угловой элемент', 'Щиты шарнирные', 'Щит компенсатор']
+                                            li.d-flex.align-items-center.gap-5
+                                                +icon('arrow-right-f', 14)(class='text-main')
+                                                span.fs-12.lh-n= val
+                            .rent-main-item-back
+                .rent-second.scroll                   
+                    each val in [{title: 'Крупнощитовая', img: '2'}, {title: 'Мелкощитовая', img: '1'}, {title: 'Для стен', img: '3'}, {title: 'Щитовая', img: '2'}]
+                        .rent-main-item.rent-second-item.pointer(data-bs-toggle="modal", data-bs-target=".modal-rent")
+                            .rent-main-item-wrapper.d-flex.flex-column.gap-20.p-xl-40.p-md-30.p-20
+                                .rent-main-item-img
+                                    //- picture
+                                        source(srcset= start+ "images/rent/second-item/"+val['img']+'.webp', type="image/webp")
+                                        img(src= start+ "images/rent/second-item/"+val['img']+'.png', alt= val['title'] loading='lazy')
+                                    +picture('rent/second-item/'+val['img'], val['title'])                                  
+                                .rent-main-item-desc.d-flex.flex-column
+                                    .d-flex.flex-column
+                                        .fs-18.fw-bl.lh-1_3= val['title']
+                                        .fw-bl.lh-1_3.fs-14 от <span class='text-main'> 350 000 </span> <span class='fs-12'> руб./мес. </span>
+                            .rent-main-item-back
+                .rent-links.border.border-1.border-light.px-xl-40.px-20.py-xl-30.py-15.d-flex.flex-wrap.align-items-center.gap-xl-60.gap-md-30.gap-15
+                    each val in ['Инвентарная', 'Объемная', 'Радиусная', 'Для ростверка', 'Для колонн']
+                        a(href='#').d-flex.align-items-center.gap-5
+                            span.fs-lg-18.fs-sm-14.fs-12.fw-bl.lh-n.text-nowrap= val
+                            +icon('arrow-right-f', 20)(class='text-main fs-sm-20 fs-18')
+mixin rent-terms
+    section.rent-terms#terms
+        .container
+            h2.fs-xl-35.fs-sm-25.fs-18.lh-1_3.fw-bl.text-uppercase.mb-lg-40.mb-20 Условия аренды
+            .d-flex.flex-column.gap-md-40.gap-20
+                .d-flex.flex-column.gap-5
+                    .rent-terms-grid.scroll
+                        each val in [{icon: 'clock', title: 'Минимальный срок <br> аренды 14 дней'}, {icon: 'group', title: 'Льготная аренда <br> на время производства'}, {icon: 'gift', title: 'Бесплатный расчет <br> и подбор комплектующих'}, {icon: 'house', title: 'Не нужны большие <br> площади для хранения'}]
+                            .rent-terms-item.rounded-1.bg-light.p-xl-30.p-sm-20.p-10.d-flex.flex-column.align-items-start.gap-sm-20.gap-10.flex-grow-1
+                                .rounded-circle.p-lg-10.p-5.bg-white
+                                    +icon(val['icon'], 30)(class='text-main fs-lg-30 fs-25')
+                                p.lh-n!= val['title']                    
+                        each val in [{icon: 'star', title: 'Минимальный срок <br> аренды 14 дней'}, {icon: 'calendar', title: 'Минимальный срок <br> аренды 14 дней'}, {icon: 'calendar', title: 'Минимальный срок <br> аренды 14 дней'}]
+                            .rent-terms-item.rounded-1.bg-light.p-xl-30.p-sm-20.p-10.d-flex.align-items-center.gap-sm-20.gap-10.flex-grow-1
+                                .rounded-circle.p-lg-10.p-5.bg-white
+                                    +icon(val['icon'], 30)(class='text-main fs-lg-30 fs-25')
+                                p.lh-n!= val['title']        
+                //- .row.g-5
+                    each val in [{icon: 'calendar', title: 'Минимальный срок <br> аренды 14 дней'}, {icon: 'group', title: 'Льготная аренда <br> на время производства'}, {icon: 'gift', title: 'Бесплатный расчет <br> и подбор комплектующих'}, {icon: 'house', title: 'Не нужны большие <br> площади для хранения'}]
+                        .col-lg-3.col-md-4.col-6.d-flex.flex-grow-1
+                            .rent-terms-item.rounded-1.bg-light.p-xl-30.p-sm-20.p-10.d-flex.flex-column.align-items-start.gap-sm-20.gap-10.flex-grow-1
+                                .rounded-circle.p-lg-10.p-5.bg-white
+                                    +icon(val['icon'], 30)(class='text-main fs-lg-30 fs-25')
+                                p.lh-n!= val['title']
+                    each val in [{icon: 'calendar', title: 'Минимальный срок <br> аренды 14 дней'}, {icon: 'calendar', title: 'Минимальный срок <br> аренды 14 дней'}, {icon: 'calendar', title: 'Минимальный срок <br> аренды 14 дней'}]
+                        .col-lg-4.col-sm-6.d-flex.flex-grow-1
+                            .rent-terms-item.rounded-1.bg-light.p-xl-30.p-sm-20.p-10.d-flex.align-items-center.gap-sm-20.gap-10.flex-grow-1
+                                .rounded-circle.p-lg-10.p-5.bg-white
+                                    +icon(val['icon'], 30)(class='text-main fs-lg-30 fs-25')
+                                p.lh-n!= val['title']
+                .row.g-md-40.g-20.align-items-center
+                    .col-xxl-6.col-xl-7.col-lg
+                        .rent-terms-comment.d-flex.flex-sm-row.flex-column.align-items-center.gap-sm-10
+                            .rent-terms-comment-ava.rounded-circle.overflow-hidden
+                                +img('images/rent/terms/ava.jpg', 'Екатерина, руководитель отдела аренды')
+                            .rent-terms-comment-desc.position-relative.pt-20.ps-sm-20.pt-sm-0
+                                .d-flex.flex-column.gap-10.rounded-15.border.border-1.border-light.p-sm-20.p-10
+                                    p.fst-italic "Помогу вам решить любые вопросы: от этапа <br> расчета проекта до возврата оборудования на склад"
+                                    span.fs-sm-14.fs-12.o-0_6.lh-n Екатерина, руководитель отдела аренды
+                                svg(xmlns="http://www.w3.org/2000/svg" width="20" height="35" viewBox="0 0 20 35" fill="none").position-absolute
+                                    path(d="M0 17.5C0 17.5 20 14 20 0V35C20 21 0 17.5 0 17.5Z" fill="#1A1616" fill-opacity="0.1")
+                    .col-xxl-6.col-xl-5.col-lg-auto
+                        form(name='rent-question' autocomplete='off').rent-terms-form.d-flex.flex-lg-column.flex-xxl-row.flex-wrap
+                            input(type='tel' placeholder='8 (9__) ___-__-__' required).main-input.bg-light.px-md-30.px-15.py-md-20.py-10.fs-md-16.fs-14.flex-grow-1
+                            button.btn-main.btn.px-md-30.px-15.py-md-20.py-10.fs-md-16.fs-14.flex-grow-1 Задать вопрос руководителю аренды
+mixin quality
+    section.quality
+        .container
+            .quality-grid
+                .quality-l.d-flex.flex-column.gap-20
+                    h2.fs-xxl-35.fs-sm-25.fs-18.lh-1_3.fw-bl.mb-0 Мы производим опалубку <br> <span class='text-main'>по строгим стандартам качества</span>
+                    .quality-slider.swiper.w-100.flex-grow-1
+                        .swiper-wrapper
+                            -for(let i = 0; i < 1; i++)
+                                .swiper-slide.rounded-5.overflow-hidden.bg-light
+                                    //- picture
+                                        source(srcset= start+ "images/quality/quality-img.webp", type="image/webp")
+                                        img(src="images/quality/quality-img.jpg", alt="Производство опалубки" loader='lazy').of-contain.mbm-darken
+                                    +picture('quality/quality-img', 'Производство опалубки')(class='mbm-darken h-100')
+
+                            .swiper-slide.rounded-5.overflow-hidden.bg-light
+                                //- picture
+                                    source(srcset= start+ "images/about/about-img.webp", type="image/webp")
+                                    img(src="images/about/about-img.jpg", alt="Производство опалубки" loader='lazy').of-contain.mbm-darken
+                                +picture('about/about-img', 'Производство опалубки')(class='mbm-darken of-contain h-100')                                               
+                .quality-r
+                    -
+                        let qsArr = [
+                                        {icon: 'document-text', title: 'Сертификат качества', href: '#'}, 
+                                        {icon: 'document-text', title: 'Сертификат качества', href: '#'}, 
+                                        {icon: 'document-text', title: 'Сертификат качества', href: '#'}, 
+                                        {icon: 'document-text', title: 'Сертификат качества', href: '#'}, 
+                                        {icon: 'document-text', title: 'Сертификат качества', href: '#'}, 
+                                        {icon: 'document-text', title: 'Сертификат качества', href: '#'}
+                                    ]
+                    each val in qsArr
+                        a(href=val['href'] title= val['title']).quality-certificate.rounded-1
+                            .quality-certificate-wrapper.d-flex.flex-column.gap-xxl-80.gap-md-60.gap-40.p-xxl-30.p-20
+                                +icon(val['icon'], 40)(class='text-main fs-md-40 fs-30')
+                                .fw-bl.lh-n.fs-xl-16.fs-14= val['title']
+                            .quality-certificate-back   
+mixin strange-map
+    section.strange-map
+        .container
+            .strange-map-block
+                .strange-map-block-wrapper.position-relative
+                    h2.fs-xl-35.fs-sm-25.fs-18.lh-1_1.fw-bl.text-uppercase.mb-20.mb-sm-0 <span class='text-main'> Работаем <br class='d-none d-sm-inline'> по аренде </span> <br class='d-none d-sm-inline'> в регионах
+                    .d-flex.gap-10
+                        .strange-map-block-item-1.fs-xl-28.fs-md-20.fs-sm-18.fs-14.lh-1.fw-bl.text-uppercase.text-second <span class='text-main fs-xl-60 fs-ms-40 fs-sm-30 fs-18'> 500+ </span> <br> постоянных <br> клиентов
+                        .strange-map-block-item-2.fs-xl-28.fs-md-20.fs-sm-18.fs-14.lh-1.fw-bl.text-uppercase.text-second <span class='text-main fs-xl-60 fs-ms-40 fs-sm-30 fs-18'> 9 лет </span> <br> на рынке <br> опалубки
+                        .strange-map-block-item-3.fs-xl-28.fs-md-20.fs-sm-18.fs-14.lh-1.fw-bl.text-uppercase.text-second <span class='text-main fs-xl-60 fs-ms-40 fs-sm-30 fs-18'> 600+ </span> <br> видов <br> продукции
+                .strange-map-block-img
+                    +img('images/strange-map/newMap.png', 'Работаем по аренде в регионах')
+mixin news(data)
+    section.news
+        .container
+            .d-flex.align-items-center.justify-content-between.mb-lg-40.mb-20
+                .d-flex.flex-wrap.align-items-center.gap-lg-40.gap-sm-20.gap-10
+                    h2.fs-xl-35.fs-sm-25.fs-18.lh-1_3.fw-bl.text-uppercase.mb-0 Новости компании
+                    a.news-vk(href='#' target='_blank')
+                        img(src= start+ 'images/vk-f.svg' alt='Читать новости Вконтакте').w-auto
+                .slider-navigation-3.d-none.d-lg-flex.align-items-center(data-categoryy= data)
+                    .slider-prev
+                        +icon('arrow-right', 30)(class='fs-30')
+                    .slider-pagination-wrapper
+                        .slider-pagination
+                    .slider-next
+                        +icon('arrow-right', 30)(class='fs-30')
+            .slider-3.swiper(data-categoryy= data)
+                .swiper-wrapper
+                    -
+                        let newsArr = [
+                                        {title: 'СИММЕТРИЯ — ОПАЛУБКА ДЛЯ МОНОЛИТНОГО СТРОИТЕЛЬСТВА', img: '1', desc: 'Компания СИММЕТРИЯ поставила опалубку собственного производства для строительства ЖК «Квартал Федерация» в г. Екатеринбург', date: '9 май 2023'},
+                                        {title: 'СИММЕТРИЯ — ОПАЛУБКА ДЛЯ МОНОЛИТНОГО СТРОИТЕЛЬСТВА', img: '2', desc: 'Готовы ли вы рекомендовать компанию "СИММЕТРИЯ", как работодателя?', date: '2 апреля 2023'},
+                                        {title: 'СИММЕТРИЯ — ОПАЛУБКА ДЛЯ МОНОЛИТНОГО СТРОИТЕЛЬСТВА', img: '3', desc: 'Компания СИММЕТРИЯ поставила комплект ветрозащитных экранов на объект ЖК "Русь" в г. Екатеринбург', date: '9 марта 2023'},
+                                        //- {title: 'СИММЕТРИЯ — ОПАЛУБКА ДЛЯ МОНОЛИТНОГО СТРОИТЕЛЬСТВА', img: '3', desc: 'Компания СИММЕТРИЯ поставила комплект ветрозащитных экранов на объект ЖК "Русь" в г. Екатеринбург', date: '9 марта 2023'},
+                                        //- {title: 'СИММЕТРИЯ — ОПАЛУБКА ДЛЯ МОНОЛИТНОГО СТРОИТЕЛЬСТВА', img: '3', desc: 'Компания СИММЕТРИЯ поставила комплект ветрозащитных экранов на объект ЖК "Русь" в г. Екатеринбург', date: '9 марта 2023'},
+                                        //- {title: 'СИММЕТРИЯ — ОПАЛУБКА ДЛЯ МОНОЛИТНОГО СТРОИТЕЛЬСТВА', img: '3', desc: 'Компания СИММЕТРИЯ поставила комплект ветрозащитных экранов на объект ЖК "Русь" в г. Екатеринбург', date: '9 марта 2023'},
+                                        //- {title: 'СИММЕТРИЯ — ОПАЛУБКА ДЛЯ МОНОЛИТНОГО СТРОИТЕЛЬСТВА', img: '3', desc: 'Компания СИММЕТРИЯ поставила комплект ветрозащитных экранов на объект ЖК "Русь" в г. Екатеринбург', date: '9 марта 2023'},
+                                      ]                    
+                    -for(let i = 0; i < 2; i++)
+                        each val in newsArr
+                            .swiper-slide.h-auto.d-flex
+                                .news-item.d-flex.flex-column.gap-md-30.gap-15.flex-grow-1
+                                    .news-item-heading.d-flex.align-item-center.gap-md-20.gap-10
+                                        .news-item-heading-logo
+                                            img(src= start+ "images/news/logo.svg", alt="Логотип").w-auto.h-100
+                                        .d-flex.flex-column.gap-5
+                                            .fs-md-14.fs-12.fw-bl.lh-1_3= val['title']
+                                            .fs-md-14.fs-12.lh-1_3.o-0_6= val['date']
+                                    .news-item-desc.d-flex.flex-column.gap-15.flex-grow-1
+                                        .news-item-img
+                                            //- picture
+                                                source(srcset= start+ "images/news/"+val['img']+".webp", type="image/webp")
+                                                img(src= start+"images/news/"+val['img']+".jpg", alt= val["title"] loading="lazy").h-100
+                                            +picture('news/'+val['img'], val['title'])(class='h-100')
+                                        .content.flex-grow-1
+                                            p.lh-1_3!= val['desc']
+                                    .news-item-feedback.pt-20.d-flex.gap-md-30.gap-15
+                                        each val in [{icon: 'heart', num: '5'}, {icon: 'message-text', num: '2'}]
+                                            .d-flex.align-items-center
+                                                +icon(val['icon'], 20)(class='text-main fs-md-20 fs-18')
+                                                span.fs-14.lh-1_3.o-0_6= val['num']
+//- mixin catalog
+    section.catalog.py-30.py-sm-100.bg-light.overflow-hidden#catalog
+        .container
+            h2.fs-20.fs-sm-25.fs-lg-30.fs-xl-35.lh-0_9.fw-bl.mb-15.mb-sm-30 Разнообразие выбора от «классики» до «эко-стиля»
+            .row.g-5.g-sm-30.align-items-center.mb-30
+                each val in ['lite', 'optim']
+                    .col-auto
+                        +img('images/collection/'+val+'.png', val)(class='catalog-tabs-collection')
+                .col-lg
+                    .fs-12.fs-sm-14.lh-1_3.catalog-tabs-text Применяется для устройства полов во всех жилых помещениях с высокой проходимостью, а также в помещениях коммерческого назначения со средней проходимостью (кафе, рестораны, небольшие магазины-бутики и т.п.).
+            .catalog-tabs
+                .js-tabs__nav.flex-grow-1.mb-15.mb-sm-30
+                    .js-tabs__no-marker.js-tabs__tabs-container.d-flex.flex-md-wrap.overflow-auto.pb-5.gap-10
+                        -
+                            let catalogTabArr = [
+                                                    {title: 'Серый', num: '1' }, {title: 'Коричневый', num: '2' }, {title: 'Натур', num: '3' }, {title: 'Бежевый', num: '4' }, {title: 'Толщина 4,3мм', num: '5' }, {title: 'Толщина 2,5мм', num: '6' }, {title: 'Толщина 2мм', num: '7' }, {title: 'Активный рисунок', num: '8' }, {title: 'Активный рисунок', num: '9' }, {title: 'Спокойный рисунок', num: '10' },
+                                                    {title: 'Для дома', num: '11' }, {title: 'Для офиса', num: '12' }, {title: 'Для магазина', num: '13' }, {title: 'Для ванной', num: '14' }, {title: 'Для детской', num: '15' }, {title: 'Для кафе', num: '16' }, {title: 'Для спальни', num: '17' }, {title: 'Для кухни', num: '18' }, {title: 'Для коридора', num: '19' }, {title: 'Для санузла', num: '20' },
+                                                    {title: 'Для спортзала', num: '21' }, {title: 'Для пола', num: '22' }, {title: 'Для стен', num: '23' }, {title: 'Для потолка', num: '24' }, {title: 'Квадратная', num: '25' }, {title: 'Прямоугольная', num: '26' }, {title: 'Под дерево', num: '27' }, {title: 'Под камень', num: '28' }, {title: 'LVT', num: '29' }, {title: 'RIGID VINYL', num: '30' },
+                                                    {title: 'Клеевая', num: '31' }, {title: 'Замкова', num: '32' }, {title: 'Гибкая', num: '33' }, {title: 'Жесткая', num: '34' }, {title: 'Эконом', num: '35' }, {title: 'Средний', num: '36' }
+                                                ]
+                        each val in catalogTabArr 
+                            .js-tabs__tab(data-article= val['num'])
+                                .btn-tab.p-5.px-md-10.py-md-7.fs-md-14.fs-12.lh-1.fw-rg.text-nowrap(title= val['title'])= val['title']                
+                .js-tabs__content-container
+                    each val in [{num: '1', classes: 'active' }]
+                        .js-tabs__content(data-article= val['num'] class= val['classes'])
+                            .catalog-preloader.d-flex.flex-column.gap-30
+                                .catalog-preloader-top.justify-content-between
+                                    .bg-white
+                                    .catalog-preloader-navigation.d-md-flex.d-none.align-items-cente.gap-10
+                                        .catalog-preloader-prev.p-10.d-flex.bg-white
+                                            i.icon.u_arrow-right.fs-30
+                                        .catalog-preloader-pagination.d-flex.align-items-center.gap-10
+                                            -for(let i = 0; i < 5; i++)
+                                                .catalog-preloader-pagination-item    
+                                        .catalog-preloader-next.p-10.d-flex.bg-white
+                                            i.icon.u_arrow-right.fs-30       
+                                .catalog-preloader-bottom 
+                                    -for(let i = 0; i < 5; i++)
+                                        if(i % 2 == 0)                                                                 
+                                            +img('images/preloader/item.svg').catalog-preloader-item.white
+                                        else
+                                            +img('images/preloader/item.svg').catalog-preloader-item.grey        
+                            .d-flex.justify-content-between.align-items-center.mb-30                                
+                                .slider-navigation-5.d-md-flex.d-none.align-items-center(data-categoryy= val['num'])
+                                    .slider-prev.p-10.d-flex.bg-white
+                                        i.icon.u_arrow-right.fs-30.text-main
+                                    .slider-pagination
+                                    .slider-next.p-10.d-flex.bg-white
+                                        i.icon.u_arrow-right.fs-30.text-main
+                            .swiper.slider-5(data-categoryy= val['num'])
+                                .swiper-wrapper.flex-wrap
+                                    .swiper-slide
+                                        +catalog-item('1', 'NEW')
+                                    -
+                                        let sliderArr = [
+                                                            {img: '1', badge: 'NEW'}, {img: '2', badge: 'Хит продаж'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '1', badge: 'NEW'}, {img: '3', badge: '-20%'}, {img: '2', badge: 'Хит продаж'},
+                                                            {img: '1', badge: 'NEW'}, {img: '2', badge: 'Хит продаж'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '1', badge: 'NEW'}, {img: '3', badge: '-20%'}, {img: '2', badge: 'Хит продаж'},
+                                                            {img: '1', badge: 'NEW'}, {img: '2', badge: 'Хит продаж'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '1', badge: 'NEW'}, {img: '3', badge: '-20%'}, {img: '2', badge: 'Хит продаж'},
+                                                        ]
+                                    each val in sliderArr
+                                        .swiper-slide
+                                            +catalog-item(val['img'], val['badge'])
+                    -for(let i = 2; i <= 36; i++)
+                        .js-tabs__content(data-article= i)
+                            .d-flex.justify-content-between.align-items-center.mb-30
+                                .row.g-5.g-sm-30.align-items-center
+                                    each val in ['lite', 'optim']
+                                        .col-auto
+                                            +img('images/collection/'+val+'.png', val)(class='catalog-tabs-collection')
+                                    .col-sm-auto
+                                        .fs-12.fs-sm-14.lh-1_3.catalog-tabs-text Применяется для устройства полов во всех жилых помещениях с высокой проходимостью, а также в помещениях коммерческого назначения со средней проходимостью (кафе, рестораны, небольшие магазины-бутики и т.п.).           
+                                .slider-navigation-5.d-md-flex.d-none.align-items-center(data-categoryy= i)
+                                    .slider-prev.p-10.d-flex.bg-white
+                                        i.icon.u_arrow-right.fs-30.text-main
+                                    .slider-pagination
+                                    .slider-next.p-10.d-flex.bg-white
+                                        i.icon.u_arrow-right.fs-30.text-main
+                            .swiper.slider-5(data-categoryy= i)
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        +catalog-item('1', 'NEW')
+                                    -
+                                        let sliderArr = [
+                                                            {img: '1', badge: 'NEW'}, {img: '2', badge: 'Хит продаж'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '1', badge: 'NEW'}, {img: '3', badge: '-20%'}, {img: '2', badge: 'Хит продаж'},
+                                                            {img: '1', badge: 'NEW'}, {img: '2', badge: 'Хит продаж'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '1', badge: 'NEW'}, {img: '3', badge: '-20%'}, {img: '2', badge: 'Хит продаж'},
+                                                            {img: '1', badge: 'NEW'}, {img: '2', badge: 'Хит продаж'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '3', badge: '-20%'}, {img: '1', badge: 'NEW'}, {img: '3', badge: '-20%'}, {img: '2', badge: 'Хит продаж'},
+                                                        ]
+                                    each val in sliderArr
+                                        .swiper-slide
+                                            +catalog-item(val['img'], val['badge'])
+//- mixin choosing
+    section.choosing.py-30.py-sm-100.bg-light#choosing(class!=attributes.class)
+        .container            
+            h2.fs-20.fs-sm-25.fs-lg-30.fs-xl-35.lh-0_9.fw-bl.mb-15.mb-sm-30 Подберите плитку для себя и получите подарок
+            .choosing-wrapper
+                .choosing-block
+                    .js-tabs__nav.choosing-tabs-btns.mb-20
+                        #steps.d-flex.pb-5.overflow-auto.overflow-xl-visible.step
+                            +choosing-tabs-btn('Расположение')
+                            +choosing-tabs-btn('Назначение')
+                            +choosing-tabs-btn('Укладка')
+                            +choosing-tabs-btn('Цвет и текстура')
+                            +choosing-tabs-btn('Получить подарок')
+                    form#zangdar-form.choosing-tabs-content.zangdar__wizard(autocomplete='off' name='choosing')
+                        +choosing-tabs-block('worry', '1', 'location', 'Расположение', '25%')
+                            .fs-14.fs-sm-16.lh-1.fw-rg.mb-10.mb-sm-20 Выберите комнаты, в которые вы хотите положить плитку
+                            .row.g-10
+                                each val in [{icon: 'tv-retro', title: 'Зал'}, {icon: 'bed', title: 'Спальня'}, {icon: 'kid', title: 'Детская'}, {icon: 'coffee', title: 'Кухня'}, {icon: 'bath', title: 'Санузел'}, {icon: 'volleyball', title: 'Прихожая'}, {icon: 'temperature-minus', title: 'Балкон'}, {icon: 'building', title: 'Офис'}, {icon: 'cloud-sun-hail', title: 'Улица'}]
+                                    .col-auto
+                                        label.choosing-tabs-item-block.position-relative
+                                            input.position-absolute.w-100.h-100.start-0.top-0(type='checkbox', name='location')
+                                            span.choosing-tabs-item-block-container.rounded-10.d-flex.align-items-center.text-black.p-10.px-sm-15.py-sm-10.px-md-25.py-md-15
+                                                i(class='u_'+val['icon']).icon.me-5.me-sm-10.me-md-15.fs-18.fs-md-25.fs-lg-30
+                                                span.fs-14.fs-sm-18.lh-0_9.fw-rg= val['title']
+                        +choosing-tabs-block('worry1', '2', 'appointment', 'Назначение', '50%')
+                            .fs-14.fs-sm-16.lh-1.fw-rg.mb-10.mb-sm-20 На какую поверхность вы хотите уложить плитку
+                            .row.g-sm-10.g-5
+                                each val in [{icon: 'floor', title: 'Пол'}, {icon: 'walls', title: 'Стены'}, {icon: 'roof', title: 'Потолок'}]
+                                    .col-auto
+                                        label.choosing-tabs-item-block.position-relative.appointment
+                                            input.position-absolute.w-100.h-100.start-0.top-0(type='checkbox', name='appointment')
+                                            span.choosing-tabs-item-block-container.rounded-10.d-flex.align-items-center.text-black.p-5.pe-20
+                                                .rounded-5.p-10.me-10.me-sm-15.bg-white.appointment-img
+                                                    +img('images/'+val['icon']+'.svg', val['title'])(class='w-auto')
+                                                span.fs-12.fs-sm-18.lh-0_9.fw-rg= val['title']                            
+                        +choosing-tabs-block('worry2', '3', 'laying', 'Укладка', '75%')
+                            .fs-14.fs-sm-16.lh-1.fw-rg.mb-10.mb-sm-20 Вид укладки
+                            .row.g-sm-10.g-5.mb-30
+                                each val in [{icon: '1', title: 'Укладка-1'}, {icon: '2', title: 'Укладка-2'}, {icon: '3', title: 'Укладка-3'}, {icon: '4', title: 'Укладка-4'}, {icon: '5', title: 'Укладка-5'}]
+                                    .col-auto.d-flex
+                                        label.choosing-tabs-item-block.position-relative.laying
+                                            input.position-absolute.w-100.h-100.start-0.top-0(type='checkbox', name='laying')
+                                            span.choosing-tabs-item-block-container.rounded-10.d-flex.align-items-center.text-black
+                                                .ratio.ratio-1x1.rounded-10.laying-img
+                                                    +img('images/qviz/laying/ucladka-'+val['icon']+'.svg', val['title'])
+                                .col-auto.d-flex
+                                    label.choosing-tabs-item-block.position-relative.laying.d-flex
+                                        input.position-absolute.w-100.h-100.start-0.top-0(type='checkbox', name='laying')
+                                        span.choosing-tabs-item-block-container.rounded-10.d-flex.align-items-center.text-black.bg-main.fw-rg.lh-1.p-20 Другая   
+                            .fs-14.fs-sm-16.lh-1.fw-rg.mb-10.mb-sm-20 Способ укладки
+                            .row.g-sm-10.g-5
+                                each val in [{icon: 'glue', title: 'Клеевая'}, {icon: 'map', title: 'Замковая'}]
+                                    .col-auto
+                                        label.choosing-tabs-item-block.position-relative
+                                            input.position-absolute.w-100.h-100.start-0.top-0(type='radio', name='method')
+                                            span.choosing-tabs-item-block-container.rounded-10.d-flex.align-items-center.text-black.p-10.px-sm-15.py-sm-10.px-md-25.py-md-15
+                                                i(class='u_'+val['icon']).icon.me-5.me-sm-10.me-md-15.fs-18.fs-md-25.fs-lg-30
+                                                span.fs-14.fs-sm-18.lh-0_9.fw-rg= val['title']                        
+                        +choosing-tabs-block('worry3', '4', 'texture', 'Цвет и текстура', '100%')
+                            .fs-14.fs-sm-16.lh-1.fw-rg.mb-10.mb-sm-20 Текстура
+                            .row.g-sm-10.g-5.mb-30
+                                each val in [{icon: 'wood', title: 'Дерево'}, {icon: 'stone', title: 'Камень'}, {icon: 'marble', title: 'Мрамор'}]
+                                    .col-auto
+                                        label.choosing-tabs-item-block.position-relative.texture
+                                            input.position-absolute.w-100.h-100.start-0.top-0(type='checkbox', name='texture')
+                                            span.choosing-tabs-item-block-container.rounded-pill.d-flex.align-items-center.text-black.p-2.p-sm-5.pe-10.pe-sm-20
+                                                .rounded-circle.texture-img.me-10.me-sm-15.ratio.ratio-1x1
+                                                    +img('images/qviz/texture/'+val['icon']+'.png', val['title'])
+                                                span.fs-12.fs-sm-16.lh-1.fw-rg= val['title']
+                                .col-auto
+                                    label.choosing-tabs-item-block.position-relative.texture
+                                        input.position-absolute.w-100.h-100.start-0.top-0(type='checkbox', name='texture')
+                                        span.choosing-tabs-item-block-container.rounded-pill.d-flex.align-items-center.text-black.p-2.p-sm-5.pe-10.pe-sm-20
+                                            .rounded-circle.texture-img.me-10.me-sm-15.ratio.ratio-1x1(style="background-color: #BEBEBE")
+                                            span.fs-12.fs-sm-16.lh-1.fw-rg Без текстуры                    
+                            .fs-14.fs-sm-16.lh-1.fw-rg.mb-10.mb-sm-20 Текстура
+                            .row.g-sm-10.g-5.mb-30
+                                each val in [{icon: '#CCC28F', title: 'Бежевый'}, {icon: '#806C33', title: 'Натуральный'}, {icon: '#99632E', title: 'Коричневый'}, {icon: '#B3B3B3', title: 'Серый'}]
+                                    .col-auto
+                                        label.choosing-tabs-item-block.position-relative.texture
+                                            input.position-absolute.w-100.h-100.start-0.top-0(type='checkbox', name='color')
+                                            span.choosing-tabs-item-block-container.rounded-pill.d-flex.align-items-center.text-black.p-2.p-sm-5.pe-10.pe-sm-20
+                                                .rounded-circle.texture-img.me-10.me-sm-15.ratio.ratio-1x1(style=`background-color: ${val['icon']}`)                                                    
+                                                span.fs-12.fs-sm-16.lh-1.fw-rg= val['title']                                                    
+                        .zangdar__step(data-step='form' data-article='5')
+                            .choosing-tabs-item.bg-white
+                                .choosing-tabs-item-wrapper.p-15.p-sm-20.p-lg-30.p-xxl-50.d-flex.flex-column
+                                    .choosing-tabs-item-progress.mb-20.mb-sm-30(style=`--p: 500%`)
+                                    .flex-grow-1
+                                        .fs-14.fs-sm-24.lh-0_9.fw-bl.mb-20 Остался всего один шаг
+                                        .bg-light.p-15.p-sm-20.p-lg-30.p-xxl-50
+                                            .fs-12.fs-sm-14.lh-1_3.fw-rg.mb-10.mb-sm-30 При заказе плитки вы гарантировано получите в подарок клей, шпатель и консультацию укладчика
+                                            .row.g-0.g-sm-20
+                                                .col-sm-6.d-flex
+                                                    label.p-md-20.p-sm-15.p-10.main-input.d-flex.align-items-center.pointer-text.flex-grow-1
+                                                        input(type='tel' placeholder='+7 (9__) ___-__-__' required).input-phone.fs-12.fs-sm-16.lh-1.p-0.flex-grow-1
+                                                        i.icon.u_phone-alt.fs-20.ms-30.d-none.d-sm-block
+                                                .col-sm-6.d-flex
+                                                    button.btn-main.p-10.px-sm-30.py-sm-20.fs-12.fs-sm-16.lh-1.fw-bl.border-0.flex-grow-1(type="submit") Хочу подарок        
+                                    hr.border.border-1.bg-light.my-sm-30.my-20.o-1
+                                    .d-flex.gap-10
+                                        button.btn-light.border-0.p-10.p-sm-20.choosing-tabs-item-next.prev-step(data-article= num data-prev)
+                                            i.icon.u_arrow-right.fs-12.fs-sm-18
+                                        button.btn-main.border-0.px-15.py-10.px-sm-30.py-sm-20.choosing-tabs-item-next.start-step.d-flex.align-items-center
+                                            span.fs-12.fs-sm-16.lh-1.fw-bl.me-5.d-inline-block Начать заново
+                                .choosing-tabs-item-img.ratio.ratio-1x1.d-none.d-lg-block
+                                    +img('images/qviz/result.png', 'Пример плитки')(class='of-unset')
+                    #form-completed.form-completed.text-center
+                        .fs-sm-40.fs-30.lh-1.ff-u.text-main Заявка успешно отправлена                        
+//- mixin collection_char
+    section.collection_char.py-30.py-sm-100.bg-light#collection
+        .container
+            h2.fs-20.fs-sm-25.fs-lg-30.fs-xl-35.lh-0_9.fw-bl.mb-15.mb-sm-30 Характеристики коллекций
+            .collection_char-table.overflow-auto.pb-5                
+                table
+                    tr
+                        th.o-0
+                        each val in [{img: 'lite', alt: 'Lite'}, {img: 'optim', alt: 'Optim'}, {img: 'strong', alt: 'Strong'}, {img: 'strong', alt: 'Strong'}, {img: 'eco', alt: 'ECO Click'}]
+                            td
+                                +img('images/collection/'+val['img']+'.png', val['alt'])(class='w-auto collection_char-table-headingImg')
+                    -
+                        let test = [
+                                        {head: 'Назначение', value: ['Применяется для устройства полов во всех жилых помещениях с высокой проходимостью, а также в помещениях коммерческого назначения со средней проходимостью (кафе, рестораны, небольшие магазины-бутики и т.п.).', 'Увеличенная  толщина позволила повысить показатели амортизации. Плитка лучше сохраняет тепло на поверхности, менее требовательна к подготовке основания в отличие от более тонких вариантов.', 'Классические характеристики кварцвиниловой плитки DeART - общая толщина 2,5 и верхний защитный микрокерамический слой 0,5мм для мест с высокой проходимостью - позволяют забыть о проблемах с царапинами.', 'Классические характеристики кварцвиниловой плитки DeART - общая толщина 2,5 и верхний защитный микрокерамический слой 0,5мм для мест с высокой проходимостью - позволяют забыть о проблемах с царапинами.', 'Технология RIGID VINYL. В отличии от SPC - не хрустит и не гремит. Теплее, приятнее, лучше амортизирует. Не требует подложки. Многослойная армированная -  именно кварцвиниловая плитка с прочным защитным слоем, а не композит из пластика.'], small: true},
+                                        {head: 'Тип плитки', value: ['Клеевая', 'Клеевая', 'Клеевая', 'Клеевая', 'Замковая']},
+                                        {head: 'Формат, мм', value: ['187×935×2', '187×935×2,5', '187×935×2,5', '470×470×2,5', '176×940×4,3']},
+                                        {head: 'Площадь плитки, м2', value: ['0,1748', '0,1748', '0,1748', '0,2209', '0,1654']},
+                                        {head: 'Защитный слой, мм', value: ['0,3', '0,3', '0,5', '0,5', '0,5']},
+                                        {head: 'Количество плиток<br>в упаковке', value: ['28', '23', '23', '18', '12']},
+                                        {head: 'Количество м2 в коробке ', value: ['4,89', '4,02', '4,02', '3,976', '1,985']},
+                                        {head: 'Объем коробки, м3', value: ['0,01', '0,01', '0,01', '0,01', '0,01']},
+                                        {head: 'Вес коробки, кг', value: ['16,8', '16,8', '16,8', '16,7', '14,8']},
+                                        {head: 'Количество дизайнов<br>в коллекции', value: ['14', '12', '24', '4', '11']}
+                                   ]                                                          
+                    each val in test
+                        tr
+                            th!= val['head']
+                            if val['small']
+                                each item in val['value']
+                                    td.fs-12= item
+                            else
+                                each item in val['value']
+                                    td= item
+//- mixin structure
+    section.structure.py-30.py-sm-100.position-relative
+        .container
+            .row.g-0.justify-content-xl-center
+                .col-xxl-10.col-xl-11.col-lg-12.col-6
+                    h2.fs-20.fs-sm-25.fs-lg-30.fs-xl-35.lh-0_9.fw-bl.mb-15.mb-sm-30 Структура <br class='d-none d-sm-inline'><span class='text-main'>кварцвиниловой плитки</span>
+                    .row.g-xl-40.g-lg-20.g-sm-10.g-5
+                        .col-lg-auto.d-flex.flex-column.gap-5.gap-sm-10
+                            each val in [{num: '1', title: 'Защитный слой'}, {num: '2', title: 'UV покрытие'}, {num: '3', title: 'Декоративный слой'}]
+                                .d-flex.align-items-center.structure-hover
+                                    .structure-hover-num.rounded-circle.p-5.p-sm-10.d-flex.align-items-center.justify-content-center.me-5.me-sm-10
+                                        span.fs-10.fs-sm-16.fw-rg.lh-0_5.pt-2= val['num']
+                                    .fs-12.fs-sm-16.lh-1.fw-rg= val['title']
+                        .col-lg-auto.d-flex.flex-column.gap-5.gap-sm-10
+                            each val in [{num: '4', title: 'Стабилизирующий слой'}, {num: '5', title: 'Слой из кварцевого песка и винила'}, {num: '6', title: 'Балансовый слой'}]
+                                .d-flex.align-items-center.structure-hover
+                                    .structure-hover-num.rounded-circle.p-5.p-sm-10.d-flex.align-items-center.justify-content-center.me-5.me-sm-10
+                                        span.fs-10.fs-sm-16.fw-rg.lh-0_5.pt-2= val['num']
+                                    .fs-12.fs-sm-16.lh-1.fw-rg= val['title']
+        .structure-img.position-absolute.mbm-darken
+            +img('images/structure-2.png', 'Структура кварцвиниловой плитки')(width='952' height='628')
+            .structure-img-group
+                -for(let i = 1; i <= 6; i++)
+                    if(i % 2 === 0)
+                        .structure-img-hover.rounded-circle.p-5.p-sm-10.d-flex.align-items-center.justify-content-center.position-absolute(data-tippy-content="Оставьте номер телефона и мы отправим на него подборку подходящей плитки" data-tippy-placement='left')
+                            span.fs-10.fs-sm-16.fw-rg.lh-0_5.pt-2= i                                                       
+                    else    
+                        .structure-img-hover.rounded-circle.p-5.p-sm-10.d-flex.align-items-center.justify-content-center.fs-10.fs-sm-16.fw-rg.position-absolute(data-tippy-content="Оставьте номер телефона и мы отправим на него подборку подходящей плитки" data-tippy-placement='right')
+                            span.fs-10.fs-sm-16.fw-rg.lh-0_5.pt-2= i                                                       
+//- mixin compareTable
+    section.compareTable.py-30.py-sm-100.bg-light.overflow-hidden#compare
+        .container
+            h2.fs-20.fs-sm-25.fs-lg-30.fs-xl-35.lh-0_9.fw-bl.mb-15.mb-sm-30 Современное решение при выборе покрытия            
+            .fs-14.lh-1_3.fw-rg.mb-15.mb-sm-30 Выберите типы покрытий, которые хотите сравнить с кварцвиниловой плиткой DeArt
+            .d-flex.gap-5.gap-sm-10.flex-nowrap.mb-15.mb-sm-30.text-nowrap.overflow-auto.pb-5
+                each val in ['Линолеум', 'Ламинат', 'Керамогранит', 'ПВХ плитка', 'SPC плитка']                   
+                    .px-lg-30.px-20.py-lg-20.py-10.d-flex.align-items-center.gap-8.gap-sm-20.justify-content-between.compareTable-btn.pointer.flex-grow-1
+                        .fs-12.fs-sm-14.lh-1.fw-bl= val
+                        i.icon.u_check.fs-14.fs-sm-24
+            -
+                let tableArr = [
+                                {title: 'Линолеум', img: '2', value: ['Низкая', 'Средняя', 'Сложная', 'Низкая', 'Отсутствует', 'Средняя', 'Низкое', 'Средняя', 'Средняя', 'Не все виды', 'Средний', 'Средние', 'до 25%', 'Средняя', 'Низкое', 'Обязателен']},
+                                {title: 'Ламинат', img: '3', value: ['Высокая', 'Высокая', 'Сложная', 'Средние', 'Сложная', 'Высокая', 'Низкое', 'Высокая', 'Низкая', 'Применяется', 'Низкий', 'Средние', '10-12%', 'Низкая', 'Среднее', 'Обязателен']},
+                                {title: 'Керамогранит', img: '4', value: ['Высокая', 'Средняя', 'Простая', 'Средние', 'Простая', 'Средняя', 'Высокая', 'Высокая', 'Высокая', 'Не все виды', 'Высокий', 'Средние', '3-5%', 'Средняя', 'Высокое', 'Не требуется']},
+                                {title: 'ПВХ плитка', img: '5', value: ['Высокая', 'Средняя', 'Простая', 'Средние', 'Простая', 'Средняя', 'Высокая', 'Высокая', 'Высокая', 'Не все виды', 'Высокий', 'Средние', '3-5%', 'Средняя', 'Высокое', 'Не требуется']},
+                                {title: 'SPC плитка', img: '6', value: ['Высокая', 'Высокая', 'Простая', 'Низкая', 'Сложная', 'Средняя', 'Среднее', 'Среднее', 'Низкая', 'Применяется', 'Низкий', 'Средние', '10-12%', 'Низкая', 'Низкое', 'Не требуется']},
+                               ]
+            .d-flex.overflow-auto.pb-5
+                .compareTable-block.heading.mw-25                
+                    .d-flex.flex-column
+                        .compareTable-heading.p-5.p-sm-5.position-relative.d-flex
+                            .compareTable-heading-wrapper.position-relative.d-flex.flex-grow-1.align-items-center.justify-content-center.gap-8.gap-md-10.gap-xl-20
+                                .ratio.ratio-1x1.compareTable-heading-img
+                                    +img('images/compareIcon.svg', 'Сравните с покрытием DeArt')(width='30' height='30')
+                                .fs-10.fs-sm-14.lh-1.fw-bl.text-white Сравните<br>с покрытием<br><span class='text-main'>DeArt</span>
+                            .position-absolute.top-0.start-0.w-100.h-100
+                                +img('images/table/table-1.png', 'Сравните с покрытием DeArt')(class="h-100")
+                        each val, index in ['Влагостойкость', 'Теплопроводность', 'Простота укладки', 'Устойчивость к химическим воздействиям', 'Ремонтопригодность', 'Износостойкость', 'Сопротивление скольжению', 'Устойчивость к ультрафиалету', 'Ударостойкость', 'Применение на системе теплых полов', 'Акустический комфорт', 'Антистатические свойства', 'Запас на подрезку при монтаже', 'Амортизация', 'Удобство транспортировки', 'Вынос мебели при монтаже']
+                            .compareTable-item.p-5.p-sm-15.fs-10.fs-sm-12.lh-1.fw-rg.border.border-1.border-grey.bg-white.d-flex.align-items-center(data-compareH= index)!= val                
+                each col in tableArr
+                    .compareTable-block.mw-25.compareTable-column
+                        .d-flex.flex-column
+                            .compareTable-heading.p-5.p-sm-5.position-relative.d-flex
+                                .compareTable-heading-wrapper.position-relative.d-flex.flex-grow-1.align-items-center.justify-content-center.gap-8.gap-sm-20
+                                    .fs-10.fs-sm-12.lh-1.fw-bl.text-white= col['title']
+                                .position-absolute.top-0.start-0.w-100.h-100
+                                    +img('images/table/table-'+col['img']+'.png', col['title'])(class="h-100")
+                            each val, index in col['value']
+                                .compareTable-item.p-5.p-sm-15.fs-10.fs-sm-12.lh-1.border.border-1.border-grey.bg-white.d-flex.align-items-center(data-compareH= index)= val    
+                .compareTable-block.mw-25
+                    .d-flex.flex-column
+                        .compareTable-heading.p-5.p-sm-5.position-relative.d-flex
+                            .compareTable-heading-wrapper.img.position-relative.d-flex.flex-grow-1.align-items-center.justify-content-center.gap-8.gap-sm-20
+                                +img('images/logoCleanW.svg', 'DeArt') 
+                            .position-absolute.top-0.start-0.w-100.h-100
+                                +img('images/table/table-7.png', 'DeArt')(class="h-100")
+                        each val, index in ['Высокая', 'Низкая', 'Простая', 'Средние', 'Простая', 'Высокая', 'Высокая', 'Высокая', 'Высокая', 'Применяется', 'Высокий', 'Высокие', '3-5%', 'Средняя', 'Высокое', 'Не требуется']
+                            .compareTable-item.p-5.p-sm-15.fs-10.fs-sm-12.lh-1.border.border-1.border-grey.bg-orangeL.d-flex.align-items-center(data-compareH= index)= val
+//- mixin news(data)
+    section.news.py-30.py-sm-100.bg-light#news
+        .container
+            .d-flex.align-items-md-center.justify-content-between.mb-sm-20.mb-10.flex-column.flex-md-row
+                .d-flex.gap-10.gap-sm-30.align-items-center
+                    h2.fs-20.fs-sm-25.fs-lg-30.fs-xl-35.lh-0_9.fw-bl.mb-0 Новости <span class='text-main'>DeArt</span>
+                    a(href="#" title='Ссылка на группу в вконтакте').d-block.news-vk
+                        +img('images/vkF.svg', 'Ссылка на группу в вконтакте') 
+                .slider-navigation-2.d-none.d-md-flex.align-items-center(data-categoryy= data)
+                    .slider-prev.p-10.d-flex.bg-white
+                        i.icon.u_arrow-right.fs-30.text-main
+                    .slider-pagination
+                    .slider-next.p-10.d-flex.bg-white
+                        i.icon.u_arrow-right.fs-30.text-main
+            .swiper.slider-2(data-categoryy= data)
+                .swiper-wrapper
+                    each val in [{date: '5 окт в 12:25', img: '1', text: 'DeART – Южно-Корейский бренд кварцвиниловой плитки. Мы являемся официальными представителями производителя клеевой и замковой плитки "DeART Corp." в России ...'}, {title: '7 окт в 14:48', img: '2', text: 'Все большей популярностью в России пользуется кварцвиниловая плитка. Современное напольное покрытие отличается высокими эксплуатационными свойствами, стильным внешним видом ...'}]
+                        .swiper-slide.h-auto.d-flex
+                            +article-item(val['date'], val['img'], val['text'])
+//- mixin contact
+    section.contact.py-30.py-sm-100.overflow-hidden#contact
+        .container
+            h2.fs-20.fs-sm-25.fs-lg-30.fs-xl-35.lh-0_9.fw-bl.mb-20.mb-sm-30 Наши контакты
+            .contact-grid.gap-20.gap-xl-30
+                .contact-info.d-flex.gap-15.align-items-start
+                    .p-10.bg-light.rounded-circle
+                        i.icon.u_phone-volume.fs-20.fs-sm-30.text-main
+                    .d-flex.flex-column.gap-10
+                        .d-flex.flex-column.gap-5
+                            a(href="tel:+78002220277").fs-18.fs-sm-24.lh-1.fw-bl 8 800 222-02-77
+                            .fs-12.fs-sm-16.lh-1.fw-rg г. Красноярск, ул. Взлетная, 5, стр. 2
+                        .fs-12.fs-sm-14.lh-1.o-0_7 Работаем с 9:00 до 18:00     
+                .contact-map.map
+                    .map-block
+                        +img("images/map.jpg", "Карта")
+                .contact-form
+                    .bg-light.p-20.p-sm-30.p-xxl-50.d-flex.flex-column.gap-20.gap-sm-30
+                        .fs-12.fs-sm-14.lh-1_3.fw-rg Остались вопросы? Задайте их нам, и у кажите номер вашего телефона, чтобы мы могли ответить.
+                        form(autocomplete='off' name='contact_form').d-flex.flex-column.gap-20                                
+                            label.p-md-20.p-sm-15.p-10.main-input.d-flex.align-items-center.pointer-text
+                                input(type='tel' placeholder='+7 (9__) ___-__-__' required).input-phone.fs-12.fs-sm-16.lh-1.p-0.flex-grow-1
+                                i.icon.u_phone-alt.fs-20.ms-30.d-none.d-sm-block
+                            button.btn-main.px-15.py-10.px-sm-20.px-md-30.py-sm-20.fs-12.fs-sm-14.fs-md-16.lh-1.fw-bl.border-0 Задать вопрос

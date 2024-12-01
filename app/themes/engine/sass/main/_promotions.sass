@@ -1,0 +1,59 @@
+.promotions
+    display: grid
+    grid-template-columns: 100%
+    gap: 10px
+    &-item
+        border: 1px solid $main
+        &-img
+            max-height: 120px
+            & .ratio
+                height: 100%
+    &-grid
+        display: grid
+        grid-template-columns: 100%
+        gap: 10px        
+@media screen and ( min-width: 576px )
+    .promotions        
+        &-item
+            border-width: 2px
+            &-img
+                max-height: 200px                                    
+        &-grid
+            grid-template-columns: repeat(2, 1fr)
+            gap: 20px            
+@media screen and ( min-width: 768px )
+    .promotions
+        grid-template-columns: 270px 1fr
+        gap: 20px
+        &-item
+            &-img
+                max-height: unset
+                & .ratio
+                    height: auto        
+@media screen and ( min-width: 992px )
+    .promotions        
+        grid-template-columns: 270px 1fr
+        &-grid
+            grid-template-columns: repeat(3, 1fr)
+            &-item.big
+                grid-column: span 2
+                & img 
+                    padding-left: 11px                   
+@media screen and ( min-width: 1200px )
+    .promotions        
+        grid-template-columns: 300px 1fr        
+@media screen and ( min-width: 1554px )
+    .promotions
+        gap: 30px
+        grid-template-columns: 360px 1fr       
+        &-grid            
+            gap: 30px
+            &-item.big
+                & img 
+                    padding-left: 15px                          
+    
+      
+            
+    
+
+                

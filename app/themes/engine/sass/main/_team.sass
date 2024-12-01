@@ -1,0 +1,37 @@
+.team
+    &-grid
+        display: grid
+        grid-template-columns: repeat(4, minmax(220px, 1fr))
+        gap: 10px
+        overflow: auto
+    &-item
+        &-img
+            height: 250px
+        &-badge
+            top: 20px
+            border-radius: 0px 10px 10px 0px
+            box-shadow: 30px 10px 50px -10px rgba(5, 13, 51, 0.50)
+@media screen and ( min-width: 992px )
+    .team
+        &-grid            
+            grid-template-columns: repeat(4, 1fr)
+            gap: 20px
+            overflow: visible
+        &-item
+            &-img
+                height: 300px    
+@media screen and ( min-width: 1200px )
+    .team        
+        &-item
+            &-img
+                height: 350px    
+@media screen and ( min-width: 1460px )
+    .team
+        &-grid                        
+            gap: 30px
+        &-item
+            &-img
+                height: 400px    
+
+                
+

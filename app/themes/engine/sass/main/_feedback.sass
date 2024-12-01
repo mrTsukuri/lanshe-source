@@ -1,0 +1,71 @@
+.feedback
+    position: relative
+    &-grid
+        display: grid
+        grid-template-columns: 100%
+        // grid-template-columns: auto 40rem        
+        gap: 2rem    
+        // gap: 5.31917vw
+    &-desc
+        &__top
+            padding-bottom: 1.5rem
+            border-bottom: 1px solid rgba(0, 0, 0, .1)
+            & p
+                max-width: 340px              
+        &__social
+            & a
+                &:hover
+                    filter: drop-shadow(0 0 1px $black)            
+            & img
+                width: 2.5rem
+        &__bottom
+            gap: 1.5rem
+            flex-direction: column
+            align-items: stretch          
+    &-form
+        background-color: $white
+        // padding: 3.5rem 2.08334vw
+        padding: 2rem
+    &-img
+        width: 37.761vw
+        // width: 725px
+        height: 26.875vw
+        // height: 516px
+        right: 0
+        bottom: 25px
+        display: none
+        & img
+            height: 100%
+            mix-blend-mode: darken
+@media screen and ( min-width: 576px )
+    .feedback
+        gap: 5rem
+        &-form                        
+            padding: 3.5rem 4rem
+        &-desc
+            &__top
+                padding-bottom: 3rem
+            &__bottom
+                gap: 4rem
+                flex-direction: row
+                align-items: center
+            &__social
+                & img
+                    width: 3rem
+@media screen and ( min-width: 1250px )
+    .feedback
+        &-grid            
+            grid-template-columns: auto 1fr
+            gap: 10rem
+            width: max-content 
+@media screen and ( min-width: 1470px )
+    .feedback
+        &-grid        
+            grid-template-columns: auto 20.834vw
+            gap: 5.31917vw
+        &-form            
+            padding: 3.5rem 2.08334vw            
+        &-img
+            display: block
+                                                           
+            

@@ -1,0 +1,6 @@
+.points-grid {
+  display: grid;
+  grid-template-columns: 1fr 820px;
+  grid-template-rows: 500px;
+  gap: 30px;
+}

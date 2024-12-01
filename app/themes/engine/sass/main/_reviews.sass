@@ -1,0 +1,26 @@
+.reviews
+    &-block
+        & .swiper-slide
+            &::after
+                content: none
+                width: 2px
+                height: 100%
+                background-color: $black                
+                position: absolute
+                top: 0
+                right: -3rem
+    &-item, &-item__heading
+        gap: 2rem    
+@media screen and ( min-width: 1200px )
+    .reviews                                   
+        &-block                                    
+            & .swiper-slide
+                &::after                    
+                    content: ''
+                    right: -2rem                                                
+@media screen and ( min-width: 1450px )
+    .reviews
+        &-block       
+            & .swiper-slide
+                &::after                    
+                    right: -3rem                                                             

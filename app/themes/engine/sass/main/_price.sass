@@ -1,0 +1,111 @@
+.price
+    &-grid
+        display: grid
+        gap: 15px        
+        grid-template-rows: repeat(1,auto) 1fr
+        grid-template-areas: 'nav' 'table' 'form'
+        grid-template-columns: 100%
+        &-navigation
+            grid-area: nav
+        &-form
+            grid-area: form
+        &-table
+            grid-area: table            
+    &-navigation
+        display: grid
+        grid-template-columns: 100%
+        gap: 20px
+    &-tabs
+        & .btn-tab
+            transition: .3s
+        & .js-tabs__tab
+            cursor: pointer    
+        & .js-tabs__tab.active
+            cursor: default
+            & .btn-tab    
+                color: $main
+        & .js-tabs__tab:not(:last-of-type)
+            margin-bottom: 15px             
+    &-block:not(:last-of-type), &-heading
+        margin-bottom: 23px        
+    &-block
+        & > *:not(:last-child)
+            margin-bottom: 8px
+        &-str
+            transition: .3s
+            & .btn-inline
+                opacity: .5
+                transition: .3s
+            &:hover
+                background-color: $light
+                box-shadow: 0 0 0 5px $light
+                & .price-block-line                    
+                    &:before
+                        opacity: .3
+                        border-color: $main
+                    & > span:first-of-type
+                        color: $main
+                    & span span
+                        background: $light    
+                & .btn-inline
+                    opacity: 1                     
+        &-line
+            &::before
+                content: none
+                position: absolute
+                width: 100%
+                border-bottom: 2px solid $light                    
+                bottom: 6px                
+                transition: .3s
+            & > span:first-of-type                
+                margin-bottom: 0                              
+            & span
+                z-index: 1
+                & span
+                    transition: .3s                     
+                    background: $white
+                    box-decoration-break: slice    
+@media screen and ( min-width: 576px )
+    .price        
+        &-block
+            &-line
+                &::before
+                    content: ''
+                & > span:first-of-type
+                    margin-bottom: 0               
+                    & > span
+                        padding-right: 15px    
+                & > span:last-of-type                                                               
+                    & > span
+                        padding-left: 15px                    
+@media screen and ( min-width: 768px )
+    .price
+        &-grid
+            gap: 20px             
+        &-navigation
+            grid-template-columns: 1fr 1fr
+        &-block
+            &-line
+                &::before
+                    bottom: 8px                
+@media screen and ( min-width: 992px )
+    .price
+        &-grid
+            grid-template-columns: 330px 1fr
+            grid-template-areas: 'nav table'
+        &-navigation
+            grid-template-columns: 330px 385px
+            gap: 30px                        
+@media screen and ( min-width: 1200px )
+    .price
+        &-grid
+            gap: 30px
+            grid-template-columns: 1fr 2fr
+            grid-template-areas: 'nav table'
+        &-navigation            
+            grid-template-columns: 100%
+        &-tabs
+            & .js-tabs__tab:not(:last-of-type)
+                margin-bottom: 20px       
+                                                      
+            
